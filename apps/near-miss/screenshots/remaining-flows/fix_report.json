@@ -1,0 +1,333 @@
+{
+  "generated_at": "2026-03-22T12:32:14.247629",
+  "fixes": {
+    "fix2_approved": {
+      "screens": {},
+      "errors": []
+    },
+    "fix4_investigation": {
+      "screens": {
+        "investigations_via_nav": {
+          "url": "https://nmms.staging.startraven.com/investigations?status=in_progress",
+          "title": "Investigations",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Near Miss Investigations",
+            "UC/UA Investigations",
+            "In Progress (48)",
+            "Released (37)",
+            "Closed (8)",
+            "All (93)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Reported By",
+            "Status",
+            "Classification",
+            "UNIT-1/2026/NM/0006",
+            "19 Feb 2026",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "Asaimani chandrasekaran",
+            "In-Progress",
+            "Workplace Safety Near Miss",
+            "UNIT-1/2026/NM/0005",
+            "10 Feb 2026",
+            "Forklift speeding near pedestrian walkways, almost hitting a worker",
+            "Process Safety Near Miss",
+            "UNIT-1/2026/NM/0004",
+            "09 Feb 2026",
+            "Forklift nearly hit a worker in the warehouse",
+            "IPL/2026/NM/0026",
+            "30 Jan 2026",
+            "Strong ammonia odour detected at pump seal",
+            "IPL/2026/NM/0023",
+            "29 Jan 2026",
+            "IPL/2026/NM/0027",
+            "Operator attempted to manually clear a component jam on the main conveyor belt while it was running at slow speed",
+            "IPL/2026/NM/0018",
+            "28 Jan 2026",
+            "IPL/2026/NM/0016",
+            "27 Jan 2026",
+            "IPL/2026/NM/0015",
+            "Forklift speeding near pedestrian walkways, nearly hit a worker but stopped in time",
+            "IPL/2026/NM/0014",
+            "Forklift sped near pedestrian walkways, nearly hitting a worker but stopped in time.",
+            "IPL/2026/NM/0013",
+            "IPL/2026/NM/0012",
+            "IPL/2026/NM/0010",
+            "21 Jan 2026",
+            "Contract workers entered the restricted zone around Hydraulic Press HP-23 while the machine was energized",
+            "IPL/2026/NM/0008",
+            "19 Jan 2026",
+            "Rows per page:",
+            "25",
+            "1\u201325 of 48"
+          ],
+          "buttons": [
+            {
+              "text": "NEAR MISS INVESTIGATIONS",
+              "disabled": false
+            },
+            {
+              "text": "UC/UA INVESTIGATIONS",
+              "disabled": false
+            },
+            {
+              "text": "In Progress (48)",
+              "disabled": false
+            },
+            {
+              "text": "Released (37)",
+              "disabled": false
+            },
+            {
+              "text": "Closed (8)",
+              "disabled": false
+            },
+            {
+              "text": "All (93)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ]
+        }
+      },
+      "errors": [
+        "No investigation rows found"
+      ]
+    },
+    "fix6_done_rejected": {
+      "screens": {
+        "done_list": {
+          "url": "https://nmms.staging.startraven.com/reports?status=done&facet=all_reports",
+          "title": "Incident Reports",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Incident Reports",
+            "Active (338)",
+            "Done (223)",
+            "Rejected (27)",
+            "Draft (227)",
+            "All (821)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Department",
+            "Reported By",
+            "Status",
+            "Classification",
+            "UNIT-1/2026/NM/0007",
+            "16 Mar 2026",
+            "Raj Oberoi slipped",
+            "PE",
+            "Raj Oberoi",
+            "Approved by Dept",
+            "Workplace Safety Near Miss",
+            "UNIT-1/2026/UC/0008",
+            "09 Mar 2026",
+            "Lift broke near the stairs",
+            "PP",
+            "rishi op",
+            "Unsafe Condition",
+            "UNIT-1/2026/NM/0006",
+            "19 Feb 2026",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "Asaimani chandrasekaran",
+            "UNIT-1/2026/UA/0001",
+            "10 Feb 2026",
+            "Forklift nearly hit a worker in the warehouse",
+            "Unsafe Act",
+            "UNIT-1/2026/NM/0005",
+            "Forklift speeding near pedestrian walkways, almost hitting a worker",
+            "Process Safety Near Miss",
+            "UNIT-1/2026/NM/0004",
+            "09 Feb 2026",
+            "UNIT-1/2026/NM/0002",
+            "04 Feb 2026",
+            "Continuous Hydrocarbon leakage at D-510 top manhole",
+            "UNIT-1/2026/UC/0005",
+            "Chemical storage area with damaged containers, poor ventilation, and spilled liquid on the floor.",
+            "UNIT-1/2026/UC/0004",
+            "Chemical storage area with damaged containers, poor ventilation, and slippery floor due to spilled liquid",
+            "UNIT-1/2026/UC/0003",
+            "Chemical storage area with damaged containers, poor ventilation, and spilled liquid on the floor",
+            "UNIT-1/2026/UC/0006",
+            "UNIT-1/2026/UC/0002",
+            "UNIT-1/2026/UC/0001",
+            "Chemical storage area with damaged containers, poor ventilation, and a slippery floor due to a spill",
+            "UNIT-1/2026/UC/0007",
+            "Chemical storage area with damaged containers, poor ventilation, and a slippery floor due to spilled liquid.",
+            "Rows per page:",
+            "25",
+            "1\u201325 of 223"
+          ],
+          "buttons": [
+            {
+              "text": "Active (338)",
+              "disabled": false
+            },
+            {
+              "text": "Done (223)",
+              "disabled": false
+            },
+            {
+              "text": "Rejected (27)",
+              "disabled": false
+            },
+            {
+              "text": "Draft (227)",
+              "disabled": false
+            },
+            {
+              "text": "All (821)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ]
+        },
+        "rejected_list": {
+          "url": "https://nmms.staging.startraven.com/reports?status=rejected&facet=all_reports",
+          "title": "Incident Reports",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Incident Reports",
+            "Active (338)",
+            "Done (223)",
+            "Rejected (27)",
+            "Draft (227)",
+            "All (821)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Department",
+            "Reported By",
+            "Status",
+            "REF/2026/0253",
+            "17 Feb 2026",
+            "Lift broke near PP department",
+            "PP",
+            "rishi",
+            "Rejected by Dept",
+            "REF/2026/0251",
+            "16 Feb 2026",
+            "Forklift nearly hit a worker in the warehouse",
+            "Asaimani chandrasekaran",
+            "Rejected by Safety Manager",
+            "REF/2026/0250",
+            "Forklift speeding near pedestrian walkways almost hit a worker",
+            "REF/2026/0249",
+            "REF/2026/0245",
+            "12 Feb 2026",
+            "Minor gas leak from thermal room",
+            "PE",
+            "P C Sharma",
+            "REF/2026/0244",
+            "Gas leak from thermal room",
+            "REF/2026/0239",
+            "11 Feb 2026",
+            "Forklift sped near pedestrian walkways, nearly hitting a worker.",
+            "REF/2026/0238",
+            "10 Feb 2026",
+            "Forklift speeding near pedestrian walkways in the warehouse, nearly hitting a worker",
+            "09 Feb 2026",
+            "Lift broke near the stairs",
+            "REF/2026/0235",
+            "REF/2026/0231",
+            "REF/2026/0227",
+            "04 Feb 2026",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "REF/2026/0211",
+            "29 Jan 2026",
+            "REF/2026/0191",
+            "21 Jan 2026",
+            "Forklift speeding near pedestrian walkways, nearly hit a worker",
+            "Rows per page:",
+            "25",
+            "1\u201325 of 27"
+          ],
+          "buttons": [
+            {
+              "text": "Active (338)",
+              "disabled": false
+            },
+            {
+              "text": "Done (223)",
+              "disabled": false
+            },
+            {
+              "text": "Rejected (27)",
+              "disabled": false
+            },
+            {
+              "text": "Draft (227)",
+              "disabled": false
+            },
+            {
+              "text": "All (821)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ]
+        }
+      },
+      "errors": []
+    }
+  }
+}

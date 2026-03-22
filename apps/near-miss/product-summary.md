@@ -154,26 +154,54 @@ Settings is a dropdown menu (not a separate page) that appears when clicking the
 
 ## Roles and Permissions (Confirmed 2026-03-21)
 
-| Role | Reports | Report Detail Actions | Investigations | Recommendations | Analysis | Report Scope |
-|------|---------|----------------------|----------------|-----------------|----------|-------------|
-| Admin | Yes | Draft: Delete/Submit | Yes | Yes | Yes | All (821) |
-| Operator | Yes | Draft: Delete/Submit | **No** | Yes | URL only | Dept (623) |
-| Safety Mgr | Yes | **Edit fields + Reject/Submit** | Yes | Yes | Yes | All (821) |
-| HoD-PP | Yes | Read-only | Yes | Yes | Yes | All (821) |
-| HoD-PE | Yes | Read-only | Yes | Yes | Yes | All (821) |
-| HoS-PP | Yes | Read-only | Yes | Yes | Yes | All (821) |
-| HSEF | Yes | Read-only | Yes | Yes | Yes | All (821) |
+| Role | Reports | Reported → Action | Approved by Safety → Action | Investigations | Analysis | Scope |
+|------|---------|-------------------|----------------------------|----------------|----------|-------|
+| Admin | Yes | — | — | Yes | Yes | All |
+| Operator | Yes | — | — | **No** | URL only | Dept |
+| Safety Mgr | Yes | **REJECT/SUBMIT (edit)** | APPROVE | Yes | Yes | All |
+| HoD-PP | Yes | — | **RETURN/APPROVE (edit)** | Yes | Yes | All |
+| HoD-PE | Yes | — | **RETURN/APPROVE (edit)** | Yes | Yes | All |
+| HoS-PP | Yes | — | **RETURN/APPROVE (edit)** | Yes | Yes | All |
+| HSEF | Yes | — | **RETURN/APPROVE (edit)** | Yes | Yes | All |
 
-## Incident Lifecycle (Confirmed from UI)
+## Incident Lifecycle (Fully Confirmed 2026-03-21)
 
 ```
 Draft ──→ Reported ──→ Approved by Safety ──→ Approved by Dept ──→ Done
-  │                          │
-  └─ DELETE REPORT           └─ REJECT REPORT (Safety Manager)
-     (Admin/Operator)
+  │           │                │                     │
+  │           │                │                     └─ (Read-only, no actions)
+  │           │                │
+  │           │                ├─ HoD: APPROVE REPORT → Approved by Dept
+  │           │                └─ HoD: RETURN REPORT → back to Safety Manager
+  │           │
+  │           ├─ Safety Mgr: SUBMIT → Approved by Safety
+  │           └─ Safety Mgr: REJECT REPORT → Rejected
+  │
+  ├─ Operator/Admin: SUBMIT REPORT → Reported
+  └─ Operator/Admin: DELETE REPORT → Deleted
+
+Rejected by Dept: HoD rejected after Safety approval (read-only, final)
 ```
 
-Status tracker in right sidebar shows 4 stages: **Draft → Reported → Approved by Safety → Approved by Dept**
+**Status tracker** in right sidebar shows 4 stages: Draft → Reported → Approved by Safety → Approved by Dept
+- Failed/Rejected states: "Rejected by Dept" shown in red in status tracker
+
+## Investigation Workflow (Confirmed 2026-03-21)
+
+Investigations use **Agentic AI** and must be triggered manually:
+1. Report reaches "Approved by Safety" status → appears in Investigations list
+2. Safety Manager/HoD navigates to Investigations → clicks report
+3. Investigation detail page shows "Run Agentic AI Investigation"
+4. Click **RUN INVESTIGATION** button → AI generates investigation analysis
+5. Investigation status: In-Progress → Released → Closed
+
+## Settings Menu (Confirmed 2026-03-21)
+Settings is a dropdown menu from the sidebar gear icon:
+- **Profile** → /profile
+- **Change Password** → Modal dialog (Current Password, New Password, Confirm — 8+ chars required)
+- **Switch to Dark Mode** → Full dark theme toggle (reversible)
+- **Manage Users** → External link to admin.staging.startraven.com (Vercel SSO required)
+- **Sign Out** → Logout
 
 ## Departments (Confirmed from Analysis filter)
 Administration, Ammonia 1, Ammonia 2, FCU, HSEF, Logistics, PE, PHD, PP

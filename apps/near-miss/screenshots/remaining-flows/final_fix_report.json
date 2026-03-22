@@ -1,0 +1,739 @@
+{
+  "fixes": {
+    "fix2": {
+      "screens": {
+        "top": {
+          "url": "https://nmms.staging.startraven.com/reports/8efc74d1-6eb9-4ff3-b086-efe1817238a9?tab=incident&redirect_path=%2Freports%3Fstatus%3Dactive%26facet%3Dall_reports",
+          "buttons": [
+            {
+              "text": "Conversation History",
+              "disabled": false
+            },
+            {
+              "text": "AI",
+              "disabled": false
+            },
+            {
+              "text": "VIEW REASONING",
+              "disabled": false
+            },
+            {
+              "text": "EXPAND",
+              "disabled": false
+            },
+            {
+              "text": "RETURN REPORT",
+              "disabled": false
+            },
+            {
+              "text": "APPROVE REPORT",
+              "disabled": false
+            }
+          ],
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "PS",
+            "P C Sharma",
+            "Powered by",
+            "REF/2026/0370",
+            "Approved by Safety",
+            "Conversation History",
+            "Report Info",
+            "Incident ID",
+            "Date & Time",
+            "14 Mar 2026 at 2:00 PM",
+            "Location Information",
+            "Department",
+            "PP",
+            "Exact Location",
+            "Short Description",
+            "Lift broke near the stairs",
+            "Immediate Action Taken / Correction",
+            "No immediate action was taken",
+            "Reporter Information",
+            "Name",
+            "rishi",
+            "ID",
+            "Rishi-002",
+            "PP,PE,Logistics,Adminstration,HSEF",
+            "Employee Type",
+            "Employee",
+            "Gender",
+            "Male",
+            "Reported On",
+            "16 Mar 2026 at 11:22 AM",
+            "Incident Classification",
+            "Workplace Safety Near Miss",
+            "Process Safety Near Miss",
+            "Unsafe Condition",
+            "AI",
+            "Unsafe Act",
+            "AI Suggested Classification",
+            "Broken lift represents unsafe condition per Q3. Equipment malfunction created hazardous physical state near stairs. No procedural deviation, intentional bypass, or near-miss scenario evident. Classification algorithm directs to unsafe condition when faulty equipment involved without human action.",
+            "View Reasoning",
+            "Classification Status",
+            "Accepted",
+            "Reviewed By",
+            "Ravi Gupta",
+            "Reviewed On",
+            "16 Mar 2026 at 11:24 AM",
+            "Rejection Reason",
+            "Approval Logs",
+            "Expand",
+            "Status",
+            "Performed By",
+            "Performed On",
+            "Comments",
+            "Classification submitted",
+            "Return Report",
+            "Approve Report",
+            "Incident ID:",
+            "Report",
+            "Draft",
+            "Reported",
+            "Approved by Dept",
+            "Plant/Dept",
+            "Description",
+            "Classification"
+          ]
+        },
+        "end": {
+          "url": "https://nmms.staging.startraven.com/reports/8efc74d1-6eb9-4ff3-b086-efe1817238a9?tab=incident&redirect_path=%2Freports%3Fstatus%3Dactive%26facet%3Dall_reports",
+          "buttons": [
+            {
+              "text": "Conversation History",
+              "disabled": false
+            },
+            {
+              "text": "AI",
+              "disabled": false
+            },
+            {
+              "text": "VIEW REASONING",
+              "disabled": false
+            },
+            {
+              "text": "EXPAND",
+              "disabled": false
+            },
+            {
+              "text": "RETURN REPORT",
+              "disabled": false
+            },
+            {
+              "text": "APPROVE REPORT",
+              "disabled": false
+            }
+          ],
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "PS",
+            "P C Sharma",
+            "Powered by",
+            "REF/2026/0370",
+            "Approved by Safety",
+            "Conversation History",
+            "Report Info",
+            "Incident ID",
+            "Date & Time",
+            "14 Mar 2026 at 2:00 PM",
+            "Location Information",
+            "Department",
+            "PP",
+            "Exact Location",
+            "Short Description",
+            "Lift broke near the stairs",
+            "Immediate Action Taken / Correction",
+            "No immediate action was taken",
+            "Reporter Information",
+            "Name",
+            "rishi",
+            "ID",
+            "Rishi-002",
+            "PP,PE,Logistics,Adminstration,HSEF",
+            "Employee Type",
+            "Employee",
+            "Gender",
+            "Male",
+            "Reported On",
+            "16 Mar 2026 at 11:22 AM",
+            "Incident Classification",
+            "Workplace Safety Near Miss",
+            "Process Safety Near Miss",
+            "Unsafe Condition",
+            "AI",
+            "Unsafe Act",
+            "AI Suggested Classification",
+            "Broken lift represents unsafe condition per Q3. Equipment malfunction created hazardous physical state near stairs. No procedural deviation, intentional bypass, or near-miss scenario evident. Classification algorithm directs to unsafe condition when faulty equipment involved without human action.",
+            "View Reasoning",
+            "Classification Status",
+            "Accepted",
+            "Reviewed By",
+            "Ravi Gupta",
+            "Reviewed On",
+            "16 Mar 2026 at 11:24 AM",
+            "Rejection Reason",
+            "Approval Logs",
+            "Expand",
+            "Status",
+            "Performed By",
+            "Performed On",
+            "Comments",
+            "Classification submitted",
+            "Return Report",
+            "Approve Report",
+            "Incident ID:",
+            "Report",
+            "Draft",
+            "Reported",
+            "Approved by Dept",
+            "Plant/Dept",
+            "Description",
+            "Classification"
+          ]
+        }
+      },
+      "errors": [],
+      "hod_action_buttons": [
+        "APPROVE REPORT",
+        "APPROVE REPORT"
+      ],
+      "sm_action_buttons": [
+        "APPROVE REPORT",
+        "APPROVE REPORT"
+      ]
+    },
+    "fix4": {
+      "screens": {
+        "investigations_page": {
+          "url": "https://nmms.staging.startraven.com/investigations?status=in_progress",
+          "buttons": [
+            {
+              "text": "NEAR MISS INVESTIGATIONS",
+              "disabled": false
+            },
+            {
+              "text": "UC/UA INVESTIGATIONS",
+              "disabled": false
+            },
+            {
+              "text": "In Progress (17)",
+              "disabled": false
+            },
+            {
+              "text": "Released (7)",
+              "disabled": false
+            },
+            {
+              "text": "Closed (4)",
+              "disabled": false
+            },
+            {
+              "text": "All (28)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ],
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "RG",
+            "Ravi Gupta",
+            "Powered by",
+            "Near Miss Investigations",
+            "UC/UA Investigations",
+            "In Progress (17)",
+            "Released (7)",
+            "Closed (4)",
+            "All (28)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Reported By",
+            "Status",
+            "Classification",
+            "UNIT-1/2026/NM/0006",
+            "19 Feb 2026",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "Asaimani chandrasekaran",
+            "In-Progress",
+            "Workplace Safety Near Miss",
+            "UNIT-1/2026/NM/0005",
+            "10 Feb 2026",
+            "Forklift speeding near pedestrian walkways, almost hitting a worker",
+            "Process Safety Near Miss",
+            "UNIT-1/2026/NM/0004",
+            "09 Feb 2026",
+            "Forklift nearly hit a worker in the warehouse",
+            "IPL/2026/NM/0026",
+            "30 Jan 2026",
+            "Strong ammonia odour detected at pump seal",
+            "Manikandan",
+            "IPL/2026/NM/0023",
+            "29 Jan 2026",
+            "IPL/2026/NM/0027",
+            "Operator attempted to manually clear a component jam on the main conveyor belt while it was running at slow speed",
+            "IPL/2026/NM/0018",
+            "28 Jan 2026",
+            "IPL/2026/NM/0016",
+            "27 Jan 2026",
+            "IPL/2026/NM/0015",
+            "Forklift speeding near pedestrian walkways, nearly hit a worker but stopped in time",
+            "IPL/2026/NM/0014",
+            "Forklift sped near pedestrian walkways, nearly hitting a worker but stopped in time.",
+            "IPL/2026/NM/0013",
+            "IPL/2026/NM/0012",
+            "IPL/2026/NM/0010",
+            "21 Jan 2026",
+            "Contract workers entered the restricted zone around Hydraulic Press HP-23 while the machine was energized",
+            "IPL/2026/NM/0008",
+            "19 Jan 2026",
+            "Rows per page:",
+            "25",
+            "1\u201317 of 17"
+          ]
+        },
+        "top": {
+          "url": "https://nmms.staging.startraven.com/reports/000321c5-d195-49ca-a723-2c850bcbd3e4?tab=investigation&redirect_path=%2Finvestigations%3Fstatus%3Din_progress",
+          "buttons": [
+            {
+              "text": "RUN INVESTIGATION",
+              "disabled": false
+            },
+            {
+              "text": "RUN INVESTIGATION",
+              "disabled": false
+            }
+          ],
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "RG",
+            "Ravi Gupta",
+            "Powered by",
+            "UNIT-1/2026/NM/0006",
+            "In-Progress",
+            "Run Agentic AI Investigation",
+            "Run Investigation",
+            "\ud83d\udd0d No Investigation Run Yet",
+            "The investigation details will appear here after you run the Agentic AI investigation.",
+            "Incident ID:",
+            "Report",
+            "Status",
+            "Accepted",
+            "Incident ID",
+            "UNIT-1/2026/NM/0006  (REF/2026/0260)",
+            "Plant/Dept",
+            "PP",
+            "Description",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "Classification",
+            "Workplace Safety Near Miss",
+            "VIEW REPORT",
+            "Investigation",
+            "Released",
+            "Closed",
+            "Investigation ID"
+          ]
+        },
+        "end": {
+          "url": "https://nmms.staging.startraven.com/reports/000321c5-d195-49ca-a723-2c850bcbd3e4?tab=investigation&redirect_path=%2Finvestigations%3Fstatus%3Din_progress",
+          "buttons": [
+            {
+              "text": "RUN INVESTIGATION",
+              "disabled": false
+            },
+            {
+              "text": "RUN INVESTIGATION",
+              "disabled": false
+            }
+          ],
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "RG",
+            "Ravi Gupta",
+            "Powered by",
+            "UNIT-1/2026/NM/0006",
+            "In-Progress",
+            "Run Agentic AI Investigation",
+            "Run Investigation",
+            "\ud83d\udd0d No Investigation Run Yet",
+            "The investigation details will appear here after you run the Agentic AI investigation.",
+            "Incident ID:",
+            "Report",
+            "Status",
+            "Accepted",
+            "Incident ID",
+            "UNIT-1/2026/NM/0006  (REF/2026/0260)",
+            "Plant/Dept",
+            "PP",
+            "Description",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "Classification",
+            "Workplace Safety Near Miss",
+            "VIEW REPORT",
+            "Investigation",
+            "Released",
+            "Closed",
+            "Investigation ID"
+          ]
+        }
+      },
+      "errors": []
+    },
+    "fix6": {
+      "screens": {
+        "done_list": {
+          "url": "https://nmms.staging.startraven.com/reports?status=done&facet=all_reports",
+          "buttons": [
+            {
+              "text": "Active (338)",
+              "disabled": false
+            },
+            {
+              "text": "Done (223)",
+              "disabled": false
+            },
+            {
+              "text": "Rejected (27)",
+              "disabled": false
+            },
+            {
+              "text": "Draft (227)",
+              "disabled": false
+            },
+            {
+              "text": "All (821)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ],
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Incident Reports",
+            "Active (338)",
+            "Done (223)",
+            "Rejected (27)",
+            "Draft (227)",
+            "All (821)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Department",
+            "Reported By",
+            "Status",
+            "Classification",
+            "UNIT-1/2026/NM/0007",
+            "16 Mar 2026",
+            "Raj Oberoi slipped",
+            "PE",
+            "Raj Oberoi",
+            "Approved by Dept",
+            "Workplace Safety Near Miss",
+            "UNIT-1/2026/UC/0008",
+            "09 Mar 2026",
+            "Lift broke near the stairs",
+            "PP",
+            "rishi op",
+            "Unsafe Condition",
+            "UNIT-1/2026/NM/0006",
+            "19 Feb 2026",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "Asaimani chandrasekaran",
+            "UNIT-1/2026/UA/0001",
+            "10 Feb 2026",
+            "Forklift nearly hit a worker in the warehouse",
+            "Unsafe Act",
+            "UNIT-1/2026/NM/0005",
+            "Forklift speeding near pedestrian walkways, almost hitting a worker",
+            "Process Safety Near Miss",
+            "UNIT-1/2026/NM/0004",
+            "09 Feb 2026",
+            "UNIT-1/2026/NM/0002",
+            "04 Feb 2026",
+            "Continuous Hydrocarbon leakage at D-510 top manhole",
+            "UNIT-1/2026/UC/0005",
+            "Chemical storage area with damaged containers, poor ventilation, and spilled liquid on the floor.",
+            "UNIT-1/2026/UC/0004",
+            "Chemical storage area with damaged containers, poor ventilation, and slippery floor due to spilled liquid",
+            "UNIT-1/2026/UC/0003",
+            "Chemical storage area with damaged containers, poor ventilation, and spilled liquid on the floor",
+            "UNIT-1/2026/UC/0006",
+            "UNIT-1/2026/UC/0002",
+            "UNIT-1/2026/UC/0001",
+            "Chemical storage area with damaged containers, poor ventilation, and a slippery floor due to a spill",
+            "UNIT-1/2026/UC/0007",
+            "Chemical storage area with damaged containers, poor ventilation, and a slippery floor due to spilled liquid.",
+            "Rows per page:",
+            "25",
+            "1\u201325 of 223"
+          ]
+        },
+        "top": {
+          "url": "https://nmms.staging.startraven.com/reports/81b5f86e-573d-4e5f-ab28-3e8af7678cee?tab=incident&redirect_path=%2Freports%3Fstatus%3Drejected%26facet%3Dall_reports",
+          "buttons": [
+            {
+              "text": "Conversation History",
+              "disabled": false
+            },
+            {
+              "text": "AI",
+              "disabled": false
+            },
+            {
+              "text": "VIEW REASONING",
+              "disabled": false
+            },
+            {
+              "text": "EXPAND",
+              "disabled": false
+            }
+          ],
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "REF/2026/0253",
+            "Rejected by Dept",
+            "Conversation History",
+            "Report Info",
+            "Incident ID",
+            "Date & Time",
+            "17 Feb 2026 at 5:30 PM",
+            "Location Information",
+            "Department",
+            "PP",
+            "Exact Location",
+            "Near lift in PP department",
+            "Short Description",
+            "Lift broke near PP department",
+            "Immediate Action Taken / Correction",
+            "No actions were taken",
+            "Reporter Information",
+            "Name",
+            "rishi",
+            "ID",
+            "Rishi-002",
+            "PP,PE,Logistics,Adminstration,HSEF",
+            "Employee Type",
+            "Employee",
+            "Gender",
+            "Male",
+            "Reported On",
+            "17 Feb 2026 at 2:47 PM",
+            "Incident Classification",
+            "Workplace Safety Near Miss",
+            "Process Safety Near Miss",
+            "Unsafe Condition",
+            "AI",
+            "Unsafe Act",
+            "AI Suggested Classification",
+            "The broken lift represents faulty equipment creating a hazardous condition. Per the algorithm, Q3 answered yes (faulty equipment) leads to Unsafe Condition classification. No deviation from procedures or intentional unsafe acts occurred. No near miss as no potential harm was narrowly avoided.",
+            "View Reasoning",
+            "Classification Status",
+            "Accepted",
+            "Reviewed By",
+            "Ravi Gupta",
+            "Reviewed On",
+            "17 Feb 2026 at 2:48 PM",
+            "Rejection Reason",
+            "Report Status",
+            "Returned",
+            "P C Sharma",
+            "17 Feb 2026 at 3:23 PM",
+            "Return Reason",
+            "first retrun",
+            "Approval Logs",
+            "Expand",
+            "Status",
+            "Performed By",
+            "Performed On",
+            "Comments",
+            "Classification submitted",
+            "Rejected",
+            "Incident ID:",
+            "Report",
+            "Draft",
+            "Reported",
+            "Approved by Safety",
+            "Plant/Dept",
+            "Description",
+            "Classification"
+          ]
+        },
+        "end": {
+          "url": "https://nmms.staging.startraven.com/reports/81b5f86e-573d-4e5f-ab28-3e8af7678cee?tab=incident&redirect_path=%2Freports%3Fstatus%3Drejected%26facet%3Dall_reports",
+          "buttons": [
+            {
+              "text": "Conversation History",
+              "disabled": false
+            },
+            {
+              "text": "AI",
+              "disabled": false
+            },
+            {
+              "text": "VIEW REASONING",
+              "disabled": false
+            },
+            {
+              "text": "EXPAND",
+              "disabled": false
+            }
+          ],
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "REF/2026/0253",
+            "Rejected by Dept",
+            "Conversation History",
+            "Report Info",
+            "Incident ID",
+            "Date & Time",
+            "17 Feb 2026 at 5:30 PM",
+            "Location Information",
+            "Department",
+            "PP",
+            "Exact Location",
+            "Near lift in PP department",
+            "Short Description",
+            "Lift broke near PP department",
+            "Immediate Action Taken / Correction",
+            "No actions were taken",
+            "Reporter Information",
+            "Name",
+            "rishi",
+            "ID",
+            "Rishi-002",
+            "PP,PE,Logistics,Adminstration,HSEF",
+            "Employee Type",
+            "Employee",
+            "Gender",
+            "Male",
+            "Reported On",
+            "17 Feb 2026 at 2:47 PM",
+            "Incident Classification",
+            "Workplace Safety Near Miss",
+            "Process Safety Near Miss",
+            "Unsafe Condition",
+            "AI",
+            "Unsafe Act",
+            "AI Suggested Classification",
+            "The broken lift represents faulty equipment creating a hazardous condition. Per the algorithm, Q3 answered yes (faulty equipment) leads to Unsafe Condition classification. No deviation from procedures or intentional unsafe acts occurred. No near miss as no potential harm was narrowly avoided.",
+            "View Reasoning",
+            "Classification Status",
+            "Accepted",
+            "Reviewed By",
+            "Ravi Gupta",
+            "Reviewed On",
+            "17 Feb 2026 at 2:48 PM",
+            "Rejection Reason",
+            "Report Status",
+            "Returned",
+            "P C Sharma",
+            "17 Feb 2026 at 3:23 PM",
+            "Return Reason",
+            "first retrun",
+            "Approval Logs",
+            "Expand",
+            "Status",
+            "Performed By",
+            "Performed On",
+            "Comments",
+            "Classification submitted",
+            "Rejected",
+            "Incident ID:",
+            "Report",
+            "Draft",
+            "Reported",
+            "Approved by Safety",
+            "Plant/Dept",
+            "Description",
+            "Classification"
+          ]
+        }
+      },
+      "errors": [],
+      "done_action_buttons": [],
+      "rejected_action_buttons": []
+    }
+  }
+}

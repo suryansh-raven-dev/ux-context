@@ -173,14 +173,33 @@ Consolidated from Slack channel analysis and 2026-03-21 automated exploration. I
 
 ---
 
+### CI-009: Manage Users opens Vercel login (not NMMS admin panel)
+- **Severity**: Medium
+- **Category**: Architecture / UX
+- **Where**: Settings → Manage Users
+- **Description**: Clicking "Manage Users" in Settings opens a new tab pointing to admin.staging.startraven.com, which redirects to Vercel SSO login. This means user management requires separate Vercel credentials and is not accessible from within the NMMS application.
+- **Expected**: Either a built-in user management screen or clear documentation that Vercel access is required
+- **Status**: Open (by design, but UX concern)
+- **Confirmed**: 2026-03-21
+
+### CI-010: Table uses MUI DataGrid (not standard HTML table)
+- **Severity**: Info
+- **Category**: Technical
+- **Where**: All list pages (Reports, Investigations, Recommendations)
+- **Description**: All data tables use MUI DataGrid (`div[role="grid"]` with `.MuiDataGrid-row`) instead of standard HTML `<table>` elements. This affects test automation — standard `table tbody tr` selectors will NOT work.
+- **Status**: By design
+- **Confirmed**: 2026-03-21
+
+---
+
 ## Issue Count Summary
 
 | Status | Count |
 |--------|-------|
-| Confirmed | 8 (CI-001, CI-002, CI-004 through CI-008, SI-010) |
+| Confirmed | 10 (CI-001, CI-002, CI-004 through CI-010, SI-010) |
 | Retracted | 1 (CI-003 → CI-005) |
 | Unverified | 8 |
-| Total | 17 |
+| Total | 19 |
 
 ## Update Rule
 Add confirmed issues with date and evidence. Change status from "Unverified" to "Confirmed" when reproduced. Add Linear ID when available.

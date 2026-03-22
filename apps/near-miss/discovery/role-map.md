@@ -36,31 +36,57 @@ Partially validated via automated exploration on 2026-03-21. Navigation and repo
 | Investigations nav item hidden | Operator only |
 | Analysis nav item hidden but accessible via URL | Operator only |
 
-## Report Detail Actions by Role (Confirmed 2026-03-21)
+## Report Detail Actions by Role and Status (Confirmed 2026-03-21)
 
+### On "Reported" Status Reports
 | Role | View Mode | Action Buttons | Editable Fields |
 |------|-----------|---------------|-----------------|
-| Admin | Read-only | Draft: DELETE REPORT + SUBMIT REPORT | None |
-| Operator | Read-only | Draft: DELETE REPORT + SUBMIT REPORT | None |
-| Safety Manager | **Editable** | **REJECT REPORT + SUBMIT** | Short Description (textarea), Immediate Action (textarea), Department (dropdown) |
-| HoD | Read-only | None visible on "Reported" status | None |
-| HoS | Read-only | None visible on "Reported" status | None |
-| HSEF | Read-only | None visible on "Reported" status | None |
+| Admin | Read-only | None | None |
+| Operator | Read-only | None | None |
+| Safety Manager | **Editable** | **REJECT REPORT + SUBMIT** | Short Description, Immediate Action, Department |
+| HoD | Read-only | None | None |
+
+### On "Approved by Safety" Status Reports (Confirmed 2026-03-21)
+| Role | View Mode | Action Buttons | Editable Fields |
+|------|-----------|---------------|-----------------|
+| Admin | Read-only | None | None |
+| Operator | Read-only | None | None |
+| Safety Manager | Read-only? | APPROVE REPORT | TBD |
+| HoD | **Editable** | **RETURN REPORT + APPROVE REPORT** | Short Description, Immediate Action, Department |
+
+### On "Draft" Status Reports
+| Role | View Mode | Action Buttons | Editable Fields |
+|------|-----------|---------------|-----------------|
+| Admin | Read-only | DELETE REPORT + SUBMIT REPORT | None |
+| Operator | Read-only | DELETE REPORT + SUBMIT REPORT | None |
+
+### On "Done" / "Rejected" Status Reports
+All roles see read-only view with no action buttons.
+
+### Complete Workflow
+```
+Draft → (Operator: SUBMIT REPORT) → Reported
+  → (Safety Manager: SUBMIT) → Approved by Safety
+    → (HoD: APPROVE REPORT) → Approved by Dept → Done
+    → (HoD: RETURN REPORT) → back to Safety Manager
+  → (Safety Manager: REJECT REPORT) → Rejected
+  → (HoD: Reject) → Rejected by Dept
+```
 
 ## Assumptions To Validate
 - ~~Each role sees only their department's incidents~~ **Partially disproved**: only Operator sees reduced set
 - ~~Operator can only see their own reports~~ **Plausible**: Operator sees 623 vs 821
-- ~~Safety Manager cannot approve/reject (only classify)~~ **Disproved**: Safety Manager has REJECT REPORT and SUBMIT buttons plus editable fields
-- HoD, HoS, HSEF Ambassador have equivalent approval authority — **Partially confirmed**: all see identical read-only view, but need to check actions on "Approved by Safety" status reports
-- ~~Admin role is separate from all workflow roles~~ **Confirmed**: Admin has same nav as HoD/HoS/HSEF
+- ~~Safety Manager cannot approve/reject (only classify)~~ **Disproved**: SM has REJECT REPORT and SUBMIT buttons plus editable fields
+- ~~HoD has no actions~~ **Disproved**: HoD has RETURN REPORT + APPROVE REPORT on "Approved by Safety" reports
+- ~~Admin role is separate from all workflow roles~~ **Confirmed**: Admin has same nav as HoD/HoS/HSEF but no workflow actions
 
 ## Questions Remaining
 - Can an operator see reports from other operators in the same department?
-- What actions do HoD/HoS see on reports with "Approved by Safety" status?
-- ~~What actions are available on individual report pages per role?~~ **Answered above**
-- ~~Does the Safety Manager have a unique "Accept Classification" action?~~ **Yes, confirmed: SUBMIT button**
-- What does the report detail look like at "Done" and "Rejected" statuses?
-- What actions appear when clicking the Investigation accordion on a report detail?
+- ~~What actions do HoD/HoS see on reports with "Approved by Safety" status?~~ **Answered: RETURN REPORT + APPROVE REPORT**
+- ~~What does the report detail look like at "Done" and "Rejected" statuses?~~ **Answered: Read-only, no actions**
+- ~~What actions appear when clicking the Investigation accordion?~~ **Answered: Shows "Run Agentic AI Investigation" page**
+- What does HoS and HSEF see on "Approved by Safety" reports? (assumed same as HoD)
+- What happens after clicking RETURN REPORT? Does it go back to "Reported" status?
 
 ## Related Workflows
 - incident-reporting (Operator)

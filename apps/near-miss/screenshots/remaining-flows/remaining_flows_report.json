@@ -1,0 +1,2259 @@
+{
+  "generated_at": "2026-03-22T12:27:18.755488",
+  "flows": {
+    "flow1_chat": {
+      "screens": {
+        "chat_initial": {
+          "url": "https://nmms.staging.startraven.com/new-report",
+          "title": "Create Incident",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Recommendations",
+            "Help and Support",
+            "Settings",
+            "AC",
+            "Asaimani chandrasekaran",
+            "Powered by"
+          ],
+          "buttons": [],
+          "inputs": [],
+          "headings": [],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "chat_messages": []
+    },
+    "flow2_approved": {
+      "roles": {
+        "hod-pp": {
+          "screens": {},
+          "errors": [
+            "Approved report: 'NoneType' object has no attribute 'click'"
+          ]
+        },
+        "hos-pp": {
+          "screens": {},
+          "errors": [
+            "Approved report: 'NoneType' object has no attribute 'click'"
+          ]
+        },
+        "hsef": {
+          "screens": {},
+          "errors": [
+            "Approved report: 'NoneType' object has no attribute 'click'"
+          ]
+        }
+      }
+    },
+    "flow3_settings": {
+      "screens": {
+        "settings_menu": {
+          "url": "https://nmms.staging.startraven.com/analysis",
+          "title": "Analysis",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Export",
+            "All Incidents",
+            "Near Miss",
+            "Unsafe Conditions",
+            "Unsafe Acts",
+            "All Departments",
+            "Year to Date",
+            "Report Summary",
+            "231",
+            "Reported",
+            "121",
+            "Closed",
+            "34% Closure Rate",
+            "Dept",
+            "Top:",
+            "PP",
+            "208",
+            "-78% vs Feb",
+            "103",
+            "23",
+            "18% Closure Rate",
+            "85",
+            "-81% vs Feb",
+            "86",
+            "Open",
+            "21",
+            "20% Closure Rate",
+            "73",
+            "-67% vs Feb",
+            "Incident Analysis",
+            "Incident Trend",
+            "Reported vs. Closed",
+            "Resolution Rate",
+            "Monthly resolution rate (%)",
+            "Monthly Trends",
+            "Incident Type Breakdown",
+            "Frequency by incident type",
+            "Profile",
+            "Change Password",
+            "Switch to",
+            "Dark Mode",
+            "Manage Users",
+            "Sign Out"
+          ],
+          "buttons": [
+            {
+              "text": "EXPORT",
+              "disabled": false
+            },
+            {
+              "text": "ALL INCIDENTS",
+              "disabled": false
+            },
+            {
+              "text": "NEAR MISS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE CONDITIONS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE ACTS",
+              "disabled": false
+            },
+            {
+              "text": "Year to Date",
+              "disabled": false
+            },
+            {
+              "text": "INCIDENTS\n\n231\n\nReported\n\n121\n\nClosed\n\n34% Closure Rate\n\n6 Depts\n\nTop: PP (208)\n\n-78% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "INVESTIGATIONS\n\n103\n\nReported\n\n23\n\nClosed\n\n18% Closure Rate\n\n3 Depts\n\nTop: PP (85)\n\n-81% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "RECOMMENDATIONS\n\n86\n\nOpen\n\n21\n\nClosed\n\n20% Closure Rate\n\n3 Depts\n\nTop: PP (73)\n\n-67% vs Feb",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "__ALL_DEPARTMENTS__"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Analysis"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Trend"
+            },
+            {
+              "tag": "H6",
+              "text": "Resolution Rate"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Type Breakdown"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            },
+            {
+              "text": "Profile",
+              "href": "https://nmms.staging.startraven.com/profile"
+            }
+          ]
+        },
+        "change_password": {
+          "url": "https://nmms.staging.startraven.com/analysis",
+          "title": "Analysis",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Export",
+            "All Incidents",
+            "Near Miss",
+            "Unsafe Conditions",
+            "Unsafe Acts",
+            "All Departments",
+            "Year to Date",
+            "Report Summary",
+            "231",
+            "Reported",
+            "121",
+            "Closed",
+            "34% Closure Rate",
+            "Dept",
+            "Top:",
+            "PP",
+            "208",
+            "-78% vs Feb",
+            "103",
+            "23",
+            "18% Closure Rate",
+            "85",
+            "-81% vs Feb",
+            "86",
+            "Open",
+            "21",
+            "20% Closure Rate",
+            "73",
+            "-67% vs Feb",
+            "Incident Analysis",
+            "Incident Trend",
+            "Reported vs. Closed",
+            "Resolution Rate",
+            "Monthly resolution rate (%)",
+            "Monthly Trends",
+            "Incident Type Breakdown",
+            "Frequency by incident type",
+            "Change Password",
+            "Update your password using your current credentials.",
+            "Current Password",
+            "New Password",
+            "Confirm New Password",
+            "Password requirements",
+            "At least 8 characters",
+            "Passwords match",
+            "Cancel"
+          ],
+          "buttons": [
+            {
+              "text": "EXPORT",
+              "disabled": false
+            },
+            {
+              "text": "ALL INCIDENTS",
+              "disabled": false
+            },
+            {
+              "text": "NEAR MISS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE CONDITIONS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE ACTS",
+              "disabled": false
+            },
+            {
+              "text": "Year to Date",
+              "disabled": false
+            },
+            {
+              "text": "INCIDENTS\n\n231\n\nReported\n\n121\n\nClosed\n\n34% Closure Rate\n\n6 Depts\n\nTop: PP (208)\n\n-78% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "INVESTIGATIONS\n\n103\n\nReported\n\n23\n\nClosed\n\n18% Closure Rate\n\n3 Depts\n\nTop: PP (85)\n\n-81% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "RECOMMENDATIONS\n\n86\n\nOpen\n\n21\n\nClosed\n\n20% Closure Rate\n\n3 Depts\n\nTop: PP (73)\n\n-67% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "CANCEL",
+              "disabled": false
+            },
+            {
+              "text": "CHANGE PASSWORD",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "__ALL_DEPARTMENTS__"
+            },
+            {
+              "type": "password",
+              "placeholder": "",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "password",
+              "placeholder": "",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "password",
+              "placeholder": "",
+              "name": "",
+              "value": ""
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Analysis"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Trend"
+            },
+            {
+              "tag": "H6",
+              "text": "Resolution Rate"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Type Breakdown"
+            },
+            {
+              "tag": "H2",
+              "text": "Change Password"
+            },
+            {
+              "tag": "H6",
+              "text": "Change Password"
+            },
+            {
+              "tag": "H6",
+              "text": "Password requirements"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        },
+        "change_password_bottom": {
+          "url": "https://nmms.staging.startraven.com/analysis",
+          "title": "Analysis",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Export",
+            "All Incidents",
+            "Near Miss",
+            "Unsafe Conditions",
+            "Unsafe Acts",
+            "All Departments",
+            "Year to Date",
+            "Report Summary",
+            "231",
+            "Reported",
+            "121",
+            "Closed",
+            "34% Closure Rate",
+            "Dept",
+            "Top:",
+            "PP",
+            "208",
+            "-78% vs Feb",
+            "103",
+            "23",
+            "18% Closure Rate",
+            "85",
+            "-81% vs Feb",
+            "86",
+            "Open",
+            "21",
+            "20% Closure Rate",
+            "73",
+            "-67% vs Feb",
+            "Incident Analysis",
+            "Incident Trend",
+            "Reported vs. Closed",
+            "Resolution Rate",
+            "Monthly resolution rate (%)",
+            "Monthly Trends",
+            "Incident Type Breakdown",
+            "Frequency by incident type",
+            "Change Password",
+            "Update your password using your current credentials.",
+            "Current Password",
+            "New Password",
+            "Confirm New Password",
+            "Password requirements",
+            "At least 8 characters",
+            "Passwords match",
+            "Cancel"
+          ],
+          "buttons": [
+            {
+              "text": "EXPORT",
+              "disabled": false
+            },
+            {
+              "text": "ALL INCIDENTS",
+              "disabled": false
+            },
+            {
+              "text": "NEAR MISS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE CONDITIONS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE ACTS",
+              "disabled": false
+            },
+            {
+              "text": "Year to Date",
+              "disabled": false
+            },
+            {
+              "text": "INCIDENTS\n\n231\n\nReported\n\n121\n\nClosed\n\n34% Closure Rate\n\n6 Depts\n\nTop: PP (208)\n\n-78% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "INVESTIGATIONS\n\n103\n\nReported\n\n23\n\nClosed\n\n18% Closure Rate\n\n3 Depts\n\nTop: PP (85)\n\n-81% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "RECOMMENDATIONS\n\n86\n\nOpen\n\n21\n\nClosed\n\n20% Closure Rate\n\n3 Depts\n\nTop: PP (73)\n\n-67% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "CANCEL",
+              "disabled": false
+            },
+            {
+              "text": "CHANGE PASSWORD",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "__ALL_DEPARTMENTS__"
+            },
+            {
+              "type": "password",
+              "placeholder": "",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "password",
+              "placeholder": "",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "password",
+              "placeholder": "",
+              "name": "",
+              "value": ""
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Analysis"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Trend"
+            },
+            {
+              "tag": "H6",
+              "text": "Resolution Rate"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Type Breakdown"
+            },
+            {
+              "tag": "H2",
+              "text": "Change Password"
+            },
+            {
+              "tag": "H6",
+              "text": "Change Password"
+            },
+            {
+              "tag": "H6",
+              "text": "Password requirements"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        },
+        "dark_mode": {
+          "url": "https://nmms.staging.startraven.com/analysis",
+          "title": "Analysis",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Export",
+            "All Incidents",
+            "Near Miss",
+            "Unsafe Conditions",
+            "Unsafe Acts",
+            "All Departments",
+            "Year to Date",
+            "Report Summary",
+            "231",
+            "Reported",
+            "121",
+            "Closed",
+            "34% Closure Rate",
+            "Dept",
+            "Top:",
+            "PP",
+            "208",
+            "-78% vs Feb",
+            "103",
+            "23",
+            "18% Closure Rate",
+            "85",
+            "-81% vs Feb",
+            "86",
+            "Open",
+            "21",
+            "20% Closure Rate",
+            "73",
+            "-67% vs Feb",
+            "Incident Analysis",
+            "Incident Trend",
+            "Reported vs. Closed",
+            "Resolution Rate",
+            "Monthly resolution rate (%)",
+            "Monthly Trends",
+            "Incident Type Breakdown",
+            "Frequency by incident type"
+          ],
+          "buttons": [
+            {
+              "text": "EXPORT",
+              "disabled": false
+            },
+            {
+              "text": "ALL INCIDENTS",
+              "disabled": false
+            },
+            {
+              "text": "NEAR MISS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE CONDITIONS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE ACTS",
+              "disabled": false
+            },
+            {
+              "text": "Year to Date",
+              "disabled": false
+            },
+            {
+              "text": "INCIDENTS\n\n231\n\nReported\n\n121\n\nClosed\n\n34% Closure Rate\n\n6 Depts\n\nTop: PP (208)\n\n-78% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "INVESTIGATIONS\n\n103\n\nReported\n\n23\n\nClosed\n\n18% Closure Rate\n\n3 Depts\n\nTop: PP (85)\n\n-81% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "RECOMMENDATIONS\n\n86\n\nOpen\n\n21\n\nClosed\n\n20% Closure Rate\n\n3 Depts\n\nTop: PP (73)\n\n-67% vs Feb",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "__ALL_DEPARTMENTS__"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Analysis"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Trend"
+            },
+            {
+              "tag": "H6",
+              "text": "Resolution Rate"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Type Breakdown"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        },
+        "dark_mode_reports": {
+          "url": "https://nmms.staging.startraven.com/reports?status=active&facet=all_reports",
+          "title": "Incident Reports",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Incident Reports",
+            "Active (338)",
+            "Done (223)",
+            "Rejected (27)",
+            "Draft (227)",
+            "All (821)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Department",
+            "Reported By",
+            "Status",
+            "REF/2026/0377",
+            "19 Mar 2026",
+            "Caustic spill during offloading at loading dock B",
+            "Logistics",
+            "Abhishek",
+            "Reported",
+            "REF/2026/0376",
+            "18 Mar 2026",
+            "Lift broke near the stairs",
+            "PP",
+            "ecae",
+            "REF/2026/0375",
+            "rishi",
+            "REF/2026/0372",
+            "16 Mar 2026",
+            "N/A",
+            "REF/2026/0371",
+            "REF/2026/0370",
+            "Approved by Safety",
+            "REF/2026/0367",
+            "09 Mar 2026",
+            "rishi456",
+            "REF/2026/0366",
+            "Lift broke near the stairs.",
+            "13234",
+            "REF/2026/0365",
+            "13245679",
+            "REF/2026/0363",
+            "REF/2026/0362",
+            "rishi op",
+            "REF/2026/0361",
+            "rishi 123",
+            "REF/2026/0360",
+            "06 Mar 2026",
+            "Person lost his life due to fire",
+            "REF/2026/0358",
+            "Xxxxxxxxxxxxxxxxxx",
+            "Rows per page:",
+            "25",
+            "1\u201325 of 338"
+          ],
+          "buttons": [
+            {
+              "text": "Active (338)",
+              "disabled": false
+            },
+            {
+              "text": "Done (223)",
+              "disabled": false
+            },
+            {
+              "text": "Rejected (27)",
+              "disabled": false
+            },
+            {
+              "text": "Draft (227)",
+              "disabled": false
+            },
+            {
+              "text": "All (821)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "Search Incident ID",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "25"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Incident Reports"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        },
+        "dark_mode_analysis": {
+          "url": "https://nmms.staging.startraven.com/analysis",
+          "title": "Analysis",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Export",
+            "All Incidents",
+            "Near Miss",
+            "Unsafe Conditions",
+            "Unsafe Acts",
+            "All Departments",
+            "Year to Date",
+            "Report Summary",
+            "231",
+            "Reported",
+            "121",
+            "Closed",
+            "34% Closure Rate",
+            "Dept",
+            "Top:",
+            "PP",
+            "208",
+            "-78% vs Feb",
+            "103",
+            "23",
+            "18% Closure Rate",
+            "85",
+            "-81% vs Feb",
+            "86",
+            "Open",
+            "21",
+            "20% Closure Rate",
+            "73",
+            "-67% vs Feb",
+            "Incident Analysis",
+            "Incident Trend",
+            "Reported vs. Closed",
+            "Resolution Rate",
+            "Monthly resolution rate (%)",
+            "Monthly Trends",
+            "Incident Type Breakdown",
+            "Frequency by incident type"
+          ],
+          "buttons": [
+            {
+              "text": "EXPORT",
+              "disabled": false
+            },
+            {
+              "text": "ALL INCIDENTS",
+              "disabled": false
+            },
+            {
+              "text": "NEAR MISS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE CONDITIONS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE ACTS",
+              "disabled": false
+            },
+            {
+              "text": "Year to Date",
+              "disabled": false
+            },
+            {
+              "text": "INCIDENTS\n\n231\n\nReported\n\n121\n\nClosed\n\n34% Closure Rate\n\n6 Depts\n\nTop: PP (208)\n\n-78% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "INVESTIGATIONS\n\n103\n\nReported\n\n23\n\nClosed\n\n18% Closure Rate\n\n3 Depts\n\nTop: PP (85)\n\n-81% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "RECOMMENDATIONS\n\n86\n\nOpen\n\n21\n\nClosed\n\n20% Closure Rate\n\n3 Depts\n\nTop: PP (73)\n\n-67% vs Feb",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "__ALL_DEPARTMENTS__"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Analysis"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Trend"
+            },
+            {
+              "tag": "H6",
+              "text": "Resolution Rate"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Type Breakdown"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        },
+        "light_mode_restored": {
+          "url": "https://nmms.staging.startraven.com/analysis",
+          "title": "Analysis",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Export",
+            "All Incidents",
+            "Near Miss",
+            "Unsafe Conditions",
+            "Unsafe Acts",
+            "All Departments",
+            "Year to Date",
+            "Report Summary",
+            "231",
+            "Reported",
+            "121",
+            "Closed",
+            "34% Closure Rate",
+            "Dept",
+            "Top:",
+            "PP",
+            "208",
+            "-78% vs Feb",
+            "103",
+            "23",
+            "18% Closure Rate",
+            "85",
+            "-81% vs Feb",
+            "86",
+            "Open",
+            "21",
+            "20% Closure Rate",
+            "73",
+            "-67% vs Feb",
+            "Incident Analysis",
+            "Incident Trend",
+            "Reported vs. Closed",
+            "Resolution Rate",
+            "Monthly resolution rate (%)",
+            "Monthly Trends",
+            "Incident Type Breakdown",
+            "Frequency by incident type"
+          ],
+          "buttons": [
+            {
+              "text": "EXPORT",
+              "disabled": false
+            },
+            {
+              "text": "ALL INCIDENTS",
+              "disabled": false
+            },
+            {
+              "text": "NEAR MISS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE CONDITIONS",
+              "disabled": false
+            },
+            {
+              "text": "UNSAFE ACTS",
+              "disabled": false
+            },
+            {
+              "text": "Year to Date",
+              "disabled": false
+            },
+            {
+              "text": "INCIDENTS\n\n231\n\nReported\n\n121\n\nClosed\n\n34% Closure Rate\n\n6 Depts\n\nTop: PP (208)\n\n-78% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "INVESTIGATIONS\n\n103\n\nReported\n\n23\n\nClosed\n\n18% Closure Rate\n\n3 Depts\n\nTop: PP (85)\n\n-81% vs Feb",
+              "disabled": false
+            },
+            {
+              "text": "RECOMMENDATIONS\n\n86\n\nOpen\n\n21\n\nClosed\n\n20% Closure Rate\n\n3 Depts\n\nTop: PP (73)\n\n-67% vs Feb",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "__ALL_DEPARTMENTS__"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Analysis"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Trend"
+            },
+            {
+              "tag": "H6",
+              "text": "Resolution Rate"
+            },
+            {
+              "tag": "H6",
+              "text": "Incident Type Breakdown"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        }
+      },
+      "errors": []
+    },
+    "flow4_investigation": {
+      "screens": {
+        "investigations_list": {
+          "url": "https://nmms.staging.startraven.com/reports?status=active",
+          "title": "Incident Reports",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Incident Reports",
+            "Active (338)",
+            "Done (223)",
+            "Rejected (27)",
+            "Draft (227)",
+            "All (821)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Department",
+            "Reported By",
+            "Status",
+            "REF/2026/0377",
+            "19 Mar 2026",
+            "Caustic spill during offloading at loading dock B",
+            "Logistics",
+            "Abhishek",
+            "Reported",
+            "REF/2026/0376",
+            "18 Mar 2026",
+            "Lift broke near the stairs",
+            "PP",
+            "ecae",
+            "REF/2026/0375",
+            "rishi",
+            "REF/2026/0372",
+            "16 Mar 2026",
+            "N/A",
+            "REF/2026/0371",
+            "REF/2026/0370",
+            "Approved by Safety",
+            "REF/2026/0367",
+            "09 Mar 2026",
+            "rishi456",
+            "REF/2026/0366",
+            "Lift broke near the stairs.",
+            "13234",
+            "REF/2026/0365",
+            "13245679",
+            "REF/2026/0363",
+            "REF/2026/0362",
+            "rishi op",
+            "REF/2026/0361",
+            "rishi 123",
+            "REF/2026/0360",
+            "06 Mar 2026",
+            "Person lost his life due to fire",
+            "REF/2026/0358",
+            "Xxxxxxxxxxxxxxxxxx",
+            "Rows per page:",
+            "25",
+            "1\u201325 of 338"
+          ],
+          "buttons": [
+            {
+              "text": "Active (338)",
+              "disabled": false
+            },
+            {
+              "text": "Done (223)",
+              "disabled": false
+            },
+            {
+              "text": "Rejected (27)",
+              "disabled": false
+            },
+            {
+              "text": "Draft (227)",
+              "disabled": false
+            },
+            {
+              "text": "All (821)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "Search Incident ID",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "25"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Incident Reports"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        }
+      },
+      "errors": []
+    },
+    "flow5_manage_users": {
+      "screens": {
+        "manage_users": {
+          "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Fadmin.staging.startraven.com%252Fauth%253Fuser_id%253Dcd0a54a8-2311-41c0-ae2b-60fddc4faca5%2526account_id%253D1138dbb7-f99a-4ce2-a250-fcc641b2076b%2526target%253D%25252Fusers%2526referrer_url%253Dhttps%25253A%25252F%25252Fnmms.staging.startraven.com%25252Freports%25253Fstatus%25253Dactive%252526facet%25253Dall_reports%2526mode%253Dlight%26nonce%3Deab2c5817796ad89d0b00bfb6e6c3ad391b23c1c27a5777c8626cef30811ee84",
+          "title": "Login \u2013 Vercel"
+        },
+        "manage_users_elements": {
+          "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Fadmin.staging.startraven.com%252Fauth%253Fuser_id%253Dcd0a54a8-2311-41c0-ae2b-60fddc4faca5%2526account_id%253D1138dbb7-f99a-4ce2-a250-fcc641b2076b%2526target%253D%25252Fusers%2526referrer_url%253Dhttps%25253A%25252F%25252Fnmms.staging.startraven.com%25252Freports%25253Fstatus%25253Dactive%252526facet%25253Dall_reports%2526mode%253Dlight%26nonce%3Deab2c5817796ad89d0b00bfb6e6c3ad391b23c1c27a5777c8626cef30811ee84",
+          "title": "Login \u2013 Vercel",
+          "all_text": [
+            "Sign Up",
+            "Log in to Vercel",
+            "Continue",
+            "with Email",
+            "with",
+            "Google",
+            "GitHub",
+            "Apple",
+            "with SAML SSO",
+            "with Passkey",
+            "Show other options",
+            "Don't have an account?",
+            "Terms",
+            "Privacy Policy"
+          ],
+          "buttons": [
+            {
+              "text": "Continue with Email",
+              "disabled": false
+            },
+            {
+              "text": "Continue with Google",
+              "disabled": false
+            },
+            {
+              "text": "Continue with GitHub",
+              "disabled": false
+            },
+            {
+              "text": "Continue with Apple",
+              "disabled": false
+            },
+            {
+              "text": "Continue with SAML SSO",
+              "disabled": false
+            },
+            {
+              "text": "Continue with Passkey",
+              "disabled": false
+            },
+            {
+              "text": "Show other options",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "email",
+              "placeholder": "Email Address"
+            }
+          ]
+        }
+      },
+      "errors": []
+    },
+    "flow6_done_rejected": {
+      "screens": {
+        "admin_done_list": {
+          "url": "https://nmms.staging.startraven.com/reports?status=done&facet=all_reports",
+          "title": "Incident Reports",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Incident Reports",
+            "Active (338)",
+            "Done (223)",
+            "Rejected (27)",
+            "Draft (227)",
+            "All (821)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Department",
+            "Reported By",
+            "Status",
+            "Classification",
+            "UNIT-1/2026/NM/0007",
+            "16 Mar 2026",
+            "Raj Oberoi slipped",
+            "PE",
+            "Raj Oberoi",
+            "Approved by Dept",
+            "Workplace Safety Near Miss",
+            "UNIT-1/2026/UC/0008",
+            "09 Mar 2026",
+            "Lift broke near the stairs",
+            "PP",
+            "rishi op",
+            "Unsafe Condition",
+            "UNIT-1/2026/NM/0006",
+            "19 Feb 2026",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "Asaimani chandrasekaran",
+            "UNIT-1/2026/UA/0001",
+            "10 Feb 2026",
+            "Forklift nearly hit a worker in the warehouse",
+            "Unsafe Act",
+            "UNIT-1/2026/NM/0005",
+            "Forklift speeding near pedestrian walkways, almost hitting a worker",
+            "Process Safety Near Miss",
+            "UNIT-1/2026/NM/0004",
+            "09 Feb 2026",
+            "UNIT-1/2026/NM/0002",
+            "04 Feb 2026",
+            "Continuous Hydrocarbon leakage at D-510 top manhole",
+            "UNIT-1/2026/UC/0005",
+            "Chemical storage area with damaged containers, poor ventilation, and spilled liquid on the floor.",
+            "UNIT-1/2026/UC/0004",
+            "Chemical storage area with damaged containers, poor ventilation, and slippery floor due to spilled liquid",
+            "UNIT-1/2026/UC/0003",
+            "Chemical storage area with damaged containers, poor ventilation, and spilled liquid on the floor",
+            "UNIT-1/2026/UC/0006",
+            "UNIT-1/2026/UC/0002",
+            "UNIT-1/2026/UC/0001",
+            "Chemical storage area with damaged containers, poor ventilation, and a slippery floor due to a spill",
+            "UNIT-1/2026/UC/0007",
+            "Chemical storage area with damaged containers, poor ventilation, and a slippery floor due to spilled liquid.",
+            "Rows per page:",
+            "25",
+            "1\u201325 of 223"
+          ],
+          "buttons": [
+            {
+              "text": "Active (338)",
+              "disabled": false
+            },
+            {
+              "text": "Done (223)",
+              "disabled": false
+            },
+            {
+              "text": "Rejected (27)",
+              "disabled": false
+            },
+            {
+              "text": "Draft (227)",
+              "disabled": false
+            },
+            {
+              "text": "All (821)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "Search Incident ID",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "25"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Incident Reports"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        },
+        "admin_rejected_list": {
+          "url": "https://nmms.staging.startraven.com/reports?status=rejected&facet=all_reports",
+          "title": "Incident Reports",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "MA",
+            "Manikandan",
+            "Powered by",
+            "Incident Reports",
+            "Active (338)",
+            "Done (223)",
+            "Rejected (27)",
+            "Draft (227)",
+            "All (821)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Department",
+            "Reported By",
+            "Status",
+            "REF/2026/0253",
+            "17 Feb 2026",
+            "Lift broke near PP department",
+            "PP",
+            "rishi",
+            "Rejected by Dept",
+            "REF/2026/0251",
+            "16 Feb 2026",
+            "Forklift nearly hit a worker in the warehouse",
+            "Asaimani chandrasekaran",
+            "Rejected by Safety Manager",
+            "REF/2026/0250",
+            "Forklift speeding near pedestrian walkways almost hit a worker",
+            "REF/2026/0249",
+            "REF/2026/0245",
+            "12 Feb 2026",
+            "Minor gas leak from thermal room",
+            "PE",
+            "P C Sharma",
+            "REF/2026/0244",
+            "Gas leak from thermal room",
+            "REF/2026/0239",
+            "11 Feb 2026",
+            "Forklift sped near pedestrian walkways, nearly hitting a worker.",
+            "REF/2026/0238",
+            "10 Feb 2026",
+            "Forklift speeding near pedestrian walkways in the warehouse, nearly hitting a worker",
+            "09 Feb 2026",
+            "Lift broke near the stairs",
+            "REF/2026/0235",
+            "REF/2026/0231",
+            "REF/2026/0227",
+            "04 Feb 2026",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "REF/2026/0211",
+            "29 Jan 2026",
+            "REF/2026/0191",
+            "21 Jan 2026",
+            "Forklift speeding near pedestrian walkways, nearly hit a worker",
+            "Rows per page:",
+            "25",
+            "1\u201325 of 27"
+          ],
+          "buttons": [
+            {
+              "text": "Active (338)",
+              "disabled": false
+            },
+            {
+              "text": "Done (223)",
+              "disabled": false
+            },
+            {
+              "text": "Rejected (27)",
+              "disabled": false
+            },
+            {
+              "text": "Draft (227)",
+              "disabled": false
+            },
+            {
+              "text": "All (821)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "Search Incident ID",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "25"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Incident Reports"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        },
+        "safety-manager_done_list": {
+          "url": "https://nmms.staging.startraven.com/reports?status=done&facet=all_reports",
+          "title": "Incident Reports",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "RG",
+            "Ravi Gupta",
+            "Powered by",
+            "Incident Reports",
+            "Active (105)",
+            "Done (48)",
+            "Rejected (25)",
+            "Draft (15)",
+            "All (193)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Department",
+            "Reported By",
+            "Status",
+            "Classification",
+            "UNIT-1/2026/NM/0007",
+            "16 Mar 2026",
+            "Raj Oberoi slipped",
+            "PE",
+            "Raj Oberoi",
+            "Approved by Dept",
+            "Workplace Safety Near Miss",
+            "UNIT-1/2026/UC/0008",
+            "09 Mar 2026",
+            "Lift broke near the stairs",
+            "PP",
+            "rishi op",
+            "Unsafe Condition",
+            "UNIT-1/2026/NM/0006",
+            "19 Feb 2026",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "Asaimani chandrasekaran",
+            "UNIT-1/2026/UA/0001",
+            "10 Feb 2026",
+            "Forklift nearly hit a worker in the warehouse",
+            "Unsafe Act",
+            "UNIT-1/2026/NM/0005",
+            "Forklift speeding near pedestrian walkways, almost hitting a worker",
+            "Process Safety Near Miss",
+            "UNIT-1/2026/NM/0004",
+            "09 Feb 2026",
+            "UNIT-1/2026/NM/0002",
+            "04 Feb 2026",
+            "Continuous Hydrocarbon leakage at D-510 top manhole",
+            "UNIT-1/2026/UC/0005",
+            "Chemical storage area with damaged containers, poor ventilation, and spilled liquid on the floor.",
+            "UNIT-1/2026/UC/0004",
+            "Chemical storage area with damaged containers, poor ventilation, and slippery floor due to spilled liquid",
+            "UNIT-1/2026/UC/0003",
+            "Chemical storage area with damaged containers, poor ventilation, and spilled liquid on the floor",
+            "UNIT-1/2026/UC/0006",
+            "UNIT-1/2026/UC/0002",
+            "UNIT-1/2026/UC/0001",
+            "Chemical storage area with damaged containers, poor ventilation, and a slippery floor due to a spill",
+            "UNIT-1/2026/UC/0007",
+            "Chemical storage area with damaged containers, poor ventilation, and a slippery floor due to spilled liquid.",
+            "Rows per page:",
+            "25",
+            "1\u201325 of 48"
+          ],
+          "buttons": [
+            {
+              "text": "Active (105)",
+              "disabled": false
+            },
+            {
+              "text": "Done (48)",
+              "disabled": false
+            },
+            {
+              "text": "Rejected (25)",
+              "disabled": false
+            },
+            {
+              "text": "Draft (15)",
+              "disabled": false
+            },
+            {
+              "text": "All (193)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "Search Incident ID",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "25"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Incident Reports"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        },
+        "safety-manager_rejected_list": {
+          "url": "https://nmms.staging.startraven.com/reports?status=rejected&facet=all_reports",
+          "title": "Incident Reports",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "RG",
+            "Ravi Gupta",
+            "Powered by",
+            "Incident Reports",
+            "Active (105)",
+            "Done (48)",
+            "Rejected (25)",
+            "Draft (15)",
+            "All (193)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Department",
+            "Reported By",
+            "Status",
+            "REF/2026/0253",
+            "17 Feb 2026",
+            "Lift broke near PP department",
+            "PP",
+            "rishi",
+            "Rejected by Dept",
+            "REF/2026/0251",
+            "16 Feb 2026",
+            "Forklift nearly hit a worker in the warehouse",
+            "Asaimani chandrasekaran",
+            "Rejected by Safety Manager",
+            "REF/2026/0250",
+            "Forklift speeding near pedestrian walkways almost hit a worker",
+            "REF/2026/0249",
+            "REF/2026/0245",
+            "12 Feb 2026",
+            "Minor gas leak from thermal room",
+            "PE",
+            "P C Sharma",
+            "REF/2026/0244",
+            "Gas leak from thermal room",
+            "REF/2026/0239",
+            "11 Feb 2026",
+            "Forklift sped near pedestrian walkways, nearly hitting a worker.",
+            "REF/2026/0238",
+            "10 Feb 2026",
+            "Forklift speeding near pedestrian walkways in the warehouse, nearly hitting a worker",
+            "09 Feb 2026",
+            "Lift broke near the stairs",
+            "REF/2026/0235",
+            "REF/2026/0231",
+            "REF/2026/0227",
+            "04 Feb 2026",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "REF/2026/0211",
+            "29 Jan 2026",
+            "REF/2026/0191",
+            "21 Jan 2026",
+            "Forklift speeding near pedestrian walkways, nearly hit a worker",
+            "Rows per page:",
+            "25",
+            "1\u201325 of 25"
+          ],
+          "buttons": [
+            {
+              "text": "Active (105)",
+              "disabled": false
+            },
+            {
+              "text": "Done (48)",
+              "disabled": false
+            },
+            {
+              "text": "Rejected (25)",
+              "disabled": false
+            },
+            {
+              "text": "Draft (15)",
+              "disabled": false
+            },
+            {
+              "text": "All (193)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "Search Incident ID",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "25"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Incident Reports"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        },
+        "hod-pp_done_list": {
+          "url": "https://nmms.staging.startraven.com/reports?status=done&facet=all_reports",
+          "title": "Incident Reports",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "PS",
+            "P C Sharma",
+            "Powered by",
+            "Incident Reports",
+            "Active (76)",
+            "Done (171)",
+            "Rejected (16)",
+            "Draft (65)",
+            "All (328)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Department",
+            "Reported By",
+            "Status",
+            "Classification",
+            "UNIT-1/2026/UC/0008",
+            "09 Mar 2026",
+            "Lift broke near the stairs",
+            "PP",
+            "rishi op",
+            "Approved by Dept",
+            "Unsafe Condition",
+            "UNIT-1/2026/NM/0006",
+            "19 Feb 2026",
+            "Forklift speeding near pedestrian walkways, nearly hitting a worker",
+            "Asaimani chandrasekaran",
+            "Workplace Safety Near Miss",
+            "UNIT-1/2026/UA/0001",
+            "10 Feb 2026",
+            "Forklift nearly hit a worker in the warehouse",
+            "Unsafe Act",
+            "UNIT-1/2026/NM/0005",
+            "Forklift speeding near pedestrian walkways, almost hitting a worker",
+            "Process Safety Near Miss",
+            "UNIT-1/2026/NM/0004",
+            "09 Feb 2026",
+            "UNIT-1/2026/UC/0005",
+            "04 Feb 2026",
+            "Chemical storage area with damaged containers, poor ventilation, and spilled liquid on the floor.",
+            "UNIT-1/2026/UC/0004",
+            "Chemical storage area with damaged containers, poor ventilation, and slippery floor due to spilled liquid",
+            "UNIT-1/2026/UC/0003",
+            "Chemical storage area with damaged containers, poor ventilation, and spilled liquid on the floor",
+            "UNIT-1/2026/UC/0002",
+            "UNIT-1/2026/UC/0001",
+            "Chemical storage area with damaged containers, poor ventilation, and a slippery floor due to a spill",
+            "UNIT-1/2026/NM/0001",
+            "IPL/2026/NM/0026",
+            "30 Jan 2026",
+            "Strong ammonia odour detected at pump seal",
+            "Manikandan",
+            "IPL/2026/NM/0010",
+            "21 Jan 2026",
+            "Contract workers entered the restricted zone around Hydraulic Press HP-23 while the machine was energized",
+            "IPL/2026/NM/0009",
+            "Contract workers entered restricted zone near Hydraulic Press HP-23 while machine was energized",
+            "Rows per page:",
+            "25",
+            "1\u201325 of 171"
+          ],
+          "buttons": [
+            {
+              "text": "Active (76)",
+              "disabled": false
+            },
+            {
+              "text": "Done (171)",
+              "disabled": false
+            },
+            {
+              "text": "Rejected (16)",
+              "disabled": false
+            },
+            {
+              "text": "Draft (65)",
+              "disabled": false
+            },
+            {
+              "text": "All (328)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "Search Incident ID",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "25"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Incident Reports"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        },
+        "hod-pp_rejected_list": {
+          "url": "https://nmms.staging.startraven.com/reports?status=rejected&facet=all_reports",
+          "title": "Incident Reports",
+          "all_text": [
+            "Report Incident",
+            "Incidents",
+            "Reports",
+            "Investigations",
+            "Recommendations",
+            "Analysis",
+            "Help and Support",
+            "Settings",
+            "PS",
+            "P C Sharma",
+            "Powered by",
+            "Incident Reports",
+            "Active (76)",
+            "Done (171)",
+            "Rejected (16)",
+            "Draft (65)",
+            "All (328)",
+            "Filter",
+            "Export",
+            "Incident ID",
+            "Reported On",
+            "Summary",
+            "Department",
+            "Reported By",
+            "Status",
+            "REF/2026/0253",
+            "17 Feb 2026",
+            "Lift broke near PP department",
+            "PP",
+            "rishi",
+            "Rejected by Dept",
+            "REF/2026/0251",
+            "16 Feb 2026",
+            "Forklift nearly hit a worker in the warehouse",
+            "Asaimani chandrasekaran",
+            "Rejected by Safety Manager",
+            "REF/2026/0250",
+            "Forklift speeding near pedestrian walkways almost hit a worker",
+            "REF/2026/0249",
+            "REF/2026/0245",
+            "12 Feb 2026",
+            "Minor gas leak from thermal room",
+            "PE",
+            "REF/2026/0244",
+            "Gas leak from thermal room",
+            "REF/2026/0239",
+            "11 Feb 2026",
+            "Forklift sped near pedestrian walkways, nearly hitting a worker.",
+            "REF/2026/0238",
+            "10 Feb 2026",
+            "Forklift speeding near pedestrian walkways in the warehouse, nearly hitting a worker",
+            "09 Feb 2026",
+            "Lift broke near the stairs",
+            "REF/2026/0235",
+            "IR-2026-0166",
+            "16 Jan 2026",
+            "Strong propylene smell near the recycle pump",
+            "IR-2026-0164",
+            "Spark stopped using fire extinguisher",
+            "IR-2026-0038",
+            "07 Jan 2026",
+            "Forklift speeding near pedestrian walkways, came very close to hitting a worker but stopped just in time.",
+            "IR-2025-0483",
+            "22 Dec 2025",
+            "Forklift speeding near pedestrian walkways, came very close to hitting a worker but stopped just in time",
+            "Rows per page:",
+            "25",
+            "1\u201316 of 16"
+          ],
+          "buttons": [
+            {
+              "text": "Active (76)",
+              "disabled": false
+            },
+            {
+              "text": "Done (171)",
+              "disabled": false
+            },
+            {
+              "text": "Rejected (16)",
+              "disabled": false
+            },
+            {
+              "text": "Draft (65)",
+              "disabled": false
+            },
+            {
+              "text": "All (328)",
+              "disabled": false
+            },
+            {
+              "text": "FILTER",
+              "disabled": false
+            },
+            {
+              "text": "EXPORT",
+              "disabled": false
+            }
+          ],
+          "inputs": [
+            {
+              "type": "text",
+              "placeholder": "Search Incident ID",
+              "name": "",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "placeholder": "",
+              "name": "",
+              "value": "25"
+            }
+          ],
+          "headings": [
+            {
+              "tag": "H6",
+              "text": "Incident Reports"
+            }
+          ],
+          "links": [
+            {
+              "text": "Report Incident",
+              "href": "https://nmms.staging.startraven.com/new-report"
+            },
+            {
+              "text": "Reports",
+              "href": "https://nmms.staging.startraven.com/reports"
+            },
+            {
+              "text": "Investigations",
+              "href": "https://nmms.staging.startraven.com/investigations"
+            },
+            {
+              "text": "Recommendations",
+              "href": "https://nmms.staging.startraven.com/recommendations"
+            },
+            {
+              "text": "Analysis",
+              "href": "https://nmms.staging.startraven.com/analysis"
+            }
+          ]
+        }
+      },
+      "errors": [
+        "admin: No done report rows",
+        "safety-manager: No done report rows",
+        "hod-pp: No done report rows"
+      ]
+    }
+  }
+}

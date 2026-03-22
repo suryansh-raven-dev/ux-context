@@ -186,5 +186,59 @@ All Departments, Administration, Ammonia 1, Ammonia 2, FCU, HSEF, Logistics, PE,
 | SAVE PROFILE button | `button:has-text("SAVE PROFILE")` | 2026-03-21 |
 | CANCEL button | `button:has-text("CANCEL")` | 2026-03-21 |
 
+## DataGrid (MUI) — Important
+The Reports, Investigations, and Recommendations tables use **MUI DataGrid** (`div[role="grid"]`), not standard HTML `<table>` elements:
+- Row selector: `.MuiDataGrid-row`
+- Cell selector: `.MuiDataGrid-cell`
+- Header: `[role="columnheader"]`
+- Virtual scroller: `.MuiDataGrid-virtualScrollerRenderZone`
+- Standard `table tbody tr` selectors will NOT work.
+
+## HoD on "Approved by Safety" Report
+
+| Element | Selector | Confirmed |
+|---------|----------|-----------|
+| RETURN REPORT button | `button:has-text("RETURN REPORT")` (red outline) | 2026-03-21 |
+| APPROVE REPORT button | `button:has-text("APPROVE REPORT")` (purple filled) | 2026-03-21 |
+
+## Investigation Detail Page
+
+| Element | Selector | Confirmed |
+|---------|----------|-----------|
+| "Run Agentic AI Investigation" heading | `text="Run Agentic AI Investigation"` | 2026-03-21 |
+| RUN INVESTIGATION button | `button:has-text("RUN INVESTIGATION")` (purple) | 2026-03-21 |
+| "No Investigation Run Yet" empty state | `text="No Investigation Run Yet"` | 2026-03-21 |
+| Investigation status: In-Progress | sidebar "In-Progress" | 2026-03-21 |
+| Investigation status: Released | sidebar "Released" | 2026-03-21 |
+| Investigation status: Closed | sidebar "Closed" | 2026-03-21 |
+
+## Change Password Modal
+
+| Element | Selector | Confirmed |
+|---------|----------|-----------|
+| Modal heading | `text="Change Password"` | 2026-03-21 |
+| Current Password input | `input` with label "Current Password*" | 2026-03-21 |
+| New Password input | `input` with label "New Password*" | 2026-03-21 |
+| Confirm New Password input | `input` with label "Confirm New Password*" | 2026-03-21 |
+| Show/hide password icon | eye icon (👁) per field | 2026-03-21 |
+| CHANGE PASSWORD button | `button:has-text("CHANGE PASSWORD")` (purple) | 2026-03-21 |
+| CANCEL button | `button:has-text("CANCEL")` | 2026-03-21 |
+
+## Done Report Detail
+
+| Element | Selector | Confirmed |
+|---------|----------|-----------|
+| Status badge: Approved by Dept | breadcrumb badge "Approved by Dept" (blue) | 2026-03-21 |
+| All status tracker stages completed | all 4 stages have ✓ icons | 2026-03-21 |
+| No action buttons | — | 2026-03-21 |
+
+## Rejected Report Detail
+
+| Element | Selector | Confirmed |
+|---------|----------|-----------|
+| Status badge: Rejected by Dept | breadcrumb badge "Rejected by Dept" (red) | 2026-03-21 |
+| Status tracker: Rejected by Dept | red ✗ icon on 4th stage | 2026-03-21 |
+| No action buttons | — | 2026-03-21 |
+
 ## Update Rule
 Add confirmed selectors with the date they were verified. Mark selectors as stale if UI changes are observed.
