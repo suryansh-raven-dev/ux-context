@@ -1,0 +1,43 @@
+---
+description: Always document learnings and update knowledge files after every exploration, testing, or discussion session
+alwaysApply: true
+---
+
+# Document Learnings Rule
+
+After every meaningful exploration, test run, or discussion about an application, you MUST update the relevant documentation files before ending the conversation. This is not optional.
+
+## What To Update
+
+At the end of each session, review and update ALL applicable files under the relevant app directory (`apps/<app-name>/`):
+
+1. **Learnings files** (`apps/<app>/learnings/<workflow>/discovery.md`) — update Discovery Status, Observed Behavior, Confirmed Paths, UI Targets, Evidence, and Risks sections with anything new.
+2. **Memory files** (`apps/<app>/memory/`) — add new selectors to `selectors.md`, new issues to `known-issues.md`, new instabilities to `flaky-areas.md`, and refine `test-oracles.md` with confirmed/unconfirmed findings.
+3. **Discovery maps** (`apps/<app>/discovery/`) — update `app-map.md`, `navigation-map.md`, `auth-map.md`, `role-map.md` if any structural or navigation changes are observed.
+4. **Workflow seeds** (`apps/<app>/workflows/`) — update environment, test account, or scope details when new information is confirmed.
+5. **Product summary** (`apps/<app>/product-summary.md`) — update when major new features or sections are discovered.
+6. **Session log** (`apps/<app>/session-logs/<date>-<topic>.md`) — create a new session log summarizing what was done, what was found, and what the next steps are.
+
+## When To Document
+
+- After any browser exploration or automated test run.
+- After any discussion that reveals new information about the application.
+- After discovering a bug, flaky behavior, or new UI element.
+- After confirming or disproving a hypothesis from a learnings file.
+- When the user provides new credentials, URLs, or workflow instructions.
+
+## How To Document
+
+- Mark observations as **confirmed** only when directly observed in the application.
+- Keep **assumptions** and **open questions** clearly separated from confirmed facts.
+- Replace outdated observations with the latest behavior and note the change.
+- Include screenshot paths when evidence was captured.
+- Add dates to selector confirmations and issue discoveries.
+- Use the existing file templates in `shared/templates/` — do not invent new formats.
+
+## What NOT To Do
+
+- Do not rely on chat history as durable memory — always persist to files.
+- Do not skip documentation because "it's a small change" — small observations compound.
+- Do not overwrite confirmed facts with assumptions.
+- Do not store credentials or tokens in tracked files (reference them by account ID only).

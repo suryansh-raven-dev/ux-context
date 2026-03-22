@@ -1,0 +1,138 @@
+[
+  {
+    "section": "Login",
+    "detail": "Navigating to login..."
+  },
+  {
+    "section": "Login",
+    "detail": "Logged in successfully"
+  },
+  {
+    "section": "DomainSelection",
+    "detail": "Body text (first 1000 chars): AI AGENTS\n\nSearch\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nSelect a domain\n\nHSEF\n\nPHD\n\nAmmonia\n\nTrain-1\n\nTrain-2\n\nFCU\n\nLine-1F\n\nLine-2F\n\nUrea\n\nUrea-1\n\nUrea-2\n\nYou can change the domain later from the dropdown in the left sidebar."
+  },
+  {
+    "section": "DomainSelection",
+    "detail": "Selecting HSEF domain..."
+  },
+  {
+    "section": "DomainSelection",
+    "detail": "HSEF domain selected"
+  },
+  {
+    "section": "Search",
+    "detail": "Exploring Search page..."
+  },
+  {
+    "section": "Search",
+    "detail": "Structure: {\n  \"title\": \"New Session\",\n  \"url\": \"https://ifz.startraven.com/search\",\n  \"h1\": [],\n  \"h2\": [],\n  \"h3\": [],\n  \"buttons\": [],\n  \"inputs\": [\n    {\n      \"type\": \"textarea\",\n      \"placeholder\": \"Search, or ask anything...\",\n      \"name\": \"\",\n      \"id\": \"\"\n    },\n    {\n      \"type\": \"textarea\",\n      \"placeholder\": \"\",\n      \"name\": \"\",\n      \"id\": \"\"\n    }\n  ],\n  \"links\": [\n    {\n      \"text\": \"Search\",\n      \"href\": \"/search\"\n    },\n    {\n      \"text\": \"P&ID\",\n      \"href\": \"/pid\"\n    },\n    {\n      \"text\": \"Data Explorer\",\n      \"href\": \"/data/data-explorer\"\n    }\n  ],\n  \"tables\": 0,\n  \"images\": 2,\n  \"svgs\": 10,\n  \"iframes\": 0,\n  \"canvases\": 0\n}"
+  },
+  {
+    "section": "Search",
+    "detail": "Page text (first 2000 chars): SELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nElectrical Energy Source Isola...\n\nTypes of Energy Sources and Lo...\n\nLockout & Tagout Procedure Ste...\n\nView All (5)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nSearch\nAsk me anything about HSEF\nRefine Search"
+  },
+  {
+    "section": "Search",
+    "detail": "Found search input, trying a query..."
+  },
+  {
+    "section": "Search",
+    "detail": "After search structure: {\n  \"title\": \"Search\",\n  \"url\": \"https://ifz.startraven.com/search/d70ffade-9e1d-450a-9d2e-148a3464965f\",\n  \"h1\": [],\n  \"h2\": [],\n  \"h3\": [],\n  \"buttons\": [\n    \"NEW SESSION\",\n    \"AI ANSWER\"\n  ],\n  \"inputs\": [\n    {\n      \"type\": \"textarea\",\n      \"placeholder\": \"Ask a follow-up...\",\n      \"name\": \"\",\n      \"id\": \"\"\n    },\n    {\n      \"type\": \"textarea\",\n      \"placeholder\": \"\",\n      \"name\": \"\",\n      \"id\": \"\"\n    }\n  ],\n  \"links\": [\n    {\n      \"text\": \"Search\",\n      \"href\": \"/search\"\n    },\n    {\n      \"text\": \"P&ID\",\n      \"href\": \"/pid\"\n    },\n    {\n      \"text\": \"Data Explorer\",\n      \"href\": \"/data/data-explorer\"\n    }\n  ],\n  \"tables\": 0,\n  \"images\": 3,\n  \"svgs\": 12,\n  \"iframes\": 0,\n  \"canvases\": 0\n}"
+  },
+  {
+    "section": "Search",
+    "detail": "Search results text (first 3000 chars): SELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nNew Session\n\nElectrical Energy Source Isola...\n\nTypes of Energy Sources and Lo...\n\nView All (6)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nSearch\nNEW SESSION\nWhat is the safety procedure for ammonia?\nToday\n7:22 PM\nAI ANSWER\n\nPulling the right info together\n\nRefine Search"
+  },
+  {
+    "section": "PID",
+    "detail": "Navigating to P&ID..."
+  },
+  {
+    "section": "PID",
+    "detail": "Structure: {\n  \"title\": \"PID\",\n  \"url\": \"https://ifz.startraven.com/pid?tabId=11ca38b5-2ccf-4dfd-a2d2-9b0631cd23b5\",\n  \"h1\": [],\n  \"h2\": [],\n  \"h3\": [],\n  \"buttons\": [],\n  \"inputs\": [\n    {\n      \"type\": \"text\",\n      \"placeholder\": \"Search by P&ID no or Equipment tag...\",\n      \"name\": \"\",\n      \"id\": \"\"\n    }\n  ],\n  \"links\": [\n    {\n      \"text\": \"Search\",\n      \"href\": \"/search\"\n    },\n    {\n      \"text\": \"P&ID\",\n      \"href\": \"/pid?tabId=11ca38b5-2ccf-4dfd-a2d2-9b0631cd23b5\"\n    },\n    {\n      \"text\": \"Data Explorer\",\n      \"href\": \"/data/data-explorer\"\n    }\n  ],\n  \"tables\": 0,\n  \"images\": 2,\n  \"svgs\": 10,\n  \"iframes\": 0,\n  \"canvases\": 0\n}"
+  },
+  {
+    "section": "PID",
+    "detail": "Page text (first 2000 chars): SELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nNew Session\n\nElectrical Energy Source Isola...\n\nTypes of Energy Sources and Lo...\n\nView All (6)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\n\nNew Tab\n\nNo files found"
+  },
+  {
+    "section": "PID",
+    "detail": "Found 0 select/combo elements"
+  },
+  {
+    "section": "PID",
+    "detail": "Canvas elements: 0, SVG elements: 10"
+  },
+  {
+    "section": "PID",
+    "detail": "Tree items: 0"
+  },
+  {
+    "section": "PID",
+    "detail": "Clickable items: 0"
+  },
+  {
+    "section": "DataExplorer",
+    "detail": "Navigating to Data Explorer..."
+  },
+  {
+    "section": "DataExplorer",
+    "detail": "Structure: {\n  \"title\": \"Data Explorer\",\n  \"url\": \"https://ifz.startraven.com/data/data-explorer\",\n  \"h1\": [],\n  \"h2\": [],\n  \"h3\": [],\n  \"buttons\": [\n    \"Files\",\n    \"FILTER\",\n    \"SORT\",\n    \"UPLOAD FILE\"\n  ],\n  \"inputs\": [\n    {\n      \"type\": \"text\",\n      \"placeholder\": \"Search files\",\n      \"name\": \"\",\n      \"id\": \":r11:\"\n    }\n  ],\n  \"links\": [\n    {\n      \"text\": \"Search\",\n      \"href\": \"/search\"\n    },\n    {\n      \"text\": \"P&ID\",\n      \"href\": \"/pid\"\n    },\n    {\n      \"text\": \"Data Explorer\",\n      \"href\": \"/data/data-explorer\"\n    }\n  ],\n  \"tables\": 1,\n  \"images\": 4,\n  \"svgs\": 11,\n  \"iframes\": 0,\n  \"canvases\": 0\n}"
+  },
+  {
+    "section": "DataExplorer",
+    "detail": "Page text (first 2000 chars): SELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nNew Session\n\nElectrical Energy Source Isola...\n\nTypes of Energy Sources and Lo...\n\nView All (6)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nData Explorer\nFiles\nFILTER\nSORT\n\u200b\nUPLOAD FILE\nName\tDate Modified\n\n\nHSEF\n\n\t--\n\n\nReports\n\n\t--"
+  },
+  {
+    "section": "Settings",
+    "detail": "Navigating to Settings..."
+  },
+  {
+    "section": "Settings",
+    "detail": "Structure: {\n  \"title\": \"Raven AI\",\n  \"url\": \"https://ifz.startraven.com/settings\",\n  \"h1\": [],\n  \"h2\": [],\n  \"h3\": [],\n  \"buttons\": [],\n  \"inputs\": [],\n  \"links\": [\n    {\n      \"text\": \"Search\",\n      \"href\": \"/search\"\n    },\n    {\n      \"text\": \"P&ID\",\n      \"href\": \"/pid\"\n    },\n    {\n      \"text\": \"Data Explorer\",\n      \"href\": \"/data/data-explorer\"\n    }\n  ],\n  \"tables\": 0,\n  \"images\": 2,\n  \"svgs\": 7,\n  \"iframes\": 0,\n  \"canvases\": 0\n}"
+  },
+  {
+    "section": "Settings",
+    "detail": "Page text (first 2000 chars): SELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\n~New Conversation\n\nElectrical Energy Source Isola...\n\nTypes of Energy Sources and Lo...\n\nView All (6)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by"
+  },
+  {
+    "section": "Sidebar",
+    "detail": "Getting full sidebar content..."
+  },
+  {
+    "section": "Sidebar",
+    "detail": "Sidebar text: No sidebar found"
+  },
+  {
+    "section": "DomainSwitch",
+    "detail": "Looking for domain switcher..."
+  },
+  {
+    "section": "Sidebar",
+    "detail": "Found hamburger/menu button"
+  },
+  {
+    "section": "Sidebar",
+    "detail": "All sidebar links: []"
+  },
+  {
+    "section": "DomainExplore",
+    "detail": "Trying domain: Train-1"
+  },
+  {
+    "section": "DomainExplore",
+    "detail": "Trying domain: Line-1F"
+  },
+  {
+    "section": "DomainExplore",
+    "detail": "Trying domain: Urea-1"
+  },
+  {
+    "section": "Structure",
+    "detail": "Capturing overall page structure..."
+  },
+  {
+    "section": "Structure",
+    "detail": "Page structure (truncated): {\n  \"tag\": \"BODY\",\n  \"id\": null,\n  \"classes\": null,\n  \"role\": null,\n  \"text\": null,\n  \"children\": [\n    {\n      \"tag\": \"NOSCRIPT\",\n      \"id\": null,\n      \"classes\": null,\n      \"role\": null,\n      \"text\": \"You need to enable JavaScript to run this app.\"\n    },\n    {\n      \"tag\": \"DIV\",\n      \"id\": \"root\",\n      \"classes\": null,\n      \"role\": null,\n      \"text\": null,\n      \"children\": [\n        {\n          \"tag\": \"DIV\",\n          \"id\": null,\n          \"classes\": \"MuiBox-root css-5ms4u1\",\n          \"role\": null,\n          \"text\": null,\n          \"children\": [\n            {\n              \"tag\": \"DIV\",\n              \"id\": null,\n              \"classes\": \"MuiBox-root css-1mwxi0f\",\n              \"role\": null,\n              \"text\": null,\n              \"children\": [\n                {\n                  \"tag\": \"DIV\",\n                  \"id\": null,\n                  \"classes\": \"MuiBox-root css-1ttlz71-root\",\n                  \"role\": null,\n                  \"text\": null\n                },\n                {\n                  \"tag\": \"DIV\",\n                  \"id\": null,\n                  \"classes\": \"MuiBox-root css-tvzewf\",\n                  \"role\": null,\n                  \"text\": null\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}"
+  }
+]

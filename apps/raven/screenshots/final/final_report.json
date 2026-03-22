@@ -1,0 +1,102 @@
+[
+  {
+    "section": "Login",
+    "detail": "Logged in successfully"
+  },
+  {
+    "section": "Search",
+    "detail": "Submitting search query and waiting for full answer..."
+  },
+  {
+    "section": "Search",
+    "detail": "AI answer page text:\nSELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nNew Session\n\n~New Conversation\n\nElectrical Energy Source Isola...\n\nView All (7)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nSearch\nNEW SESSION\nWhat are the lockout tagout procedures?\nToday\n7:24 PM\nAI ANSWER\n\nAI Thoughts\n\nDocument Search \u2014 Query: governing principle of lockout tagout procedure safe isolation section 5.16; Keywords: lockout, tagout, LOTO, governing, principle, 5.16, safe isolation\n\nThinking\n\nRefine Search"
+  },
+  {
+    "section": "Search",
+    "detail": "Full scrolled text:\nSELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nNew Session\n\n~New Conversation\n\nElectrical Energy Source Isola...\n\nView All (7)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nSearch\nNEW SESSION\nWhat are the lockout tagout procedures?\nToday\n7:24 PM\nAI ANSWER\n\nAI Thoughts\n\nDocument Search \u2014 Query: safe isolation procedure residual energy verification lockout tagout all energy sources; Keywords: safe isolation, energy source, stored energy, residual energy, verification, lockout, tagout\n\nThinking\n\nRefine Search"
+  },
+  {
+    "section": "Sessions",
+    "detail": "Clicking on a previous search session..."
+  },
+  {
+    "section": "Sessions",
+    "detail": "Previous session text:\nSELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nNew Session\n\n~New Conversation\n\nElectrical Energy Source Isola...\n\nView All (7)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nSearch\nNEW SESSION\nWhat is the complete De-Energizing and Re-Energizing procedure for Electrical Energy Source Isolation (Sections 5.7.1 and 5.7.2), and what is the policy for LOTO permit retention (Section 5.7.5)? A5.\nToday\n3:12 PM\nAI ANSWER\nSOURCES (1)\n\nAI Thoughts\n\n5.7.1 De-Energizing\nStop the equipment; Shift Engineer prepares the permit in Infor, which auto-triggers to Electrical.\nSystem generates tags A, B, and C; waterproof tags are printed.\nAuthorized Electrical Engineer/Shift Technician confirms equipment is not running, signs tags A/B/C, and isolates as per electrical SOP/SMP.\nElectrical installs the HASP and locking arrangement on the de-energized feeder.\nAfter isolation/locking, display Danger Tag A on the main switch/breaker, enter key details in the Infor permit, verify tag number appears, and mark de-energization done.\nPermit returns to Operations for printing.\nElectrical hands tags B and C with the key to Operations and signs the electrical isolation section of the permit.\nOperations attaches tag B to the permit and places tag C in the LCS panel after try-out.\nAfter de-energization is confirmed, Operations issues the work permit and records the Electrical Lockout Permit number, Danger Tag number, and lock number on the work permit; then hands the work permit plus Danger Tag C to the permit receiver/executor.\nDuring the job, the executor keeps the hot/cold work permit with Danger Tag C stapled to it and the padlock key; the original Electrical Lockout Permit stays with Operations in the concerned control room. [1]\n5.7.2 Re-Energizing\nAfter work is complete, the executing agency returns the work permit with Danger Tag B to Operations.\nOn instruction from the Chief Operator/Engineer, the field operator checks job completion, material removal, housekeeping, guard refitting, etc., then removes Local Tag A and hands it to the Chief Operator/Engineer.\nAt this stage, the job is treated as complete and the maintained electrical system is ready for energizing.\nAfter field confirmation, the Chief Operator/Engineer signs Section C of the Electrical Lockout Permit and sends the permit with Danger Tag C to Electrical.\nThe executing agency/person removes the lock from the HASP on the isolated feeder in the presence of the Authorized Isolator (Electrical Engineer/Shift Technician).\nElectrical confirms all executing agencies have removed their locks and no one is still working, then removes the HASP and energizes the feeder as per electrical SOP/SMP.\nAfter energizing and completing Section D, Electrical returns the original and duplicate Electrical Lockout Permit with Danger Tags B and C to Operations. [2]\n5.7.5 LOTO permit retention\nClosed LOTO permits are kept for 1 month before destruction.\nIf there is any incident, the permit must be preserved and sent to the Safety Department for records and statutory reference. [3]\nRefine Search"
+  },
+  {
+    "section": "DataExplorer",
+    "detail": "Navigating to Data Explorer..."
+  },
+  {
+    "section": "DataExplorer",
+    "detail": "HSEF folder contents:\nSELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nNew Session\n\n~New Conversation\n\nElectrical Energy Source Isola...\n\nView All (7)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nData Explorer\nFiles\nFILTER\nSORT\n\u200b\nUPLOAD FILE\nName\tDate Modified\n\n\nHSEF\n\n\t--\n\n\nReports\n\n\t--\nSWITCH DOMAIN\n\nHSEF\n\nPHD\n\nAmmonia\n\nTrain-1\n\nTrain-2\n\nFCU\n\nLine-1F\n\nLine-2F\n\nUrea\n\nUrea-1\n\nUrea-2"
+  },
+  {
+    "section": "DataExplorer",
+    "detail": "Reports folder contents:\nSELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nLockout Tagout (LOTO) Procedur...\n\n~New Conversation\n\nElectrical Energy Source Isola...\n\nView All (7)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nData Explorer\nFiles\n/\n\nReports\n\nFILTER\nSORT\n\u200b\nUPLOAD FILE\nName\tStatus\tDate Modified\tCategory\tTags\tActions\n\n\n04-IFL-HSEF Monthly Report_ April 2025.xlsx\n\nReports\n\t\nCompleted\n\t27 Oct 2025\t\nTabular\n\t\t\n\n1\u20131 of 1"
+  },
+  {
+    "section": "DataExplorer",
+    "detail": "Upload dialog text:\nSELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nLockout Tagout (LOTO) Procedur...\n\n~New Conversation\n\nElectrical Energy Source Isola...\n\nView All (7)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nData Explorer\nFiles\nFILTER\nSORT\n\u200b\nUPLOAD FILE\nName\tDate Modified\n\n\nHSEF\n\n\t--\n\n\nReports\n\n\t--\nUpload files\n\nClick to upload or drag and drop\n\nDocuments (PDF or Doc), Images, Excel Sheets\n\nSupported formats: pdf, txt, docx, png, jpg, jpeg, csv, xls or xlsx\nCANCEL\nCONFIRM UPLOAD"
+  },
+  {
+    "section": "DataExplorer",
+    "detail": "Filter area text:\nSELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nLockout Tagout (LOTO) Procedur...\n\n~New Conversation\n\nElectrical Energy Source Isola...\n\nView All (7)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nData Explorer\nFiles\nFILTER\nSORT\n\u200b\nUPLOAD FILE\nName\tDate Modified\n\n\nHSEF\n\n\t--\n\n\nReports\n\n\t--\nFile Category\nFile Type\nFile Status\nTags"
+  },
+  {
+    "section": "PID",
+    "detail": "Switching to Train-1 domain for P&ID..."
+  },
+  {
+    "section": "PID",
+    "detail": "Domain switch error: ElementHandle.click: Timeout 30000ms exceeded.\nCall log:\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div aria-hidden=\"true\" class=\"MuiBackdrop-root MuiBackdrop-invisible MuiModal-backdrop css-1lbe2ow\"></div> from <div role=\"presentation\" class=\"MuiPopover-root MuiMenu-root MuiModal-root css-749mnm\">\u2026</div> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div aria-hidden=\"true\" class=\"MuiBackdrop-root MuiBackdrop-invisible MuiModal-backdrop css-1lbe2ow\"></div> from <div role=\"presentation\" class=\"MuiPopover-root MuiMenu-root MuiModal-root css-749mnm\">\u2026</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    56 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div aria-hidden=\"true\" class=\"MuiBackdrop-root MuiBackdrop-invisible MuiModal-backdrop css-1lbe2ow\"></div> from <div role=\"presentation\" class=\"MuiPopover-root MuiMenu-root MuiModal-root css-749mnm\">\u2026</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+  },
+  {
+    "section": "PHD",
+    "detail": "Switching to PHD domain..."
+  },
+  {
+    "section": "PHD",
+    "detail": "Current domain display: SELECTED DOMAIN"
+  },
+  {
+    "section": "PHD",
+    "detail": "Domain selector element: {\"tag\": \"HTML\", \"text\": \"SELECTED DOMAIN\\n\\nHSEF\\n\\nAI AGENTS\\n\\nSearch\\n\\nLockout Tagout (LOTO) Procedur...\\n\\n~New Conversation\\n\\nElectrical Energy Source Isola...\\n\\nView All (7)\\n\\nP&ID\\n\\nData Explorer\\n\\nSettings\\n\\nPowered by\\nSearch\\nAsk me anything about HSEF\\nRefine Search\", \"classes\": \"\"}"
+  },
+  {
+    "section": "Settings",
+    "detail": "Exploring Settings page..."
+  },
+  {
+    "section": "RefineSearch",
+    "detail": "Testing Refine Search feature..."
+  },
+  {
+    "section": "RefineSearch",
+    "detail": "Error: Page.query_selector: Unexpected token \"=\" while parsing css selector \"button:has-text('Refine Search'), text=Refine Search\". Did you mean to CSS.escape it?"
+  },
+  {
+    "section": "ViewAll",
+    "detail": "Clicking View All sessions..."
+  },
+  {
+    "section": "ViewAll",
+    "detail": "All sessions text:\nSELECTED DOMAIN\n\nHSEF\n\nAI AGENTS\n\nSearch\n\nLockout Tagout (LOTO) Procedur...\n\n~New Conversation\n\nElectrical Energy Source Isola...\n\nView All (7)\n\nP&ID\n\nData Explorer\n\nSettings\n\nPowered by\nAll Sessions\nHistory\n7 sessions\n\u200b\nTODAY\n\nLockout Tagout (LOTO) Procedures for Safe Equipment Isolation\n\njust now\n\n~New Conversation\n\n2 minutes ago\n\nElectrical Energy Source Isolation: De-Energizing, Re-Energizing Procedures and LOTO Permit Retention Policy\n\n4 hours ago\n\nTypes of Energy Sources and Lock Colour Codes\n\n4 hours ago\n\nLockout & Tagout Procedure Steps and Conditions for Applying Hazardous Energy Control Standard\n\n4 hours ago\n\nResponsibilities of Shift In-charge and Maintenance Supervisor in Safe Isolation Procedure\n\n4 hours ago\n\nPurpose and Scope of the Procedure for Safe Isolation\n\n4 hours ago"
+  },
+  {
+    "section": "Menu",
+    "detail": "Opening hamburger menu..."
+  },
+  {
+    "section": "Menu",
+    "detail": "Hamburger menu text:\nHSEF\n\nSearch\n\nP&ID\n\nData Explorer\n\nSettings\n\nAll Sessions\nHistory\n7 sessions\n\u200b\nTODAY\n\nLockout Tagout (LOTO) Procedures for Safe Equipment Isolation\n\njust now\n\n~New Conversation\n\n2 minutes ago\n\nElectrical Energy Source Isolation: De-Energizing, Re-Energizing Procedures and LOTO Permit Retention Policy\n\n4 hours ago\n\nTypes of Energy Sources and Lock Colour Codes\n\n4 hours ago\n\nLockout & Tagout Procedure Steps and Conditions for Applying Hazardous Energy Control Standard\n\n4 hours ago\n\nResponsibilities of Shift In-charge and Maintenance Supervisor in Safe Isolation Procedure\n\n4 hours ago\n\nPurpose and Scope of the Procedure for Safe Isolation\n\n4 hours ago"
+  },
+  {
+    "section": "Voice",
+    "detail": "Checking for voice input..."
+  },
+  {
+    "section": "Voice",
+    "detail": "No dedicated mic button found via aria-label"
+  }
+]

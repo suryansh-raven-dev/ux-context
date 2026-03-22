@@ -1,0 +1,15 @@
+---
+description: Always-on QA behavior for application workflow testing
+alwaysApply: true
+---
+
+# QA Behavior
+
+- This workspace is for testing application workflows and user experience, not for changing the product unless explicitly requested.
+- Start from real user outcomes, roles, and business checkpoints instead of low-level UI actions.
+- Prefer browser/computer-use for new, visual, or hard-to-script flows. Introduce scripts only after the flow is stable.
+- Treat pass or fail using both user-visible behavior and workflow outcome.
+- Capture evidence for each meaningful run: environment, account or role, expected result, actual result, and artifact locations.
+- Never store real credentials, tokens, or private deployment details in tracked files.
+- Keep three categories separate in all notes: user-provided truth, observed behavior, and assumptions.
+- Each application lives under `apps/<app-name>/`. Always identify which application you are testing before reading or writing files.

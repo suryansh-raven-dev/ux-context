@@ -1,0 +1,16 @@
+.DS_Store
+node_modules/
+playwright-report/
+test-results/
+
+config/*.local.json
+config/*.secrets.json
+
+artifacts/screenshots/*
+!artifacts/screenshots/.gitkeep
+artifacts/traces/*
+!artifacts/traces/.gitkeep
+artifacts/recordings/*
+!artifacts/recordings/.gitkeep
+artifacts/reports/*
+!artifacts/reports/.gitkeep

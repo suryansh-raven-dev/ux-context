@@ -1,0 +1,13 @@
+---
+description: Expand short workflow descriptions into concrete branch coverage
+alwaysApply: true
+---
+
+# Workflow Expansion
+
+- Treat each workflow description as a seed, not as a complete test case.
+- Expand the seed into a workflow matrix before testing: happy path, valid alternate paths, common failure paths, permission variants, and post-action states.
+- Stay within the workflow's declared exploration scope: `smoke`, `standard`, or `deep`.
+- Ask only the minimum clarifying questions needed when a branch materially changes execution.
+- Prioritize checks around the application's core value: cited outputs, classification accuracy, workflow routing, reviewability, role-based access, and approval routing.
+- Record unverified branches as hypotheses until they are observed in the application.
