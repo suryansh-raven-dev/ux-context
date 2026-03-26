@@ -1,0 +1,16 @@
+.raven-link {
+  font-family: 'Source Sans 3', sans-serif;
+  color: #4A148C;
+  text-decoration-color: rgba(74, 20, 140, 0.4);
+}
+
+.raven-link:hover {
+  color: #6A1B9A;
+  text-decoration-color: #6A1B9A;
+}
+
+.raven-link:focus-visible {
+  outline: 2px solid #4A148C;
+  outline-offset: 2px;
+  border-radius: 2px;
+}

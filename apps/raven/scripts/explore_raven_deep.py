@@ -6,6 +6,9 @@ from playwright.async_api import async_playwright
 SCREENSHOTS_DIR = "/Users/suryanshsrivastava/Testing Files/screenshots/deep"
 os.makedirs(SCREENSHOTS_DIR, exist_ok=True)
 
+EMPLOYEE_ID = os.environ["RAVEN_EMPLOYEE_ID"]
+PASSWORD = os.environ["RAVEN_PASSWORD"]
+
 REPORT = []
 sc = 1
 
@@ -66,13 +69,13 @@ async def main():
         log("Login", "Navigating to login...")
         await page.goto("https://ifz.startraven.com", wait_until="networkidle", timeout=30000)
         emp_input = await page.wait_for_selector("input", timeout=5000)
-        await emp_input.fill("SURYANSH-04")
+        await emp_input.fill(EMPLOYEE_ID)
         continue_btn = await page.query_selector("button:has-text('Continue')")
         await continue_btn.click()
         await page.wait_for_timeout(2000)
 
         pwd_input = await page.wait_for_selector("input[type='password']", timeout=5000)
-        await pwd_input.fill("RavenTesting@123")
+        await pwd_input.fill(PASSWORD)
         login_btn = await page.query_selector("button:has-text('Login'), button:has-text('Sign in'), button[type='submit']")
         if login_btn:
             await login_btn.click()

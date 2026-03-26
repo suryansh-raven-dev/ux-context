@@ -1,0 +1,32 @@
+.raven-autocomplete.MuiAutocomplete-root {
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.raven-autocomplete .MuiInputBase-root {
+  font-family: 'Source Sans 3', sans-serif;
+  border-radius: var(--raven-radius-default);
+}
+
+.raven-autocomplete .MuiInputLabel-root {
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--raven-text-secondary);
+}
+
+.raven-autocomplete .MuiInputLabel-root.Mui-focused {
+  color: var(--raven-purple-900);
+}
+
+.raven-autocomplete .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--raven-purple-900);
+}
+
+.raven-autocomplete .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--raven-purple-800);
+}
+
+.raven-autocomplete .MuiChip-root {
+  font-family: 'Source Sans 3', sans-serif;
+  background-color: var(--raven-purple-100);
+  color: var(--raven-purple-900);
+  border-radius: var(--raven-radius-pill);
+}

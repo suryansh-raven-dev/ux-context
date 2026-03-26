@@ -6,6 +6,9 @@ from playwright.async_api import async_playwright
 SCREENSHOTS_DIR = "/Users/suryanshsrivastava/Testing Files/screenshots"
 os.makedirs(SCREENSHOTS_DIR, exist_ok=True)
 
+EMPLOYEE_ID = os.environ["RAVEN_EMPLOYEE_ID"]
+PASSWORD = os.environ["RAVEN_PASSWORD"]
+
 REPORT = []
 
 def log(section, detail):
@@ -144,7 +147,7 @@ async def main():
         log("Login", "Entering Employee ID...")
         try:
             emp_input = await page.wait_for_selector("input", timeout=5000)
-            await emp_input.fill("SURYANSH-04")
+            await emp_input.fill(EMPLOYEE_ID)
             await screenshot(page, "02_employee_id_entered")
 
             continue_btn = await page.query_selector("button:has-text('Continue')")
@@ -159,7 +162,7 @@ async def main():
         log("Login", "Entering Password...")
         try:
             pwd_input = await page.wait_for_selector("input[type='password']", timeout=5000)
-            await pwd_input.fill("RavenTesting@123")
+            await pwd_input.fill(PASSWORD)
             await screenshot(page, "04_password_entered")
 
             sign_in_btn = await page.query_selector("button:has-text('Sign in'), button:has-text('Login'), button:has-text('Submit'), button[type='submit']")

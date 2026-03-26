@@ -90,5 +90,16 @@ Track stable selectors, reliable labels, and fallback targeting strategies disco
 - Test accounts for Indorama IPL: Employee ID `copilot-admin-ipl` / `RavenTesting@123`
 - Admin portals: `admin.startraven.com`, `admin.ifz.startraven.com`
 
+## Raven UI (design-system package, local)
+BEM roots under `apps/raven/design-system/raven-ui/src/components/data-display/` (for Storybook / unit tests, not production app — **confirmed** 2026-03-26 as implemented in repo):
+
+| Component | Root class |
+|-----------|------------|
+| SummaryCard | `.raven-summary-card` |
+| DataTable | `.raven-data-table`, status dot `.raven-data-table__status-dot` |
+| DiffCard | `.raven-diff-card`, modifiers `--updates`, `--added`, `--removed` |
+| StatusStepper | `.raven-status-stepper`, dot `.raven-status-stepper__dot` |
+| StatusTransitionCard | `.raven-status-transition` |
+
 ## Update Rule
 Whenever a selector is added, note the workflow and the last environment where it was confirmed.

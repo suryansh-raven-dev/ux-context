@@ -1,0 +1,20 @@
+.raven-checkbox.MuiFormControlLabel-root {
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.raven-checkbox .MuiTypography-root {
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--raven-text-primary);
+}
+
+.raven-checkbox .MuiCheckbox-root.Mui-checked {
+  color: var(--raven-purple-900);
+}
+
+.raven-checkbox .MuiCheckbox-root.MuiCheckbox-indeterminate {
+  color: var(--raven-purple-900);
+}
+
+.raven-checkbox .MuiCheckbox-root:hover {
+  background-color: var(--raven-purple-100);
+}

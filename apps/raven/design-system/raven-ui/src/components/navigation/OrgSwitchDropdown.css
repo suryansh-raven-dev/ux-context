@@ -1,0 +1,47 @@
+.raven-org-switch {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  padding: 6px;
+  margin: 0;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+}
+
+.raven-org-switch:focus-visible {
+  outline: 2px solid #4a148c;
+  outline-offset: 2px;
+}
+
+.raven-org-switch__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.raven-org-switch__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.raven-org-switch__chevron {
+  color: rgba(0, 0, 0, 0.54);
+  flex-shrink: 0;
+}

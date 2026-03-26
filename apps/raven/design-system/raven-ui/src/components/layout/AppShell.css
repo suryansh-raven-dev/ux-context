@@ -1,0 +1,25 @@
+.raven-app-shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fcf6fe;
+}
+
+.raven-app-shell__sidebar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.raven-app-shell__content-wrapper {
+  flex: 1;
+  min-width: 0;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.raven-app-shell__content {
+  flex: 1;
+  border: 1px solid #f3e5f5;
+  border-radius: 24px;
+  background-color: #ffffff;
+}

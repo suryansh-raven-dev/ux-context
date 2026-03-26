@@ -17,11 +17,24 @@
 - Successful login redirects to `/search` and immediately shows a "Select a domain" modal.
 - No MFA, SSO, or social login options were observed.
 - No "Forgot Password" link was visible on the login form.
+- **NEW (2026-03-23)**: Email domain validation — non-company emails (e.g., `user@example.com`) show red error: "Email domain is not allowed. Please use your company email." and CONTINUE button stays disabled.
+- **NEW (2026-03-23)**: Unregistered company email (e.g., `test@indorama.com`) → clicking CONTINUE redirects to a full "Create your account" registration form with fields: Name*, Employee ID*, Email (pre-filled), Password*, Confirm Password*, Unit (auto-filled to IFZ), Department (dropdown).
+- **NEW (2026-03-23)**: Registration form has REGISTER button and BACK TO SIGN IN link.
+- **NEW (2026-03-23)**: Domain selection modal shows 8 domains grouped by plant area: HSEF, PHD, Ammonia (Train-1, Train-2), FCU (Line-1F, Line-2F), Urea (Urea-1, Urea-2). Each domain has a colored dot.
+- **NEW (2026-03-23)**: Domain selection modal includes info text: "You can change the domain later from the dropdown in the left sidebar."
+- **NEW (2026-03-23)**: Account Settings page (/account) shows Name, Employee ID, Unit, Departments fields with SAVE PROFILE and CANCEL buttons. No verification status banner observed for verified user (SURYANSH-04).
+- **NEW (2026-03-23)**: **Verification banner confirmed** — Unverified accounts show a blue info banner at the top of Account Settings: "Please wait for your account to be verified by an admin before you can access the application." Banner disappears after admin verification. Screenshot provided by user from IPL deployment.
+- **NEW (2026-03-23)**: Registration can happen via **Employee ID** (not just email). Organization name and domain are pre-approved in Raven portal, allowing employees to self-register using their Employee ID.
+- **NEW (2026-03-23)**: Admin portal (admin.ifz.startraven.com) shows "Not Authenticated" page with lock icon — requires login through application portal.
 
 ## Confirmed Paths
 - Employee ID + password login (happy path) — confirmed working.
 - Two-step login flow (ID first, then password) — confirmed.
 - Post-login domain selection modal — confirmed, required before using the app.
+- **NEW (2026-03-23)**: Email domain validation for non-company emails — confirmed.
+- **NEW (2026-03-23)**: Unregistered company email → Registration form flow — confirmed.
+- **NEW (2026-03-23)**: Registration form with auto-filled email and unit — confirmed.
+- **NEW (2026-03-23)**: 8 domains available in selection modal — confirmed.
 
 ## Hypothesized Branches
 - ~~Password login happy path~~ (confirmed)
@@ -89,12 +102,31 @@ Stytch is the auth backend (discovered from Slack thread debugging, Mar 20).
 - **Unverified user access**: Users marked "unverified" on admin portal can still access search/documents. Verification status not enforced as a gate.
 - **Fix applied**: Admin portal now shows "not authenticated" screen instead of redirecting.
 
+### Admin Portal User Management (New — From Mar 23)
+- **URL**: `admin.ifz.startraven.com/users` — full user management interface
+- **Access**: Requires authentication through the main app (Workplace Settings → Users)
+- **User count**: 286 total users on IFZ
+- **Columns**: Name, Employee ID, E-mail, Unit, Department, Roles, Status, Actions
+- **Status values**: "Verified" (green text). Filter dropdown defaults to "All" — implies "Unverified" filter exists
+- **Actions**: Three-dot menu per user row (likely: verify, edit, deactivate)
+- **Bulk tools**: EXPORT CSV, IMPORT USERS, ADD USER buttons
+- **Search**: Search by name, email, or employee ID
+- **Sidebar nav**: Users, Departments, Raven Chatbot, Settings
+- **Brand**: "raven" logo + "Copilot Admin" user label
+
+### Self-Registration Form (New — From Mar 23)
+- Triggered when entering an unregistered company email on login page
+- Fields: Name*, Employee ID*, Email (pre-filled, read-only), Password*, Confirm Password*, Unit (auto-filled to deployment), Department (dropdown)
+- Unit auto-fills to "IFZ" for ifz.startraven.com
+- REGISTER button + BACK TO SIGN IN link
+- Non-company emails rejected with "Email domain is not allowed. Please use your company email."
+
 ### Additional Auth Environments
 - `ifz.startraven.com/login` — Indorama IFZ
 - `ipl.startraven.com/login` — Indorama IPL
 - `copilot.startraven.com` — Block Imaging
 - `admin.startraven.com` — Global admin
-- `admin.ifz.startraven.com` — IFZ-specific admin
+- `admin.ifz.startraven.com` — IFZ-specific admin (user management)
 
 ### Additional Test Accounts (From Mar 20)
 - Admin IFZ: Employee ID `copilot-admin-001`, Password `RavenTesting@123`
