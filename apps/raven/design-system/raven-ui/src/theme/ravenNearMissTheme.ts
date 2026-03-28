@@ -36,7 +36,7 @@ declare module '@mui/material/Typography' {
 export const ravenNearMissTheme = createTheme({
   palette: {
     primary: {
-      main: '#4A148C',
+      main: '#4B158D',
       light: '#CE93D8',
       dark: '#311B92',
       contrastText: '#FFFFFF',
