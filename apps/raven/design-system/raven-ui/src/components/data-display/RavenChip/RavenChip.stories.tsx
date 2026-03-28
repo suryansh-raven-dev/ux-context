@@ -1,11 +1,11 @@
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CheckCircleIcon from '@mui/icons-material/CheckCircleRounded';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { RavenChip } from './RavenChip';
 
 export default {
-  title: 'Data display/RavenChip',
+  title: 'Components/Data Display/Chip',
   component: RavenChip,
   tags: ['autodocs'],
 } satisfies Meta<typeof RavenChip>;

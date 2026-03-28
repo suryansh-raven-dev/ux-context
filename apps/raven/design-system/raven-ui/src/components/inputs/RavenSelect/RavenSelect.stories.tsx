@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RavenSelect } from './RavenSelect';
 
 const meta: Meta<typeof RavenSelect> = {
-  title: 'Inputs/RavenSelect',
+  title: 'Components/Inputs/Select',
   component: RavenSelect,
   tags: ['autodocs'],
 };

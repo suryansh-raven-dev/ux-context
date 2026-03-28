@@ -2,7 +2,7 @@ import { useId, useState, type ReactNode } from 'react';
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMoreRounded';
 
 import './RecommendationPanel.css';
 

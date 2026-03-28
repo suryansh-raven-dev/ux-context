@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import IconButton from '@mui/material/IconButton';
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNoneRounded';
 
 import { MobileAppShell } from './MobileAppShell';
 
 export default {
-  title: 'Layout/MobileAppShell',
+  title: 'Layout/Mobile App Shell',
   component: MobileAppShell,
 } satisfies Meta<typeof MobileAppShell>;
 

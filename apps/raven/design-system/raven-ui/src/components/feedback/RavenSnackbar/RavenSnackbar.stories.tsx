@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Button from '@mui/material/Button';
 import { RavenSnackbar } from './RavenSnackbar';
 
 const meta: Meta<typeof RavenSnackbar> = {
-  title: 'Feedback/RavenSnackbar',
+  title: 'Components/Feedback/Snackbar',
   component: RavenSnackbar,
   tags: ['autodocs'],
 };

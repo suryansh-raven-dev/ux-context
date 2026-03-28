@@ -1,7 +1,7 @@
-import AddIcon from '@mui/icons-material/Add';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import EditIcon from '@mui/icons-material/Edit';
-import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/AddRounded';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForwardRounded';
+import EditIcon from '@mui/icons-material/EditRounded';
+import RemoveIcon from '@mui/icons-material/RemoveRounded';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 

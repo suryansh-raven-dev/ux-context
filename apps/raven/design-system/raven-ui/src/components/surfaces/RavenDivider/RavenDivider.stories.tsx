@@ -3,12 +3,12 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { RavenDivider } from './RavenDivider';
 
 const meta: Meta<typeof RavenDivider> = {
-  title: 'Surfaces/RavenDivider',
+  title: 'Components/Data Display/Divider',
   component: RavenDivider,
   tags: ['autodocs'],
 };

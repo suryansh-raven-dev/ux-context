@@ -1,7 +1,7 @@
 import { useId, useState, type MouseEvent } from 'react';
 
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import FileDownload from '@mui/icons-material/FileDownload';
+import ExpandMore from '@mui/icons-material/ExpandMoreRounded';
+import FileDownload from '@mui/icons-material/FileDownloadRounded';
 import { Button, Menu, MenuItem } from '@mui/material';
 
 import './ExportButton.css';

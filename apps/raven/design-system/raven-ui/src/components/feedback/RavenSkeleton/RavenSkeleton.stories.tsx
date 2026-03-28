@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Box from '@mui/material/Box';
 import { RavenSkeleton } from './RavenSkeleton';
 
 const meta: Meta<typeof RavenSkeleton> = {
-  title: 'Feedback/RavenSkeleton',
+  title: 'Components/Feedback/Skeleton',
   component: RavenSkeleton,
   tags: ['autodocs'],
 };

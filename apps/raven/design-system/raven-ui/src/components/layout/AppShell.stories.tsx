@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { AppShell } from './AppShell';
 
 export default {
-  title: 'Layout/AppShell',
+  title: 'Layout/App Shell',
   component: AppShell,
 } satisfies Meta<typeof AppShell>;
 

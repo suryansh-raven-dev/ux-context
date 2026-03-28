@@ -33,6 +33,30 @@ const RAVEN_LOGOS: LogoAsset[] = [
   },
 ];
 
+const ACME_LOGOS: LogoAsset[] = [
+  {
+    name: 'ACME',
+    variant: 'Color — for light backgrounds',
+    filename: 'acme-logo-color.png',
+    src: '/logos/acme-logo-color.png',
+    background: 'light',
+  },
+  {
+    name: 'ACME',
+    variant: 'White — for dark backgrounds',
+    filename: 'acme-logo-white.png',
+    src: '/logos/acme-logo-white.png',
+    background: 'dark',
+  },
+  {
+    name: 'ACME',
+    variant: 'White — on brand gradient',
+    filename: 'acme-logo-white.png',
+    src: '/logos/acme-logo-white.png',
+    background: 'purple',
+  },
+];
+
 const INDORAMA_LOGOS: LogoAsset[] = [
   {
     name: 'Indorama',
@@ -103,6 +127,18 @@ export const BrandLogos: React.FC = () => {
         <div className="raven-brand-logos__grid">
           {RAVEN_LOGOS.map((logo, i) => (
             <LogoCard key={`raven-${i}`} logo={logo} />
+          ))}
+        </div>
+      </div>
+
+      <div className="raven-brand-logos__section">
+        <h2 className="raven-brand-logos__section-title">ACME Logos</h2>
+        <p className="raven-brand-logos__section-desc">
+          The ACME corporate logo. Use the color version on light backgrounds and the white version on dark or gradient backgrounds.
+        </p>
+        <div className="raven-brand-logos__grid">
+          {ACME_LOGOS.map((logo, i) => (
+            <LogoCard key={`acme-${i}`} logo={logo} />
           ))}
         </div>
       </div>

@@ -1,5 +1,5 @@
-import ChevronLeft from '@mui/icons-material/ChevronLeft';
-import ChevronRight from '@mui/icons-material/ChevronRight';
+import ChevronLeft from '@mui/icons-material/ChevronLeftRounded';
+import ChevronRight from '@mui/icons-material/ChevronRightRounded';
 import { Box, Chip, IconButton, Stack, Typography } from '@mui/material';
 
 import './BreadcrumbNav.css';

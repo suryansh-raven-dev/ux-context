@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { MuiV6Catalog } from './MuiV6Catalog';
 
 const meta: Meta<typeof MuiV6Catalog> = {
-  title: 'Catalog/MUI v6',
+  title: 'Components/All Components',
   component: MuiV6Catalog,
   tags: ['autodocs'],
   parameters: {

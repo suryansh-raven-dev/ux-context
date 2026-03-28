@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { OrgSwitchDropdown } from './OrgSwitchDropdown';
 
 export default {
-  title: 'Navigation/OrgSwitchDropdown',
+  title: 'Navigation/Org Switch Dropdown',
   component: OrgSwitchDropdown,
 } satisfies Meta<typeof OrgSwitchDropdown>;
 

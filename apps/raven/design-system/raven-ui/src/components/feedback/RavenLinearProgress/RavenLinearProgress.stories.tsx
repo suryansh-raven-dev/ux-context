@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RavenLinearProgress } from './RavenLinearProgress';
 
 const meta: Meta<typeof RavenLinearProgress> = {
-  title: 'Feedback/RavenLinearProgress',
+  title: 'Components/Feedback/Linear Progress',
   component: RavenLinearProgress,
   tags: ['autodocs'],
 };

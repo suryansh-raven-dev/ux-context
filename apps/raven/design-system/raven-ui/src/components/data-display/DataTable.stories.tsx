@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { DataTable, StatusCell } from './DataTable';
 
@@ -17,7 +17,7 @@ const sampleRows: Row[] = [
 ];
 
 export default {
-  title: 'Data display/DataTable',
+  title: 'Components/Data Display/Table',
   component: DataTable<Row>,
 } satisfies Meta<typeof DataTable<Row>>;
 

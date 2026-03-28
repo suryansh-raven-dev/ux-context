@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { RavenAvatar } from './RavenAvatar';
 
 export default {
-  title: 'Data display/RavenAvatar',
+  title: 'Components/Data Display/Avatar',
   component: RavenAvatar,
   tags: ['autodocs'],
 } satisfies Meta<typeof RavenAvatar>;

@@ -1,5 +1,5 @@
-import ArrowUpward from '@mui/icons-material/ArrowUpward';
-import AttachFile from '@mui/icons-material/AttachFile';
+import ArrowUpward from '@mui/icons-material/ArrowUpwardRounded';
+import AttachFile from '@mui/icons-material/AttachFileRounded';
 import { Box, IconButton, InputBase, Typography } from '@mui/material';
 
 import './CommentInput.css';

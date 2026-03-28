@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { FilterControls } from './FilterControls';
 
 export default {
-  title: 'Forms/FilterControls',
+  title: 'Forms/Filter Controls',
   component: FilterControls,
 } satisfies Meta<typeof FilterControls>;
 

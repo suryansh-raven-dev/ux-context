@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { RavenPagination } from './RavenPagination';
 
 const meta: Meta<typeof RavenPagination> = {
-  title: 'Navigation/RavenPagination',
+  title: 'Components/Navigation/Pagination',
   component: RavenPagination,
   tags: ['autodocs'],
 };

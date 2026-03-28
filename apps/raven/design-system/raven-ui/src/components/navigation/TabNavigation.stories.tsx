@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { TabNavigation } from './TabNavigation';
 
 export default {
-  title: 'Navigation/TabNavigation',
+  title: 'Components/Navigation/Tabs',
   component: TabNavigation,
 } satisfies Meta<typeof TabNavigation>;
 

@@ -1,13 +1,13 @@
-import InboxIcon from '@mui/icons-material/Inbox';
-import ReportIcon from '@mui/icons-material/Report';
-import StarIcon from '@mui/icons-material/Star';
+import InboxIcon from '@mui/icons-material/InboxRounded';
+import ReportIcon from '@mui/icons-material/ReportRounded';
+import StarIcon from '@mui/icons-material/StarRounded';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { RavenList } from './RavenList';
 
 export default {
-  title: 'Data display/RavenList',
+  title: 'Components/Data Display/List',
   component: RavenList,
   tags: ['autodocs'],
 } satisfies Meta<typeof RavenList>;

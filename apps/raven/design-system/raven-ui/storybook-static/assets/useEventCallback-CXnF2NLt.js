@@ -1,1 +1,0 @@
-import{r as t}from"./index-Dx_1l3Sb.js";import{u as c}from"./useEnhancedEffect-CioLkZex.js";function o(r){const e=t.useRef(r);return c(()=>{e.current=r}),t.useRef((...u)=>(0,e.current)(...u)).current}export{o as u};

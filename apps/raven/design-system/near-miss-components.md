@@ -98,34 +98,46 @@ palette: {
 
 #### Type Scale
 
-| Figma Style | Size | Weight | Line Height | Letter Spacing | MUI v6 Variant |
-|------------|------|--------|-------------|----------------|----------------|
-| `Product Typography/h4` | 34px | 600 (SemiBold) | 40px | 0.25px | `typography.h4` |
-| `Product Typography/h6` | 20px | 600 (SemiBold) | 32px | 0.15px | `typography.h6` |
-| `Product Typography/body-1` | 16px | 400 (Regular) | 1.75 (28px) | 0.15px | `typography.body1` |
-| `Product Typography/body-1-bold` | 16px | 600 (SemiBold) | 1.75 (28px) | 0.15px | Custom: `typography.body1Bold` |
-| `Product Typography/body-2` | 14px | 400 (Regular) | 20px | 0.25px | `typography.body2` |
-| `Product Typography/subtitle-2` | 14px | 400 (Regular) | 22px | 0.1px | `typography.subtitle2` |
-| `Product Typography/button-large` | 15px | 600 (SemiBold) | 100% | 0.46px | Tab labels, large buttons |
-| `Product Typography/button-medium` | 14px | 500 (Medium) | 24px | 0.4px | `typography.button` |
-| `Product Typography/caption` | 12px | 400 (Regular) | 100% | 0.4px | `typography.caption` |
-| `Product Typography/overline` | 12px | 600 (SemiBold) | 32px | 2px (uppercase) | `typography.overline` |
-| `Product Typography/Label-Text` | 13px | 500 (Medium) | 18px | 0.16px | Input label text |
-| `Product Typography/tabel header` | 14px | 600 (SemiBold) | 100% | 0.17px | Custom: `typography.tableHeader` |
+| Figma Style | Size | Weight | Line Height | Letter Spacing | MUI v6 Variant | Raven Component |
+|------------|------|--------|-------------|----------------|----------------|----------------|
+| — | 96px | 300 (Light) | 1.167 | -1.5px | `typography.h1` | `RavenTypography variant="h1"` |
+| — | 60px | 300 (Light) | 1.2 | -0.5px | `typography.h2` | `RavenTypography variant="h2"` |
+| — | 48px | 400 (Regular) | 1.167 | 0 | `typography.h3` | `RavenTypography variant="h3"` |
+| `Product Typography/h4` | 34px | 600 (SemiBold) | 40px | 0.25px | `typography.h4` | `RavenTypography variant="h4"` |
+| — | 24px | 600 (SemiBold) | 32px | 0 | `typography.h5` | `RavenTypography variant="h5"` |
+| `Product Typography/h6` | 20px | 600 (SemiBold) | 32px | 0.15px | `typography.h6` | `RavenTypography variant="h6"` |
+| — | 16px | 400 (Regular) | 1.75 | 0.15px | `typography.subtitle1` | `RavenTypography variant="subtitle1"` |
+| `Product Typography/subtitle-2` | 14px | 400 (Regular) | 22px | 0.1px | `typography.subtitle2` | `RavenTypography variant="subtitle2"` |
+| `Product Typography/body-1` | 16px | 400 (Regular) | 1.75 (28px) | 0.15px | `typography.body1` | `RavenTypography variant="body1"` |
+| `Product Typography/body-1-bold` | 16px | 600 (SemiBold) | 1.75 (28px) | 0.15px | Custom: `typography.body1Bold` | `RavenTypography variant="body1Bold"` |
+| `Product Typography/body-2` | 14px | 400 (Regular) | 20px | 0.25px | `typography.body2` | `RavenTypography variant="body2"` |
+| `Product Typography/button-large` | 15px | 600 (SemiBold) | 100% | 0.46px | Tab labels, large buttons | — |
+| `Product Typography/button-medium` | 14px | 500 (Medium) | 24px | 0.4px | `typography.button` | `RavenTypography variant="button"` |
+| `Product Typography/caption` | 12px | 400 (Regular) | 100% | 0.4px | `typography.caption` | `RavenTypography variant="caption"` |
+| `Product Typography/overline` | 12px | 600 (SemiBold) | 32px | 2px (uppercase) | `typography.overline` | `RavenTypography variant="overline"` |
+| `Product Typography/Label-Text` | 13px | 500 (Medium) | 18px | 0.16px | Input label text | — |
+| `Product Typography/tabel header` | 14px | 600 (SemiBold) | 100% | 0.17px | Custom: `typography.tableHeader` | `RavenTypography variant="tableHeader"` |
 
 MUI v6 typography config:
 
 ```typescript
 typography: {
   fontFamily: '"Source Sans 3", "Roboto", "Helvetica", "Arial", sans-serif',
+  h1: { fontSize: '6rem', fontWeight: 300, lineHeight: 1.167, letterSpacing: '-1.5px' },
+  h2: { fontSize: '3.75rem', fontWeight: 300, lineHeight: 1.2, letterSpacing: '-0.5px' },
+  h3: { fontSize: '3rem', fontWeight: 400, lineHeight: 1.167, letterSpacing: '0' },
   h4: { fontSize: '2.125rem', fontWeight: 600, lineHeight: '40px', letterSpacing: '0.25px' },
+  h5: { fontSize: '1.5rem', fontWeight: 600, lineHeight: '32px', letterSpacing: '0' },
   h6: { fontSize: '1.25rem', fontWeight: 600, lineHeight: '32px', letterSpacing: '0.15px' },
-  body1: { fontSize: '1rem', fontWeight: 400, lineHeight: 1.75, letterSpacing: '0.15px' },
-  body2: { fontSize: '0.875rem', fontWeight: 400, lineHeight: '20px', letterSpacing: '0.25px' },
+  subtitle1: { fontSize: '1rem', fontWeight: 400, lineHeight: 1.75, letterSpacing: '0.15px' },
   subtitle2: { fontSize: '0.875rem', fontWeight: 400, lineHeight: '22px', letterSpacing: '0.1px' },
+  body1: { fontSize: '1rem', fontWeight: 400, lineHeight: 1.75, letterSpacing: '0.15px' },
+  body1Bold: { fontSize: '1rem', fontWeight: 600, lineHeight: 1.75, letterSpacing: '0.15px' },
+  body2: { fontSize: '0.875rem', fontWeight: 400, lineHeight: '20px', letterSpacing: '0.25px' },
   button: { fontSize: '0.875rem', fontWeight: 500, lineHeight: '24px', letterSpacing: '0.4px', textTransform: 'uppercase' },
   caption: { fontSize: '0.75rem', fontWeight: 400, lineHeight: 1, letterSpacing: '0.4px' },
   overline: { fontSize: '0.75rem', fontWeight: 600, lineHeight: '32px', letterSpacing: '2px', textTransform: 'uppercase' },
+  tableHeader: { fontFamily: '"Source Sans 3", sans-serif', fontSize: '0.875rem', fontWeight: 600, lineHeight: 1, letterSpacing: '0.17px' },
 }
 ```
 
@@ -154,9 +166,61 @@ The design uses a **4px base unit**. Common spacing values observed across all s
 
 ### 1.5 Shadows / Elevation
 
+The Raven theme includes the full MUI v6 `shadows` array (25 levels, 0–24) defined explicitly in `ravenNearMissTheme.ts`. Each shadow is a composite of three layers following the [Material Design elevation spec](https://m2.material.io/design/environment/elevation.html): **umbra** (opacity 0.2), **penumbra** (opacity 0.14), and **ambient** (opacity 0.12).
+
+#### Complete `theme.shadows` Array (MUI v6)
+
+| Index | CSS `box-shadow` Value |
+|-------|------------------------|
+| `shadows[0]` | `none` |
+| `shadows[1]` | `0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)` |
+| `shadows[2]` | `0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)` |
+| `shadows[3]` | `0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12)` |
+| `shadows[4]` | `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)` |
+| `shadows[5]` | `0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0,0,0,0.14), 0px 1px 14px 0px rgba(0,0,0,0.12)` |
+| `shadows[6]` | `0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)` |
+| `shadows[7]` | `0px 4px 5px -2px rgba(0,0,0,0.2), 0px 7px 10px 1px rgba(0,0,0,0.14), 0px 2px 16px 1px rgba(0,0,0,0.12)` |
+| `shadows[8]` | `0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)` |
+| `shadows[9]` | `0px 5px 6px -3px rgba(0,0,0,0.2), 0px 9px 12px 1px rgba(0,0,0,0.14), 0px 3px 16px 2px rgba(0,0,0,0.12)` |
+| `shadows[10]` | `0px 6px 6px -3px rgba(0,0,0,0.2), 0px 10px 14px 1px rgba(0,0,0,0.14), 0px 4px 18px 3px rgba(0,0,0,0.12)` |
+| `shadows[11]` | `0px 6px 7px -4px rgba(0,0,0,0.2), 0px 11px 15px 1px rgba(0,0,0,0.14), 0px 4px 20px 3px rgba(0,0,0,0.12)` |
+| `shadows[12]` | `0px 7px 8px -4px rgba(0,0,0,0.2), 0px 12px 17px 2px rgba(0,0,0,0.14), 0px 5px 22px 4px rgba(0,0,0,0.12)` |
+| `shadows[13]` | `0px 7px 8px -4px rgba(0,0,0,0.2), 0px 13px 19px 2px rgba(0,0,0,0.14), 0px 5px 24px 4px rgba(0,0,0,0.12)` |
+| `shadows[14]` | `0px 7px 9px -4px rgba(0,0,0,0.2), 0px 14px 21px 2px rgba(0,0,0,0.14), 0px 5px 26px 4px rgba(0,0,0,0.12)` |
+| `shadows[15]` | `0px 8px 9px -5px rgba(0,0,0,0.2), 0px 15px 22px 2px rgba(0,0,0,0.14), 0px 6px 28px 5px rgba(0,0,0,0.12)` |
+| `shadows[16]` | `0px 8px 10px -5px rgba(0,0,0,0.2), 0px 16px 24px 2px rgba(0,0,0,0.14), 0px 6px 30px 5px rgba(0,0,0,0.12)` |
+| `shadows[17]` | `0px 8px 11px -5px rgba(0,0,0,0.2), 0px 17px 26px 2px rgba(0,0,0,0.14), 0px 6px 32px 5px rgba(0,0,0,0.12)` |
+| `shadows[18]` | `0px 9px 11px -5px rgba(0,0,0,0.2), 0px 18px 28px 2px rgba(0,0,0,0.14), 0px 7px 34px 6px rgba(0,0,0,0.12)` |
+| `shadows[19]` | `0px 9px 12px -6px rgba(0,0,0,0.2), 0px 19px 29px 2px rgba(0,0,0,0.14), 0px 7px 36px 6px rgba(0,0,0,0.12)` |
+| `shadows[20]` | `0px 10px 13px -6px rgba(0,0,0,0.2), 0px 20px 31px 3px rgba(0,0,0,0.14), 0px 8px 38px 7px rgba(0,0,0,0.12)` |
+| `shadows[21]` | `0px 10px 13px -6px rgba(0,0,0,0.2), 0px 21px 33px 3px rgba(0,0,0,0.14), 0px 8px 40px 7px rgba(0,0,0,0.12)` |
+| `shadows[22]` | `0px 10px 14px -6px rgba(0,0,0,0.2), 0px 22px 35px 3px rgba(0,0,0,0.14), 0px 8px 42px 7px rgba(0,0,0,0.12)` |
+| `shadows[23]` | `0px 11px 14px -7px rgba(0,0,0,0.2), 0px 23px 36px 3px rgba(0,0,0,0.14), 0px 9px 44px 8px rgba(0,0,0,0.12)` |
+| `shadows[24]` | `0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12)` |
+
+#### Component Elevation Mapping
+
+| Component | State | Shadow Index | Source |
+|-----------|-------|-------------|--------|
+| Contained Button | rest | `shadows[2]` | `MuiButton.contained` |
+| Contained Button | hover | `shadows[4]` | `MuiButton.contained:hover` |
+| Contained Button | focus-visible | `shadows[6]` | `MuiButton.contained.Mui-focusVisible` |
+| Contained Button | active/pressed | `shadows[8]` | `MuiButton.contained:active` |
+| Contained Button | disabled | `shadows[0]` | `MuiButton.contained.Mui-disabled` |
+| Text Button | all states | `shadows[0]` | `MuiButton.text` |
+| Outlined Button | all states | `shadows[0]` | `MuiButton.outlined` |
+| FAB | rest | `shadows[6]` | `MuiFab.root` |
+| FAB | hover / active / focus | `shadows[12]` | `MuiFab.root:hover` |
+| FAB | disabled | `shadows[0]` | `MuiFab.root.Mui-disabled` |
+| Paper | default | `shadows[1]` | `<Paper elevation={1}>` |
+| Card | default | `shadows[1]` | `<Card>` inherits Paper |
+| Drawer | default | `shadows[16]` | `<Drawer>` |
+| Dialog | default | `shadows[24]` | `<Dialog>` |
+
+#### Custom (Non-MUI) Elevation Tokens
+
 | Token | CSS Value | Usage |
 |-------|-----------|-------|
-| `elevation/2` | `0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px rgba(0,0,0,0.14), 0px 1px 5px rgba(0,0,0,0.12)` | Summary cards, table containers |
 | `elevation/drawer` | `0px 9px 46px rgba(0,0,0,0.12), 0px 24px 38px rgba(0,0,0,0.14), 0px 11px 15px rgba(0,0,0,0.2)` | Activity Drawer |
 | `elevation/toggle` | `0px 2px 16px rgba(74,20,140,0.12)` | View toggle container (brand-tinted shadow) |
 
@@ -1431,6 +1495,500 @@ export function ExportButton({ onExport }: ExportButtonProps) {
 
 ---
 
+### 2.16 RavenButton (MUI v6 Button — Raven Styled)
+
+**Source**: [MUI v6 Button](https://v6.mui.com/material-ui/react-button/) + [Button API](https://v6.mui.com/material-ui/api/button/)
+**Raven Support**: `Raven component available`
+**Component path**: `raven-ui/src/components/inputs/RavenButton/`
+
+Buttons allow users to take actions and make choices with a single tap. In the Raven Near-Miss design system, buttons appear throughout the UI in modal windows, forms, cards, toolbars, page headers, and the sidebar navigation.
+
+---
+
+#### 2.16.1 Design Tokens Applied
+
+| MUI Default | Raven Override | Token |
+|---|---|---|
+| `borderRadius: 4px` | `borderRadius: 50px` | `radius.pill` |
+| `fontFamily: Roboto` | `fontFamily: "Source Sans 3"` | `typography.fontFamily` |
+| `textTransform: uppercase` | `textTransform: uppercase` | *(kept)* |
+| `fontSize (medium): 14px` | `fontSize: 14px, fontWeight: 500` | `typography.button` |
+| `fontSize (large): 15px` | `fontSize: 15px, fontWeight: 600` | `typography.button-large` |
+| `letterSpacing: 0.4px` | `letterSpacing: 0.4px` | *(kept)* |
+| `primary.main: #1976d2` | `primary.main: #4A148C` | `palette.primary.main` |
+| `primary.light: #42a5f5` | `primary.light: #CE93D8` | `palette.primary.light` |
+| `primary.dark: #1565c0` | `primary.dark: #311B92` | `palette.primary.dark` |
+| `primary.contrastText: #fff` | `primary.contrastText: #FFFFFF` | *(kept)* |
+| Hover bg (contained) | `#6A1B9A` | `purple.800` |
+| Hover bg (text/outlined) | `#F3E5F5` | `purple.100` |
+| Outlined border | `#CE93D8` | `purple.300` |
+
+##### Elevation / Box Shadow (MUI v6 shadows)
+
+Contained buttons use Material Design elevation. Text and outlined buttons have no elevation. These follow the MUI v6 default `theme.shadows` array (sourced from [material-components-web](https://github.com/material-components/material-components-web)):
+
+| State | Elevation | CSS `box-shadow` |
+|---|---|---|
+| **Contained — rest** | 2 | `0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)` |
+| **Contained — hover** | 4 | `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)` |
+| **Contained — active/pressed** | 8 | `0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)` |
+| **Contained — focus-visible** | 6 | `0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)` |
+| **Contained — disabled** | 0 | `none` |
+| **Text / Outlined — all states** | 0 | `none` |
+| **disableElevation — all states** | 0 | `none` |
+
+Each MUI shadow is a composite of three layers (umbra `0.2`, penumbra `0.14`, ambient `0.12`) following the [Material Design elevation spec](https://m2.material.io/design/environment/elevation.html).
+
+The full MUI v6 shadows array provides 25 levels (0–24). Button-relevant levels:
+
+```
+shadows[0]  = 'none'
+shadows[2]  = '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)'
+shadows[4]  = '0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)'
+shadows[6]  = '0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)'
+shadows[8]  = '0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)'
+```
+
+---
+
+#### 2.16.2 Basic Button
+
+The `RavenButton` component comes with three variants: **text** (default), **contained**, and **outlined**. All variants use the pill border-radius (50px) and uppercase labels.
+
+```tsx
+import { RavenButton } from './components/inputs/RavenButton/RavenButton';
+
+// Three variants
+<RavenButton variant="text">Text</RavenButton>
+<RavenButton variant="contained">Contained</RavenButton>
+<RavenButton variant="outlined">Outlined</RavenButton>
+```
+
+**Text Button** — Used for less-pronounced actions: in-dialog actions, card secondary actions, export controls. Text buttons in Raven use `#4A148C` (purple.900) text color with a `#F3E5F5` hover background.
+
+```tsx
+<RavenButton variant="text">Primary</RavenButton>
+<RavenButton variant="text" disabled>Disabled</RavenButton>
+<RavenButton variant="text" href="#text-buttons">Link</RavenButton>
+```
+
+**Contained Button** — High-emphasis buttons for primary CTAs: "Report Incident", "Submit", navigation CTAs. Uses `#4A148C` fill with white text and `#6A1B9A` hover. Elevation can be removed with `disableElevation`.
+
+```tsx
+<RavenButton variant="contained">Contained</RavenButton>
+<RavenButton variant="contained" disabled>Disabled</RavenButton>
+<RavenButton variant="contained" disableElevation>No Elevation</RavenButton>
+```
+
+**Outlined Button** — Medium-emphasis for secondary actions: "Clear All", filter controls. Uses `#CE93D8` border, `#4A148C` text, and `#F3E5F5` hover fill.
+
+```tsx
+<RavenButton variant="outlined">Primary</RavenButton>
+<RavenButton variant="outlined" disabled>Disabled</RavenButton>
+```
+
+---
+
+#### 2.16.3 Colors
+
+Raven supports all MUI semantic colors mapped to the Near-Miss palette:
+
+| Color | Main Hex | Usage in Raven |
+|---|---|---|
+| `primary` | `#4A148C` | Default CTAs, sidebar nav, report incident button |
+| `secondary` | `#4A148C` | Form submit, export buttons (same as primary in Raven) |
+| `success` | `#4CAF50` | Closed/completed status actions, "Added" confirmations |
+| `error` | `#F44336` | "Clear All", delete/destructive actions, "Removed" confirmations |
+| `warning` | `#FF9800` | Warning-level action states |
+| `info` | `#0288D1` | Information-level CTAs, investigation actions |
+| `inherit` | *(current color)* | When button inherits parent text color |
+
+```tsx
+<RavenButton color="secondary">Secondary</RavenButton>
+<RavenButton variant="contained" color="success">Success</RavenButton>
+<RavenButton variant="outlined" color="error">Error</RavenButton>
+```
+
+---
+
+#### 2.16.4 Sizes
+
+Three sizes are available via the `size` prop, each with Raven-specific padding:
+
+| Size | Font Size | Font Weight | Padding | Usage |
+|---|---|---|---|---|
+| `small` | 13px | 500 | `4px 12px` | Inline actions, table row actions |
+| `medium` | 14px | 500 | `6px 20px` | Standard CTAs (default) |
+| `large` | 15px | 600 | `8px 28px` | Form action groups, primary page CTAs |
+
+```tsx
+<RavenButton variant="contained" size="small">Small</RavenButton>
+<RavenButton variant="contained" size="medium">Medium</RavenButton>
+<RavenButton variant="contained" size="large">Large</RavenButton>
+```
+
+---
+
+#### 2.16.5 Buttons with Icons and Label
+
+Use `startIcon` and `endIcon` props to add icons to buttons. Raven patterns observed across the Figma screens:
+
+| Pattern | Icon Position | Example |
+|---|---|---|
+| Report Incident CTA | `startIcon={<AddCircle />}` | Sidebar navigation |
+| Submit button | `startIcon={<Done />}` | Form action group |
+| Export button | `startIcon={<FileDownload />}` | Page header |
+| Send action | `endIcon={<Send />}` | Communication flows |
+
+```tsx
+<RavenButton variant="outlined" startIcon={<DeleteIcon />}>Delete</RavenButton>
+<RavenButton variant="contained" endIcon={<SendIcon />}>Send</RavenButton>
+<RavenButton variant="contained" startIcon={<DoneIcon />} color="secondary">Submit</RavenButton>
+```
+
+---
+
+#### 2.16.6 Icon Button (RavenIconButton)
+
+`RavenIconButton` wraps MUI `IconButton` with Raven styling and adds a `loading` convenience prop. Icon buttons in Raven commonly appear in app bars, toolbars, page headers (back navigation), table rows (chevron), and drawer close controls.
+
+```tsx
+import { RavenIconButton } from './components/inputs/RavenButton/RavenButton';
+
+<RavenIconButton aria-label="delete"><DeleteIcon /></RavenIconButton>
+<RavenIconButton aria-label="alarm" color="secondary"><AlarmIcon /></RavenIconButton>
+<RavenIconButton aria-label="delete" disabled color="primary"><DeleteIcon /></RavenIconButton>
+```
+
+**Sizes**: Uses MUI `size` prop — `small`, `medium`, `large`.
+
+```tsx
+<RavenIconButton size="small" aria-label="delete"><DeleteIcon fontSize="inherit" /></RavenIconButton>
+<RavenIconButton size="medium" aria-label="delete"><DeleteIcon /></RavenIconButton>
+<RavenIconButton size="large" aria-label="delete"><DeleteIcon fontSize="inherit" /></RavenIconButton>
+```
+
+**Colors**: Accepts all MUI color tokens. Default color in Raven is `rgba(0,0,0,0.6)` with `#F3E5F5` hover background.
+
+```tsx
+<RavenIconButton color="primary" aria-label="fingerprint"><FingerprintIcon /></RavenIconButton>
+<RavenIconButton color="success" aria-label="fingerprint"><FingerprintIcon /></RavenIconButton>
+<RavenIconButton color="error" aria-label="fingerprint"><FingerprintIcon /></RavenIconButton>
+```
+
+**Loading state**: The `loading` prop replaces the icon with a `CircularProgress` spinner and disables the button.
+
+```tsx
+<RavenIconButton loading={isLoading} aria-label="cart"><ShoppingCartIcon /></RavenIconButton>
+```
+
+**With Badge**: Combine with MUI `Badge` for notification counts.
+
+```tsx
+<RavenIconButton aria-label="cart">
+  <Badge badgeContent={2} color="primary" overlap="circular">
+    <ShoppingCartIcon fontSize="small" />
+  </Badge>
+</RavenIconButton>
+```
+
+---
+
+#### 2.16.7 File Upload
+
+Turn a button into a file upload control using `component="label"`:
+
+```tsx
+<RavenButton
+  component="label"
+  role={undefined}
+  variant="contained"
+  tabIndex={-1}
+  startIcon={<CloudUploadIcon />}
+>
+  Upload files
+  <input type="file" hidden multiple />
+</RavenButton>
+```
+
+---
+
+#### 2.16.8 Loading State (v6.4.0+)
+
+MUI v6.4.0 introduced the `loading` prop for `Button`. Raven supports all loading positions:
+
+| Prop | Default | Description |
+|---|---|---|
+| `loading` | `null` | When `true`, disables the button and shows loading indicator |
+| `loadingIndicator` | `<CircularProgress />` | Custom loading indicator node |
+| `loadingPosition` | `'center'` | `'start'` \| `'center'` \| `'end'` |
+
+```tsx
+<RavenButton variant="outlined" loading={true}>Submit</RavenButton>
+<RavenButton variant="contained" loading={true} loadingIndicator="Loading…">Fetch data</RavenButton>
+<RavenButton variant="contained" loading={true} loadingPosition="start" startIcon={<SaveIcon />}>Save</RavenButton>
+<RavenButton variant="contained" loading={true} loadingPosition="end" endIcon={<SendIcon />}>Send</RavenButton>
+```
+
+**Important**: The `loading` value should always be `null` or `boolean`. Avoid conditional spreading like `{...(isFetching && { loading: true })}` as it can cause Google Translation crashes.
+
+---
+
+#### 2.16.9 Full Width
+
+Use `fullWidth` to make the button span the entire container width:
+
+```tsx
+<RavenButton variant="contained" fullWidth>Full width</RavenButton>
+<RavenButton variant="outlined" fullWidth>Full width</RavenButton>
+```
+
+---
+
+#### 2.16.10 Complete Props Reference
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `children` | `node` | — | Button label content |
+| `variant` | `'text' \| 'contained' \| 'outlined'` | `'text'` | Visual style variant |
+| `color` | `'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' \| 'info' \| 'inherit'` | `'primary'` | Palette color |
+| `size` | `'small' \| 'medium' \| 'large'` | `'medium'` | Component size |
+| `disabled` | `bool` | `false` | Disables the button |
+| `disableElevation` | `bool` | `false` | Removes box-shadow from contained |
+| `disableFocusRipple` | `bool` | `false` | Disables keyboard focus ripple |
+| `disableRipple` | `bool` | `false` | Disables click ripple effect |
+| `startIcon` | `node` | — | Icon placed before children |
+| `endIcon` | `node` | — | Icon placed after children |
+| `fullWidth` | `bool` | `false` | Expands to container width |
+| `href` | `string` | — | Renders as `<a>` element |
+| `loading` | `bool \| null` | `null` | Shows loading indicator (v6.4.0+) |
+| `loadingIndicator` | `node` | `<CircularProgress />` | Custom loading element |
+| `loadingPosition` | `'start' \| 'center' \| 'end'` | `'center'` | Loading indicator placement |
+| `component` | `elementType` | — | Root component override (e.g., `'label'` for file upload) |
+| `sx` | `object \| array \| func` | — | MUI system prop for inline overrides |
+
+Props from `ButtonBase` are also available (e.g., `onClick`, `onFocus`, `tabIndex`).
+
+---
+
+#### 2.16.11 CSS Classes Reference
+
+Key CSS classes applied by the Raven-styled button:
+
+| Class | Applied when |
+|---|---|
+| `.raven-button` | Always (root class for RavenButton) |
+| `.raven-icon-button` | Always (root class for RavenIconButton) |
+| `.MuiButton-text` | `variant="text"` |
+| `.MuiButton-contained` | `variant="contained"` |
+| `.MuiButton-outlined` | `variant="outlined"` |
+| `.MuiButton-sizeSmall` | `size="small"` |
+| `.MuiButton-sizeMedium` | `size="medium"` |
+| `.MuiButton-sizeLarge` | `size="large"` |
+| `.MuiButton-colorPrimary` | `color="primary"` |
+| `.MuiButton-colorSecondary` | `color="secondary"` |
+| `.MuiButton-colorSuccess` | `color="success"` |
+| `.MuiButton-colorError` | `color="error"` |
+| `.MuiButton-disableElevation` | `disableElevation={true}` |
+| `.MuiButton-fullWidth` | `fullWidth={true}` |
+| `.MuiButton-startIcon` | When `startIcon` is supplied |
+| `.MuiButton-endIcon` | When `endIcon` is supplied |
+| `.MuiButton-loading` | `loading={true}` |
+| `.Mui-disabled` | `disabled={true}` |
+| `.Mui-focusVisible` | Keyboard focus state |
+
+---
+
+#### 2.16.12 Raven Accessibility Notes
+
+- All icon-only buttons (`RavenIconButton`) must include an `aria-label` describing the action.
+- Disabled buttons set `pointer-events: none` — wrap in a `<span>` with `cursor: not-allowed` if the disabled cursor is needed.
+- Loading buttons are automatically `disabled` to prevent double-submission.
+- File upload buttons use `component="label"` with a hidden `<input type="file">` for native file picker access.
+- When a button opens a menu, set `aria-haspopup="true"` and `aria-expanded` to reflect the menu state (see `ExportButton` pattern).
+
+---
+
+#### 2.16.13 Raven Button Usage Patterns (from Figma)
+
+| Pattern | Variant | Color | Size | Icon | Figma Node |
+|---|---|---|---|---|---|
+| Report Incident CTA | `contained` | `primary` | `medium` | `startIcon={<AddCircle />}` | `2202:12232` |
+| Submit (form action) | `contained` | `secondary` | `large` | `startIcon={<Done />}` | `1698:7954` |
+| Save as Draft | `text` | `secondary` | `large` | — | `1698:7954` |
+| Clear All | `outlined` | `error` | `large` | — | `1698:7954` |
+| Export | `text` | `secondary` | `medium` | `startIcon={<FileDownload />}` | `2103:11610` |
+| Back navigation | `IconButton` | `default` | `small` | `<ArrowBackIos />` | `2078:11109` |
+| Drawer close | `IconButton` | `default` | `small` | `<Close />` | `1861:8925` |
+| Table row action | `IconButton` | `default` | `small` | `<ChevronRight />` | `1726:8079` |
+| Timeline expand | `IconButton` | `default` | `small` | `<ExpandMore />` / `<ExpandLess />` | `1861:8925` |
+
+---
+
+#### 2.16.14 Theme Overrides (ravenNearMissTheme)
+
+The full `theme.shadows` array (25 levels, 0–24) is defined in `ravenNearMissTheme.ts` so all MUI components that use elevation — `Paper`, `Card`, `Dialog`, `Drawer`, `Button`, `Fab` — get consistent shadows. Button overrides reference the array by index to stay in sync:
+
+```typescript
+// theme.shadows[0..24] — full MUI v6 elevation array defined in ravenNearMissTheme
+// (see Section 1.5 for the complete values)
+
+components: {
+  MuiButton: {
+    defaultProps: {
+      disableElevation: false,
+    },
+    styleOverrides: {
+      root: { borderRadius: 50, textTransform: 'uppercase' },
+      contained: ({ theme }) => ({
+        boxShadow: theme.shadows[2],              // elevation 2 — rest
+        '&:hover': {
+          boxShadow: theme.shadows[4],             // elevation 4
+        },
+        '&:active': {
+          boxShadow: theme.shadows[8],             // elevation 8
+        },
+        '&.Mui-focusVisible': {
+          boxShadow: theme.shadows[6],             // elevation 6
+        },
+        '&.Mui-disabled': {
+          boxShadow: theme.shadows[0],             // elevation 0
+        },
+      }),
+      text: { boxShadow: 'none' },
+      outlined: { boxShadow: 'none' },
+    },
+  },
+  MuiFab: {
+    styleOverrides: {
+      root: {
+        boxShadow: theme.shadows[6],              // elevation 6 — rest
+        '&:hover':        { boxShadow: theme.shadows[12] },  // elevation 12
+        '&:active':       { boxShadow: theme.shadows[12] },
+        '&.Mui-focusVisible': { boxShadow: theme.shadows[12] },
+        '&.Mui-disabled': { boxShadow: 'none' },
+      },
+    },
+  },
+  MuiIconButton: {
+    styleOverrides: {
+      root: { color: 'rgba(0,0,0,0.6)' },         // no elevation (flat)
+    },
+  },
+}
+```
+
+The `RavenButton` CSS layer adds Source Sans 3, size-specific padding, purple hover states, brand-tinted outlined borders, and mirrors the same elevation shadows for contained buttons. The CSS provides a fallback that works independently of the theme for components rendered outside `ThemeProvider`.
+
+---
+
+#### 2.16.15 Limitations
+
+- **Cursor not-allowed on disabled buttons**: `ButtonBase` sets `pointer-events: none` on disabled buttons. To show a `not-allowed` cursor, wrap the button in a `<span style={{ cursor: 'not-allowed' }}>`.
+- **Third-party routing**: Use the `component` prop to integrate with React Router or Next.js Link components.
+- **Google Translation crash**: Always keep `loading` as `null | boolean`. Never conditionally spread the loading prop.
+
+---
+
+### 2.17 RavenTypography (MUI v6 Typography — Raven Styled)
+
+**MUI v6 source**: [Typography](https://v6.mui.com/material-ui/react-typography/) · [API](https://v6.mui.com/material-ui/api/typography/)
+
+**Raven wrapper**: `RavenTypography` — thin `forwardRef` wrapper around `MuiTypography` that applies the `raven-typography` CSS class and the Raven design system type scale.
+
+**File location**: `src/components/data-display/RavenTypography/`
+- `RavenTypography.tsx` — Component implementation
+- `RavenTypography.css` — Raven CSS overrides
+- `RavenTypography.stories.tsx` — Storybook stories
+- `RavenTypography.test.tsx` — Unit tests
+
+#### Typography Scale (Figma → Raven → MUI v6)
+
+| Figma Style | Raven Variant | Size | Weight | Line Height | Letter Spacing | HTML Element |
+|------------|---------------|------|--------|-------------|----------------|-------------|
+| — | `h1` | 6rem (96px) | 300 (Light) | 1.167 | -1.5px | `<h1>` |
+| — | `h2` | 3.75rem (60px) | 300 (Light) | 1.2 | -0.5px | `<h2>` |
+| — | `h3` | 3rem (48px) | 400 (Regular) | 1.167 | 0 | `<h3>` |
+| `Product Typography/h4` | `h4` | 2.125rem (34px) | 600 (SemiBold) | 40px | 0.25px | `<h4>` |
+| `Product Typography/h5` | `h5` | 1.5rem (24px) | 600 (SemiBold) | 32px | 0 | `<h5>` |
+| `Product Typography/h6` | `h6` | 1.25rem (20px) | 600 (SemiBold) | 32px | 0.15px | `<h6>` |
+| — | `subtitle1` | 1rem (16px) | 400 (Regular) | 1.75 | 0.15px | `<h6>` |
+| `Product Typography/subtitle-2` | `subtitle2` | 0.875rem (14px) | 400 (Regular) | 22px | 0.1px | `<h6>` |
+| `Product Typography/body-1` | `body1` | 1rem (16px) | 400 (Regular) | 1.75 (28px) | 0.15px | `<p>` |
+| `Product Typography/body-1-bold` | `body1Bold` ★ | 1rem (16px) | 600 (SemiBold) | 1.75 (28px) | 0.15px | `<span>` |
+| `Product Typography/body-2` | `body2` | 0.875rem (14px) | 400 (Regular) | 20px | 0.25px | `<p>` |
+| `Product Typography/button-medium` | `button` | 0.875rem (14px) | 500 (Medium) | 24px | 0.4px | `<span>` |
+| `Product Typography/caption` | `caption` | 0.75rem (12px) | 400 (Regular) | 100% | 0.4px | `<span>` |
+| `Product Typography/overline` | `overline` | 0.75rem (12px) | 600 (SemiBold) | 32px | 2px (uppercase) | `<span>` |
+| `Product Typography/tabel header` | `tableHeader` ★ | 0.875rem (14px) | 600 (SemiBold) | 100% | 0.17px | `<span>` |
+
+★ = Custom Raven variant (not in standard MUI Typography)
+
+#### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `RavenTypographyVariant` | `'body1'` | Typography variant from the Raven type scale |
+| `color` | `RavenTypographyColor \| string` | — | Text color: `'primary'`, `'secondary'`, `'success'`, `'error'`, `'info'`, `'warning'`, `'textPrimary'`, `'textSecondary'`, `'textDisabled'` |
+| `align` | `RavenTypographyAlign` | `'inherit'` | Text alignment: `'left'`, `'center'`, `'right'`, `'justify'`, `'inherit'` |
+| `gutterBottom` | `boolean` | `false` | Adds bottom margin for visual separation |
+| `noWrap` | `boolean` | `false` | Truncates text with ellipsis on overflow |
+| `paragraph` | `boolean` | `false` | Adds paragraph-level bottom margin (16px) |
+| `component` | `ElementType` | — | Override the semantic HTML element |
+| `sx` | `SxProps` | — | MUI system styles |
+
+#### Usage in Near-Miss App
+
+```tsx
+import { RavenTypography } from '@raven/ui';
+
+{/* Section headers */}
+<RavenTypography variant="overline" color="primary">
+  Report Information
+</RavenTypography>
+
+{/* Page titles */}
+<RavenTypography variant="h4">Analysis Dashboard</RavenTypography>
+
+{/* Card titles */}
+<RavenTypography variant="h6">Near-Miss Incident Summary</RavenTypography>
+
+{/* Chat messages with emphasis */}
+<RavenTypography variant="body1Bold">Hi Ramesh!</RavenTypography>
+<RavenTypography variant="body1">
+  I'll help you report the near-miss incident.
+</RavenTypography>
+
+{/* Table column headers */}
+<RavenTypography variant="tableHeader">Incident ID</RavenTypography>
+
+{/* Captions and helper text */}
+<RavenTypography variant="caption" color="textSecondary">
+  Last updated: 2 minutes ago
+</RavenTypography>
+
+{/* Accessible heading hierarchy */}
+<RavenTypography variant="h4" component="h1">Page Title</RavenTypography>
+<RavenTypography variant="h5" component="h2">Section</RavenTypography>
+```
+
+#### Design Tokens
+
+- **Font family**: `"Source Sans 3", "Roboto", "Helvetica", "Arial", sans-serif`
+- **Brand color**: `#4A148C` (purple/darken-4) — used for `color="primary"`
+- **Text primary**: `rgba(0,0,0,0.87)`
+- **Text secondary**: `rgba(0,0,0,0.6)`
+- **Text disabled**: `rgba(0,0,0,0.42)`
+
+#### Accessibility
+
+- Use `component` prop to maintain proper heading hierarchy (WCAG 2.0)
+- Use `rem` units for font sizes to respect user browser settings
+- Ensure 4.5:1 color contrast ratio between text and background
+- Do not skip heading levels (h1 → h2 → h3, not h1 → h3)
+
+---
+
 ## Section 3: Page-Level Patterns
 
 ### 3.1 Dashboard Pattern
@@ -2614,7 +3172,7 @@ This appendix aligns the Raven Near Miss design system to the official [Material
 | MUI Name | Guideline | Docs | Raven Mapping | Support |
 |---|---|---|---|---|
 | Autocomplete | No guidelines | [MUI docs](https://v6.mui.com/material-ui/react-autocomplete/) | `RavenAutocomplete` | Raven component available |
-| Button | MD2 | [MUI docs](https://v6.mui.com/material-ui/react-button/) | `MuiButton` under `ravenNearMissTheme` | Raven theme support |
+| Button | MD2 | [MUI docs](https://v6.mui.com/material-ui/react-button/) | `RavenButton` / `RavenIconButton` | Raven component available |
 | Button Group | No guidelines | [MUI docs](https://v6.mui.com/material-ui/react-button-group/) | `MuiButtonGroup` under `ravenNearMissTheme` | Raven theme support |
 | Checkbox | MD2 | [MUI docs](https://v6.mui.com/material-ui/react-checkbox/) | `RavenCheckbox` | Raven component available |
 | Floating Action Button | MD2 | [MUI docs](https://v6.mui.com/material-ui/react-floating-action-button/) | `MuiFab` under `ravenNearMissTheme` | Raven theme support |

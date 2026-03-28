@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Stack from '@mui/material/Stack';
 
 import { ChatBubble } from './ChatBubble';
 
 export default {
-  title: 'Chat/ChatBubble',
+  title: 'Chat/Chat Bubble',
   component: ChatBubble,
 } satisfies Meta<typeof ChatBubble>;
 

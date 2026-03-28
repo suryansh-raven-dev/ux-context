@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RavenSwitch } from './RavenSwitch';
 
 const meta: Meta<typeof RavenSwitch> = {
-  title: 'Inputs/RavenSwitch',
+  title: 'Components/Inputs/Switch',
   component: RavenSwitch,
   tags: ['autodocs'],
 };

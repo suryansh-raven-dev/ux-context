@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIosRounded';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';

@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { BreadcrumbNav } from './BreadcrumbNav';
 
 export default {
-  title: 'Navigation/BreadcrumbNav',
+  title: 'Components/Navigation/Breadcrumbs',
   component: BreadcrumbNav,
 } satisfies Meta<typeof BreadcrumbNav>;
 

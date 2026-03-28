@@ -16,6 +16,16 @@
   color: var(--raven-purple-900);
 }
 
+.raven-text-field .MuiOutlinedInput-notchedOutline legend {
+  font-family: 'Source Sans 3', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: calc(13px * 0.75) !important;
+}
+.raven-text-field .MuiOutlinedInput-notchedOutline legend > span {
+  font-family: 'Source Sans 3', sans-serif !important;
+  font-weight: 500 !important;
+}
+
 .raven-text-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: var(--raven-purple-900);
 }

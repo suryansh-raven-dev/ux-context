@@ -1,49 +1,30 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { RavenCheckbox } from './RavenCheckbox';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
-const meta: Meta<typeof RavenCheckbox> = {
-  title: 'Inputs/RavenCheckbox',
+import { RavenCheckbox } from './RavenCheckbox';
+import { CheckboxDocumentation } from './CheckboxDocsPage';
+
+export default {
+  title: 'Components/Inputs/Checkbox',
+  id: 'components-inputs-checkbox',
   component: RavenCheckbox,
   tags: ['autodocs'],
-};
-export default meta;
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        component:
+          'Raven-styled Checkbox wrapping MUI v6. Uses the Near-Miss purple palette, ' +
+          'Source Sans 3 typography, and brand hover states. ' +
+          'This page mirrors the Material UI Checkbox documentation—' +
+          'see https://v6.mui.com/material-ui/react-checkbox/ — with Raven-specific patterns.',
+      },
+    },
+  },
+} satisfies Meta<typeof RavenCheckbox>;
+
 type Story = StoryObj<typeof RavenCheckbox>;
 
-export const Unchecked: Story = {
-  args: {
-    label: 'Accept terms and conditions',
-    checked: false,
-  },
-};
-
-export const Checked: Story = {
-  args: {
-    label: 'Accept terms and conditions',
-    checked: true,
-  },
-};
-
-export const Indeterminate: Story = {
-  args: {
-    label: 'Select all items',
-    indeterminate: true,
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    label: 'Unavailable option',
-    checked: false,
-    disabled: true,
-  },
-};
-
-export const GroupExample: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-      <RavenCheckbox label="Email notifications" checked />
-      <RavenCheckbox label="SMS notifications" checked={false} />
-      <RavenCheckbox label="Push notifications" checked />
-    </div>
-  ),
+export const Checkbox: Story = {
+  name: 'Checkbox',
+  render: () => <CheckboxDocumentation />,
 };

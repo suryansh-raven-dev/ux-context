@@ -37,12 +37,10 @@ Nearmiss Platform
 │   └── Resolution & Closure Tracking
 │
 ├── Insights                          ← THIS PRD
-│   ├── AI Safety Search
+│   ├── AI Safety Search (with auto-generated dashboard)
+│   ├── Prevention Savings (ROI)
+│   ├── Predictive Risk (What Might Happen Next)
 │   ├── Heinrich Triangle (Leading Indicator)
-│   ├── Repeat Incident Detector
-│   ├── Corrective Action Effectiveness
-│   ├── Risk Exposure Heatmap
-│   ├── Shift & Time Pattern Intelligence
 │   └── Safety Culture Score
 │
 └── Settings
@@ -137,7 +135,7 @@ Each insight block combines a metric, a visualization, a finding, and an action.
 
 #### Insight 1: Heinrich Triangle — Leading Indicator Health
 
-**Why this matters across industries:** The Heinrich/Bird ratio (1 fatality : 10 serious injuries : 30 minor injuries : 600 near misses) is the most universally accepted safety model. If your triangle is inverted (many injuries, few near misses), your reporting culture is broken.
+**Why this matters across industries:** The Heinrich/Bird ratio (1 major injury : 29 minor injuries : 300 near misses : 3000 unsafe behaviours/conditions) is the most universally accepted safety model. If your triangle is inverted (many injuries, few near misses), your reporting culture is broken. Fatalities are excluded from this visualization because we do not currently have fatality data.
 
 | Metric | What It Shows | Action When Wrong |
 |--------|--------------|-------------------|
@@ -145,7 +143,7 @@ Each insight block combines a metric, a visualization, a finding, and an action.
 | Reporting rate trend | Is reporting improving or declining? | Declining = people stopped trusting the system |
 | Department comparison | Which departments report well vs poorly? | Target underreporting departments with training |
 
-**Viz:** Triangle diagram with live counts at each level. Red if the ratio is unhealthy.
+**Viz:** Triangle diagram with live counts at each level (Injuries → Near Misses → Unsafe Acts → Unsafe Conditions, from peak to base — fatalities excluded). Red if the ratio is unhealthy.
 
 ---
 
@@ -224,6 +222,65 @@ Each insight block combines a metric, a visualization, a finding, and an action.
 
 ---
 
+#### Insight 7: Lethal Incident History
+
+**Why this matters:** Fatalities are the most severe outcome. Every plant must know exactly which past incidents were lethal, what caused them, and whether similar conditions exist today. This isn't just analytics — it's a legal and moral obligation.
+
+| Metric | What It Shows | Action |
+|--------|--------------|--------|
+| Lethal incident timeline | All fatality events mapped chronologically | Identify if fatality frequency is increasing or decreasing |
+| Cause of death breakdown | What killed people — blast, toxic exposure, fall, crush, electrocution | Target prevention spend at actual killing mechanisms |
+| Conditions at time of fatality | Shift, department, activity, equipment involved | Cross-reference with current operations to flag live risk |
+| "Could it happen again?" flags | Compare lethal incident conditions with today's open near-misses | If near-misses match a past fatality profile, escalate immediately |
+
+**Viz:** Timeline of lethal incidents with severity dots + a conditions comparison table showing past fatality profiles matched against current open near-misses.
+
+---
+
+#### Insight 8: Predictive Risk — What Might Happen Next
+
+**Why this matters:** This is where the platform shifts from rearview mirror to windshield. Using historical patterns, the AI calculates the probability of specific incident types occurring in the near future based on current plant conditions.
+
+| Prediction | Probability | Basis | Recommended Action |
+|-----------|------------|-------|-------------------|
+| LOTO failure during maintenance | **73%** | 7 recurring incidents, accelerating repeat cycle | Mandatory LOTO audit before every maintenance job |
+| Night shift injury (Maintenance dept) | **62%** | 2.1x night rate + Maintenance is highest-risk dept | Add dedicated safety observer for night maintenance |
+| Chemical release during startup | **45%** | 3 near-misses in startup operations this quarter | Pre-startup safety review with checklist enforcement |
+| Equipment failure at Tank Farm | **38%** | 5 repeat incidents at same location | Engineering inspection of Tank Farm assets |
+| Slip/trip in Warehouse | **28%** | Seasonal pattern (monsoon) + housekeeping gaps | Housekeeping audit + anti-slip mat deployment |
+
+**How probability is calculated:** Weighted scoring of: repeat incident rate (30%), temporal pattern match (25%), near-miss density in that category (20%), corrective action effectiveness for that root cause (15%), seasonal/environmental factors (10%).
+
+**Viz:** Ranked risk cards with probability bars, color-coded (Red >60%, Amber 30-60%, Green <30%). Each card shows the basis and a specific recommended action.
+
+---
+
+#### Insight 9: Prevention Savings — ROI of Predictive Safety
+
+**Why this matters:** The ultimate stakeholder question: "What's the return on this investment?" This block quantifies the cost of incidents that were *prevented* because the platform flagged the risk and the team acted on it.
+
+| Metric | Calculation | Value |
+|--------|------------|-------|
+| **Incidents Prevented** | Near-misses that matched a high-risk prediction but were caught before escalation | 23 incidents prevented this year |
+| **Estimated Cost Avoided** | Industry-average cost per incident type × prevented count | **$4.2M saved** (avg $182K per prevented recordable incident) |
+| **Fatalities Averted** | Predictions that matched lethal incident profiles and were acted upon | **2 potential fatalities averted** |
+| **Lost Workdays Saved** | Based on LTIR reduction since platform adoption | **1,247 workdays saved** (equivalent to 5.7 FTEs) |
+| **Insurance Premium Impact** | Projected reduction based on improved TRIR/EMR | **12% premium reduction projected** |
+
+**Cost-per-incident benchmarks (industry average):**
+
+| Incident Type | Direct Cost | Indirect Cost (4x multiplier) | Total |
+|--------------|------------|-------------------------------|-------|
+| Fatality | $1.2M | $4.8M | **$6.0M** |
+| Lost-time injury | $42K | $168K | **$210K** |
+| Recordable injury | $32K | $128K | **$160K** |
+| Near-miss (if it had escalated) | $8K | $32K | **$40K** |
+| Property damage | $15K | $60K | **$75K** |
+
+**Viz:** Summary card with big numbers (Incidents Prevented, Cost Avoided, Fatalities Averted) + a trend chart showing cumulative savings over time + comparison bar: "Cost of platform vs. Cost of incidents prevented."
+
+---
+
 ## 5. Why These Metrics Win Skeptics
 
 | Skeptic's Question | Our Answer |
@@ -234,6 +291,8 @@ Each insight block combines a metric, a visualization, a finding, and an action.
 | "We don't have enough data" | Start with near-miss reporting. The Heinrich Triangle and Safety Culture Score improve as reporting volume grows |
 | "How is this different from our EHS tool?" | Repeat Incident Detection + Corrective Action Effectiveness — no EHS tool tracks whether fixes actually worked |
 | "Our executives won't use this" | Analysis page is 6 numbers and 2 charts. A Safety Director reads it in 30 seconds. That's the point. |
+| "What's the ROI?" | Prevention Savings block shows exact dollar value of incidents prevented, fatalities averted, and insurance premium impact |
+| "We've never had a fatality, why do we need this?" | Lethal Incident History shows that 73% of fatality profiles match conditions in your current near-misses. Prevention is cheaper than a funeral. |
 
 ---
 

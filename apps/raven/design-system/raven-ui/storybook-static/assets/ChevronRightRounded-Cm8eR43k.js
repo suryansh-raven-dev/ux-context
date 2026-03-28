@@ -1,0 +1,1 @@
+import{j as o}from"./iframe-CXEw8YqF.js";import{c as t}from"./createSvgIcon-B15l7tE5.js";const s=t(o.jsx("path",{d:"M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41s1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01"}),"ChevronRightRounded");export{s as C};

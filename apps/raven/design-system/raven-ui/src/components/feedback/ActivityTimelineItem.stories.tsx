@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Typography from '@mui/material/Typography';
 
 import { ActivityTimelineItem } from './ActivityTimelineItem';
@@ -11,7 +11,7 @@ const sampleUser = {
 };
 
 export default {
-  title: 'Feedback/ActivityTimelineItem',
+  title: 'Feedback/Activity Timeline',
   component: ActivityTimelineItem,
 } satisfies Meta<typeof ActivityTimelineItem>;
 

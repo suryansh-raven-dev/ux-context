@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RavenRadioGroup } from './RavenRadioGroup';
 
 const meta: Meta<typeof RavenRadioGroup> = {
-  title: 'Inputs/RavenRadioGroup',
+  title: 'Components/Inputs/Radio Group',
   component: RavenRadioGroup,
   tags: ['autodocs'],
 };

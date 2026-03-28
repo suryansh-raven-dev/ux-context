@@ -1,4 +1,4 @@
-import Done from '@mui/icons-material/Done';
+import Done from '@mui/icons-material/DoneRounded';
 import { Box, Button } from '@mui/material';
 
 import './ActionButtonGroup.css';

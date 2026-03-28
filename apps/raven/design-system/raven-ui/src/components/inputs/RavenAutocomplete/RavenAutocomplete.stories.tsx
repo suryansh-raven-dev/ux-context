@@ -1,54 +1,27 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RavenAutocomplete } from './RavenAutocomplete';
+import { AutocompleteDocumentation } from './AutocompleteDocsPage';
+import './RavenAutocomplete.css';
 
 const meta: Meta<typeof RavenAutocomplete> = {
-  title: 'Inputs/RavenAutocomplete',
+  title: 'Components/Inputs/Autocomplete',
+  id: 'components-inputs-autocomplete',
   component: RavenAutocomplete,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A text input enhanced by a panel of suggested options, built on MUI v6 Autocomplete with full Raven styling.',
+      },
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<typeof RavenAutocomplete>;
 
-const categories = [
-  'Equipment Failure',
-  'Human Error',
-  'Process Deviation',
-  'Environmental',
-  'Near Miss',
-  'Safety Observation',
-  'Chemical Spill',
-  'Slip / Trip / Fall',
-];
-
-export const Default: Story = {
-  args: {
-    options: categories,
-    placeholder: 'Search categories…',
-  },
-};
-
-export const WithLabel: Story = {
-  args: {
-    options: categories,
-    label: 'Incident Category',
-    placeholder: 'Start typing…',
-  },
-};
-
-export const Multiple: Story = {
-  args: {
-    options: categories,
-    label: 'Tags',
-    placeholder: 'Select tags…',
-    multiple: true,
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    options: categories,
-    label: 'Category',
-    value: 'Near Miss',
-    disabled: true,
-  },
+export const Autocomplete: Story = {
+  render: () => <AutocompleteDocumentation />,
+  parameters: { layout: 'fullscreen' },
 };

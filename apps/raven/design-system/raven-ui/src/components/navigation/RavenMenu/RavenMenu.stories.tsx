@@ -1,16 +1,16 @@
 import React from 'react';
 
 import Button from '@mui/material/Button';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
+import ContentCopyIcon from '@mui/icons-material/ContentCopyRounded';
+import DeleteIcon from '@mui/icons-material/DeleteRounded';
+import EditIcon from '@mui/icons-material/EditRounded';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { RavenMenu } from './RavenMenu';
 
 const meta: Meta<typeof RavenMenu> = {
-  title: 'Navigation/RavenMenu',
+  title: 'Components/Navigation/Menu',
   component: RavenMenu,
   tags: ['autodocs'],
 };

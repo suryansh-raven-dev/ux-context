@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import Description from '@mui/icons-material/Description';
-import Engineering from '@mui/icons-material/Engineering';
-import Event from '@mui/icons-material/Event';
-import MarkChatRead from '@mui/icons-material/MarkChatRead';
+import Description from '@mui/icons-material/DescriptionRounded';
+import Engineering from '@mui/icons-material/EngineeringRounded';
+import Event from '@mui/icons-material/EventRounded';
+import MarkChatRead from '@mui/icons-material/MarkChatReadRounded';
 import {
   Box,
   Card,

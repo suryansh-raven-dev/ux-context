@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { StatusStepper } from './StatusStepper';
 
 export default {
-  title: 'Data display/StatusStepper',
+  title: 'Components/Navigation/Stepper',
   component: StatusStepper,
 } satisfies Meta<typeof StatusStepper>;
 

@@ -3,12 +3,12 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { RavenTooltip } from './RavenTooltip';
 
 export default {
-  title: 'Data display/RavenTooltip',
+  title: 'Components/Data Display/Tooltip',
   component: RavenTooltip,
   tags: ['autodocs'],
 } satisfies Meta<typeof RavenTooltip>;

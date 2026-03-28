@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
-import PolicyOutlinedIcon from '@mui/icons-material/PolicyOutlined';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbRounded';
+import PolicyOutlinedIcon from '@mui/icons-material/PolicyRounded';
 import Typography from '@mui/material/Typography';
 
 import { RecommendationPanel } from './RecommendationPanel';
 
 export default {
-  title: 'Feedback/RecommendationPanel',
+  title: 'Feedback/Recommendation Panel',
   component: RecommendationPanel,
 } satisfies Meta<typeof RecommendationPanel>;
 

@@ -32,6 +32,8 @@ export type { RavenChipProps, RavenChipVariant } from './components/data-display
 export { RavenTooltip } from './components/data-display/RavenTooltip/RavenTooltip';
 export { RavenList } from './components/data-display/RavenList/RavenList';
 export type { RavenListItem, RavenListProps } from './components/data-display/RavenList/RavenList';
+export { RavenTypography } from './components/data-display/RavenTypography/RavenTypography';
+export type { RavenTypographyProps, RavenTypographyVariant, RavenTypographyColor, RavenTypographyAlign } from './components/data-display/RavenTypography/RavenTypography';
 
 // Feedback
 export { ActivityDrawer } from './components/feedback/ActivityDrawer';

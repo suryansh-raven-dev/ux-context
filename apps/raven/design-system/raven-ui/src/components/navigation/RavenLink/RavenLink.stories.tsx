@@ -2,12 +2,12 @@ import React from 'react';
 
 import Typography from '@mui/material/Typography';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { RavenLink } from './RavenLink';
 
 const meta: Meta<typeof RavenLink> = {
-  title: 'Navigation/RavenLink',
+  title: 'Components/Navigation/Link',
   component: RavenLink,
   tags: ['autodocs'],
 };

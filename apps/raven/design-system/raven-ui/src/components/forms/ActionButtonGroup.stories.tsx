@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { ActionButtonGroup } from './ActionButtonGroup';
 
 export default {
-  title: 'Forms/ActionButtonGroup',
+  title: 'Forms/Action Button Group',
   component: ActionButtonGroup,
 } satisfies Meta<typeof ActionButtonGroup>;
 

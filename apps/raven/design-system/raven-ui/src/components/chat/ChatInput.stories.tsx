@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Box from '@mui/material/Box';
 
 import { ChatInput } from './ChatInput';
 
 export default {
-  title: 'Chat/ChatInput',
+  title: 'Chat/Chat Input',
   component: ChatInput,
 } satisfies Meta<typeof ChatInput>;
 

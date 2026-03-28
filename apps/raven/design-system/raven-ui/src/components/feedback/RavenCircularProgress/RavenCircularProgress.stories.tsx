@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RavenCircularProgress } from './RavenCircularProgress';
 
 const meta: Meta<typeof RavenCircularProgress> = {
-  title: 'Feedback/RavenCircularProgress',
+  title: 'Components/Feedback/Circular Progress',
   component: RavenCircularProgress,
   tags: ['autodocs'],
 };

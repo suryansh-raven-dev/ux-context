@@ -1,8 +1,8 @@
 import { useCallback, type ChangeEvent } from 'react';
-import AttachFileIcon from '@mui/icons-material/AttachFile';
-import MicIcon from '@mui/icons-material/Mic';
-import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
-import SendIcon from '@mui/icons-material/Send';
+import AttachFileIcon from '@mui/icons-material/AttachFileRounded';
+import MicIcon from '@mui/icons-material/MicRounded';
+import PhotoCameraIcon from '@mui/icons-material/PhotoCameraRounded';
+import SendIcon from '@mui/icons-material/SendRounded';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';

@@ -2,12 +2,12 @@ import React from 'react';
 
 import Typography from '@mui/material/Typography';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { RavenAccordion } from './RavenAccordion';
 
 const meta: Meta<typeof RavenAccordion> = {
-  title: 'Surfaces/RavenAccordion',
+  title: 'Components/Surfaces/Accordion',
   component: RavenAccordion,
   tags: ['autodocs'],
 };

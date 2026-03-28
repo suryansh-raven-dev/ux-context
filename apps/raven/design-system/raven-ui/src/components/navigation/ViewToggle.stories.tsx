@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import ViewList from '@mui/icons-material/ViewList';
-import ViewModule from '@mui/icons-material/ViewModule';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import ViewList from '@mui/icons-material/ViewListRounded';
+import ViewModule from '@mui/icons-material/ViewModuleRounded';
 
 import { ViewToggle } from './ViewToggle';
 
 export default {
-  title: 'Navigation/ViewToggle',
+  title: 'Navigation/View Toggle',
   component: ViewToggle,
 } satisfies Meta<typeof ViewToggle>;
 

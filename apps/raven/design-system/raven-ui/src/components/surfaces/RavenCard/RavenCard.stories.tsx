@@ -3,15 +3,15 @@ import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import MoreVertIcon from '@mui/icons-material/MoreVertRounded';
 import Typography from '@mui/material/Typography';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { RavenCard } from './RavenCard';
 
 const meta: Meta<typeof RavenCard> = {
-  title: 'Surfaces/RavenCard',
+  title: 'Components/Surfaces/Card',
   component: RavenCard,
   tags: ['autodocs'],
 };

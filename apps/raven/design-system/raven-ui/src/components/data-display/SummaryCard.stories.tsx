@@ -1,11 +1,11 @@
-import AssessmentIcon from '@mui/icons-material/Assessment';
+import AssessmentIcon from '@mui/icons-material/AssessmentRounded';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { SummaryCard } from './SummaryCard';
 
 export default {
-  title: 'Data display/SummaryCard',
+  title: 'Data Display/Summary Card',
   component: SummaryCard,
 } satisfies Meta<typeof SummaryCard>;
 

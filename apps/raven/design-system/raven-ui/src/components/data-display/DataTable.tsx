@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronRightIcon from '@mui/icons-material/ChevronRightRounded';
 import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';

@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { DiffCard } from './DiffCard';
 
 export default {
-  title: 'Data display/DiffCard',
+  title: 'Data Display/Diff Card',
   component: DiffCard,
 } satisfies Meta<typeof DiffCard>;
 

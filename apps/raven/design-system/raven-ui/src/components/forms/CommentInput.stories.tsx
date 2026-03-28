@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { CommentInput } from './CommentInput';
 
 export default {
-  title: 'Forms/CommentInput',
+  title: 'Forms/Comment Input',
   component: CommentInput,
 } satisfies Meta<typeof CommentInput>;
 

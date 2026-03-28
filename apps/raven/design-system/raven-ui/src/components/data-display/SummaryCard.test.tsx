@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ThemeProvider } from '@mui/material/styles';
 
-import AssessmentIcon from '@mui/icons-material/Assessment';
+import AssessmentIcon from '@mui/icons-material/AssessmentRounded';
 
 import { ravenNearMissTheme } from '../../theme/ravenNearMissTheme';
 import { SummaryCard } from './SummaryCard';

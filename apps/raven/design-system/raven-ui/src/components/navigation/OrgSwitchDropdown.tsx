@@ -1,4 +1,4 @@
-import ExpandMore from '@mui/icons-material/ExpandMore';
+import ExpandMore from '@mui/icons-material/ExpandMoreRounded';
 import { Box, Stack, Typography } from '@mui/material';
 
 import './OrgSwitchDropdown.css';

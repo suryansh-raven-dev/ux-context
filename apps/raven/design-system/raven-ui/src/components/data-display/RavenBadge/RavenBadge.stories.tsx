@@ -1,12 +1,12 @@
-import MailIcon from '@mui/icons-material/Mail';
+import MailIcon from '@mui/icons-material/MailRounded';
 import Avatar from '@mui/material/Avatar';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { RavenBadge } from './RavenBadge';
 
 export default {
-  title: 'Data display/RavenBadge',
+  title: 'Components/Data Display/Badge',
   component: RavenBadge,
   tags: ['autodocs'],
 } satisfies Meta<typeof RavenBadge>;

@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { StatusTransitionCard } from './StatusTransitionCard';
 
 export default {
-  title: 'Data display/StatusTransitionCard',
+  title: 'Data Display/Status Transition Card',
   component: StatusTransitionCard,
 } satisfies Meta<typeof StatusTransitionCard>;
 

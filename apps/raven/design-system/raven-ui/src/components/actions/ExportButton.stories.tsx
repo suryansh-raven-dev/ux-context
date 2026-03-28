@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { ExportButton } from './ExportButton';
 
 export default {
-  title: 'Actions/ExportButton',
+  title: 'Actions/Export Button',
   component: ExportButton,
 } satisfies Meta<typeof ExportButton>;
 

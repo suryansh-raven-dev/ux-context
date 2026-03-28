@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { IncidentForm } from './IncidentForm';
 
 export default {
-  title: 'Forms/IncidentForm',
+  title: 'Forms/Incident Form',
   component: IncidentForm,
 } satisfies Meta<typeof IncidentForm>;
 

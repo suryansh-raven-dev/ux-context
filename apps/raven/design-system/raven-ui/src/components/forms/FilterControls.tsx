@@ -1,7 +1,7 @@
 import type { KeyboardEvent } from 'react';
 
-import Search from '@mui/icons-material/Search';
-import Event from '@mui/icons-material/Event';
+import Search from '@mui/icons-material/SearchRounded';
+import Event from '@mui/icons-material/EventRounded';
 import { Box, FormControl, InputAdornment, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material/Select';
 

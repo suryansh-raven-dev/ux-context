@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Stack from '@mui/material/Stack';
 
 import { GradientTitle } from './GradientTitle';
 
 export default {
-  title: 'Chat/GradientTitle',
+  title: 'Chat/Gradient Title',
   component: GradientTitle,
 } satisfies Meta<typeof GradientTitle>;
 

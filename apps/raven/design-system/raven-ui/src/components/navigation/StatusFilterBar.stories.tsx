@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { StatusFilterBar } from './StatusFilterBar';
 
 export default {
-  title: 'Navigation/StatusFilterBar',
+  title: 'Navigation/Status Filter Bar',
   component: StatusFilterBar,
 } satisfies Meta<typeof StatusFilterBar>;
 

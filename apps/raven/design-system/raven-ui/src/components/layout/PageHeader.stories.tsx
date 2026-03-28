@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Button from '@mui/material/Button';
 
 import { PageHeader } from './PageHeader';
 
 export default {
-  title: 'Layout/PageHeader',
+  title: 'Layout/Page Header',
   component: PageHeader,
 } satisfies Meta<typeof PageHeader>;
 

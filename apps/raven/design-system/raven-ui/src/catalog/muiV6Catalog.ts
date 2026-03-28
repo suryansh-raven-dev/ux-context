@@ -38,9 +38,9 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     name: 'Button',
     guideline: 'MD2',
     docsUrl: 'https://v6.mui.com/material-ui/react-button/',
-    ravenSupport: 'themed',
-    ravenEquivalent: 'MuiButton under ravenNearMissTheme',
-    notes: 'Primary CTAs should use the Raven purple palette, pill radius, and uppercase labels for action emphasis.',
+    ravenSupport: 'available',
+    ravenEquivalent: 'RavenButton / RavenIconButton',
+    notes: 'Pill-radius buttons with purple palette, Source Sans 3 typography, uppercase labels, and loading state support. Includes RavenIconButton wrapper with loading convenience prop.',
   },
   {
     category: 'Inputs',
@@ -228,9 +228,9 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     name: 'Typography',
     guideline: 'MD2',
     docsUrl: 'https://v6.mui.com/material-ui/react-typography/',
-    ravenSupport: 'themed',
-    ravenEquivalent: 'MuiTypography + custom Raven variants',
-    notes: 'Source Sans 3, custom tableHeader/body1Bold variants, and clear content hierarchy define Raven typography.',
+    ravenSupport: 'available',
+    ravenEquivalent: 'RavenTypography',
+    notes: 'Source Sans 3 font, full MUI type scale (h1–h6, subtitle1/2, body1/2, button, caption, overline) plus custom body1Bold and tableHeader variants. Raven purple brand colors and WCAG-compliant heading hierarchy.',
   },
 
   {

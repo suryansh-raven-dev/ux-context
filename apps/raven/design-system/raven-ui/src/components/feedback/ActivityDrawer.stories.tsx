@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import { ActivityDrawer } from './ActivityDrawer';
 
 export default {
-  title: 'Feedback/ActivityDrawer',
+  title: 'Feedback/Activity Drawer',
   component: ActivityDrawer,
 } satisfies Meta<typeof ActivityDrawer>;
 
