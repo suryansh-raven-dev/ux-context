@@ -33,6 +33,7 @@ const preview: Preview = {
             [
               'Autocomplete',
               'Buttons',
+              'Button Group',
               'Checkbox',
               'Radio Group',
               'Select',

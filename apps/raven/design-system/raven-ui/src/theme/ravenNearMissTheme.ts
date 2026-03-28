@@ -46,8 +46,8 @@ export const ravenNearMissTheme = createTheme({
       light: '#E1BEE7',
     },
     success: { main: '#4CAF50', dark: '#1B5E20', light: '#E8F5E9' },
-    error: { main: '#F44336', dark: '#B71C1C', light: '#FFEBEE' },
-    warning: { main: '#FF9800', dark: '#FF6F00', light: '#FFF8E1' },
+    error: { main: '#D32F2F', dark: '#B71C1C', light: '#FFEBEE', contrastText: '#FFFFFF' },
+    warning: { main: '#E65100', dark: '#BF360C', light: '#FFF8E1', contrastText: '#FFFFFF' },
     info: { main: '#0288D1', dark: '#01579B', light: '#E1F5FE' },
     background: {
       default: '#FCF6FE',
