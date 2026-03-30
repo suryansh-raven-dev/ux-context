@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 import { RavenCircularProgress } from './RavenCircularProgress';
 
 const meta: Meta<typeof RavenCircularProgress> = {

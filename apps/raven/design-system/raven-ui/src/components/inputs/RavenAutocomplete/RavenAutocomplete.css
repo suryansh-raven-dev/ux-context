@@ -18,7 +18,7 @@
 
 .raven-autocomplete .MuiInputBase-input {
   font-family: 'Source Sans 3', sans-serif;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--raven-text-primary);
 }
 
@@ -31,12 +31,11 @@
 .raven-autocomplete .MuiInputLabel-root {
   font-family: 'Source Sans 3', sans-serif;
   color: var(--raven-text-secondary);
-  font-size: 0.9375rem;
+  font-size: 1rem;
 }
 
 .raven-autocomplete .MuiInputLabel-root.Mui-focused {
   color: var(--raven-purple-900);
-  font-weight: 500;
 }
 
 .raven-autocomplete .MuiInputLabel-root.Mui-error {
@@ -44,13 +43,10 @@
 }
 
 .raven-autocomplete .MuiOutlinedInput-notchedOutline legend {
-  font-family: 'Source Sans 3', sans-serif !important;
-  font-weight: 500 !important;
-  font-size: calc(13px * 0.75) !important;
+  font-family: 'Source Sans 3', sans-serif;
 }
 .raven-autocomplete .MuiOutlinedInput-notchedOutline legend > span {
-  font-family: 'Source Sans 3', sans-serif !important;
-  font-weight: 500 !important;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 /* --- Outlined variant borders --- */

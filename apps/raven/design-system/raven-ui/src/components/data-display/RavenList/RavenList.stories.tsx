@@ -2,7 +2,7 @@ import InboxIcon from '@mui/icons-material/InboxRounded';
 import ReportIcon from '@mui/icons-material/ReportRounded';
 import StarIcon from '@mui/icons-material/StarRounded';
 
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { RavenList } from './RavenList';
 

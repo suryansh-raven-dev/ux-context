@@ -7,8 +7,13 @@
   border-radius: var(--raven-radius-default);
 }
 
+.raven-select .MuiInputBase-input,
 .raven-select .MuiInputLabel-root {
   font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+}
+
+.raven-select .MuiInputLabel-root {
   color: var(--raven-text-secondary);
 }
 
@@ -17,13 +22,10 @@
 }
 
 .raven-select .MuiOutlinedInput-notchedOutline legend {
-  font-family: 'Source Sans 3', sans-serif !important;
-  font-weight: 500 !important;
-  font-size: calc(13px * 0.75) !important;
+  font-family: 'Source Sans 3', sans-serif;
 }
 .raven-select .MuiOutlinedInput-notchedOutline legend > span {
-  font-family: 'Source Sans 3', sans-serif !important;
-  font-weight: 500 !important;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 .raven-select .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
@@ -36,4 +38,5 @@
 
 .raven-select .MuiSelect-select {
   font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
 }

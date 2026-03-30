@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -205,7 +205,7 @@ const tdCellMono = {
   color: 'rgba(0,0,0,0.7)',
 } as const;
 
-export const TypeScale: Story = {
+const TypeScale: Story = {
   name: 'Type Scale',
   render: () => (
     <Box sx={{ maxWidth: 1100 }}>
@@ -387,7 +387,7 @@ export const TypeScale: Story = {
 
 /* ─── Headings ───────────────────────────────────────────── */
 
-export const Headings: Story = {
+const Headings: Story = {
   name: 'Headings',
   render: () => (
     <Stack spacing={2}>
@@ -408,7 +408,7 @@ export const Headings: Story = {
 
 /* ─── Body Variants ──────────────────────────────────────── */
 
-export const BodyVariants: Story = {
+const BodyVariants: Story = {
   name: 'Body Variants',
   render: () => (
     <Stack spacing={3}>
@@ -452,7 +452,7 @@ export const BodyVariants: Story = {
 
 /* ─── Subtitle Variants ──────────────────────────────────── */
 
-export const SubtitleVariants: Story = {
+const SubtitleVariants: Story = {
   name: 'Subtitle Variants',
   render: () => (
     <Stack spacing={2}>
@@ -470,7 +470,7 @@ export const SubtitleVariants: Story = {
 
 /* ─── Custom Raven Variants ──────────────────────────────── */
 
-export const CustomRavenVariants: Story = {
+const CustomRavenVariants: Story = {
   name: 'Custom Raven Variants',
   render: () => (
     <Stack spacing={3}>
@@ -500,7 +500,7 @@ export const CustomRavenVariants: Story = {
 
 /* ─── Utility Variants ───────────────────────────────────── */
 
-export const UtilityVariants: Story = {
+const UtilityVariants: Story = {
   name: 'Utility Variants',
   render: () => (
     <Stack spacing={2}>
@@ -536,7 +536,7 @@ export const UtilityVariants: Story = {
 
 /* ─── Colors ─────────────────────────────────────────────── */
 
-export const Colors: Story = {
+const Colors: Story = {
   name: 'Colors',
   render: () => (
     <Stack spacing={1}>
@@ -561,7 +561,7 @@ export const Colors: Story = {
 
 /* ─── Alignment ──────────────────────────────────────────── */
 
-export const Alignment: Story = {
+const Alignment: Story = {
   name: 'Alignment',
   render: () => (
     <Stack spacing={2}>
@@ -580,7 +580,7 @@ export const Alignment: Story = {
 
 /* ─── Gutter Bottom ──────────────────────────────────────── */
 
-export const GutterBottom: Story = {
+const GutterBottom: Story = {
   name: 'Gutter Bottom',
   render: () => (
     <Box sx={{ border: '1px dashed #E0E0E0', p: 2 }}>
@@ -597,7 +597,7 @@ export const GutterBottom: Story = {
 
 /* ─── No Wrap (Truncation) ───────────────────────────────── */
 
-export const NoWrap: Story = {
+const NoWrap: Story = {
   name: 'No Wrap (Truncation)',
   render: () => (
     <Box sx={{ width: 300, border: '1px dashed #E0E0E0', p: 2 }}>
@@ -611,7 +611,7 @@ export const NoWrap: Story = {
 
 /* ─── Paragraph ──────────────────────────────────────────── */
 
-export const Paragraph: Story = {
+const Paragraph: Story = {
   name: 'Paragraph',
   render: () => (
     <Box>
@@ -632,7 +632,7 @@ export const Paragraph: Story = {
 
 /* ─── Semantic Element Override ───────────────────────────── */
 
-export const SemanticElement: Story = {
+const SemanticElement: Story = {
   name: 'Semantic Element Override',
   render: () => (
     <Stack spacing={2}>
@@ -651,7 +651,7 @@ export const SemanticElement: Story = {
 
 /* ─── Theme Keys Demo ────────────────────────────────────── */
 
-export const ThemeKeys: Story = {
+const ThemeKeys: Story = {
   name: 'Theme Keys',
   render: () => (
     <Box
@@ -670,7 +670,7 @@ export const ThemeKeys: Story = {
 
 /* ─── Raven Product Patterns ─────────────────────────────── */
 
-export const RavenProductPatterns: Story = {
+const RavenProductPatterns: Story = {
   name: 'Raven Product Patterns',
   render: () => (
     <Stack spacing={4}>
@@ -748,7 +748,7 @@ export const RavenProductPatterns: Story = {
 
 /* ─── Accessibility: Heading Hierarchy ────────────────────── */
 
-export const HeadingHierarchy: Story = {
+const HeadingHierarchy: Story = {
   name: 'Accessibility: Heading Hierarchy',
   render: () => (
     <Stack spacing={2}>
@@ -768,5 +768,119 @@ export const HeadingHierarchy: Story = {
         Content paragraph following the heading hierarchy.
       </RavenTypography>
     </Stack>
+  ),
+};
+
+function renderSection(story: Story) {
+  if (!story.render) return null;
+  return story.render({} as never, {} as never);
+}
+
+const sectionTitleSx = {
+  fontFamily: '"Source Sans 3", sans-serif',
+  fontSize: '1.25rem',
+  fontWeight: 600,
+  color: '#4A148C',
+  lineHeight: 1.4,
+} as const;
+
+const sectionCardSx = {
+  border: '1px solid #E0E0E0',
+  borderRadius: '12px',
+  backgroundColor: '#FFFFFF',
+  p: 3,
+} as const;
+
+export const Typography: Story = {
+  name: 'Typography',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <Box
+      sx={{
+        height: '100vh',
+        overflowY: 'auto',
+        p: 3,
+        backgroundColor: '#FCF6FE',
+      }}
+    >
+      <Stack spacing={3}>
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Type Scale</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(TypeScale)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Headings</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(Headings)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Body Variants</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(BodyVariants)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Subtitle Variants</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(SubtitleVariants)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Custom Raven Variants</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(CustomRavenVariants)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Utility Variants</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(UtilityVariants)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Colors</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(Colors)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Alignment</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(Alignment)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Gutter Bottom</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(GutterBottom)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>No Wrap (Truncation)</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(NoWrap)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Paragraph</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(Paragraph)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Semantic Element Override</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(SemanticElement)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Theme Keys</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(ThemeKeys)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Raven Product Patterns</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(RavenProductPatterns)}</Box>
+        </Box>
+
+        <Box sx={sectionCardSx}>
+          <Box sx={sectionTitleSx}>Accessibility: Heading Hierarchy</Box>
+          <Box sx={{ mt: 2 }}>{renderSection(HeadingHierarchy)}</Box>
+        </Box>
+      </Stack>
+    </Box>
   ),
 };

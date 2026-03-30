@@ -1,6 +1,4 @@
-import React from 'react';
 import { createTheme } from '@mui/material/styles';
-import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 
 declare module '@mui/material/styles' {
   interface TypeBackground {
@@ -46,8 +44,8 @@ export const ravenNearMissTheme = createTheme({
       light: '#E1BEE7',
     },
     success: { main: '#4CAF50', dark: '#1B5E20', light: '#E8F5E9' },
-    error: { main: '#D32F2F', dark: '#B71C1C', light: '#FFEBEE', contrastText: '#FFFFFF' },
-    warning: { main: '#E65100', dark: '#BF360C', light: '#FFF8E1', contrastText: '#FFFFFF' },
+    error: { main: '#F44336', dark: '#B71C1C', light: '#FFEBEE' },
+    warning: { main: '#FF9800', dark: '#FF6F00', light: '#FFF8E1' },
     info: { main: '#0288D1', dark: '#01579B', light: '#E1F5FE' },
     background: {
       default: '#FCF6FE',
@@ -206,6 +204,14 @@ export const ravenNearMissTheme = createTheme({
         root: { borderRadius: 8 },
       },
     },
+    MuiInputBase: {
+      styleOverrides: {
+        input: {
+          fontSize: '1rem',
+          lineHeight: '1.4375em',
+        },
+      },
+    },
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
@@ -217,27 +223,16 @@ export const ravenNearMissTheme = createTheme({
         notchedOutline: {
           '& legend': {
             fontFamily: '"Source Sans 3", sans-serif',
-            fontWeight: 500,
-            fontSize: 'calc(13px * 0.75)',
           },
           '& legend > span': {
             fontFamily: '"Source Sans 3", sans-serif',
-            fontWeight: 500,
           },
         },
       },
     },
     MuiSelect: {
-      defaultProps: {
-        IconComponent: ArrowDropDownRoundedIcon,
-      },
       styleOverrides: {
         root: { borderRadius: 8 },
-      },
-    },
-    MuiNativeSelect: {
-      defaultProps: {
-        IconComponent: ArrowDropDownRoundedIcon,
       },
     },
     MuiCheckbox: {
@@ -286,7 +281,6 @@ export const ravenNearMissTheme = createTheme({
         size: 'medium' as const,
         noOptionsText: 'No options',
         loadingText: 'Loading…',
-        popupIcon: React.createElement(ArrowDropDownRoundedIcon),
       },
       styleOverrides: {
         root: {
@@ -572,8 +566,6 @@ export const ravenNearMissTheme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: '"Source Sans 3", sans-serif',
-          fontSize: '13px',
-          fontWeight: 500,
         },
       },
     },

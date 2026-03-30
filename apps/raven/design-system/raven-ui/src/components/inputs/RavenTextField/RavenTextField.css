@@ -10,6 +10,7 @@
 .raven-text-field .MuiInputLabel-root {
   font-family: 'Source Sans 3', sans-serif;
   color: var(--raven-text-secondary);
+  transform-origin: top left;
 }
 
 .raven-text-field .MuiInputLabel-root.Mui-focused {
@@ -17,13 +18,10 @@
 }
 
 .raven-text-field .MuiOutlinedInput-notchedOutline legend {
-  font-family: 'Source Sans 3', sans-serif !important;
-  font-weight: 500 !important;
-  font-size: calc(13px * 0.75) !important;
+  font-family: 'Source Sans 3', sans-serif;
 }
 .raven-text-field .MuiOutlinedInput-notchedOutline legend > span {
-  font-family: 'Source Sans 3', sans-serif !important;
-  font-weight: 500 !important;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 .raven-text-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
@@ -36,4 +34,15 @@
 
 .raven-text-field .MuiFormHelperText-root {
   font-family: 'Source Sans 3', sans-serif;
+}
+
+/* Match MUI label/placeholder interaction:
+   placeholder is hidden until focus, then appears when input is empty. */
+.raven-text-field .MuiInputBase-input::placeholder {
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.raven-text-field .MuiOutlinedInput-root.Mui-focused .MuiInputBase-input::placeholder {
+  opacity: 0.42;
 }

@@ -5,11 +5,10 @@ import { ComponentReference } from './ComponentReference';
 const item = muiV6Catalog.find((c) => c.name === 'Grid v2')!;
 
 export default {
-  title: 'Components/Layout/Grid v2',
+  title: 'Components/Layout',
   parameters: { layout: 'centered' },
 };
 
-export const Docs = {
-  name: 'Overview',
+export const GridV2 = {
   render: () => <ComponentReference item={item} />,
 };

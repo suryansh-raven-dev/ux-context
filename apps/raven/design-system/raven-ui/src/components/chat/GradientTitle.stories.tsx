@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 import Stack from '@mui/material/Stack';
 
 import { GradientTitle } from './GradientTitle';

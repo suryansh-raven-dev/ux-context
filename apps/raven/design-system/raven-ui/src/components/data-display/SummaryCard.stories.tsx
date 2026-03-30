@@ -1,6 +1,6 @@
 import AssessmentIcon from '@mui/icons-material/AssessmentRounded';
 
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { SummaryCard } from './SummaryCard';
 

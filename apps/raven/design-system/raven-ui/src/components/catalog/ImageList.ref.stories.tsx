@@ -5,11 +5,10 @@ import { ComponentReference } from './ComponentReference';
 const item = muiV6Catalog.find((c) => c.name === 'Image List')!;
 
 export default {
-  title: 'Components/Layout/Image List',
+  title: 'Components/Layout',
   parameters: { layout: 'centered' },
 };
 
-export const Docs = {
-  name: 'Overview',
+export const ImageList = {
   render: () => <ComponentReference item={item} />,
 };

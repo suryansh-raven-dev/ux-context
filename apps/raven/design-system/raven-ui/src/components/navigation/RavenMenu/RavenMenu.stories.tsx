@@ -5,7 +5,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopyRounded';
 import DeleteIcon from '@mui/icons-material/DeleteRounded';
 import EditIcon from '@mui/icons-material/EditRounded';
 
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { RavenMenu } from './RavenMenu';
 

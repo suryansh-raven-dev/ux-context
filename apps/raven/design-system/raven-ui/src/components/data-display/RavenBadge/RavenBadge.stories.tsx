@@ -1,7 +1,7 @@
 import MailIcon from '@mui/icons-material/MailRounded';
 import Avatar from '@mui/material/Avatar';
 
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { RavenBadge } from './RavenBadge';
 

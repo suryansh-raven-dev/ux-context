@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -8,6 +8,7 @@ import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/FavoriteRounded';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorderRounded';
 import StarIcon from '@mui/icons-material/StarRounded';
+import StarBorderIcon from '@mui/icons-material/StarBorderRounded';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfiedRounded';
 import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfiedRounded';
 import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfiedRounded';
@@ -48,6 +49,11 @@ export default {
 
 type Story = StoryObj<typeof RavenRating>;
 
+const roundedRatingIcons = {
+  icon: <StarIcon fontSize="inherit" />,
+  emptyIcon: <StarBorderIcon fontSize="inherit" />,
+};
+
 /* ─── Basic ─────────────────────────────────────────────── */
 
 export const Basic: Story = {
@@ -60,25 +66,25 @@ export const Basic: Story = {
           <Typography variant="subtitle2" gutterBottom>
             Controlled
           </Typography>
-          <Rating value={value} onChange={(_, newVal) => setValue(newVal)} />
+          <Rating {...roundedRatingIcons} value={value} onChange={(_, newVal) => setValue(newVal)} />
         </Box>
         <Box>
           <Typography variant="subtitle2" gutterBottom>
             Read Only
           </Typography>
-          <Rating value={4} readOnly />
+          <Rating {...roundedRatingIcons} value={4} readOnly />
         </Box>
         <Box>
           <Typography variant="subtitle2" gutterBottom>
             Disabled
           </Typography>
-          <Rating value={2} disabled />
+          <Rating {...roundedRatingIcons} value={2} disabled />
         </Box>
         <Box>
           <Typography variant="subtitle2" gutterBottom>
             No Rating
           </Typography>
-          <Rating value={null} />
+          <Rating {...roundedRatingIcons} value={null} />
         </Box>
       </Stack>
     );
@@ -95,16 +101,16 @@ export const HalfPrecision: Story = {
         <Typography variant="subtitle2" gutterBottom>
           Half-star precision (0.5)
         </Typography>
-        <Rating defaultValue={2.5} precision={0.5} />
+        <Rating {...roundedRatingIcons} defaultValue={2.5} precision={0.5} />
       </Box>
       <Box>
         <Typography variant="subtitle2" gutterBottom>
           Read-only half values
         </Typography>
         <Stack spacing={1}>
-          <Rating value={3.5} precision={0.5} readOnly />
-          <Rating value={4.5} precision={0.5} readOnly />
-          <Rating value={1.5} precision={0.5} readOnly />
+          <Rating {...roundedRatingIcons} value={3.5} precision={0.5} readOnly />
+          <Rating {...roundedRatingIcons} value={4.5} precision={0.5} readOnly />
+          <Rating {...roundedRatingIcons} value={1.5} precision={0.5} readOnly />
         </Stack>
       </Box>
     </Stack>
@@ -122,7 +128,7 @@ export const Sizes: Story = {
           <Typography variant="subtitle2" gutterBottom>
             {size}
           </Typography>
-          <Rating defaultValue={3} size={size} />
+          <Rating {...roundedRatingIcons} defaultValue={3} size={size} />
         </Box>
       ))}
     </Stack>
@@ -139,11 +145,12 @@ export const HoverFeedback: Story = {
     return (
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Rating
+          {...roundedRatingIcons}
           value={value}
           precision={0.5}
           onChange={(_, newVal) => setValue(newVal)}
           onChangeActive={(_, newHover) => setHover(newHover)}
-          emptyIcon={<StarIcon style={{ opacity: 0.3 }} fontSize="inherit" />}
+          emptyIcon={<StarBorderIcon style={{ opacity: 0.3 }} fontSize="inherit" />}
         />
         {value !== null && (
           <Typography variant="body2">
@@ -209,13 +216,13 @@ export const MaxStars: Story = {
         <Typography variant="subtitle2" gutterBottom>
           3-star scale
         </Typography>
-        <Rating defaultValue={2} max={3} />
+        <Rating {...roundedRatingIcons} defaultValue={2} max={3} />
       </Box>
       <Box>
         <Typography variant="subtitle2" gutterBottom>
           10-star scale
         </Typography>
-        <Rating defaultValue={7} max={10} />
+        <Rating {...roundedRatingIcons} defaultValue={7} max={10} />
       </Box>
     </Stack>
   ),
@@ -234,7 +241,7 @@ export const RavenProductPatterns: Story = {
         <Typography variant="body2" color="text.secondary" gutterBottom>
           Rate the severity of the near-miss incident (1 = negligible, 5 = critical)
         </Typography>
-        <Rating defaultValue={3} size="large" />
+        <Rating {...roundedRatingIcons} defaultValue={3} size="large" />
       </Box>
       <Box>
         <Typography variant="h6" gutterBottom>
@@ -243,14 +250,14 @@ export const RavenProductPatterns: Story = {
         <Typography variant="body2" color="text.secondary" gutterBottom>
           How likely is recurrence? (half-star precision)
         </Typography>
-        <Rating defaultValue={2.5} precision={0.5} size="large" />
+        <Rating {...roundedRatingIcons} defaultValue={2.5} precision={0.5} size="large" />
       </Box>
       <Box>
         <Typography variant="h6" gutterBottom>
           Investigation Quality Score (read-only summary)
         </Typography>
         <Stack direction="row" spacing={1} alignItems="center">
-          <Rating value={4.5} precision={0.5} readOnly />
+          <Rating {...roundedRatingIcons} value={4.5} precision={0.5} readOnly />
           <Typography variant="body2" color="text.secondary">
             4.5 / 5 (32 reviews)
           </Typography>

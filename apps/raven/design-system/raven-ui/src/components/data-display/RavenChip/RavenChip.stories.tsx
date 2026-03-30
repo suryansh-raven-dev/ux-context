@@ -1,6 +1,6 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircleRounded';
 
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { RavenChip } from './RavenChip';
 

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 import Box from '@mui/material/Box';
 import { RavenSkeleton } from './RavenSkeleton';
 

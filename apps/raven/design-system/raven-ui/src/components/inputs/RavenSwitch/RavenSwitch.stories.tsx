@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 import { RavenSwitch } from './RavenSwitch';
 
 const meta: Meta<typeof RavenSwitch> = {

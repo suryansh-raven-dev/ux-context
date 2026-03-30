@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbRounded';
 import PolicyOutlinedIcon from '@mui/icons-material/PolicyRounded';
 import Typography from '@mui/material/Typography';

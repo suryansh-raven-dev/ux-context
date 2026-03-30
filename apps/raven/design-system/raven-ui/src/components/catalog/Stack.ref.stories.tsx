@@ -5,11 +5,10 @@ import { ComponentReference } from './ComponentReference';
 const item = muiV6Catalog.find((c) => c.name === 'Stack')!;
 
 export default {
-  title: 'Components/Layout/Stack',
+  title: 'Components/Layout',
   parameters: { layout: 'centered' },
 };
 
-export const Docs = {
-  name: 'Overview',
+export const Stack = {
   render: () => <ComponentReference item={item} />,
 };
