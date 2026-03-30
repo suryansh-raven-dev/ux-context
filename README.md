@@ -6,7 +6,7 @@ This repository is a dedicated QA harness for testing multiple applications. It 
 
 | App | Description | Production | Staging |
 |-----|-------------|-----------|---------|
-| **Raven** | AI copilot for process plants — knowledge search, P&ID, data explorer | https://ifz.startraven.com | — |
+| **Copilot** | AI copilot for process plants — knowledge search, P&ID, data explorer | https://ifz.startraven.com | — |
 | **Near-Miss (NMMS)** | AI-powered incident reporting and investigation platform | https://nmms.startraven.com | https://nmms.staging.startraven.com |
 
 ## Operating Model
@@ -22,7 +22,7 @@ This repository is a dedicated QA harness for testing multiple applications. It 
 
 ```
 ├── apps/
-│   ├── raven/                  Raven-specific docs, workflows, learnings, memory
+│   ├── copilot/                Copilot-specific docs, workflows, learnings, memory
 │   │   ├── product-summary.md
 │   │   ├── workflows/
 │   │   ├── learnings/
@@ -47,7 +47,7 @@ This repository is a dedicated QA harness for testing multiple applications. It 
 │
 ├── config/                     Checked-in examples only; local secrets stay out of git
 ├── artifacts/                  Per-app subdirs for screenshots, traces, recordings, reports
-│   ├── raven/
+│   ├── copilot/
 │   └── near-miss/
 ```
 
