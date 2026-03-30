@@ -1,66 +1,67 @@
-# QA Testing Workspace
+# Raven Design System
 
-This repository is a dedicated QA harness for testing multiple applications. It is designed to take short workflow descriptions, explore each application with browser/computer-use, capture what was learned in per-app files, and progressively turn stable flows into reusable automation.
+This repository hosts the Raven Design System implementation and supporting design-system documentation. The active UI library lives under `apps/raven/design-system/raven-ui/` and is built as a React + MUI v6 component library with Storybook and Vitest.
 
-## Applications
+## Project Location
 
-| App | Description | Production | Staging |
-|-----|-------------|-----------|---------|
-| **Copilot** | AI copilot for process plants — knowledge search, P&ID, data explorer | https://ifz.startraven.com | — |
-| **Near-Miss (NMMS)** | AI-powered incident reporting and investigation platform | https://nmms.startraven.com | https://nmms.staging.startraven.com |
+- App path: `apps/raven/design-system/raven-ui/`
+- Theme tokens: `apps/raven/design-system/raven-ui/src/theme/ravenNearMissTheme.ts`
+- Global tokens: `apps/raven/design-system/raven-ui/src/global.css`
+- Storybook stories: `apps/raven/design-system/raven-ui/src/**/*.stories.tsx`
+- Public entrypoint: `apps/raven/design-system/raven-ui/src/index.ts`
 
-## Operating Model
+## Stack
 
-1. Add or update a workflow seed in `apps/<app>/workflows/`.
-2. Read the relevant discovery and memory files under `apps/<app>/` before exploring.
-3. Explore the workflow with computer-use first when the UI is new, visual, or hard to script.
-4. Save confirmed learnings under `apps/<app>/learnings/`, `apps/<app>/discovery/`, and `apps/<app>/memory/`.
-5. Capture artifacts in `artifacts/<app>/`.
-6. Promote stable flows to script-based automation only when repeatability matters.
+- React 18 + TypeScript 5
+- MUI v6
+- Storybook 8
+- Vitest + React Testing Library
+- Plain CSS with `raven-` prefixed styling
+
+## Getting Started
+
+```bash
+cd apps/raven/design-system/raven-ui
+npm install
+npm run storybook
+npm run dev
+npm run test
+```
+
+Storybook runs locally at `http://localhost:6006`.
+
+## What The Design System Contains
+
+- Layout primitives such as `AppShell`, `SideNavigation`, `PageHeader`, and `MobileAppShell`
+- Input components such as `RavenTextField`, `RavenSelect`, `RavenCheckbox`, `RavenRadioGroup`, `RavenSwitch`, `RavenAutocomplete`, and `RavenButton`
+- Data display components such as `SummaryCard`, `DataTable`, `DiffCard`, `StatusStepper`, `RavenBadge`, `RavenChip`, and `RavenTypography`
+- Feedback components such as `RavenAlert`, `RavenDialog`, `RavenSnackbar`, `RecommendationPanel`, and `ActivityDrawer`
+- Catalog and reference pages for MUI v6 component alignment
 
 ## Directory Structure
 
-```
-├── apps/
-│   ├── copilot/                Copilot-specific docs, workflows, learnings, memory
-│   │   ├── product-summary.md
-│   │   ├── workflows/
-│   │   ├── learnings/
-│   │   ├── discovery/
-│   │   ├── memory/
-│   │   ├── session-logs/
-│   │   ├── screenshots/
-│   │   └── scripts/
-│   │
-│   └── near-miss/              Near-Miss (NMMS) specific docs
-│       ├── product-summary.md
-│       ├── workflows/
-│       ├── learnings/
-│       ├── discovery/
-│       ├── memory/
-│       ├── session-logs/
-│       └── screenshots/
-│
-├── shared/
-│   ├── templates/              Shared templates for workflows, learnings, discovery maps
-│   └── run-report-template.md
-│
-├── config/                     Checked-in examples only; local secrets stay out of git
-├── artifacts/                  Per-app subdirs for screenshots, traces, recordings, reports
-│   ├── copilot/
-│   └── near-miss/
+```text
+apps/
+└── raven/
+    └── design-system/
+        ├── near-miss-components.md
+        └── raven-ui/
+            ├── .storybook/
+            ├── public/
+            ├── session-logs/
+            ├── src/
+            ├── package.json
+            └── package-lock.json
 ```
 
-## Adding a New Application
+## Design System Workflow
 
-1. Create a new directory under `apps/<app-name>/`.
-2. Copy templates from `shared/templates/` to scaffold workflows, learnings, and discovery maps.
-3. Create a `product-summary.md` with the app's details.
-4. Add the app's environments and accounts to `config/`.
-5. Create artifact subdirectories under `artifacts/<app-name>/`.
+1. Build or update components in `apps/raven/design-system/raven-ui/src/components/`.
+2. Document and review variants in Storybook stories.
+3. Keep theme tokens and component behavior aligned with Figma and product usage.
+4. Capture meaningful changes in `apps/raven/design-system/raven-ui/session-logs/`.
 
-## Security Notes
+## Notes
 
-- Never store real credentials or deployment secrets in tracked files.
-- Put only placeholders in checked-in config examples.
-- Save user-provided facts separately from observed behavior and assumptions.
+- The repository still contains broader application and artifact folders, but the tracked UI implementation for this work is `apps/raven/design-system/raven-ui/`.
+- Do not store credentials or secrets in tracked files.
