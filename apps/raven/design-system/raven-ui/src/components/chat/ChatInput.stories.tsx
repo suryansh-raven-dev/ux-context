@@ -2,7 +2,9 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Box from '@mui/material/Box';
 
+import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { ChatInput } from './ChatInput';
+import type { ChatInputProps } from './ChatInput';
 
 export default {
   title: 'Chat/Chat Input',
@@ -29,14 +31,38 @@ function ChatInputStateful(args: { placeholder?: string; multiline?: boolean }) 
   );
 }
 
-export const SingleLine: Story = {
+const SingleLine: Story = {
   render: () => <ChatInputStateful />,
 };
 
-export const Multiline: Story = {
+const Multiline: Story = {
   render: () => <ChatInputStateful multiline />,
 };
 
-export const CustomPlaceholder: Story = {
+const CustomPlaceholder: Story = {
   render: () => <ChatInputStateful placeholder="Ask about near-miss reports…" />,
+};
+
+function renderStory(story: Story) {
+  if (story.render) {
+    return story.render({ ...(story.args ?? {}) } as never, {} as never);
+  }
+  if (story.args) {
+    return <ChatInput {...(story.args as ChatInputProps)} />;
+  }
+  return null;
+}
+
+export const ChatInputPage: Story = {
+  name: 'Chat Input',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={540}>
+      <StorybookSection title="Single Line">{renderStory(SingleLine)}</StorybookSection>
+      <StorybookSection title="Multiline">{renderStory(Multiline)}</StorybookSection>
+      <StorybookSection title="Custom Placeholder">{renderStory(CustomPlaceholder)}</StorybookSection>
+    </StorybookPage>
+  ),
 };

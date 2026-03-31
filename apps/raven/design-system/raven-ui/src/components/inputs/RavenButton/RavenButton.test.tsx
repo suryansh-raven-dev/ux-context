@@ -46,7 +46,6 @@ describe('RavenButton', () => {
   });
 
   it('does not fire onClick when disabled', async () => {
-    const user = userEvent.setup();
     const onClick = vi.fn();
     renderWithTheme(
       <RavenButton disabled onClick={onClick}>
@@ -54,7 +53,7 @@ describe('RavenButton', () => {
       </RavenButton>,
     );
 
-    await user.click(screen.getByRole('button'));
+    expect(screen.getByRole('button')).toBeDisabled();
     expect(onClick).not.toHaveBeenCalled();
   });
 

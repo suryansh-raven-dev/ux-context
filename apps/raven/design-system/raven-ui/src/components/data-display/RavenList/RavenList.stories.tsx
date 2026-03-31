@@ -4,7 +4,9 @@ import StarIcon from '@mui/icons-material/StarRounded';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { RavenList } from './RavenList';
+import type { RavenListProps } from './RavenList';
 
 export default {
   title: 'Components/Data Display/List',
@@ -20,13 +22,13 @@ const basicItems = [
   { id: '3', primary: 'Corrective action plan' },
 ];
 
-export const Default: Story = {
+const Default: Story = {
   args: {
     items: basicItems,
   },
 };
 
-export const WithIcons: Story = {
+const WithIcons: Story = {
   args: {
     items: [
       { id: '1', primary: 'Inbox', icon: <InboxIcon /> },
@@ -36,7 +38,7 @@ export const WithIcons: Story = {
   },
 };
 
-export const WithSecondaryText: Story = {
+const WithSecondaryText: Story = {
   args: {
     items: [
       { id: '1', primary: 'Near-miss #1042', secondary: 'Reported by John Doe — Jan 15' },
@@ -46,14 +48,14 @@ export const WithSecondaryText: Story = {
   },
 };
 
-export const Dense: Story = {
+const Dense: Story = {
   args: {
     items: basicItems,
     dense: true,
   },
 };
 
-export const WithSelectedItem: Story = {
+const WithSelectedItem: Story = {
   args: {
     items: [
       { id: '1', primary: 'Dashboard' },
@@ -61,4 +63,30 @@ export const WithSelectedItem: Story = {
       { id: '3', primary: 'Settings' },
     ],
   },
+};
+
+function renderStory(story: Story) {
+  if (story.render) {
+    return story.render({ ...(story.args ?? {}) } as never, {} as never);
+  }
+  if (story.args) {
+    return <RavenList {...(story.args as RavenListProps)} />;
+  }
+  return null;
+}
+
+export const List: Story = {
+  name: 'List',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={760}>
+      <StorybookSection title="Default">{renderStory(Default)}</StorybookSection>
+      <StorybookSection title="With Icons">{renderStory(WithIcons)}</StorybookSection>
+      <StorybookSection title="With Secondary Text">{renderStory(WithSecondaryText)}</StorybookSection>
+      <StorybookSection title="Dense">{renderStory(Dense)}</StorybookSection>
+      <StorybookSection title="With Selected Item">{renderStory(WithSelectedItem)}</StorybookSection>
+    </StorybookPage>
+  ),
 };

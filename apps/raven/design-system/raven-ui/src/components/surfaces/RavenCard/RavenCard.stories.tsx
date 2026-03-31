@@ -8,23 +8,28 @@ import Typography from '@mui/material/Typography';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { muiV6Catalog } from '../../../catalog/muiV6Catalog';
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
+import { ComponentReference } from '../../catalog/ComponentReference';
 import { RavenCard } from './RavenCard';
+import type { RavenCardProps } from './RavenCard';
+
+const item = muiV6Catalog.find((c) => c.name === 'Card')!;
 
 const meta: Meta<typeof RavenCard> = {
-  title: 'Components/Surfaces/Card',
+  title: 'Components',
   component: RavenCard,
-  tags: ['autodocs'],
 };
 export default meta;
 type Story = StoryObj<typeof RavenCard>;
 
-export const Default: Story = {
+const Default: Story = {
   args: {
     children: <Typography>This is a basic card with default elevation and brand shadow.</Typography>,
   },
 };
 
-export const WithHeader: Story = {
+const WithHeader: Story = {
   args: {
     title: 'Incident Report',
     subheader: 'March 15, 2026',
@@ -32,7 +37,7 @@ export const WithHeader: Story = {
   },
 };
 
-export const WithActions: Story = {
+const WithActions: Story = {
   args: {
     title: 'Review Required',
     children: <Typography>This card contains actionable content that needs user review.</Typography>,
@@ -45,7 +50,7 @@ export const WithActions: Story = {
   },
 };
 
-export const Flat: Story = {
+const Flat: Story = {
   args: {
     elevated: false,
     title: 'Flat Card',
@@ -53,7 +58,7 @@ export const Flat: Story = {
   },
 };
 
-export const WithAvatar: Story = {
+const WithAvatar: Story = {
   args: {
     title: 'Jane Doe',
     subheader: 'Safety Inspector',
@@ -65,4 +70,36 @@ export const WithAvatar: Story = {
     ),
     children: <Typography>Card with an avatar, subtitle, and action button in the header.</Typography>,
   },
+};
+
+function renderStory(story: Story) {
+  if (story.render) {
+    return story.render({ ...(story.args ?? {}) } as never, {} as never);
+  }
+  if (story.args) {
+    return <RavenCard {...(story.args as RavenCardProps)} />;
+  }
+  return null;
+}
+
+export const Card: Story = {
+  name: 'Card',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={760}>
+      <StorybookSection title="Default">{renderStory(Default)}</StorybookSection>
+      <StorybookSection title="With Header">{renderStory(WithHeader)}</StorybookSection>
+      <StorybookSection title="With Actions">{renderStory(WithActions)}</StorybookSection>
+      <StorybookSection title="Flat">{renderStory(Flat)}</StorybookSection>
+      <StorybookSection title="With Avatar">{renderStory(WithAvatar)}</StorybookSection>
+      <StorybookSection
+        title="MUI Alignment"
+        description="Cross-checked with the MUI v6 Card docs for composition, action areas, outlined usage, and media guidance."
+      >
+        <ComponentReference item={item} embedded />
+      </StorybookSection>
+    </StorybookPage>
+  ),
 };

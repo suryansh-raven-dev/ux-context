@@ -4,10 +4,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Slider from '@mui/material/Slider';
+import MuiSlider from '@mui/material/Slider';
 import VolumeDown from '@mui/icons-material/VolumeDownRounded';
 import VolumeUp from '@mui/icons-material/VolumeUpRounded';
 
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { RavenSlider } from './RavenSlider';
 
 export default {
@@ -30,7 +31,7 @@ type Story = StoryObj<typeof RavenSlider>;
 
 /* ─── Continuous ────────────────────────────────────────── */
 
-export const ContinuousSlider: Story = {
+const ContinuousSlider: Story = {
   name: 'Continuous',
   render: () => {
     const [value, setValue] = useState(40);
@@ -41,7 +42,7 @@ export const ContinuousSlider: Story = {
         </Typography>
         <Stack direction="row" spacing={2} alignItems="center">
           <VolumeDown />
-          <Slider
+          <MuiSlider
             value={value}
             onChange={(_, v) => setValue(v as number)}
             aria-label="Volume"
@@ -55,7 +56,7 @@ export const ContinuousSlider: Story = {
 
 /* ─── Sizes ─────────────────────────────────────────────── */
 
-export const Sizes: Story = {
+const Sizes: Story = {
   name: 'Sizes',
   render: () => (
     <Box sx={{ width: 300 }}>
@@ -64,13 +65,13 @@ export const Sizes: Story = {
           <Typography variant="subtitle2" gutterBottom>
             Small
           </Typography>
-          <Slider defaultValue={30} size="small" />
+          <MuiSlider defaultValue={30} size="small" />
         </Box>
         <Box>
           <Typography variant="subtitle2" gutterBottom>
             Medium (default)
           </Typography>
-          <Slider defaultValue={50} />
+          <MuiSlider defaultValue={50} />
         </Box>
       </Stack>
     </Box>
@@ -79,7 +80,7 @@ export const Sizes: Story = {
 
 /* ─── Discrete ──────────────────────────────────────────── */
 
-export const DiscreteSlider: Story = {
+const DiscreteSlider: Story = {
   name: 'Discrete (with steps)',
   render: () => (
     <Box sx={{ width: 300 }}>
@@ -88,7 +89,7 @@ export const DiscreteSlider: Story = {
           <Typography variant="subtitle2" gutterBottom>
             Step = 10
           </Typography>
-          <Slider
+          <MuiSlider
             defaultValue={30}
             step={10}
             marks
@@ -101,7 +102,7 @@ export const DiscreteSlider: Story = {
           <Typography variant="subtitle2" gutterBottom>
             Step = 25
           </Typography>
-          <Slider
+          <MuiSlider
             defaultValue={50}
             step={25}
             marks
@@ -125,14 +126,14 @@ const severityMarks = [
   { value: 100, label: 'Critical' },
 ];
 
-export const CustomMarks: Story = {
+const CustomMarks: Story = {
   name: 'Custom Marks',
   render: () => (
     <Box sx={{ width: 350, px: 2 }}>
       <Typography variant="subtitle2" gutterBottom>
         Severity scale with custom labels
       </Typography>
-      <Slider
+      <MuiSlider
         defaultValue={50}
         step={null}
         marks={severityMarks}
@@ -144,7 +145,7 @@ export const CustomMarks: Story = {
 
 /* ─── Range Slider ──────────────────────────────────────── */
 
-export const RangeSlider: Story = {
+const RangeSlider: Story = {
   name: 'Range',
   render: () => {
     const [value, setValue] = useState<number[]>([20, 60]);
@@ -153,7 +154,7 @@ export const RangeSlider: Story = {
         <Typography variant="subtitle2" gutterBottom>
           Range selection
         </Typography>
-        <Slider
+        <MuiSlider
           value={value}
           onChange={(_, v) => setValue(v as number[])}
           valueLabelDisplay="auto"
@@ -168,7 +169,7 @@ export const RangeSlider: Story = {
 
 /* ─── Colors ────────────────────────────────────────────── */
 
-export const Colors: Story = {
+const Colors: Story = {
   name: 'Colors',
   render: () => (
     <Box sx={{ width: 300 }}>
@@ -179,7 +180,7 @@ export const Colors: Story = {
               <Typography variant="subtitle2" gutterBottom>
                 {color}
               </Typography>
-              <Slider defaultValue={50} color={color} />
+              <MuiSlider defaultValue={50} color={color} />
             </Box>
           ),
         )}
@@ -190,7 +191,7 @@ export const Colors: Story = {
 
 /* ─── Vertical ──────────────────────────────────────────── */
 
-export const VerticalSlider: Story = {
+const VerticalSlider: Story = {
   name: 'Vertical',
   render: () => (
     <Stack direction="row" spacing={4} sx={{ height: 200 }}>
@@ -198,13 +199,13 @@ export const VerticalSlider: Story = {
         <Typography variant="subtitle2" gutterBottom>
           Continuous
         </Typography>
-        <Slider orientation="vertical" defaultValue={40} />
+        <MuiSlider orientation="vertical" defaultValue={40} />
       </Box>
       <Box>
         <Typography variant="subtitle2" gutterBottom>
           Discrete
         </Typography>
-        <Slider
+        <MuiSlider
           orientation="vertical"
           defaultValue={30}
           step={10}
@@ -218,7 +219,7 @@ export const VerticalSlider: Story = {
         <Typography variant="subtitle2" gutterBottom>
           Range
         </Typography>
-        <Slider
+        <MuiSlider
           orientation="vertical"
           defaultValue={[20, 70]}
           valueLabelDisplay="auto"
@@ -230,11 +231,11 @@ export const VerticalSlider: Story = {
 
 /* ─── Disabled ──────────────────────────────────────────── */
 
-export const Disabled: Story = {
+const Disabled: Story = {
   name: 'Disabled',
   render: () => (
     <Box sx={{ width: 300 }}>
-      <Slider defaultValue={40} disabled />
+      <MuiSlider defaultValue={40} disabled />
     </Box>
   ),
 };
@@ -249,7 +250,7 @@ const likelihoodMarks = [
   { value: 5, label: 'Almost Certain' },
 ];
 
-export const RavenProductPatterns: Story = {
+const RavenProductPatterns: Story = {
   name: 'Raven Product Patterns',
   render: () => (
     <Stack spacing={5} sx={{ maxWidth: 400, px: 2 }}>
@@ -257,7 +258,7 @@ export const RavenProductPatterns: Story = {
         <Typography variant="h6" gutterBottom>
           Risk Likelihood
         </Typography>
-        <Slider
+        <MuiSlider
           defaultValue={3}
           step={1}
           marks={likelihoodMarks}
@@ -273,7 +274,7 @@ export const RavenProductPatterns: Story = {
         <Typography variant="body2" color="text.secondary" gutterBottom>
           Min–Max potential impact
         </Typography>
-        <Slider
+        <MuiSlider
           defaultValue={[2, 4]}
           step={1}
           marks={likelihoodMarks}
@@ -286,12 +287,42 @@ export const RavenProductPatterns: Story = {
         <Typography variant="h6" gutterBottom>
           Completion Progress
         </Typography>
-        <Slider
+        <MuiSlider
           defaultValue={65}
           valueLabelDisplay="on"
           valueLabelFormat={(v) => `${v}%`}
         />
       </Box>
     </Stack>
+  ),
+};
+
+function renderStory(story: Story) {
+  if (story.render) {
+    return story.render({ ...(story.args ?? {}) } as never, {} as never);
+  }
+  if (story.args) {
+    return <RavenSlider {...story.args} />;
+  }
+  return null;
+}
+
+export const SliderPage: Story = {
+  name: 'Slider',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={860}>
+      <StorybookSection title="Continuous">{renderStory(ContinuousSlider)}</StorybookSection>
+      <StorybookSection title="Sizes">{renderStory(Sizes)}</StorybookSection>
+      <StorybookSection title="Discrete">{renderStory(DiscreteSlider)}</StorybookSection>
+      <StorybookSection title="Custom Marks">{renderStory(CustomMarks)}</StorybookSection>
+      <StorybookSection title="Range">{renderStory(RangeSlider)}</StorybookSection>
+      <StorybookSection title="Colors">{renderStory(Colors)}</StorybookSection>
+      <StorybookSection title="Vertical">{renderStory(VerticalSlider)}</StorybookSection>
+      <StorybookSection title="Disabled">{renderStory(Disabled)}</StorybookSection>
+      <StorybookSection title="Raven Product Patterns">{renderStory(RavenProductPatterns)}</StorybookSection>
+    </StorybookPage>
   ),
 };

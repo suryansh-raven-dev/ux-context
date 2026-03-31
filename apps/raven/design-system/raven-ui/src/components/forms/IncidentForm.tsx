@@ -5,20 +5,18 @@ import Description from '@mui/icons-material/DescriptionRounded';
 import Event from '@mui/icons-material/EventRounded';
 import PersonRounded from '@mui/icons-material/PersonRounded';
 import PlaceRounded from '@mui/icons-material/PlaceRounded';
-import {
-  Box,
-  Card,
-  FormControl,
-  InputAdornment,
-  FormControlLabel,
-  MenuItem,
-  Radio,
-  RadioGroup,
-  Select,
-  Stack,
-  TextField,
-  Typography,
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import MenuItem from '@mui/material/MenuItem';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import Select from '@mui/material/Select';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import type { SelectChangeEvent } from '@mui/material/Select';
 
 import { RavenButton } from '../inputs/RavenButton/RavenButton';
@@ -64,6 +62,13 @@ const incidentSectionCardSx = {
   backgroundImage: 'none',
 } as const;
 
+const sectionCardSx = { ...incidentSectionCardSx, mb: 2.5 } as const;
+const sectionIconSx = { color: SECTION_ICON_COLOR } as const;
+const radioControlSx = {
+  color: SECTION_ICON_COLOR,
+  '&.Mui-checked': { color: SECTION_ICON_COLOR },
+} as const;
+
 /**
  * Near-miss incident report form — layout matches Figma (cards, footer actions).
  */
@@ -84,10 +89,10 @@ export function IncidentForm() {
   return (
     <Box className="raven-incident-form-shell" data-raven-incident-form="figma-v1">
       <Box component="form" className="raven-incident-form" noValidate autoComplete="off">
-      <Card className="raven-incident-form__section" elevation={0} sx={{ ...incidentSectionCardSx, mb: 2.5 }}>
+      <Card className="raven-incident-form__section" elevation={0} sx={sectionCardSx}>
         <Box className="raven-incident-form__section-header">
           <Stack direction="row" alignItems="center" spacing={1} className="raven-incident-form__section-title">
-            <Description sx={{ color: SECTION_ICON_COLOR }} aria-hidden />
+            <Description sx={sectionIconSx} aria-hidden />
             <Typography component="h2" id="section-report-information">
               Report Information
             </Typography>
@@ -164,10 +169,10 @@ export function IncidentForm() {
         </Box>
       </Card>
 
-      <Card className="raven-incident-form__section" elevation={0} sx={{ ...incidentSectionCardSx, mb: 2.5 }}>
+      <Card className="raven-incident-form__section" elevation={0} sx={sectionCardSx}>
         <Box className="raven-incident-form__section-header">
           <Stack direction="row" alignItems="center" spacing={1} className="raven-incident-form__section-title">
-            <PlaceRounded sx={{ color: SECTION_ICON_COLOR }} aria-hidden />
+            <PlaceRounded sx={sectionIconSx} aria-hidden />
             <Typography component="h2" id="section-incident-details">
               Incident Details
             </Typography>
@@ -203,10 +208,10 @@ export function IncidentForm() {
         </Box>
       </Card>
 
-      <Card className="raven-incident-form__section" elevation={0} sx={{ ...incidentSectionCardSx, mb: 2.5 }}>
+      <Card className="raven-incident-form__section" elevation={0} sx={sectionCardSx}>
         <Box className="raven-incident-form__section-header">
           <Stack direction="row" alignItems="center" spacing={1} className="raven-incident-form__section-title">
-            <PersonRounded sx={{ color: SECTION_ICON_COLOR }} aria-hidden />
+            <PersonRounded sx={sectionIconSx} aria-hidden />
             <Typography component="h2" id="section-reporting-as">
               Reporting as
             </Typography>
@@ -223,13 +228,13 @@ export function IncidentForm() {
             >
               <FormControlLabel
                 value="self"
-                control={<Radio size="small" sx={{ color: SECTION_ICON_COLOR, '&.Mui-checked': { color: SECTION_ICON_COLOR } }} />}
+                control={<Radio size="small" sx={radioControlSx} />}
                 label="Self"
                 sx={radioLabelSx(reportingAs === 'self')}
               />
               <FormControlLabel
                 value="other"
-                control={<Radio size="small" sx={{ color: SECTION_ICON_COLOR, '&.Mui-checked': { color: SECTION_ICON_COLOR } }} />}
+                control={<Radio size="small" sx={radioControlSx} />}
                 label="Someone else"
                 sx={{ ...radioLabelSx(reportingAs === 'other'), mr: 0 }}
               />

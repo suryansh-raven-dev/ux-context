@@ -41,7 +41,25 @@ export const RavenAccordion: React.FC<RavenAccordionProps> = ({ items, exclusive
           onChange={exclusive ? handleChange(item.id) : undefined}
           className="raven-accordion__item"
         >
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            slotProps={{
+              content: {
+                sx: {
+                  margin: '12px 0',
+                  '&.Mui-expanded': {
+                    margin: '12px 0',
+                  },
+                },
+              },
+            }}
+            sx={{
+              minHeight: 48,
+              '&.Mui-expanded': {
+                minHeight: 48,
+              },
+            }}
+          >
             <Typography variant="body1" fontWeight={600}>{item.title}</Typography>
           </AccordionSummary>
           <AccordionDetails>{item.content}</AccordionDetails>

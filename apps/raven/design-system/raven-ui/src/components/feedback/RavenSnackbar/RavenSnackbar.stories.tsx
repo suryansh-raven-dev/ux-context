@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from '@mui/material/Button';
+
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { RavenSnackbar } from './RavenSnackbar';
+import type { RavenSnackbarProps } from './RavenSnackbar';
 
 const meta: Meta<typeof RavenSnackbar> = {
-  title: 'Components/Feedback/Snackbar',
+  title: 'Components/Feedback',
   component: RavenSnackbar,
-  tags: ['autodocs'],
 };
 export default meta;
 type Story = StoryObj<typeof RavenSnackbar>;
 
-export const Success: Story = {
+const Success: Story = {
   render: () => {
     const [open, setOpen] = useState(false);
     return (
@@ -23,7 +25,7 @@ export const Success: Story = {
   },
 };
 
-export const Error: Story = {
+const Error: Story = {
   render: () => {
     const [open, setOpen] = useState(false);
     return (
@@ -35,7 +37,7 @@ export const Error: Story = {
   },
 };
 
-export const Warning: Story = {
+const Warning: Story = {
   render: () => {
     const [open, setOpen] = useState(false);
     return (
@@ -47,7 +49,7 @@ export const Warning: Story = {
   },
 };
 
-export const Info: Story = {
+const Info: Story = {
   render: () => {
     const [open, setOpen] = useState(false);
     return (
@@ -57,4 +59,29 @@ export const Info: Story = {
       </>
     );
   },
+};
+
+function renderStory(story: Story) {
+  if (story.render) {
+    return story.render({ ...(story.args ?? {}) } as never, {} as never);
+  }
+  if (story.args) {
+    return <RavenSnackbar {...(story.args as RavenSnackbarProps)} />;
+  }
+  return null;
+}
+
+export const Snackbar: Story = {
+  name: 'Snackbar',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={720}>
+      <StorybookSection title="Success">{renderStory(Success)}</StorybookSection>
+      <StorybookSection title="Error">{renderStory(Error)}</StorybookSection>
+      <StorybookSection title="Warning">{renderStory(Warning)}</StorybookSection>
+      <StorybookSection title="Info">{renderStory(Info)}</StorybookSection>
+    </StorybookPage>
+  ),
 };

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { RavenAvatar } from './RavenAvatar';
 
 export default {
@@ -10,36 +11,62 @@ export default {
 
 type Story = StoryObj<typeof RavenAvatar>;
 
-export const Default: Story = {
+const Default: Story = {
   args: {
     children: 'JD',
   },
 };
 
-export const WithImage: Story = {
+const WithImage: Story = {
   args: {
     src: 'https://i.pravatar.cc/150?u=raven',
     alt: 'User avatar',
   },
 };
 
-export const Small: Story = {
+const Small: Story = {
   args: {
     children: 'JD',
     size: 'small',
   },
 };
 
-export const Large: Story = {
+const Large: Story = {
   args: {
     children: 'JD',
     size: 'large',
   },
 };
 
-export const Gradient: Story = {
+const Gradient: Story = {
   args: {
     children: 'JD',
     gradient: true,
   },
+};
+
+function renderStory(story: Story) {
+  if (story.render) {
+    return story.render({ ...(story.args ?? {}) } as never, {} as never);
+  }
+  if (story.args) {
+    return <RavenAvatar {...story.args} />;
+  }
+  return null;
+}
+
+export const Avatar: Story = {
+  name: 'Avatar',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={720}>
+      <StorybookSection title="Default">{renderStory(Default)}</StorybookSection>
+      <StorybookSection title="With Image">{renderStory(WithImage)}</StorybookSection>
+      <StorybookSection title="Small">{renderStory(Small)}</StorybookSection>
+      <StorybookSection title="Large">{renderStory(Large)}</StorybookSection>
+      <StorybookSection title="Gradient">{renderStory(Gradient)}</StorybookSection>
+    </StorybookPage>
+  ),
 };

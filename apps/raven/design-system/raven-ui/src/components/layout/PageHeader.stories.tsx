@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from '@mui/material/Button';
 
+import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { PageHeader } from './PageHeader';
+import type { PageHeaderProps } from './PageHeader';
 
 export default {
   title: 'Layout/Page Header',
@@ -10,20 +12,20 @@ export default {
 
 type Story = StoryObj<typeof PageHeader>;
 
-export const SimpleTitle: Story = {
+const SimpleTitle: Story = {
   args: {
     title: 'Incidents',
   },
 };
 
-export const WithSubtitle: Story = {
+const WithSubtitle: Story = {
   args: {
     title: 'Investigation details',
     subtitle: 'Case #1042 · Opened Mar 12, 2026',
   },
 };
 
-export const WithBackButton: Story = {
+const WithBackButton: Story = {
   args: {
     title: 'Edit report',
     subtitle: 'Autosaved',
@@ -34,7 +36,7 @@ export const WithBackButton: Story = {
   },
 };
 
-export const WithActions: Story = {
+const WithActions: Story = {
   args: {
     title: 'Reports',
     subtitle: 'Last 30 days',
@@ -49,4 +51,29 @@ export const WithActions: Story = {
       </>
     ),
   },
+};
+
+function renderStory(story: Story) {
+  if (story.render) {
+    return story.render({ ...(story.args ?? {}) } as never, {} as never);
+  }
+  if (story.args) {
+    return <PageHeader {...(story.args as PageHeaderProps)} />;
+  }
+  return null;
+}
+
+export const PageHeaderPage: Story = {
+  name: 'Page Header',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={960}>
+      <StorybookSection title="Simple Title">{renderStory(SimpleTitle)}</StorybookSection>
+      <StorybookSection title="With Subtitle">{renderStory(WithSubtitle)}</StorybookSection>
+      <StorybookSection title="With Back Button">{renderStory(WithBackButton)}</StorybookSection>
+      <StorybookSection title="With Actions">{renderStory(WithActions)}</StorybookSection>
+    </StorybookPage>
+  ),
 };

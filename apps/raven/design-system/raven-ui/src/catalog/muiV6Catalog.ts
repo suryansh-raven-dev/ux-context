@@ -11,6 +11,11 @@ export type MuiV6Category =
 export type MuiGuideline = 'MD1' | 'MD2' | 'No guidelines' | 'Utility';
 export type RavenSupportLevel = 'available' | 'themed' | 'guidance';
 
+export interface MuiComponentLink {
+  label: string;
+  url: string;
+}
+
 export interface MuiV6CatalogItem {
   category: MuiV6Category;
   name: string;
@@ -19,6 +24,12 @@ export interface MuiV6CatalogItem {
   ravenSupport: RavenSupportLevel;
   ravenEquivalent: string;
   notes: string;
+  summary?: string;
+  importPath?: string[];
+  composition?: string[];
+  keyPoints?: string[];
+  accessibility?: string[];
+  apiLinks?: MuiComponentLink[];
 }
 
 export const MUI_V6_CATALOG_URL = 'https://v6.mui.com/material-ui/all-components/';
@@ -177,6 +188,20 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     ravenSupport: 'available',
     ravenEquivalent: 'RavenDivider',
     notes: 'Prefer soft neutral separators to preserve the light Raven surfaces.',
+    summary: 'The Divider component provides a thin, unobtrusive line for grouping elements to reinforce visual hierarchy.',
+    importPath: ["import Divider from '@mui/material/Divider';"],
+    keyPoints: [
+      'Supports fullWidth, inset, and middle variants for different spacing relationships.',
+      'Use orientation="vertical" for side-by-side layouts, and add flexItem when the divider lives inside a flex container.',
+      'Dividers can wrap text or chips, with textAlign controlling the alignment of inline content.',
+      'When separating list rows, render the divider as an li with the component prop so the markup stays valid.',
+    ],
+    accessibility: [
+      'A plain Divider is announced as a separator by assistive technology.',
+      'Set aria-hidden="true" when the divider is purely decorative.',
+      'When wrapping text or chips, prefer component="div" with role="presentation" so the wrapped content remains the primary semantic target.',
+    ],
+    apiLinks: [{ label: 'Divider API', url: 'https://v6.mui.com/material-ui/api/divider/' }],
   },
   {
     category: 'Data display',
@@ -296,6 +321,35 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     ravenSupport: 'available',
     ravenEquivalent: 'RavenAccordion',
     notes: 'Use compact outlined accordions for supporting detail rather than primary workflow steps.',
+    summary: 'The Accordion component lets users show and hide sections of related content on a page.',
+    importPath: [
+      "import Accordion from '@mui/material/Accordion';",
+      "import AccordionSummary from '@mui/material/AccordionSummary';",
+      "import AccordionDetails from '@mui/material/AccordionDetails';",
+    ],
+    composition: [
+      'Accordion: wrapper for the grouped section.',
+      'Accordion Summary: interactive header that expands or collapses content.',
+      'Accordion Details: content region for the expanded state.',
+      'Accordion Actions: optional footer container for action buttons.',
+    ],
+    keyPoints: [
+      'Use the expandIcon prop on AccordionSummary to swap the disclosure icon while keeping the built-in rotation animation.',
+      'defaultExpanded covers the common uncontrolled case, while expanded supports fully controlled accordions.',
+      'Use slots.transition and slotProps.transition to customize the expansion transition or unmount heavy content on exit.',
+      'Adjust slotProps.heading.component when the default h3 heading does not fit the page heading hierarchy.',
+    ],
+    accessibility: [
+      'Set id and aria-controls on AccordionSummary so the generated region and button relationship stays explicit.',
+      'Keep heading levels consistent by updating slotProps.heading.component when the accordion sits deeper in the document outline.',
+      'Follow the WAI-ARIA accordion pattern for keyboard and announcement behavior.',
+    ],
+    apiLinks: [
+      { label: 'Accordion API', url: 'https://v6.mui.com/material-ui/api/accordion/' },
+      { label: 'Accordion Summary API', url: 'https://v6.mui.com/material-ui/api/accordion-summary/' },
+      { label: 'Accordion Details API', url: 'https://v6.mui.com/material-ui/api/accordion-details/' },
+      { label: 'Accordion Actions API', url: 'https://v6.mui.com/material-ui/api/accordion-actions/' },
+    ],
   },
   {
     category: 'Surface',
@@ -305,6 +359,26 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     ravenSupport: 'themed',
     ravenEquivalent: 'MuiAppBar / MobileAppShell header treatment',
     notes: 'Raven app bars should remain light, border-led, and secondary to the page content container.',
+    summary: 'The App Bar displays information and actions relating to the current screen and is commonly used for branding, titles, navigation, and contextual actions.',
+    importPath: [
+      "import AppBar from '@mui/material/AppBar';",
+      "import Toolbar from '@mui/material/Toolbar';",
+    ],
+    composition: [
+      'AppBar: positioned surface container for top or bottom navigation treatments.',
+      'Toolbar: spacing and height wrapper for title, navigation, search, and action controls.',
+    ],
+    keyPoints: [
+      'Use AppBar for screen-level branding, titles, menus, and search entry points.',
+      'Prefer position="sticky" when possible; fixed app bars need an offset element or theme.mixins.toolbar so page content is not hidden behind the bar.',
+      'useScrollTrigger supports hide-on-scroll and elevate-on-scroll patterns when the header should respond to reading behavior.',
+      'In dark mode, enableColorOnDark restores color-driven styling when the default dark treatment is too muted.',
+    ],
+    apiLinks: [
+      { label: 'App Bar API', url: 'https://v6.mui.com/material-ui/api/app-bar/' },
+      { label: 'Toolbar API', url: 'https://v6.mui.com/material-ui/api/toolbar/' },
+      { label: 'useScrollTrigger API', url: 'https://v6.mui.com/material-ui/react-app-bar/#scrolling' },
+    ],
   },
   {
     category: 'Surface',
@@ -314,6 +388,32 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     ravenSupport: 'available',
     ravenEquivalent: 'RavenCard',
     notes: 'Cards use generous radius, soft borders, and content-first spacing to echo Figma surfaces.',
+    summary: 'Cards contain content and actions about a single subject and can combine headers, media, primary actions, and supporting controls.',
+    importPath: [
+      "import Card from '@mui/material/Card';",
+      "import CardContent from '@mui/material/CardContent';",
+    ],
+    composition: [
+      'Card: surface container for a single topic.',
+      'Card Header: optional title and metadata region.',
+      'Card Content: body copy and primary information.',
+      'Card Media: image, video, or other media treatment.',
+      'Card Actions and Card Action Area: supplemental controls and the main clickable region.',
+    ],
+    keyPoints: [
+      'Set variant="outlined" when the design calls for a flatter container instead of elevated depth.',
+      'Wrap the primary interactive region in CardActionArea when the whole card should behave like a link or expandable target.',
+      'Keep supplemental buttons detached from the CardActionArea to avoid overlapping hit targets.',
+      'Use the component prop on CardMedia when an img, video, or other semantic element is more appropriate than a background image container.',
+    ],
+    apiLinks: [
+      { label: 'Card API', url: 'https://v6.mui.com/material-ui/api/card/' },
+      { label: 'Card Header API', url: 'https://v6.mui.com/material-ui/api/card-header/' },
+      { label: 'Card Content API', url: 'https://v6.mui.com/material-ui/api/card-content/' },
+      { label: 'Card Actions API', url: 'https://v6.mui.com/material-ui/api/card-actions/' },
+      { label: 'Card Action Area API', url: 'https://v6.mui.com/material-ui/api/card-action-area/' },
+      { label: 'Card Media API', url: 'https://v6.mui.com/material-ui/api/card-media/' },
+    ],
   },
   {
     category: 'Surface',
@@ -323,6 +423,15 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     ravenSupport: 'themed',
     ravenEquivalent: 'MuiPaper under ravenNearMissTheme',
     notes: 'Paper surfaces should inherit Raven corner radius and remain visually lighter than default Material.',
+    summary: 'The Paper component is a container for displaying content on an elevated surface and uses the theme elevation scale to express depth.',
+    importPath: ["import Paper from '@mui/material/Paper';"],
+    keyPoints: [
+      'Use elevation values from 0 to 24 to communicate hierarchy through theme shadows.',
+      'In dark mode, higher elevation also lightens the background with a translucent overlay.',
+      'Set variant="outlined" to render a flat bordered paper without shadow.',
+      'Paper uses rounded corners by default; add square to remove the radius when the layout needs hard edges.',
+    ],
+    apiLinks: [{ label: 'Paper API', url: 'https://v6.mui.com/material-ui/api/paper/' }],
   },
 
   {
@@ -404,7 +513,7 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     docsUrl: 'https://v6.mui.com/material-ui/react-tabs/',
     ravenSupport: 'available',
     ravenEquivalent: 'TabNavigation / MuiTabs',
-    notes: 'Use bold uppercase tab labels with a purple indicator and high clarity between active/inactive states.',
+    notes: 'Supports Raven navigation tabs plus wrapped labels, full-width and centered layouts, scrollable tab sets, icon-only and icon-label tabs, icon positioning, link-style nav tabs, selection-follows-focus behavior, vertical orientation, and a segmented pill-style variant for high-emphasis view switching.',
   },
 
   {

@@ -1,8 +1,11 @@
 import { useCallback, type KeyboardEvent } from 'react';
 
-import { Box, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 import './StatusFilterBar.css';
+
+const INHERIT_COLOR_SX = { color: 'inherit' } as const;
 
 export type StatusFilterBarProps = {
   filters: { label: string; count: number }[];
@@ -65,7 +68,7 @@ export function StatusFilterBar({ filters, activeIndex, onChange }: StatusFilter
               component="span"
               variant="body2"
               className="raven-status-filter__chip-label"
-              sx={{ color: 'inherit' }}
+              sx={INHERIT_COLOR_SX}
             >
               {filter.label}{' '}
               <span className="raven-status-filter__chip-count">({filter.count})</span>

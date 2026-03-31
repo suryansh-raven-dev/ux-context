@@ -2,7 +2,10 @@ import { useId, useState, type MouseEvent } from 'react';
 
 import ExpandMore from '@mui/icons-material/ExpandMoreRounded';
 import FileDownload from '@mui/icons-material/FileDownloadRounded';
-import { Button, Menu, MenuItem } from '@mui/material';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
+import { RavenButton } from '../inputs/RavenButton/RavenButton';
 
 import './ExportButton.css';
 
@@ -33,7 +36,7 @@ export function ExportButton({ onExport }: ExportButtonProps) {
 
   return (
     <>
-      <Button
+      <RavenButton
         className="raven-export-button"
         type="button"
         variant="text"
@@ -46,7 +49,7 @@ export function ExportButton({ onExport }: ExportButtonProps) {
         onClick={handleOpen}
       >
         Export
-      </Button>
+      </RavenButton>
       <Menu id={menuId} anchorEl={anchorEl} open={open} onClose={handleClose}>
         <MenuItem onClick={() => choose('pdf')}>PDF</MenuItem>
         <MenuItem onClick={() => choose('csv')}>CSV</MenuItem>

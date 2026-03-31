@@ -1,8 +1,12 @@
 import { useCallback, type KeyboardEvent, type ReactNode } from 'react';
 
-import { Box, Stack, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 import './ViewToggle.css';
+
+const INHERIT_COLOR_SX = { color: 'inherit' } as const;
 
 export type ViewToggleProps = {
   options: { label: string; icon?: ReactNode; value: string }[];
@@ -71,7 +75,7 @@ export function ViewToggle({ options, value, onChange }: ViewToggleProps) {
                 component="span"
                 variant="body2"
                 className="raven-view-toggle__label"
-                sx={{ color: 'inherit' }}
+                sx={INHERIT_COLOR_SX}
               >
                 {option.label}
               </Typography>

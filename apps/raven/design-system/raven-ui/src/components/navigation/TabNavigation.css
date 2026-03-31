@@ -1,15 +1,33 @@
+.raven-tab-nav {
+  width: 100%;
+}
+
+.raven-tab-nav .MuiTabs-root {
+  width: 100%;
+}
+
+.raven-tab-nav--divider {
+  border-bottom: 1px solid #e0e0e0;
+}
+
 .raven-tab-nav .MuiTab-root {
   font-family: 'Source Sans 3', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.46px;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--raven-text-secondary);
   min-height: 48px;
+  opacity: 1;
 }
 
 .raven-tab-nav .MuiTab-root.Mui-selected {
   color: #4a148c;
+}
+
+.raven-tab-nav .MuiTab-root.Mui-disabled {
+  color: var(--raven-text-disabled);
+  opacity: 1;
 }
 
 .raven-tab-nav .MuiTabs-indicator {
@@ -17,4 +35,133 @@
   background-color: #4a148c;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
+}
+
+.raven-tab-nav--segmented {
+  display: inline-flex;
+  width: auto;
+  padding: 4px;
+  border-radius: 999px;
+  background-color: #f5f5f5;
+  box-shadow:
+    0 0 0 1px #f3e5f5,
+    0 2px 16px rgba(74, 20, 140, 0.12);
+}
+
+.raven-tab-nav--segmented .MuiTabs-root {
+  width: auto;
+  min-height: auto;
+}
+
+.raven-tab-nav--segmented .MuiTabs-indicator {
+  display: none;
+}
+
+.raven-tab-nav--segmented .MuiTabs-flexContainer {
+  gap: 0;
+  align-items: center;
+}
+
+.raven-tab-nav--segmented .MuiTab-root {
+  height: 40px;
+  min-height: 40px;
+  min-width: 0;
+  max-width: none;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.15px;
+  line-height: 28px;
+  text-transform: none;
+  color: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.raven-tab-nav--segmented .MuiTab-root .MuiSvgIcon-root {
+  font-size: 24px;
+}
+
+.raven-tab-nav--segmented .MuiTab-root .MuiTab-icon {
+  margin: 0 6px 0 0;
+}
+
+.raven-tab-nav--segmented .MuiTab-root .MuiTab-iconWrapper {
+  margin: 0 6px 0 0;
+}
+
+.raven-tab-nav--segmented .MuiTab-root.Mui-selected {
+  color: #4a148c;
+  background-color: #e1bee7;
+  border: 1px solid #ce93d8;
+}
+
+.raven-tab-nav--segmented .MuiTab-root.Mui-disabled {
+  color: var(--raven-text-disabled);
+}
+
+.raven-tab-nav--segmented .MuiTabs-scroller,
+.raven-tab-nav--segmented .MuiTabs-flexContainer {
+  overflow: visible;
+}
+
+.raven-tab-nav--rail .MuiTabs-root {
+  min-height: auto;
+}
+
+.raven-tab-nav--rail .MuiTabs-indicator {
+  display: none;
+}
+
+.raven-tab-nav--rail .MuiTabs-flexContainer {
+  gap: 4px;
+}
+
+.raven-tab-nav--rail .MuiTabs-scroller,
+.raven-tab-nav--rail .MuiTabs-flexContainer {
+  overflow: visible;
+}
+
+.raven-tab-nav--rail .MuiTab-root {
+  min-height: 40px;
+  min-width: 0;
+  max-width: none;
+  padding: 8px;
+  border-radius: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.1px;
+  text-transform: none;
+  color: var(--raven-text-secondary);
+  text-align: left;
+}
+
+.raven-tab-nav--rail.raven-tab-nav--vertical .MuiTab-root {
+  align-items: stretch;
+}
+
+.raven-tab-nav--rail .MuiTab-root .MuiTab-icon {
+  margin: 0 8px 0 0;
+}
+
+.raven-tab-nav--rail .MuiTab-root .MuiTab-iconWrapper {
+  margin: 0 8px 0 0;
+}
+
+.raven-tab-nav--rail .MuiTab-root .MuiSvgIcon-root {
+  font-size: 24px;
+}
+
+.raven-tab-nav--rail .MuiTab-root.Mui-selected {
+  color: #4a148c;
+  font-weight: 600;
+  background-color: #e1bee7;
+}
+
+.raven-tab-nav--rail .MuiTab-root.Mui-disabled {
+  color: var(--raven-text-disabled);
 }

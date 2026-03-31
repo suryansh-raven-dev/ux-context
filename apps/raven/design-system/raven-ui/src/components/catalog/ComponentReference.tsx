@@ -1,4 +1,11 @@
 import React from 'react';
+
+import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
+import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+
 import type { MuiV6CatalogItem } from '../../catalog/muiV6Catalog';
 
 const supportLabels: Record<string, { label: string; color: string; bg: string }> = {
@@ -7,89 +14,196 @@ const supportLabels: Record<string, { label: string; color: string; bg: string }
   guidance: { label: 'Guidance only', color: '#4A148C', bg: '#F3E5F5' },
 };
 
-export function ComponentReference({ item }: { item: MuiV6CatalogItem }) {
+function ReferenceList({ items }: { items: string[] }) {
+  return (
+    <Box component="ul" sx={{ m: 0, pl: 2.5 }}>
+      {items.map((entry) => (
+        <Box component="li" key={entry} sx={{ mb: 0.75 }}>
+          <Typography variant="body2" color="text.secondary">
+            {entry}
+          </Typography>
+        </Box>
+      ))}
+    </Box>
+  );
+}
+
+export function ComponentReference({
+  item,
+  embedded = false,
+}: {
+  item: MuiV6CatalogItem;
+  embedded?: boolean;
+}) {
   const support = supportLabels[item.ravenSupport];
 
   return (
-    <div style={{ fontFamily: "'Source Sans 3', sans-serif", padding: 32, maxWidth: 720 }}>
-      <h1 style={{ margin: 0, fontSize: 28, fontWeight: 700 }}>{item.name}</h1>
+    <Box
+      sx={{
+        fontFamily: '"Source Sans 3", sans-serif',
+        p: embedded ? 0 : 4,
+        maxWidth: embedded ? 'none' : 720,
+      }}
+    >
+      <Typography variant={embedded ? 'h5' : 'h3'} sx={{ m: 0, fontWeight: 700 }}>
+        {item.name}
+      </Typography>
 
-      <div style={{ display: 'flex', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
-        <span
-          style={{
-            display: 'inline-block',
-            padding: '2px 10px',
-            borderRadius: 12,
-            fontSize: 13,
-            fontWeight: 600,
-            background: '#E8EAF6',
-            color: '#1A237E',
-          }}
-        >
-          {item.guideline}
-        </span>
-        <span
-          style={{
-            display: 'inline-block',
-            padding: '2px 10px',
-            borderRadius: 12,
-            fontSize: 13,
-            fontWeight: 600,
-            background: support.bg,
-            color: support.color,
-          }}
-        >
-          {support.label}
-        </span>
-      </div>
+      {item.summary ? (
+        <Typography variant="body1" color="text.secondary" sx={{ mt: 1.5 }}>
+          {item.summary}
+        </Typography>
+      ) : null}
 
-      <table
-        style={{
-          marginTop: 24,
+      <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ mt: 1.5 }}>
+        <Chip
+          label={item.guideline}
+          size="small"
+          sx={{ backgroundColor: '#E8EAF6', color: '#1A237E', fontWeight: 700 }}
+        />
+        <Chip
+          label={support.label}
+          size="small"
+          sx={{ backgroundColor: support.bg, color: support.color, fontWeight: 700 }}
+        />
+      </Stack>
+
+      <Box
+        component="table"
+        sx={{
+          mt: 3,
           borderCollapse: 'collapse',
           width: '100%',
           fontSize: 14,
         }}
       >
-        <tbody>
-          <tr>
-            <td style={{ padding: '8px 12px', fontWeight: 600, color: '#666', width: 160 }}>
+        <Box component="tbody">
+          <Box component="tr">
+            <Box
+              component="td"
+              sx={{ py: 1, px: 1.5, fontWeight: 700, color: 'text.secondary', width: 160 }}
+            >
               Raven mapping
-            </td>
-            <td style={{ padding: '8px 12px' }}>{item.ravenEquivalent}</td>
-          </tr>
-          <tr style={{ background: '#FAFAFA' }}>
-            <td style={{ padding: '8px 12px', fontWeight: 600, color: '#666' }}>Category</td>
-            <td style={{ padding: '8px 12px' }}>{item.category}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '8px 12px', fontWeight: 600, color: '#666' }}>Notes</td>
-            <td style={{ padding: '8px 12px' }}>{item.notes}</td>
-          </tr>
-        </tbody>
-      </table>
+            </Box>
+            <Box component="td" sx={{ py: 1, px: 1.5 }}>
+              {item.ravenEquivalent}
+            </Box>
+          </Box>
+          <Box component="tr" sx={{ backgroundColor: '#FAFAFA' }}>
+            <Box component="td" sx={{ py: 1, px: 1.5, fontWeight: 700, color: 'text.secondary' }}>
+              Category
+            </Box>
+            <Box component="td" sx={{ py: 1, px: 1.5 }}>
+              {item.category}
+            </Box>
+          </Box>
+          <Box component="tr">
+            <Box component="td" sx={{ py: 1, px: 1.5, fontWeight: 700, color: 'text.secondary' }}>
+              Notes
+            </Box>
+            <Box component="td" sx={{ py: 1, px: 1.5 }}>
+              {item.notes}
+            </Box>
+          </Box>
+        </Box>
+      </Box>
 
-      <div style={{ marginTop: 24, display: 'flex', gap: 16 }}>
-        <a
+      {item.importPath?.length ? (
+        <Box sx={{ mt: 3 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#4A148C', mb: 1 }}>
+            Import
+          </Typography>
+          <Box
+            component="pre"
+            sx={{
+              m: 0,
+              p: 2,
+              borderRadius: 2,
+              backgroundColor: '#F7F7FB',
+              border: '1px solid #E7E8F3',
+              overflowX: 'auto',
+              fontSize: 13,
+              lineHeight: 1.6,
+              fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+            }}
+          >
+            {item.importPath.join('\n')}
+          </Box>
+        </Box>
+      ) : null}
+
+      {item.composition?.length ? (
+        <Box sx={{ mt: 3 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#4A148C', mb: 1 }}>
+            Composition
+          </Typography>
+          <ReferenceList items={item.composition} />
+        </Box>
+      ) : null}
+
+      {item.keyPoints?.length ? (
+        <Box sx={{ mt: 3 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#4A148C', mb: 1 }}>
+            MUI Guidance
+          </Typography>
+          <ReferenceList items={item.keyPoints} />
+        </Box>
+      ) : null}
+
+      {item.accessibility?.length ? (
+        <Box sx={{ mt: 3 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#4A148C', mb: 1 }}>
+            Accessibility
+          </Typography>
+          <ReferenceList items={item.accessibility} />
+        </Box>
+      ) : null}
+
+      <Stack direction="row" spacing={1.5} useFlexGap flexWrap="wrap" sx={{ mt: 3 }}>
+        <Link
           href={item.docsUrl}
           target="_blank"
           rel="noreferrer"
-          style={{
+          underline="none"
+          sx={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: 6,
-            padding: '8px 16px',
-            borderRadius: 8,
-            background: '#1976D2',
+            gap: 0.75,
+            px: 2,
+            py: 1,
+            borderRadius: 2,
+            backgroundColor: '#1976D2',
             color: '#fff',
-            textDecoration: 'none',
             fontSize: 14,
-            fontWeight: 600,
+            fontWeight: 700,
           }}
         >
           MUI Docs ↗
-        </a>
-      </div>
-    </div>
+        </Link>
+        {item.apiLinks?.map((link) => (
+          <Link
+            key={link.url}
+            href={link.url}
+            target="_blank"
+            rel="noreferrer"
+            underline="none"
+            sx={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              px: 2,
+              py: 1,
+              borderRadius: 2,
+              border: '1px solid #D1C4E9',
+              color: '#4A148C',
+              fontSize: 14,
+              fontWeight: 700,
+              backgroundColor: '#FFF',
+            }}
+          >
+            {link.label} ↗
+          </Link>
+        ))}
+      </Stack>
+    </Box>
   );
 }

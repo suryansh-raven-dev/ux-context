@@ -5,11 +5,11 @@ import { ComponentReference } from './ComponentReference';
 const item = muiV6Catalog.find((c) => c.name === 'Backdrop')!;
 
 export default {
-  title: 'Components/Feedback/Backdrop',
+  title: 'Components/Feedback',
   parameters: { layout: 'centered' },
 };
 
-export const Docs = {
-  name: 'Overview',
+export const Backdrop = {
+  name: 'Backdrop',
   render: () => <ComponentReference item={item} />,
 };

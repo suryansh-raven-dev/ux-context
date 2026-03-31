@@ -2,10 +2,18 @@ import type { KeyboardEvent } from 'react';
 
 import Search from '@mui/icons-material/SearchRounded';
 import Event from '@mui/icons-material/EventRounded';
-import { Box, FormControl, InputAdornment, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
+import InputAdornment from '@mui/material/InputAdornment';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
 import type { SelectChangeEvent } from '@mui/material/Select';
 
 import './FilterControls.css';
+
+const SECONDARY_ICON_SX = { color: 'text.secondary' } as const;
 
 export type FilterControlsProps = {
   departments: string[];
@@ -53,7 +61,7 @@ export function FilterControls({
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <Search fontSize="small" sx={{ color: 'text.secondary' }} aria-hidden />
+              <Search fontSize="small" sx={SECONDARY_ICON_SX} aria-hidden />
             </InputAdornment>
           ),
           inputProps: {
@@ -108,7 +116,7 @@ export function FilterControls({
           readOnly: true,
           endAdornment: (
             <InputAdornment position="end">
-              <Event fontSize="small" sx={{ color: 'text.secondary' }} aria-hidden />
+              <Event fontSize="small" sx={SECONDARY_ICON_SX} aria-hidden />
             </InputAdornment>
           ),
         }}

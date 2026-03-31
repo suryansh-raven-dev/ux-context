@@ -787,11 +787,27 @@ const ICON_CATEGORIES: Record<string, IconMap> = {
 export function IconGallery() {
   const [search, setSearch] = useState('');
   const [copied, setCopied] = useState('');
+  const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({
+    Navigation: true,
+  });
+  const [showAllMatches, setShowAllMatches] = useState(false);
 
   const handleCopy = useCallback((name: string) => {
     navigator.clipboard.writeText(`import ${name} from '@mui/icons-material/${name}';`);
     setCopied(name);
     setTimeout(() => setCopied(''), 1500);
+  }, []);
+
+  const handleSearchChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
+    setShowAllMatches(false);
+  }, []);
+
+  const toggleCategory = useCallback((category: string) => {
+    setExpandedCategories((current) => ({
+      ...current,
+      [category]: !current[category],
+    }));
   }, []);
 
   const filteredCategories = useMemo(() => {
@@ -821,6 +837,61 @@ export function IconGallery() {
     Object.values(filteredCategories).forEach((icons) => Object.keys(icons).forEach((n) => seen.add(n)));
     return seen.size;
   }, [filteredCategories]);
+
+  const categorySummaries = useMemo(
+    () =>
+      Object.entries(ICON_CATEGORIES).map(([category, icons]) => ({
+        category,
+        count: Object.keys(icons).length,
+        expanded: Boolean(expandedCategories[category]),
+      })),
+    [expandedCategories],
+  );
+
+  const searchResults = useMemo(() => {
+    if (!search) {
+      return {
+        categories: {} as Record<string, IconMap>,
+        visibleCount: 0,
+      };
+    }
+
+    if (showAllMatches) {
+      return {
+        categories: filteredCategories,
+        visibleCount: filteredCount,
+      };
+    }
+
+    let remaining = 120;
+    const limitedCategories: Record<string, IconMap> = {};
+
+    Object.entries(filteredCategories).forEach(([category, icons]) => {
+      if (remaining <= 0) return;
+      const visibleIcons = Object.entries(icons).slice(0, remaining);
+      if (visibleIcons.length > 0) {
+        limitedCategories[category] = Object.fromEntries(visibleIcons);
+        remaining -= visibleIcons.length;
+      }
+    });
+
+    return {
+      categories: limitedCategories,
+      visibleCount: 120 - remaining,
+    };
+  }, [filteredCategories, filteredCount, search, showAllMatches]);
+
+  const visibleCategories = useMemo(() => {
+    if (search) {
+      return searchResults.categories;
+    }
+
+    return Object.fromEntries(
+      Object.entries(ICON_CATEGORIES).filter(([category]) => expandedCategories[category]),
+    );
+  }, [expandedCategories, search, searchResults.categories]);
+
+  const hiddenSearchResultCount = search ? filteredCount - searchResults.visibleCount : 0;
 
   return (
     <div className="raven-icon-gallery">
@@ -908,7 +979,7 @@ import SvgIcon from '@mui/material/SvgIcon';
           size="small"
           fullWidth
           value={search}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
+          onChange={handleSearchChange}
           slotProps={{
             input: {
               startAdornment: (
@@ -925,7 +996,44 @@ import SvgIcon from '@mui/material/SvgIcon';
         {search ? `${filteredCount} icon${filteredCount !== 1 ? 's' : ''} found` : `${totalIcons} icons in ${Object.keys(ICON_CATEGORIES).length} categories`}
       </p>
 
-      {Object.entries(filteredCategories).map(([category, icons]) => (
+      {!search ? (
+        <div className="raven-icon-gallery__category-grid">
+          {categorySummaries.map(({ category, count, expanded }) => (
+            <button
+              key={category}
+              type="button"
+              className={
+                expanded
+                  ? 'raven-icon-gallery__category-card raven-icon-gallery__category-card--active'
+                  : 'raven-icon-gallery__category-card'
+              }
+              onClick={() => toggleCategory(category)}
+              aria-pressed={expanded}
+            >
+              <span className="raven-icon-gallery__category-card-title">{category}</span>
+              <span className="raven-icon-gallery__category-card-count">{count} icons</span>
+              <span className="raven-icon-gallery__category-card-action">
+                {expanded ? 'Hide icons' : 'Show icons'}
+              </span>
+            </button>
+          ))}
+        </div>
+      ) : null}
+
+      {search && hiddenSearchResultCount > 0 ? (
+        <div className="raven-icon-gallery__search-note">
+          Showing the first {searchResults.visibleCount} matches to keep the catalog responsive.
+          <button
+            type="button"
+            className="raven-icon-gallery__search-note-action"
+            onClick={() => setShowAllMatches(true)}
+          >
+            Render all {filteredCount} matches
+          </button>
+        </div>
+      ) : null}
+
+      {Object.entries(visibleCategories).map(([category, icons]) => (
         <div key={category} className="raven-icon-gallery__section">
           <h3 className="raven-icon-gallery__section-title">
             {category}
@@ -949,9 +1057,15 @@ import SvgIcon from '@mui/material/SvgIcon';
         </div>
       ))}
 
-      {Object.keys(filteredCategories).length === 0 && (
+      {search && Object.keys(visibleCategories).length === 0 ? (
         <div className="raven-icon-gallery__empty">No icons found matching "{search}".</div>
-      )}
+      ) : null}
+
+      {!search && Object.keys(visibleCategories).length === 0 ? (
+        <div className="raven-icon-gallery__empty">
+          Choose a category above to render its icons.
+        </div>
+      ) : null}
     </div>
   );
 }

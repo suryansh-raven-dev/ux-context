@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { RavenSelect } from './RavenSelect';
+import type { RavenSelectProps } from './RavenSelect';
 
 const meta: Meta<typeof RavenSelect> = {
   title: 'Components/Inputs/Select',
@@ -72,7 +73,7 @@ const WithManyOptions: Story = {
 
 function renderStory(story: Story) {
   if (story.render) return story.render({} as never, {} as never);
-  if (story.args) return <RavenSelect {...story.args} />;
+  if (story.args) return <RavenSelect {...(story.args as RavenSelectProps)} />;
   return null;
 }
 

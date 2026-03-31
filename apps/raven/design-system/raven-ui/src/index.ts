@@ -9,6 +9,7 @@ export { MobileAppShell } from './components/layout/MobileAppShell';
 
 // Navigation
 export { TabNavigation } from './components/navigation/TabNavigation';
+export type { TabNavigationProps, TabNavigationItem, TabNavigationAppearance } from './components/navigation/TabNavigation';
 export { StatusFilterBar } from './components/navigation/StatusFilterBar';
 export { ViewToggle } from './components/navigation/ViewToggle';
 export { BreadcrumbNav } from './components/navigation/BreadcrumbNav';
@@ -21,6 +22,7 @@ export { RavenLink } from './components/navigation/RavenLink/RavenLink';
 // Data Display
 export { SummaryCard } from './components/data-display/SummaryCard';
 export { DataTable } from './components/data-display/DataTable';
+export { VirtualizedDataTable } from './components/data-display/VirtualizedDataTable';
 export { DiffCard } from './components/data-display/DiffCard';
 export { StatusStepper } from './components/data-display/StatusStepper';
 export { StatusTransitionCard } from './components/data-display/StatusTransitionCard';
@@ -91,3 +93,4 @@ export { RavenSwitch } from './components/inputs/RavenSwitch/RavenSwitch';
 export type { RavenSwitchProps } from './components/inputs/RavenSwitch/RavenSwitch';
 export { RavenAutocomplete } from './components/inputs/RavenAutocomplete/RavenAutocomplete';
 export type { RavenAutocompleteProps } from './components/inputs/RavenAutocomplete/RavenAutocomplete';
+export { VirtualizedAutocompleteListbox } from './components/inputs/RavenAutocomplete/VirtualizedAutocompleteListbox';

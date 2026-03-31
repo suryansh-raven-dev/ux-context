@@ -22,7 +22,10 @@
   background: transparent;
   color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
-  font: inherit;
+  font-family: 'Source Sans 3', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.46px;
   line-height: 1.2;
 }
 
@@ -42,6 +45,10 @@
 
 .raven-view-toggle__label {
   color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
 }
 
 .raven-view-toggle__option--active {
