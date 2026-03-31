@@ -1,44 +1,45 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from '@mui/material/Button';
+
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { RavenAlert } from './RavenAlert';
 
 const meta: Meta<typeof RavenAlert> = {
-  title: 'Components/Feedback/Alert',
+  title: 'Components/Feedback',
   component: RavenAlert,
-  tags: ['autodocs'],
 };
 export default meta;
 type Story = StoryObj<typeof RavenAlert>;
 
-export const Success: Story = {
+const Success: Story = {
   args: {
     severity: 'success',
     children: 'Incident report submitted successfully.',
   },
 };
 
-export const Error: Story = {
+const Error: Story = {
   args: {
     severity: 'error',
     children: 'Failed to save incident — please try again.',
   },
 };
 
-export const Warning: Story = {
+const Warning: Story = {
   args: {
     severity: 'warning',
     children: 'This incident has not been reviewed in over 30 days.',
   },
 };
 
-export const Info: Story = {
+const Info: Story = {
   args: {
     severity: 'info',
     children: 'A new analysis workflow is available for this report.',
   },
 };
 
-export const WithTitle: Story = {
+const WithTitle: Story = {
   args: {
     severity: 'info',
     title: 'Review Required',
@@ -46,7 +47,7 @@ export const WithTitle: Story = {
   },
 };
 
-export const WithAction: Story = {
+const WithAction: Story = {
   args: {
     severity: 'warning',
     title: 'Pending Approval',
@@ -55,7 +56,7 @@ export const WithAction: Story = {
   },
 };
 
-export const Outlined: Story = {
+const Outlined: Story = {
   args: {
     severity: 'success',
     variant: 'outlined',
@@ -63,10 +64,39 @@ export const Outlined: Story = {
   },
 };
 
-export const Filled: Story = {
+const Filled: Story = {
   args: {
     severity: 'error',
     variant: 'filled',
     children: 'Critical safety threshold exceeded — immediate action required.',
   },
+};
+
+function renderStory(story: Story) {
+  if (story.render) {
+    return story.render({ ...(story.args ?? {}) } as never, {} as never);
+  }
+  if (story.args) {
+    return <RavenAlert {...story.args} />;
+  }
+  return null;
+}
+
+export const Alert: Story = {
+  name: 'Alert',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={760}>
+      <StorybookSection title="Success">{renderStory(Success)}</StorybookSection>
+      <StorybookSection title="Error">{renderStory(Error)}</StorybookSection>
+      <StorybookSection title="Warning">{renderStory(Warning)}</StorybookSection>
+      <StorybookSection title="Info">{renderStory(Info)}</StorybookSection>
+      <StorybookSection title="With Title">{renderStory(WithTitle)}</StorybookSection>
+      <StorybookSection title="With Action">{renderStory(WithAction)}</StorybookSection>
+      <StorybookSection title="Outlined">{renderStory(Outlined)}</StorybookSection>
+      <StorybookSection title="Filled">{renderStory(Filled)}</StorybookSection>
+    </StorybookPage>
+  ),
 };

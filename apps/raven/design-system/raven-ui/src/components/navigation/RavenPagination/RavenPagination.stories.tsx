@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { RavenPagination } from './RavenPagination';
 
 const meta: Meta<typeof RavenPagination> = {
@@ -12,13 +13,13 @@ const meta: Meta<typeof RavenPagination> = {
 export default meta;
 type Story = StoryObj<typeof RavenPagination>;
 
-export const Default: Story = {
+const Default: Story = {
   args: {
     count: 10,
   },
 };
 
-export const WithBoundary: Story = {
+const WithBoundary: Story = {
   args: {
     count: 20,
     boundaryCount: 2,
@@ -26,28 +27,28 @@ export const WithBoundary: Story = {
   },
 };
 
-export const Rounded: Story = {
+const Rounded: Story = {
   args: {
     count: 10,
     shape: 'rounded',
   },
 };
 
-export const Small: Story = {
+const Small: Story = {
   args: {
     count: 10,
     size: 'small',
   },
 };
 
-export const Large: Story = {
+const Large: Story = {
   args: {
     count: 10,
     size: 'large',
   },
 };
 
-export const Controlled: Story = {
+const Controlled: Story = {
   render: () => {
     const [page, setPage] = useState(1);
     return (
@@ -58,4 +59,31 @@ export const Controlled: Story = {
       />
     );
   },
+};
+
+function renderStory(story: { render?: (...args: any[]) => any; args?: any }) {
+  if (story.render) {
+    return story.render({}, {});
+  }
+  if (story.args) {
+    return <RavenPagination {...story.args} />;
+  }
+  return null;
+}
+
+export const Pagination: Story = {
+  name: 'Pagination',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={720}>
+      <StorybookSection title="Default">{renderStory(Default)}</StorybookSection>
+      <StorybookSection title="With Boundary">{renderStory(WithBoundary)}</StorybookSection>
+      <StorybookSection title="Rounded">{renderStory(Rounded)}</StorybookSection>
+      <StorybookSection title="Small">{renderStory(Small)}</StorybookSection>
+      <StorybookSection title="Large">{renderStory(Large)}</StorybookSection>
+      <StorybookSection title="Controlled">{renderStory(Controlled)}</StorybookSection>
+    </StorybookPage>
+  ),
 };

@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Rating from '@mui/material/Rating';
+import MuiRating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/FavoriteRounded';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorderRounded';
 import StarIcon from '@mui/icons-material/StarRounded';
@@ -15,6 +15,7 @@ import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfiedRounde
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAltRounded';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfiedRounded';
 
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { RavenRating } from './RavenRating';
 
 const labels: Record<number, string> = {
@@ -56,7 +57,7 @@ const roundedRatingIcons = {
 
 /* ─── Basic ─────────────────────────────────────────────── */
 
-export const Basic: Story = {
+const Basic: Story = {
   name: 'Basic',
   render: () => {
     const [value, setValue] = useState<number | null>(3);
@@ -66,25 +67,25 @@ export const Basic: Story = {
           <Typography variant="subtitle2" gutterBottom>
             Controlled
           </Typography>
-          <Rating {...roundedRatingIcons} value={value} onChange={(_, newVal) => setValue(newVal)} />
+          <MuiRating {...roundedRatingIcons} value={value} onChange={(_, newVal) => setValue(newVal)} />
         </Box>
         <Box>
           <Typography variant="subtitle2" gutterBottom>
             Read Only
           </Typography>
-          <Rating {...roundedRatingIcons} value={4} readOnly />
+          <MuiRating {...roundedRatingIcons} value={4} readOnly />
         </Box>
         <Box>
           <Typography variant="subtitle2" gutterBottom>
             Disabled
           </Typography>
-          <Rating {...roundedRatingIcons} value={2} disabled />
+          <MuiRating {...roundedRatingIcons} value={2} disabled />
         </Box>
         <Box>
           <Typography variant="subtitle2" gutterBottom>
             No Rating
           </Typography>
-          <Rating {...roundedRatingIcons} value={null} />
+          <MuiRating {...roundedRatingIcons} value={null} />
         </Box>
       </Stack>
     );
@@ -93,7 +94,7 @@ export const Basic: Story = {
 
 /* ─── Precision ─────────────────────────────────────────── */
 
-export const HalfPrecision: Story = {
+const HalfPrecision: Story = {
   name: 'Half Precision',
   render: () => (
     <Stack spacing={2}>
@@ -101,16 +102,16 @@ export const HalfPrecision: Story = {
         <Typography variant="subtitle2" gutterBottom>
           Half-star precision (0.5)
         </Typography>
-        <Rating {...roundedRatingIcons} defaultValue={2.5} precision={0.5} />
+        <MuiRating {...roundedRatingIcons} defaultValue={2.5} precision={0.5} />
       </Box>
       <Box>
         <Typography variant="subtitle2" gutterBottom>
           Read-only half values
         </Typography>
         <Stack spacing={1}>
-          <Rating {...roundedRatingIcons} value={3.5} precision={0.5} readOnly />
-          <Rating {...roundedRatingIcons} value={4.5} precision={0.5} readOnly />
-          <Rating {...roundedRatingIcons} value={1.5} precision={0.5} readOnly />
+          <MuiRating {...roundedRatingIcons} value={3.5} precision={0.5} readOnly />
+          <MuiRating {...roundedRatingIcons} value={4.5} precision={0.5} readOnly />
+          <MuiRating {...roundedRatingIcons} value={1.5} precision={0.5} readOnly />
         </Stack>
       </Box>
     </Stack>
@@ -119,7 +120,7 @@ export const HalfPrecision: Story = {
 
 /* ─── Sizes ─────────────────────────────────────────────── */
 
-export const Sizes: Story = {
+const Sizes: Story = {
   name: 'Sizes',
   render: () => (
     <Stack spacing={2}>
@@ -128,7 +129,7 @@ export const Sizes: Story = {
           <Typography variant="subtitle2" gutterBottom>
             {size}
           </Typography>
-          <Rating {...roundedRatingIcons} defaultValue={3} size={size} />
+          <MuiRating {...roundedRatingIcons} defaultValue={3} size={size} />
         </Box>
       ))}
     </Stack>
@@ -137,14 +138,14 @@ export const Sizes: Story = {
 
 /* ─── Hover Feedback ────────────────────────────────────── */
 
-export const HoverFeedback: Story = {
+const HoverFeedback: Story = {
   name: 'Hover Feedback',
   render: () => {
     const [value, setValue] = useState<number | null>(3);
     const [hover, setHover] = useState(-1);
     return (
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <Rating
+        <MuiRating
           {...roundedRatingIcons}
           value={value}
           precision={0.5}
@@ -164,7 +165,7 @@ export const HoverFeedback: Story = {
 
 /* ─── Custom Icons ──────────────────────────────────────── */
 
-export const CustomIcons: Story = {
+const CustomIcons: Story = {
   name: 'Custom Icons',
   render: () => (
     <Stack spacing={3}>
@@ -172,7 +173,7 @@ export const CustomIcons: Story = {
         <Typography variant="subtitle2" gutterBottom>
           Heart Icons
         </Typography>
-        <Rating
+        <MuiRating
           defaultValue={3}
           icon={<FavoriteIcon fontSize="inherit" />}
           emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
@@ -186,7 +187,7 @@ export const CustomIcons: Story = {
         <Typography variant="subtitle2" gutterBottom>
           Sentiment Icons (10-star scale)
         </Typography>
-        <Rating
+        <MuiRating
           defaultValue={3}
           max={5}
           IconContainerComponent={({ value: v, ...rest }) => {
@@ -208,7 +209,7 @@ export const CustomIcons: Story = {
 
 /* ─── Max Stars ─────────────────────────────────────────── */
 
-export const MaxStars: Story = {
+const MaxStars: Story = {
   name: 'Max Stars',
   render: () => (
     <Stack spacing={2}>
@@ -216,13 +217,13 @@ export const MaxStars: Story = {
         <Typography variant="subtitle2" gutterBottom>
           3-star scale
         </Typography>
-        <Rating {...roundedRatingIcons} defaultValue={2} max={3} />
+        <MuiRating {...roundedRatingIcons} defaultValue={2} max={3} />
       </Box>
       <Box>
         <Typography variant="subtitle2" gutterBottom>
           10-star scale
         </Typography>
-        <Rating {...roundedRatingIcons} defaultValue={7} max={10} />
+        <MuiRating {...roundedRatingIcons} defaultValue={7} max={10} />
       </Box>
     </Stack>
   ),
@@ -230,7 +231,7 @@ export const MaxStars: Story = {
 
 /* ─── Raven Product Patterns ────────────────────────────── */
 
-export const RavenProductPatterns: Story = {
+const RavenProductPatterns: Story = {
   name: 'Raven Product Patterns',
   render: () => (
     <Stack spacing={4}>
@@ -241,7 +242,7 @@ export const RavenProductPatterns: Story = {
         <Typography variant="body2" color="text.secondary" gutterBottom>
           Rate the severity of the near-miss incident (1 = negligible, 5 = critical)
         </Typography>
-        <Rating {...roundedRatingIcons} defaultValue={3} size="large" />
+        <MuiRating {...roundedRatingIcons} defaultValue={3} size="large" />
       </Box>
       <Box>
         <Typography variant="h6" gutterBottom>
@@ -250,19 +251,47 @@ export const RavenProductPatterns: Story = {
         <Typography variant="body2" color="text.secondary" gutterBottom>
           How likely is recurrence? (half-star precision)
         </Typography>
-        <Rating {...roundedRatingIcons} defaultValue={2.5} precision={0.5} size="large" />
+        <MuiRating {...roundedRatingIcons} defaultValue={2.5} precision={0.5} size="large" />
       </Box>
       <Box>
         <Typography variant="h6" gutterBottom>
           Investigation Quality Score (read-only summary)
         </Typography>
         <Stack direction="row" spacing={1} alignItems="center">
-          <Rating {...roundedRatingIcons} value={4.5} precision={0.5} readOnly />
+          <MuiRating {...roundedRatingIcons} value={4.5} precision={0.5} readOnly />
           <Typography variant="body2" color="text.secondary">
             4.5 / 5 (32 reviews)
           </Typography>
         </Stack>
       </Box>
     </Stack>
+  ),
+};
+
+function renderStory(story: { render?: (...args: any[]) => any; args?: any }) {
+  if (story.render) {
+    return story.render({}, {});
+  }
+  if (story.args) {
+    return <RavenRating {...story.args} />;
+  }
+  return null;
+}
+
+export const RatingPage: Story = {
+  name: 'Rating',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={760}>
+      <StorybookSection title="Basic">{renderStory(Basic)}</StorybookSection>
+      <StorybookSection title="Half Precision">{renderStory(HalfPrecision)}</StorybookSection>
+      <StorybookSection title="Sizes">{renderStory(Sizes)}</StorybookSection>
+      <StorybookSection title="Hover Feedback">{renderStory(HoverFeedback)}</StorybookSection>
+      <StorybookSection title="Custom Icons">{renderStory(CustomIcons)}</StorybookSection>
+      <StorybookSection title="Max Stars">{renderStory(MaxStars)}</StorybookSection>
+      <StorybookSection title="Raven Product Patterns">{renderStory(RavenProductPatterns)}</StorybookSection>
+    </StorybookPage>
   ),
 };

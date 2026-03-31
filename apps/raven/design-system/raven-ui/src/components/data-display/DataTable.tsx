@@ -33,6 +33,11 @@ export type DataTableProps<T extends object> = {
   onRowsPerPageChange: (rpp: number) => void;
 };
 
+const COLUMN_WIDTH_SX = (width?: number | string) =>
+  width != null ? { width } : undefined;
+
+const CLICKABLE_ROW_SX = { cursor: 'pointer' } as const;
+
 const STATUS_DOT: Record<string, string> = {
   closed: '#2E7D32',
   'in progress': '#0288D1',
@@ -92,7 +97,7 @@ export function DataTable<T extends object>({
                   <TableCell
                     key={String(col.key)}
                     className="raven-data-table__header-cell"
-                    sx={col.width != null ? { width: col.width } : undefined}
+                    sx={COLUMN_WIDTH_SX(col.width)}
                     component="th"
                     scope="col"
                   >
@@ -121,7 +126,7 @@ export function DataTable<T extends object>({
                     hover
                     className={onRowClick ? 'raven-data-table__row--clickable' : undefined}
                     onClick={onRowClick ? () => onRowClick(row) : undefined}
-                    sx={onRowClick ? { cursor: 'pointer' } : undefined}
+                    sx={onRowClick ? CLICKABLE_ROW_SX : undefined}
                   >
                     {columns.map((col) => {
                       const raw = row[col.key];

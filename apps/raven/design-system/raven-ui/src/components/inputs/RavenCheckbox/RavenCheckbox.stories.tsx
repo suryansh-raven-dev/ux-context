@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { RavenCheckbox } from './RavenCheckbox';
+import type { RavenCheckboxProps } from './RavenCheckbox';
 
 const meta: Meta<typeof RavenCheckbox> = {
   title: 'Components/Inputs/Checkbox',
@@ -54,7 +55,7 @@ const GroupExample: Story = {
 
 function renderStory(story: Story) {
   if (story.render) return story.render({} as never, {} as never);
-  if (story.args) return <RavenCheckbox {...story.args} />;
+  if (story.args) return <RavenCheckbox {...(story.args as RavenCheckboxProps)} />;
   return null;
 }
 

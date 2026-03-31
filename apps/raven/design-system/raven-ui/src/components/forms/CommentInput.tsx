@@ -1,8 +1,23 @@
 import ArrowUpward from '@mui/icons-material/ArrowUpwardRounded';
 import AttachFile from '@mui/icons-material/AttachFileRounded';
-import { Box, IconButton, InputBase, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import InputBase from '@mui/material/InputBase';
+import Typography from '@mui/material/Typography';
 
 import './CommentInput.css';
+
+const submitButtonSx = (hasText: boolean) => ({
+  bgcolor: hasText ? 'primary.main' : 'action.disabledBackground',
+  color: hasText ? 'primary.contrastText' : 'action.disabled',
+  '&:hover': {
+    bgcolor: hasText ? 'primary.dark' : 'action.disabledBackground',
+  },
+  '&.Mui-disabled': {
+    bgcolor: 'action.disabledBackground',
+    color: 'action.disabled',
+  },
+});
 
 export type CommentInputProps = {
   value: string;
@@ -57,17 +72,7 @@ export function CommentInput({ value, onChange, onSubmit }: CommentInputProps) {
             onClick={handleSubmit}
             disabled={!hasText}
             aria-label="Submit comment"
-            sx={{
-              bgcolor: hasText ? 'primary.main' : 'action.disabledBackground',
-              color: hasText ? 'primary.contrastText' : 'action.disabled',
-              '&:hover': {
-                bgcolor: hasText ? 'primary.dark' : 'action.disabledBackground',
-              },
-              '&.Mui-disabled': {
-                bgcolor: 'action.disabledBackground',
-                color: 'action.disabled',
-              },
-            }}
+            sx={submitButtonSx(hasText)}
           >
             <ArrowUpward fontSize="small" />
           </IconButton>

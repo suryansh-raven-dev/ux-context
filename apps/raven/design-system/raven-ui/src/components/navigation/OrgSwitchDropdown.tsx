@@ -1,9 +1,12 @@
 import ExpandMore from '@mui/icons-material/ExpandMoreRounded';
-import { Box, Stack, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 import './OrgSwitchDropdown.css';
 
 const DEFAULT_GRADIENT: [string, string] = ['#757575', '#212121'];
+const ROOT_STACK_SX = { width: '100%', minWidth: 0 } as const;
 
 export type OrgSwitchDropdownProps = {
   initials: string;
@@ -30,7 +33,7 @@ export function OrgSwitchDropdown({
       aria-haspopup="true"
       aria-label={`Organization: ${name}`}
     >
-      <Stack direction="row" alignItems="center" spacing={1} sx={{ width: '100%', minWidth: 0 }}>
+      <Stack direction="row" alignItems="center" spacing={1} sx={ROOT_STACK_SX}>
         <Box
           className="raven-org-switch__avatar"
           aria-hidden

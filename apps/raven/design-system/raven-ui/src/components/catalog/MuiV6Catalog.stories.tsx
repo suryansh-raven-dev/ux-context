@@ -1,11 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { muiV6Categories } from '../../catalog/muiV6Catalog';
 import { MuiV6Catalog } from './MuiV6Catalog';
 
 const meta: Meta<typeof MuiV6Catalog> = {
   title: 'Components/All Components',
   component: MuiV6Catalog,
   tags: ['autodocs'],
+  argTypes: {
+    category: {
+      control: 'select',
+      options: ['All', ...muiV6Categories],
+    },
+  },
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -21,55 +28,8 @@ export default meta;
 type Story = StoryObj<typeof MuiV6Catalog>;
 
 export const AllComponents: Story = {
+  name: 'All Components',
   args: {
     category: 'All',
-  },
-};
-
-export const Inputs: Story = {
-  args: {
-    category: 'Inputs',
-  },
-};
-
-export const DataDisplay: Story = {
-  args: {
-    category: 'Data display',
-  },
-};
-
-export const Feedback: Story = {
-  args: {
-    category: 'Feedback',
-  },
-};
-
-export const Surface: Story = {
-  args: {
-    category: 'Surface',
-  },
-};
-
-export const Navigation: Story = {
-  args: {
-    category: 'Navigation',
-  },
-};
-
-export const Layout: Story = {
-  args: {
-    category: 'Layout',
-  },
-};
-
-export const Lab: Story = {
-  args: {
-    category: 'Lab',
-  },
-};
-
-export const Utils: Story = {
-  args: {
-    category: 'Utils',
   },
 };

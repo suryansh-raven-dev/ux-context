@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StatusStepper } from './StatusStepper';
 
 export default {
-  title: 'Components/Navigation/Stepper',
+  title: 'Components/Data Display/Stepper',
   component: StatusStepper,
 } satisfies Meta<typeof StatusStepper>;
 

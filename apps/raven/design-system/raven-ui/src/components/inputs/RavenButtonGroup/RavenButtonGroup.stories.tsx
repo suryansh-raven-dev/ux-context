@@ -1,26 +1,32 @@
-import React, { useState, useRef } from 'react';
+import React, { useId, useRef, useState } from 'react';
 import type { Meta } from '@storybook/react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDownRounded';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Grow from '@mui/material/Grow';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
-import CircularProgress from '@mui/material/CircularProgress';
+import Stack from '@mui/material/Stack';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDownRounded';
+import SaveIcon from '@mui/icons-material/SaveRounded';
+
+import {
+  RavenButtonGroup,
+  type RavenButtonGroupButton,
+} from './RavenButtonGroup';
+import { RavenButton } from '../RavenButton/RavenButton';
 
 export default {
   title: 'Components/Inputs/Button Group',
+  component: RavenButtonGroup,
   tags: ['!autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
-} satisfies Meta;
+} satisfies Meta<typeof RavenButtonGroup>;
 
 function Section({
   title,
@@ -38,16 +44,15 @@ function Section({
       <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
         {title}
       </Typography>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 2, maxWidth: 680, lineHeight: 1.6 }}>
+      <Typography
+        variant="body2"
+        color="text.secondary"
+        sx={{ mb: 2, maxWidth: 680, lineHeight: 1.6 }}
+      >
         {description}
       </Typography>
       <Box
         sx={{
-          p: 3,
-          border: '1px solid',
-          borderColor: 'divider',
-          borderRadius: 2,
-          bgcolor: '#fafafa',
           display: 'flex',
           flexWrap: 'wrap',
           gap: 2,
@@ -78,29 +83,77 @@ function Section({
   );
 }
 
-const splitOptions = ['Create incident', 'Create near-miss', 'Create observation'];
+const baseButtons: RavenButtonGroupButton[] = [
+  { label: 'One' },
+  { label: 'Two' },
+  { label: 'Three' },
+];
+
+const splitOptions = [
+  'Create incident',
+  'Create near-miss',
+  'Create observation',
+];
 
 function SplitButtonDemo() {
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const anchorRef = useRef<HTMLDivElement>(null);
+  const menuId = useId();
+  const toggleId = useId();
 
   return (
     <>
-      <ButtonGroup variant="contained" ref={anchorRef}>
-        <Button>{splitOptions[selectedIndex]}</Button>
-        <Button size="small" onClick={() => setOpen((prev) => !prev)}>
+      <RavenButtonGroup
+        ref={anchorRef}
+        variant="contained"
+        aria-label="Create item split button"
+      >
+        <RavenButton>{splitOptions[selectedIndex]}</RavenButton>
+        <RavenButton
+          id={toggleId}
+          size="small"
+          aria-controls={open ? menuId : undefined}
+          aria-expanded={open ? 'true' : undefined}
+          aria-haspopup="menu"
+          aria-label="Select create action"
+          onClick={() => setOpen((prev) => !prev)}
+        >
           <ArrowDropDownIcon />
-        </Button>
-      </ButtonGroup>
-      <Popper open={open} anchorEl={anchorRef.current} transition disablePortal sx={{ zIndex: 1 }}>
+        </RavenButton>
+      </RavenButtonGroup>
+
+      <Popper
+        open={open}
+        anchorEl={anchorRef.current}
+        transition
+        disablePortal
+        sx={{ zIndex: 1 }}
+      >
         {({ TransitionProps, placement }) => (
-          <Grow {...TransitionProps} style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
+          <Grow
+            {...TransitionProps}
+            style={{
+              transformOrigin:
+                placement === 'bottom' ? 'center top' : 'center bottom',
+            }}
+          >
             <Paper>
               <ClickAwayListener onClickAway={() => setOpen(false)}>
-                <MenuList>
+                <MenuList
+                  id={menuId}
+                  autoFocusItem={open}
+                  aria-labelledby={toggleId}
+                >
                   {splitOptions.map((option, index) => (
-                    <MenuItem key={option} selected={index === selectedIndex} onClick={() => { setSelectedIndex(index); setOpen(false); }}>
+                    <MenuItem
+                      key={option}
+                      selected={index === selectedIndex}
+                      onClick={() => {
+                        setSelectedIndex(index);
+                        setOpen(false);
+                      }}
+                    >
                       {option}
                     </MenuItem>
                   ))}
@@ -121,263 +174,351 @@ export const ButtonGroupPage = {
       <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
         Button Group
       </Typography>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 680, lineHeight: 1.7 }}>
-        The ButtonGroup component can be used to group related buttons. Raven applies the brand purple palette, rounded corners, and consistent spacing from the design system.
+      <Typography
+        variant="body1"
+        color="text.secondary"
+        sx={{ mb: 4, maxWidth: 700, lineHeight: 1.7 }}
+      >
+        Raven wraps MUI v6 Button Group with Source Sans 3 typography and a
+        deliberate `8px` separation between grouped buttons. This keeps related
+        actions visually connected without the fully flush segmented treatment of
+        stock MUI.
       </Typography>
 
       <Divider sx={{ mb: 4 }} />
 
-      {/* Basic button group */}
       <Section
-        title="Basic button group"
-        description="The buttons can be grouped by wrapping them with the ButtonGroup component. They need to be immediate children."
-        code={`<ButtonGroup variant="contained" aria-label="Basic button group">
-  <Button>One</Button>
-  <Button>Two</Button>
-  <Button>Three</Button>
-</ButtonGroup>`}
+        title="Raven wrapper basics"
+        description="Use the Raven wrapper for the common case: pass a buttons array and the group-level MUI props you want to share."
+        code={`<RavenButtonGroup
+  variant="contained"
+  aria-label="Basic button group"
+  buttons={[
+    { label: 'One' },
+    { label: 'Two' },
+    { label: 'Three' },
+  ]}
+/>`}
       >
-        <ButtonGroup variant="contained" aria-label="Basic button group">
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
-        </ButtonGroup>
+        <RavenButtonGroup
+          variant="contained"
+          aria-label="Basic button group"
+          buttons={baseButtons}
+        />
       </Section>
 
-      {/* Button variants */}
       <Section
         title="Button variants"
-        description="All the standard button variants are supported."
-        code={`<ButtonGroup variant="outlined" aria-label="Outlined button group">
-  <Button>One</Button>
-  <Button>Two</Button>
-  <Button>Three</Button>
-</ButtonGroup>
-<ButtonGroup variant="text" aria-label="Text button group">
-  <Button>One</Button>
-  <Button>Two</Button>
-  <Button>Three</Button>
-</ButtonGroup>`}
+        description="All the standard MUI button-group variants are supported and inherit the Raven spacing treatment."
+        code={`<RavenButtonGroup variant="outlined" buttons={buttons} />
+<RavenButtonGroup variant="text" buttons={buttons} />`}
       >
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-          <ButtonGroup variant="outlined" aria-label="Outlined button group">
-            <Button>One</Button>
-            <Button>Two</Button>
-            <Button>Three</Button>
-          </ButtonGroup>
-          <ButtonGroup variant="text" aria-label="Text button group">
-            <Button>One</Button>
-            <Button>Two</Button>
-            <Button>Three</Button>
-          </ButtonGroup>
-        </Box>
+        <Stack spacing={2} alignItems="flex-start">
+          <RavenButtonGroup
+            variant="outlined"
+            aria-label="Outlined button group"
+            buttons={baseButtons}
+          />
+          <RavenButtonGroup
+            variant="text"
+            aria-label="Text button group"
+            buttons={baseButtons}
+          />
+        </Stack>
       </Section>
 
-      {/* Sizes and colors */}
       <Section
         title="Sizes and colors"
-        description="The size and color props can be used to control the appearance of the button group."
-        code={`<ButtonGroup size="small" aria-label="Small button group">
-  <Button>One</Button>
-  <Button>Two</Button>
-  <Button>Three</Button>
-</ButtonGroup>
-<ButtonGroup color="secondary" aria-label="Secondary button group">
-  <Button>One</Button>
-  <Button>Two</Button>
-  <Button>Three</Button>
-</ButtonGroup>
-<ButtonGroup size="large" aria-label="Large button group">
-  <Button>One</Button>
-  <Button>Two</Button>
-  <Button>Three</Button>
-</ButtonGroup>`}
+        description="The size and color props control the appearance of the entire group, matching the MUI Button Group API."
+        code={`<RavenButtonGroup size="small" variant="outlined" buttons={buttons} />
+<RavenButtonGroup color="secondary" variant="contained" buttons={buttons} />
+<RavenButtonGroup size="large" variant="outlined" buttons={buttons} />`}
       >
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'flex-start' }}>
-          <ButtonGroup size="small" variant="outlined" aria-label="Small button group">
-            <Button>One</Button>
-            <Button>Two</Button>
-            <Button>Three</Button>
-          </ButtonGroup>
-          <ButtonGroup color="secondary" variant="contained" aria-label="Secondary button group">
-            <Button>One</Button>
-            <Button>Two</Button>
-            <Button>Three</Button>
-          </ButtonGroup>
-          <ButtonGroup size="large" variant="outlined" aria-label="Large button group">
-            <Button>One</Button>
-            <Button>Two</Button>
-            <Button>Three</Button>
-          </ButtonGroup>
-        </Box>
+        <Stack spacing={2} alignItems="flex-start">
+          <RavenButtonGroup
+            size="small"
+            variant="outlined"
+            aria-label="Small button group"
+            buttons={baseButtons}
+          />
+          <RavenButtonGroup
+            color="secondary"
+            variant="contained"
+            aria-label="Secondary button group"
+            buttons={baseButtons}
+          />
+          <RavenButtonGroup
+            size="large"
+            variant="outlined"
+            aria-label="Large button group"
+            buttons={baseButtons}
+          />
+        </Stack>
       </Section>
 
-      {/* Color variants */}
       <Section
         title="Color variants"
-        description="All theme palette colors are supported for consistent brand and semantic styling."
+        description="All theme palette colors are supported for semantic emphasis."
       >
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'flex-start' }}>
-          {(['primary', 'secondary', 'success', 'error', 'warning', 'info'] as const).map((color) => (
-            <Box key={color} sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-              <Typography variant="caption" sx={{ width: 72, textTransform: 'capitalize', color: 'text.secondary' }}>
+        <Stack spacing={2} alignItems="flex-start">
+          {(
+            ['primary', 'secondary', 'success', 'error', 'warning', 'info'] as const
+          ).map((color) => (
+            <Box
+              key={color}
+              sx={{ display: 'flex', alignItems: 'center', gap: 2 }}
+            >
+              <Typography
+                variant="caption"
+                sx={{
+                  width: 72,
+                  textTransform: 'capitalize',
+                  color: 'text.secondary',
+                }}
+              >
                 {color}
               </Typography>
-              <ButtonGroup variant="contained" color={color}>
-                <Button>One</Button>
-                <Button>Two</Button>
-                <Button>Three</Button>
-              </ButtonGroup>
+              <RavenButtonGroup
+                variant="contained"
+                color={color}
+                aria-label={`${color} button group`}
+                buttons={baseButtons}
+              />
             </Box>
           ))}
-        </Box>
+        </Stack>
       </Section>
 
-      {/* Vertical group */}
       <Section
         title="Vertical group"
-        description="The button group can be displayed vertically using the orientation prop."
-        code={`<ButtonGroup orientation="vertical" variant="contained">
-  <Button>Create</Button>
-  <Button>Edit</Button>
-  <Button>Delete</Button>
-</ButtonGroup>`}
+        description="The orientation prop still works with Raven's 8px spacing, so vertical groups remain easy to scan."
+        code={`<RavenButtonGroup
+  orientation="vertical"
+  variant="contained"
+  buttons={[
+    { label: 'Create' },
+    { label: 'Edit' },
+    { label: 'Delete' },
+  ]}
+/>`}
       >
         {(['contained', 'outlined', 'text'] as const).map((variant) => (
           <Box key={variant} sx={{ textAlign: 'center' }}>
-            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
+            <Typography
+              variant="caption"
+              color="text.secondary"
+              sx={{ display: 'block', mb: 1 }}
+            >
               {variant}
             </Typography>
-            <ButtonGroup orientation="vertical" variant={variant}>
-              <Button>Create</Button>
-              <Button>Edit</Button>
-              <Button>Delete</Button>
-            </ButtonGroup>
+            <RavenButtonGroup
+              orientation="vertical"
+              variant={variant}
+              aria-label={`${variant} vertical button group`}
+              buttons={[
+                { label: 'Create' },
+                { label: 'Edit' },
+                { label: 'Delete' },
+              ]}
+            />
           </Box>
         ))}
       </Section>
 
-      {/* Split button */}
       <Section
         title="Split button"
-        description="ButtonGroup can also be used to create a split button. The dropdown can change the button action or be used to immediately trigger a related action."
-        code={`const options = ['Create incident', 'Create near-miss', 'Create observation'];
-
-<ButtonGroup variant="contained" ref={anchorRef}>
-  <Button>{options[selectedIndex]}</Button>
-  <Button size="small" onClick={handleToggle}>
+        description="Use children instead of the buttons array when you need a compound control. This example adds the missing menu accessibility details from the standard MUI pattern."
+        code={`<RavenButtonGroup ref={anchorRef} variant="contained">
+  <RavenButton>{options[selectedIndex]}</RavenButton>
+  <RavenButton
+    id={toggleId}
+    size="small"
+    aria-haspopup="menu"
+    aria-expanded={open ? 'true' : undefined}
+    aria-controls={open ? menuId : undefined}
+  >
     <ArrowDropDownIcon />
-  </Button>
-</ButtonGroup>
-<Popper open={open} anchorEl={anchorRef.current} transition>
-  ...menu items...
-</Popper>`}
+  </RavenButton>
+</RavenButtonGroup>`}
       >
         <SplitButtonDemo />
       </Section>
 
-      {/* Disabled elevation */}
       <Section
         title="Disabled elevation"
-        description="You can remove the elevation with the disableElevation prop."
-        code={`<ButtonGroup disableElevation variant="contained">
-  <Button>One</Button>
-  <Button>Two</Button>
-</ButtonGroup>`}
+        description="You can remove elevation from contained groups with disableElevation."
+        code={`<RavenButtonGroup
+  disableElevation
+  variant="contained"
+  aria-label="Disabled elevation button group"
+  buttons={[
+    { label: 'One' },
+    { label: 'Two' },
+  ]}
+/>`}
       >
-        <ButtonGroup disableElevation variant="contained" aria-label="Disabled elevation button group">
-          <Button>One</Button>
-          <Button>Two</Button>
-        </ButtonGroup>
+        <RavenButtonGroup
+          disableElevation
+          variant="contained"
+          aria-label="Disabled elevation button group"
+          buttons={[{ label: 'One' }, { label: 'Two' }]}
+        />
       </Section>
 
-      {/* Disabled state */}
       <Section
         title="Disabled"
-        description="All buttons in a group can be disabled at once using the disabled prop on ButtonGroup."
-        code={`<ButtonGroup variant="contained" disabled>
-  <Button>One</Button>
-  <Button>Two</Button>
-  <Button>Three</Button>
-</ButtonGroup>`}
+        description="Disable the whole group with the group-level prop, or disable individual buttons via the buttons array."
+        code={`<RavenButtonGroup variant="contained" disabled buttons={buttons} />
+<RavenButtonGroup
+  variant="outlined"
+  buttons={[
+    { label: 'One' },
+    { label: 'Two', disabled: true },
+    { label: 'Three' },
+  ]}
+/>`}
       >
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'flex-start' }}>
-          <ButtonGroup variant="contained" disabled>
-            <Button>One</Button>
-            <Button>Two</Button>
-            <Button>Three</Button>
-          </ButtonGroup>
-          <ButtonGroup variant="outlined" disabled>
-            <Button>One</Button>
-            <Button>Two</Button>
-            <Button>Three</Button>
-          </ButtonGroup>
-        </Box>
+        <Stack spacing={2} alignItems="flex-start">
+          <RavenButtonGroup
+            variant="contained"
+            disabled
+            aria-label="Disabled contained group"
+            buttons={baseButtons}
+          />
+          <RavenButtonGroup
+            variant="outlined"
+            aria-label="Partially disabled button group"
+            buttons={[
+              { label: 'One' },
+              { label: 'Two', disabled: true },
+              { label: 'Three' },
+            ]}
+          />
+        </Stack>
       </Section>
 
-      {/* Loading */}
       <Section
         title="Loading"
-        description="Use the loading prop on individual buttons to set them in a loading state and disable interactions."
-        code={`<ButtonGroup variant="outlined">
-  <Button>Submit</Button>
-  <Button>Fetch data</Button>
-  <Button disabled startIcon={<CircularProgress size={16} />}>
-    Saving...
-  </Button>
-</ButtonGroup>`}
+        description="Use the actual Button loading prop on individual Raven buttons, matching the MUI v6 Button Group guidance more closely than a manual disabled-spinner workaround."
+        code={`<RavenButtonGroup
+  variant="outlined"
+  aria-label="Loading button group"
+  buttons={[
+    { label: 'Submit' },
+    { label: 'Fetch data' },
+    {
+      label: 'Save',
+      loading: true,
+      loadingPosition: 'start',
+      startIcon: <SaveIcon />,
+    },
+  ]}
+/>`}
       >
-        <ButtonGroup variant="outlined" aria-label="Loading button group">
-          <Button>Submit</Button>
-          <Button>Fetch data</Button>
-          <Button disabled startIcon={<CircularProgress size={16} />}>
-            Saving...
-          </Button>
-        </ButtonGroup>
+        <RavenButtonGroup
+          variant="outlined"
+          aria-label="Loading button group"
+          buttons={[
+            { label: 'Submit' },
+            { label: 'Fetch data' },
+            {
+              label: 'Save',
+              loading: true,
+              loadingPosition: 'start',
+              startIcon: <SaveIcon />,
+            },
+          ]}
+        />
+      </Section>
+
+      <Section
+        title="Full width"
+        description="Full-width groups are supported and keep the 8px separation while stretching the whole control to the container width."
+        code={`<Box sx={{ width: 360 }}>
+  <RavenButtonGroup
+    fullWidth
+    variant="outlined"
+    buttons={[
+      { label: 'Draft' },
+      { label: 'Review' },
+      { label: 'Approve' },
+    ]}
+  />
+</Box>`}
+      >
+        <Box sx={{ width: 360 }}>
+          <RavenButtonGroup
+            fullWidth
+            variant="outlined"
+            aria-label="Full width button group"
+            buttons={[
+              { label: 'Draft' },
+              { label: 'Review' },
+              { label: 'Approve' },
+            ]}
+          />
+        </Box>
       </Section>
 
       <Divider sx={{ my: 4 }} />
 
-      {/* Raven Product Patterns */}
       <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
         Raven product patterns
       </Typography>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 2, maxWidth: 680, lineHeight: 1.6 }}>
-        Common ButtonGroup patterns used across the Near Miss Incident Reporting application.
+      <Typography
+        variant="body2"
+        color="text.secondary"
+        sx={{ mb: 2, maxWidth: 680, lineHeight: 1.6 }}
+      >
+        Common Raven patterns that benefit from grouped actions with breathable
+        spacing rather than fully fused segmented controls.
       </Typography>
 
       <Section
         title="Incident status actions"
-        description="Grouped status transition buttons for incident workflow stages."
+        description="Grouped status transition actions for incident workflow stages."
       >
-        <ButtonGroup variant="contained">
-          <Button>Draft</Button>
-          <Button>In Review</Button>
-          <Button>Approved</Button>
-          <Button>Closed</Button>
-        </ButtonGroup>
+        <RavenButtonGroup
+          variant="contained"
+          aria-label="Incident status actions"
+          buttons={[
+            { label: 'Draft' },
+            { label: 'In Review' },
+            { label: 'Approved' },
+            { label: 'Closed' },
+          ]}
+        />
       </Section>
 
       <Section
         title="View toggle"
         description="Outlined button group used to switch between different content views."
       >
-        <ButtonGroup variant="outlined" size="small">
-          <Button>List</Button>
-          <Button>Grid</Button>
-          <Button>Timeline</Button>
-        </ButtonGroup>
+        <RavenButtonGroup
+          variant="outlined"
+          size="small"
+          aria-label="View toggle"
+          buttons={[
+            { label: 'List' },
+            { label: 'Grid' },
+            { label: 'Timeline' },
+          ]}
+        />
       </Section>
 
       <Section
         title="Export options"
         description="Grouped export format selection for report generation."
       >
-        <ButtonGroup variant="outlined">
-          <Button>PDF</Button>
-          <Button>CSV</Button>
-          <Button>Excel</Button>
-        </ButtonGroup>
+        <RavenButtonGroup
+          variant="outlined"
+          aria-label="Export options"
+          buttons={[
+            { label: 'PDF' },
+            { label: 'CSV' },
+            { label: 'Excel' },
+          ]}
+        />
       </Section>
 
       <Divider sx={{ my: 4 }} />
@@ -386,7 +527,11 @@ export const ButtonGroupPage = {
         API
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
-        See the MUI documentation for a complete reference to all props and classes available for{' '}
+        Use the Raven `buttons` convenience API for standard grouped actions, or
+        pass custom children for advanced compositions like split buttons. The
+        wrapper continues to support the main MUI group props such as `variant`,
+        `color`, `size`, `orientation`, `disabled`, `disableElevation`, and
+        `fullWidth`. See the MUI documentation for{' '}
         <Typography
           component="a"
           variant="body2"

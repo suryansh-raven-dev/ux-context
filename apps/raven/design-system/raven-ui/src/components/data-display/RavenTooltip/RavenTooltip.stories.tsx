@@ -4,7 +4,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import type { Meta, StoryObj } from '@storybook/react';
+import type { TooltipProps } from '@mui/material/Tooltip';
 
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { RavenTooltip } from './RavenTooltip';
 
 export default {
@@ -15,14 +17,14 @@ export default {
 
 type Story = StoryObj<typeof RavenTooltip>;
 
-export const Default: Story = {
+const Default: Story = {
   args: {
     title: 'This is a tooltip',
     children: <Button variant="outlined">Hover me</Button>,
   },
 };
 
-export const Top: Story = {
+const Top: Story = {
   args: {
     title: 'Top placement',
     placement: 'top',
@@ -30,7 +32,7 @@ export const Top: Story = {
   },
 };
 
-export const Right: Story = {
+const Right: Story = {
   args: {
     title: 'Right placement',
     placement: 'right',
@@ -38,7 +40,7 @@ export const Right: Story = {
   },
 };
 
-export const Bottom: Story = {
+const Bottom: Story = {
   args: {
     title: 'Bottom placement',
     placement: 'bottom',
@@ -46,7 +48,7 @@ export const Bottom: Story = {
   },
 };
 
-export const Left: Story = {
+const Left: Story = {
   args: {
     title: 'Left placement',
     placement: 'left',
@@ -54,7 +56,7 @@ export const Left: Story = {
   },
 };
 
-export const WithRichContent: Story = {
+const WithRichContent: Story = {
   args: {
     title: (
       <React.Fragment>
@@ -69,4 +71,31 @@ export const WithRichContent: Story = {
     ),
     children: <Button variant="outlined">Rich tooltip</Button>,
   },
+};
+
+function renderStory(story: Story) {
+  if (story.render) {
+    return story.render({ ...(story.args ?? {}) } as never, {} as never);
+  }
+  if (story.args) {
+    return <RavenTooltip {...(story.args as TooltipProps)} />;
+  }
+  return null;
+}
+
+export const Tooltip: Story = {
+  name: 'Tooltip',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={720}>
+      <StorybookSection title="Default">{renderStory(Default)}</StorybookSection>
+      <StorybookSection title="Top">{renderStory(Top)}</StorybookSection>
+      <StorybookSection title="Right">{renderStory(Right)}</StorybookSection>
+      <StorybookSection title="Bottom">{renderStory(Bottom)}</StorybookSection>
+      <StorybookSection title="Left">{renderStory(Left)}</StorybookSection>
+      <StorybookSection title="With Rich Content">{renderStory(WithRichContent)}</StorybookSection>
+    </StorybookPage>
+  ),
 };

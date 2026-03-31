@@ -15,6 +15,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlankRounded';
 import CheckBoxIcon from '@mui/icons-material/CheckBoxRounded';
+
+import { VirtualizedAutocompleteListbox } from './VirtualizedAutocompleteListbox';
+
 import './RavenAutocomplete.css';
 
 export { createFilterOptions };
@@ -84,6 +87,13 @@ export interface RavenAutocompleteProps<
   open?: boolean;
   onOpen?: (event: React.SyntheticEvent) => void;
   onClose?: (event: React.SyntheticEvent, reason: string) => void;
+  ListboxComponent?: AutocompleteProps<T, Multiple, DisableClearable, FreeSolo>['ListboxComponent'];
+  ListboxProps?: AutocompleteProps<T, Multiple, DisableClearable, FreeSolo>['ListboxProps'];
+  virtualized?: boolean;
+  virtualizationThreshold?: number;
+  listboxHeight?: number;
+  listboxRowHeight?: number;
+  overscanCount?: number;
 }
 
 const checkboxIcon = <CheckBoxOutlineBlankIcon fontSize="small" />;
@@ -145,6 +155,13 @@ export function RavenAutocomplete<
   open,
   onOpen,
   onClose,
+  ListboxComponent,
+  ListboxProps,
+  virtualized = false,
+  virtualizationThreshold = 100,
+  listboxHeight = 320,
+  listboxRowHeight = 40,
+  overscanCount = 6,
 }: RavenAutocompleteProps<T, Multiple, DisableClearable, FreeSolo>) {
   const sizeClass = size === 'small' ? 'raven-autocomplete--small' : '';
   const rootClassName = ['raven-autocomplete', sizeClass, className]
@@ -218,6 +235,25 @@ export function RavenAutocomplete<
     }) as any;
   }
 
+  const shouldVirtualize =
+    virtualized &&
+    options.length >= virtualizationThreshold &&
+    !groupBy &&
+    !renderGroupProp;
+
+  const resolvedListboxComponent = shouldVirtualize
+    ? VirtualizedAutocompleteListbox
+    : ListboxComponent;
+
+  const resolvedListboxProps = shouldVirtualize
+    ? {
+        ...(ListboxProps ?? {}),
+        itemSize: listboxRowHeight,
+        listboxHeight,
+        overscanCount,
+      }
+    : ListboxProps;
+
   return (
     <Autocomplete
       id={id}
@@ -263,6 +299,8 @@ export function RavenAutocomplete<
       open={open}
       onOpen={onOpen}
       onClose={onClose as any}
+      ListboxComponent={resolvedListboxComponent}
+      ListboxProps={resolvedListboxProps as any}
     />
   );
 }

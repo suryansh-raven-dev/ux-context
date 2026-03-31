@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { RavenRadioGroup } from './RavenRadioGroup';
+import type { RavenRadioGroupProps } from './RavenRadioGroup';
 
 const meta: Meta<typeof RavenRadioGroup> = {
   title: 'Components/Inputs/Radio Group',
@@ -17,7 +20,7 @@ const severityOptions = [
   { value: 'critical', label: 'Critical' },
 ];
 
-export const Default: Story = {
+const Default: Story = {
   args: {
     label: 'Severity',
     options: severityOptions,
@@ -25,7 +28,7 @@ export const Default: Story = {
   },
 };
 
-export const Row: Story = {
+const Row: Story = {
   args: {
     label: 'Layout direction',
     options: severityOptions,
@@ -34,7 +37,7 @@ export const Row: Story = {
   },
 };
 
-export const WithDisabledOption: Story = {
+const WithDisabledOption: Story = {
   args: {
     label: 'Priority',
     options: [
@@ -47,7 +50,7 @@ export const WithDisabledOption: Story = {
   },
 };
 
-export const Controlled: Story = {
+const Controlled: Story = {
   render: function ControlledRadio() {
     const [val, setVal] = useState('medium');
     return (
@@ -62,4 +65,29 @@ export const Controlled: Story = {
       </div>
     );
   },
+};
+
+function renderStory(story: Story) {
+  if (story.render) {
+    return story.render({ ...(story.args ?? {}) } as never, {} as never);
+  }
+  if (story.args) {
+    return <RavenRadioGroup {...(story.args as RavenRadioGroupProps)} />;
+  }
+  return null;
+}
+
+export const RadioGroup: Story = {
+  name: 'Radio Group',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={760}>
+      <StorybookSection title="Default">{renderStory(Default)}</StorybookSection>
+      <StorybookSection title="Row">{renderStory(Row)}</StorybookSection>
+      <StorybookSection title="With Disabled Option">{renderStory(WithDisabledOption)}</StorybookSection>
+      <StorybookSection title="Controlled">{renderStory(Controlled)}</StorybookSection>
+    </StorybookPage>
+  ),
 };

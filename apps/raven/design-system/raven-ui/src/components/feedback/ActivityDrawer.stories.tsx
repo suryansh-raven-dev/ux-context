@@ -3,10 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { ActivityDrawer } from './ActivityDrawer';
 
 export default {
-  title: 'Feedback/Activity Drawer',
+  title: 'Components/Feedback',
   component: ActivityDrawer,
 } satisfies Meta<typeof ActivityDrawer>;
 
@@ -28,10 +29,19 @@ function DrawerDemo({ width }: { width?: number }) {
   );
 }
 
-export const Default: Story = {
-  render: () => <DrawerDemo />,
-};
-
-export const CustomWidth: Story = {
-  render: () => <DrawerDemo width={520} />,
+export const ActivityDrawerPage: Story = {
+  name: 'Activity Drawer',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={760}>
+      <StorybookSection title="Default">
+        <DrawerDemo />
+      </StorybookSection>
+      <StorybookSection title="Custom Width">
+        <DrawerDemo width={520} />
+      </StorybookSection>
+    </StorybookPage>
+  ),
 };

@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { RavenTransferList } from './RavenTransferList';
 
 export default {
@@ -27,7 +28,7 @@ type Story = StoryObj<typeof RavenTransferList>;
 
 /* ─── Basic ─────────────────────────────────────────────── */
 
-export const Basic: Story = {
+const Basic: Story = {
   name: 'Basic',
   args: {
     leftItems: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
@@ -39,7 +40,7 @@ export const Basic: Story = {
 
 /* ─── Reviewer Assignment ───────────────────────────────── */
 
-export const ReviewerAssignment: Story = {
+const ReviewerAssignment: Story = {
   name: 'Reviewer Assignment',
   render: () => (
     <Box>
@@ -68,7 +69,7 @@ export const ReviewerAssignment: Story = {
 
 /* ─── Permission Groups ─────────────────────────────────── */
 
-export const PermissionGroups: Story = {
+const PermissionGroups: Story = {
   name: 'Permission Groups',
   render: () => (
     <Box>
@@ -99,7 +100,7 @@ export const PermissionGroups: Story = {
 
 /* ─── Investigation Categories ──────────────────────────── */
 
-export const InvestigationCategories: Story = {
+const InvestigationCategories: Story = {
   name: 'Investigation Categories',
   render: () => (
     <Box>
@@ -127,7 +128,7 @@ export const InvestigationCategories: Story = {
 
 /* ─── Empty States ──────────────────────────────────────── */
 
-export const EmptyStates: Story = {
+const EmptyStates: Story = {
   name: 'Empty States',
   render: () => (
     <Stack spacing={4}>
@@ -154,5 +155,54 @@ export const EmptyStates: Story = {
         />
       </Box>
     </Stack>
+  ),
+};
+
+const LargeDatasetStress: Story = {
+  name: 'Large Dataset Stress',
+  render: () => (
+    <Box>
+      <Typography variant="h6" gutterBottom>
+        Large Team Assignment
+      </Typography>
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        Stress surface for large transfer lists. Each panel contains hundreds of items and switches to the virtualized path to keep scrolling responsive.
+      </Typography>
+      <RavenTransferList
+        leftTitle="Available responders"
+        rightTitle="Assigned responders"
+        leftItems={Array.from({ length: 400 }, (_, index) => `Responder ${String(index + 1).padStart(3, '0')}`)}
+        rightItems={Array.from({ length: 180 }, (_, index) => `Assigned ${String(index + 1).padStart(3, '0')}`)}
+        virtualized
+        listHeight={320}
+      />
+    </Box>
+  ),
+};
+
+function renderStory(story: Story) {
+  if (story.render) {
+    return story.render({ ...(story.args ?? {}) } as never, {} as never);
+  }
+  if (story.args) {
+    return <RavenTransferList {...story.args} />;
+  }
+  return null;
+}
+
+export const TransferList: Story = {
+  name: 'Transfer List',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={960}>
+      <StorybookSection title="Basic">{renderStory(Basic)}</StorybookSection>
+      <StorybookSection title="Reviewer Assignment">{renderStory(ReviewerAssignment)}</StorybookSection>
+      <StorybookSection title="Permission Groups">{renderStory(PermissionGroups)}</StorybookSection>
+      <StorybookSection title="Investigation Categories">{renderStory(InvestigationCategories)}</StorybookSection>
+      <StorybookSection title="Empty States">{renderStory(EmptyStates)}</StorybookSection>
+      <StorybookSection title="Large Dataset Stress">{renderStory(LargeDatasetStress)}</StorybookSection>
+    </StorybookPage>
   ),
 };

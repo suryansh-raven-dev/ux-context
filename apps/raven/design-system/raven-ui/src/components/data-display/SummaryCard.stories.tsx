@@ -2,6 +2,7 @@ import AssessmentIcon from '@mui/icons-material/AssessmentRounded';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { SummaryCard } from './SummaryCard';
 
 export default {
@@ -11,7 +12,7 @@ export default {
 
 type Story = StoryObj<typeof SummaryCard>;
 
-export const Default: Story = {
+const Default: Story = {
   args: {
     icon: <AssessmentIcon />,
     title: 'Near-miss overview',
@@ -25,17 +26,41 @@ export const Default: Story = {
   },
 };
 
-export const Clickable: Story = {
+const Clickable: Story = {
   args: {
     ...Default.args,
     onClick: () => {},
   },
 };
 
-export const NegativeTrend: Story = {
+const NegativeTrend: Story = {
   args: {
     ...Default.args,
     closureRate: { value: '54%', positive: false },
     trend: { value: '-3% vs last month', positive: false },
   },
+};
+
+function renderStory(story: { render?: (...args: any[]) => any; args?: any }) {
+  if (story.render) {
+    return story.render({}, {});
+  }
+  if (story.args) {
+    return <SummaryCard {...story.args} />;
+  }
+  return null;
+}
+
+export const SummaryCardPage: Story = {
+  name: 'Summary Card',
+  parameters: {
+    layout: 'fullscreen',
+  },
+  render: () => (
+    <StorybookPage maxWidth={760}>
+      <StorybookSection title="Default">{renderStory(Default)}</StorybookSection>
+      <StorybookSection title="Clickable">{renderStory(Clickable)}</StorybookSection>
+      <StorybookSection title="Negative Trend">{renderStory(NegativeTrend)}</StorybookSection>
+    </StorybookPage>
+  ),
 };

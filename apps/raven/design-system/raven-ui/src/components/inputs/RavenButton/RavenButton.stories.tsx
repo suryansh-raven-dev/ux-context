@@ -17,6 +17,7 @@ import AlarmIcon from '@mui/icons-material/AlarmRounded';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCartRounded';
 import FingerprintIcon from '@mui/icons-material/FingerprintRounded';
 
+import { ExportButton } from '../../actions/ExportButton';
 import { RavenButton, RavenIconButton } from './RavenButton';
 
 export default {
@@ -114,6 +115,19 @@ function IconButtonLoadingDemo() {
       <RavenButton variant="text" size="small" onClick={() => setLoading(false)}>
         Reset
       </RavenButton>
+    </Stack>
+  );
+}
+
+function ExportButtonDemo() {
+  const [last, setLast] = useState<string | null>(null);
+
+  return (
+    <Stack spacing={2} alignItems="flex-start">
+      <ExportButton onExport={(format) => setLast(format)} />
+      <Typography variant="body2" color="text.secondary">
+        Last export: {last ?? '—'}
+      </Typography>
     </Stack>
   );
 }
@@ -383,11 +397,9 @@ export const ButtonPage = {
 
           <Box>
             <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
-              Export button (text + icon)
+              Export button with menu
             </Typography>
-            <RavenButton variant="text" color="secondary" startIcon={<FileDownloadIcon />}>
-              Export
-            </RavenButton>
+            <ExportButtonDemo />
           </Box>
         </Stack>
       </Section>

@@ -3,16 +3,21 @@ import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbRounded';
 import PolicyOutlinedIcon from '@mui/icons-material/PolicyRounded';
 import Typography from '@mui/material/Typography';
 
+import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { RecommendationPanel } from './RecommendationPanel';
 
 export default {
-  title: 'Feedback/Recommendation Panel',
+  title: 'Components/Feedback',
   component: RecommendationPanel,
 } satisfies Meta<typeof RecommendationPanel>;
 
 type Story = StoryObj<typeof RecommendationPanel>;
 
-export const Default: Story = {
+export const RecommendationPanelPage: Story = {
+  name: 'Recommendation Panel',
+  parameters: {
+    layout: 'fullscreen',
+  },
   args: {
     incidentId: 'NM-2026-0142',
     sections: [
@@ -38,4 +43,11 @@ export const Default: Story = {
       },
     ],
   },
+  render: (args) => (
+    <StorybookPage maxWidth={760}>
+      <StorybookSection title="Default">
+        <RecommendationPanel {...args} />
+      </StorybookSection>
+    </StorybookPage>
+  ),
 };

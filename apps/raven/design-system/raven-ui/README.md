@@ -7,7 +7,7 @@ Component library for the Raven Near-Miss Incident Reporting Tool, built from Fi
 - React 18 + TypeScript 5
 - MUI v6 + plain CSS (BEM naming with `raven-` prefix)
 - Storybook 8 (interactive component docs + a11y addon)
-- Vitest + React Testing Library (69 unit tests)
+- Vitest + React Testing Library (118 unit tests)
 - WCAG AA accessible
 
 ## Getting Started
@@ -16,7 +16,7 @@ Component library for the Raven Near-Miss Incident Reporting Tool, built from Fi
 npm install
 npm run storybook    # Interactive component browser at http://localhost:6006
 npm run dev          # Vite dev server
-npm run test         # Run unit tests (69 tests across 26 files)
+npm run test         # Run unit tests
 npm run test:watch   # Watch mode
 ```
 
@@ -69,6 +69,7 @@ Support levels used in the catalog:
 |-----------|------|-------|
 | SummaryCard | `components/data-display/SummaryCard` | `icon`, `title`, `stats`, `closureRate`, `departments`, `trend`, `onClick?` |
 | DataTable | `components/data-display/DataTable` | `columns`, `rows`, `rowKey`, `onRowClick?`, pagination props |
+| VirtualizedDataTable | `components/data-display/VirtualizedDataTable` | `columns`, `rows`, `rowKey`, `height?`, `rowHeight?`, `overscanCount?`, `onRowClick?` |
 | DiffCard | `components/data-display/DiffCard` | `type` (updates/added/removed), `changes` |
 | StatusStepper | `components/data-display/StatusStepper` | `steps` (label, completed?, active?) |
 | StatusTransitionCard | `components/data-display/StatusTransitionCard` | `fromStatus`, `toStatus` |
@@ -103,7 +104,8 @@ Support levels used in the catalog:
 ## Usage
 
 ```tsx
-import { ThemeProvider, CssBaseline } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import { ravenNearMissTheme, AppShell, SideNavigation, PageHeader } from './index';
 import './global.css';
 
@@ -119,6 +121,23 @@ function App() {
   );
 }
 ```
+
+## Performance Guardrails
+
+- Keep `ravenNearMissTheme` as a shared singleton. Do not create themes inside render paths.
+- Prefer MUI path imports such as `@mui/material/Button` and `@mui/icons-material/AddRounded` to reduce dev-time module cost.
+- Reserve `sx` for one-off adjustments. Reused layouts and repeated visual patterns should move to CSS classes or hoisted style constants.
+- Use `DataTable` for small and paginated datasets. Use `VirtualizedDataTable` when row counts become large enough that DOM rendering dominates.
+- `RavenTransferList` now supports large collections with built-in virtualization. It auto-switches at higher item counts and can be forced with `virtualized`.
+- `RavenAutocomplete` exposes a `virtualized` path for large flat option sets. Prefer that path once options move beyond quick interactive filtering.
+- The icon catalog is lazy-loaded in Storybook and category-gated in the UI so the docs shell does not eagerly render the entire icon surface.
+
+## Performance Stress Surfaces
+
+- `Components/Data Display/Table > Performance Stress`
+- `Components/Inputs/Transfer List > Transfer List`
+- `Components/Inputs/Autocomplete > Large Option Set Stress`
+- `Components/Icons > All Icons`
 
 ## Source
 

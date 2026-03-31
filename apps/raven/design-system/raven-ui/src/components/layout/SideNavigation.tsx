@@ -18,6 +18,14 @@ import './SideNavigation.css';
 
 const INCIDENT_PATHS = ['/reports', '/investigations', '/recommendations'] as const;
 const REPORT_INCIDENT_PATH = '/report-incident';
+const DRAWER_SX = {
+  width: 240,
+  flexShrink: 0,
+  '& .MuiDrawer-paper': {
+    position: 'relative',
+  },
+} as const;
+const NAV_LIST_SX = { flex: 1, px: 1 } as const;
 
 export type SideNavigationProps = {
   activePath: string;
@@ -48,13 +56,7 @@ export function SideNavigation({ activePath, onNavigate }: SideNavigationProps) 
     <Drawer
       variant="permanent"
       className="raven-side-nav"
-      sx={{
-        width: 240,
-        flexShrink: 0,
-        '& .MuiDrawer-paper': {
-          position: 'relative',
-        },
-      }}
+      sx={DRAWER_SX}
       slotProps={{
         paper: {
           className: 'raven-side-nav__paper',
@@ -89,7 +91,7 @@ export function SideNavigation({ activePath, onNavigate }: SideNavigationProps) 
           Report Incident
         </Button>
 
-        <List component="div" disablePadding sx={{ flex: 1, px: 1 }}>
+        <List component="div" disablePadding sx={NAV_LIST_SX}>
           <ListItemButton
             className="raven-side-nav__item"
             onClick={toggleIncidents}
