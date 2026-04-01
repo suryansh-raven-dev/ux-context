@@ -14,16 +14,16 @@ export default {
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 // Status color tokens (dot color from status_color_token_reference.html):
-//   Pending Safety Approval → #FFB300 (Amber A700)
-//   Pending Dept Approval   → #FFB300 (Amber A700)
+//   Pending Safety Approval → #EF6C00 (Orange 800)
+//   Pending Dept Approval   → #FFC107 (Amber 500)
 //   Approved by Dept        → #0097A7 (Cyan 800)
-//   Rejected                → #E53935 (Red 600)
+//   Rejected                → #EF5350 (Red 400)
 
 const REPORTS_LEGEND = [
-  { label: 'Pending Safety Manager Approval', color: '#FFB300' },
-  { label: 'Pending Department Approval',     color: '#FFB300' },
+  { label: 'Pending Safety Manager Approval', color: '#EF6C00' },
+  { label: 'Pending Department Approval',     color: '#FFC107' },
   { label: 'Approved by Department',          color: '#0097A7' },
-  { label: 'Rejected',                        color: '#E53935' },
+  { label: 'Rejected',                        color: '#EF5350' },
 ];
 
 const REPORTS_DATA = [
