@@ -72,6 +72,7 @@ function renderStory(story: { render?: (...args: any[]) => any; args?: any }) {
 }
 
 export const Pagination: Story = {
+  tags: ['!dev'],
   name: 'Pagination',
   parameters: {
     layout: 'fullscreen',

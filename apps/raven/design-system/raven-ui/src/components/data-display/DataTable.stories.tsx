@@ -43,11 +43,13 @@ const stressRows: Row[] = Array.from({ length: 2500 }, (_, index) => ({
 export default {
   title: 'Components/Data Display/Table',
   component: DataTable<Row>,
+  tags: ['autodocs'],
 } satisfies Meta<typeof DataTable<Row>>;
 
 type Story = StoryObj<typeof DataTable<Row>>;
 
 export const Default: Story = {
+  tags: ['!dev'],
   args: {
     columns,
     rows: sampleRows,
@@ -61,6 +63,7 @@ export const Default: Story = {
 };
 
 export const WithRowClick: Story = {
+  tags: ['!dev'],
   args: {
     ...Default.args,
     onRowClick: () => {},
@@ -68,6 +71,7 @@ export const WithRowClick: Story = {
 };
 
 export const Paginated: Story = {
+  tags: ['!dev'],
   args: {
     ...Default.args,
     rows: Array.from({ length: 12 }, (_, i) => ({
@@ -83,6 +87,7 @@ export const Paginated: Story = {
 };
 
 export const PerformanceStress: Story = {
+  tags: ['!dev'],
   name: 'Performance Stress',
   parameters: {
     layout: 'fullscreen',

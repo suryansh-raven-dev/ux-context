@@ -6,10 +6,12 @@ const item = muiV6Catalog.find((c) => c.name === 'Modal')!;
 
 export default {
   title: 'Components/Utils/Modal',
+  tags: ['autodocs'],
   parameters: { layout: 'centered' },
 };
 
 export const Docs = {
+  tags: ['!dev'],
   name: 'Overview',
   render: () => <ComponentReference item={item} />,
 };

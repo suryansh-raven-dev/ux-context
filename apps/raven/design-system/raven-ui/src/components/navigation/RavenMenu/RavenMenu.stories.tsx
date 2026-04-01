@@ -18,6 +18,7 @@ export default meta;
 type Story = StoryObj<typeof RavenMenu>;
 
 export const Default: Story = {
+  tags: ['!dev'],
   args: {
     trigger: <Button variant="outlined">Open Menu</Button>,
     options: [
@@ -29,6 +30,7 @@ export const Default: Story = {
 };
 
 export const WithIcons: Story = {
+  tags: ['!dev'],
   args: {
     trigger: <Button variant="outlined">Actions</Button>,
     options: [
@@ -40,6 +42,7 @@ export const WithIcons: Story = {
 };
 
 export const WithDisabledItem: Story = {
+  tags: ['!dev'],
   args: {
     trigger: <Button variant="outlined">Options</Button>,
     options: [

@@ -67,6 +67,7 @@ function renderStory(story: { render?: (...args: any[]) => any; args?: any }) {
 }
 
 export const Link: Story = {
+  tags: ['!dev'],
   name: 'Link',
   parameters: {
     layout: 'fullscreen',

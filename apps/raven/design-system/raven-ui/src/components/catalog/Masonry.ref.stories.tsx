@@ -6,10 +6,12 @@ const item = muiV6Catalog.find((c) => c.name === 'Masonry')!;
 
 export default {
   title: 'Components/Lab/Masonry',
+  tags: ['autodocs'],
   parameters: { layout: 'centered' },
 };
 
 export const Docs = {
+  tags: ['!dev'],
   name: 'Overview',
   render: () => <ComponentReference item={item} />,
 };

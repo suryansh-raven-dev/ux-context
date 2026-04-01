@@ -52,6 +52,7 @@ function renderStory(story: { render?: (...args: any[]) => any; args?: any }) {
 }
 
 export const SummaryCardPage: Story = {
+  tags: ['!dev'],
   name: 'Summary Card',
   parameters: {
     layout: 'fullscreen',

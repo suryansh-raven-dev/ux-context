@@ -84,6 +84,7 @@ function renderStory(story: Story) {
 }
 
 export const Tooltip: Story = {
+  tags: ['!dev'],
   name: 'Tooltip',
   parameters: {
     layout: 'fullscreen',

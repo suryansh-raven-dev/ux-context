@@ -89,6 +89,7 @@ function renderStory(story: Story) {
 }
 
 export const Chip: Story = {
+  tags: ['!dev'],
   name: 'Chip',
   parameters: {
     layout: 'fullscreen',

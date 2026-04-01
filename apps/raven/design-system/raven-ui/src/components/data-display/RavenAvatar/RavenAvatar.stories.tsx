@@ -56,6 +56,7 @@ function renderStory(story: Story) {
 }
 
 export const Avatar: Story = {
+  tags: ['!dev'],
   name: 'Avatar',
   parameters: {
     layout: 'fullscreen',

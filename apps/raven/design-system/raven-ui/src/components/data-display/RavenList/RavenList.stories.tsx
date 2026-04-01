@@ -76,6 +76,7 @@ function renderStory(story: Story) {
 }
 
 export const List: Story = {
+  tags: ['!dev'],
   name: 'List',
   parameters: {
     layout: 'fullscreen',

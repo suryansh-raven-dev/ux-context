@@ -5,11 +5,13 @@ import { StatusStepper } from './StatusStepper';
 export default {
   title: 'Components/Data Display/Stepper',
   component: StatusStepper,
+  tags: ['autodocs'],
 } satisfies Meta<typeof StatusStepper>;
 
 type Story = StoryObj<typeof StatusStepper>;
 
 export const Default: Story = {
+  tags: ['!dev'],
   args: {
     steps: [
       { label: 'Submitted', completed: true },
@@ -21,6 +23,7 @@ export const Default: Story = {
 };
 
 export const AllComplete: Story = {
+  tags: ['!dev'],
   args: {
     steps: [
       { label: 'Draft', completed: true },

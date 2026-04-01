@@ -63,6 +63,7 @@ function renderStory(story: Story) {
 }
 
 export const Badge: Story = {
+  tags: ['!dev'],
   name: 'Badge',
   parameters: {
     layout: 'fullscreen',

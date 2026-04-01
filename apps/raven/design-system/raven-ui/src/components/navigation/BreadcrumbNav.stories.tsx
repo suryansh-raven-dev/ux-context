@@ -5,11 +5,13 @@ import { BreadcrumbNav } from './BreadcrumbNav';
 export default {
   title: 'Components/Navigation/Breadcrumbs',
   component: BreadcrumbNav,
+  tags: ['autodocs'],
 } satisfies Meta<typeof BreadcrumbNav>;
 
 type Story = StoryObj<typeof BreadcrumbNav>;
 
 export const InProgress: Story = {
+  tags: ['!dev'],
   args: {
     parentLabel: 'Near-miss reports',
     currentId: 'NM-20418',
@@ -19,6 +21,7 @@ export const InProgress: Story = {
 };
 
 export const OtherStatus: Story = {
+  tags: ['!dev'],
   args: {
     parentLabel: 'Incidents',
     currentId: 'INC-991',
