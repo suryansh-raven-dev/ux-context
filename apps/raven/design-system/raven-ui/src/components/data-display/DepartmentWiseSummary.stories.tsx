@@ -13,11 +13,17 @@ export default {
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
+// Status chip hex codes from NMMS live app:
+//   Pending Safety Manager Approval → #009688 (teal, chip bg: #E0F2F1, text: #004D40)
+//   Pending Department Approval     → #B71C1C (red, chip bg: #FFEBEE, text: #B71C1C)
+//   Approved by Department          → #2196F3 (blue, chip bg: #E3F2FD, text: #0D47A1)
+//   Rejected                        → #EF5350 (light red, chip bg: #FFEBEE, text: #B71C1C)
+
 const REPORTS_LEGEND = [
-  { label: 'Pending Safety Manager Approval', color: '#26A69A' },
-  { label: 'Pending Department Approval',     color: '#EF5350' },
-  { label: 'Approved by Department',          color: '#5E35B1' },
-  { label: 'Rejected',                        color: '#66BB6A' },
+  { label: 'Pending Safety Manager Approval', color: '#009688' },
+  { label: 'Pending Department Approval',     color: '#B71C1C' },
+  { label: 'Approved by Department',          color: '#2196F3' },
+  { label: 'Rejected',                        color: '#EF5350' },
 ];
 
 const REPORTS_DATA = [
@@ -29,10 +35,11 @@ const REPORTS_DATA = [
   { dept: 'Adminstration',  segments: [0,  1, 0,  0]  },
 ];
 
+// Investigations chip colors: In-Progress=blue, Released=blue-light, Closed=teal
 const INVESTIGATIONS_LEGEND = [
-  { label: 'In-Progress', color: '#42A5F5' },
-  { label: 'Released',    color: '#90CAF9' },
-  { label: 'Closed',      color: '#66BB6A' },
+  { label: 'In-Progress', color: '#2196F3' },
+  { label: 'Released',    color: '#0D47A1' },
+  { label: 'Closed',      color: '#009688' },
 ];
 
 const INVESTIGATIONS_DATA = [
@@ -41,10 +48,11 @@ const INVESTIGATIONS_DATA = [
   { dept: 'Logistics', segments: [4,  0,  2]  },
 ];
 
+// Recommendations chip colors: Pending=amber (#FF6F00), In-Review=purple (#311B92), Done=teal (#009688)
 const RECOMMENDATIONS_LEGEND = [
-  { label: 'Pending',   color: '#FFA726' },
-  { label: 'In-Review', color: '#42A5F5' },
-  { label: 'Done',      color: '#66BB6A' },
+  { label: 'Pending',   color: '#FF6F00' },
+  { label: 'In-Review', color: '#311B92' },
+  { label: 'Done',      color: '#009688' },
 ];
 
 const RECOMMENDATIONS_DATA = [
