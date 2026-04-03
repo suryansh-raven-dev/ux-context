@@ -48,13 +48,20 @@ export type DetailCard = {
   onClick?: () => void;
 };
 
+/**
+ * A stat group is either a single stat or multiple stats shown together
+ * in one bordered container, separated by vertical dividers.
+ * e.g. `[340]` is standalone, `[177, 22]` is a grouped pair.
+ */
+export type StatGroup = OverviewStat | OverviewStat[];
+
 export type IncidentsSummaryProps = {
   /** Section title, e.g. "INCIDENTS SUMMARY" */
   sectionTitle?: string;
   /** Badge chip next to the title, e.g. "21% Approval Rate" */
   approvalRate?: { label: string; tooltipText?: string };
-  /** Top-level big stat numbers */
-  overviewStats: OverviewStat[];
+  /** Top-level big stat numbers — each entry is a single stat or grouped stats */
+  overviewStats: StatGroup[];
   /** Detail cards row (Total Reports, Total Investigations, Total Recommendations) */
   detailCards: DetailCard[];
 };
@@ -253,14 +260,21 @@ export function IncidentsSummary({
 
       {/* Overview stat row */}
       <Box className="incidents-summary__stat-row">
-        {overviewStats.map((stat, idx) => (
-          <Box key={stat.label} className="incidents-summary__stat-cell">
-            {idx > 0 && (
-              <Divider orientation="vertical" flexItem sx={{ mx: 0 }} />
-            )}
-            <StatBlock {...stat} />
-          </Box>
-        ))}
+        {overviewStats.map((group, gIdx) => {
+          const stats = Array.isArray(group) ? group : [group];
+          return (
+            <Box key={gIdx} className="incidents-summary__stat-cell">
+              {stats.map((stat, sIdx) => (
+                <Box key={stat.label} sx={{ display: 'flex', alignItems: 'center', gap: 2, flex: 1 }}>
+                  {sIdx > 0 && (
+                    <Divider orientation="vertical" flexItem />
+                  )}
+                  <StatBlock {...stat} />
+                </Box>
+              ))}
+            </Box>
+          );
+        })}
       </Box>
 
       {/* Detail cards */}

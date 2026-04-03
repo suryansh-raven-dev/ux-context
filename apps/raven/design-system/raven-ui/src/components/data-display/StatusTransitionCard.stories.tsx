@@ -4,7 +4,7 @@ import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { StatusTransitionCard } from './StatusTransitionCard';
 
 export default {
-  title: 'Data Display/Status Transition Card',
+  title: 'Components/Card/Status Transition Card',
   component: StatusTransitionCard,
 } satisfies Meta<typeof StatusTransitionCard>;
 

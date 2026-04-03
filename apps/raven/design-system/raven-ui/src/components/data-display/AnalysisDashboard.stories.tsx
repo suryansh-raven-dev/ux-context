@@ -17,6 +17,7 @@ import Chip from '@mui/material/Chip';
 import EventRounded from '@mui/icons-material/EventRounded';
 
 import { TabNavigation } from '../navigation/TabNavigation';
+import { SideNavigation } from '../layout/SideNavigation';
 import { AnalyticsChartCard } from './AnalyticsChartCard';
 import { CauseAnalysisChart } from './CauseAnalysisChart';
 import { IncidentsSummary } from './IncidentsSummary';
@@ -32,8 +33,10 @@ export default {
 
 const OVERVIEW_STATS = [
   { value: 340, label: 'Total Incidents' },
-  { value: 177, label: 'Total Investigation In-Progress' },
-  { value: 22,  label: 'Total Investigation Released' },
+  [
+    { value: 177, label: 'Total Investigation In-Progress' },
+    { value: 22,  label: 'Total Investigation Released' },
+  ],
   { value: 70,  label: 'Total Closed' },
 ];
 
@@ -273,9 +276,13 @@ function GroupedBarMock() {
 
 function AnalysisDashboardPrototype() {
   const [activeTab, setActiveTab] = useState(0);
+  const [activePath, setActivePath] = useState('/analysis');
 
   return (
     <Box sx={{ backgroundColor: '#fdfafe', minHeight: '100vh', display: 'flex' }}>
+      {/* Side Navigation */}
+      <SideNavigation activePath={activePath} onNavigate={setActivePath} />
+
       {/* Main content */}
       <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         {/* Page header */}

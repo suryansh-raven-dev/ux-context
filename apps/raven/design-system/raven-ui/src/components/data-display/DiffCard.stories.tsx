@@ -4,7 +4,7 @@ import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { DiffCard } from './DiffCard';
 
 export default {
-  title: 'Data Display/Diff Card',
+  title: 'Components/Card/Diff Card',
   component: DiffCard,
 } satisfies Meta<typeof DiffCard>;
 

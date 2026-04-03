@@ -7,7 +7,7 @@ import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { AnalyticsChartCard } from './AnalyticsChartCard';
 
 export default {
-  title: 'Data Display/Analytics Chart Card',
+  title: 'Components/Card/Analytics Chart Card',
   component: AnalyticsChartCard,
   tags: ['autodocs'],
 } satisfies Meta<typeof AnalyticsChartCard>;

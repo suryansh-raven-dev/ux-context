@@ -6,7 +6,7 @@ import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { SummaryCard } from './SummaryCard';
 
 export default {
-  title: 'Data Display/Summary Card',
+  title: 'Components/Card/Summary Card',
   component: SummaryCard,
 } satisfies Meta<typeof SummaryCard>;
 

@@ -8,7 +8,7 @@ import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { IncidentsSummary } from './IncidentsSummary';
 
 export default {
-  title: 'Data Display/Incidents Summary',
+  title: 'Components/Card/Incidents Summary',
   component: IncidentsSummary,
   tags: ['autodocs'],
 } satisfies Meta<typeof IncidentsSummary>;
@@ -19,8 +19,10 @@ type Story = StoryObj<typeof IncidentsSummary>;
 
 const OVERVIEW_STATS = [
   { value: 340, label: 'Total Incidents' },
-  { value: 177, label: 'Total Investigation In-Progress' },
-  { value: 22,  label: 'Total Investigation Released' },
+  [
+    { value: 177, label: 'Total Investigation In-Progress' },
+    { value: 22,  label: 'Total Investigation Released' },
+  ],
   { value: 70,  label: 'Total Closed' },
 ];
 
