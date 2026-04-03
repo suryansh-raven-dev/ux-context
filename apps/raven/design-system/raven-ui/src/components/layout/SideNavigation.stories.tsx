@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SideNavigation } from './SideNavigation';
 
 export default {
-  title: 'Layout/Side Navigation',
+  title: 'Components/Layout/Side Navigation',
   component: SideNavigation,
 } satisfies Meta<typeof SideNavigation>;
 

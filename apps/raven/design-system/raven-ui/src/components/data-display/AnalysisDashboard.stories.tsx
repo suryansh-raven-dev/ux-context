@@ -23,7 +23,7 @@ import { CauseAnalysisChart } from './CauseAnalysisChart';
 import { IncidentsSummary } from './IncidentsSummary';
 
 export default {
-  title: 'Layout/Analysis Dashboard',
+  title: 'Components/Layout/Analysis Dashboard',
   parameters: {
     layout: 'fullscreen',
   },

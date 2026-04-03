@@ -5,7 +5,7 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNoneRounded'
 import { MobileAppShell } from './MobileAppShell';
 
 export default {
-  title: 'Layout/Mobile App Shell',
+  title: 'Components/Layout/Mobile App Shell',
   component: MobileAppShell,
 } satisfies Meta<typeof MobileAppShell>;
 

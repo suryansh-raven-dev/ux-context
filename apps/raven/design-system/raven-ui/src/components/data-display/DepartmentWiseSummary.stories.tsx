@@ -8,7 +8,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TabNavigation } from '../navigation/TabNavigation';
 
 export default {
-  title: 'Layout',
+  title: 'Components/Layout',
 } satisfies Meta;
 
 // ─── Data ────────────────────────────────────────────────────────────────────

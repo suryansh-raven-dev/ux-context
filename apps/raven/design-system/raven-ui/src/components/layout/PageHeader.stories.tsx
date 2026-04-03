@@ -6,7 +6,7 @@ import { PageHeader } from './PageHeader';
 import type { PageHeaderProps } from './PageHeader';
 
 export default {
-  title: 'Layout/Page Header',
+  title: 'Components/Layout/Page Header',
   component: PageHeader,
 } satisfies Meta<typeof PageHeader>;
 

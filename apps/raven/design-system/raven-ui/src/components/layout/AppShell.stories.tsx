@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AppShell } from './AppShell';
 
 export default {
-  title: 'Layout/App Shell',
+  title: 'Components/Layout/App Shell',
   component: AppShell,
 } satisfies Meta<typeof AppShell>;
 
