@@ -7,7 +7,11 @@
   background-color: #fcf6fe;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
 }
 
 .raven-side-nav__inner {
