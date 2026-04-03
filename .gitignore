@@ -1,16 +1,12 @@
 .DS_Store
 node_modules/
+dist/
+storybook-static/
 playwright-report/
 test-results/
+*.log
+logs/
 
-config/*.local.json
-config/*.secrets.json
-
-artifacts/screenshots/*
-!artifacts/screenshots/.gitkeep
-artifacts/traces/*
-!artifacts/traces/.gitkeep
-artifacts/recordings/*
-!artifacts/recordings/.gitkeep
-artifacts/reports/*
-!artifacts/reports/.gitkeep
+# Secrets
+*.local.json
+*.secrets.json

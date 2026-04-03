@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "storybook": {
+      "command": "/usr/local/bin/node",
+      "args": ["/Users/suryanshsrivastava/.npm/_npx/e337d7045d46d77e/node_modules/storybook-mcp-server/dist/index.js"],
+      "env": {
+        "STORYBOOK_URL": "http://localhost:6006"
+      }
+    }
+  }
+}

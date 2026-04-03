@@ -1,0 +1,73 @@
+{
+    "name": "process_near_miss_investigation_step6",
+    "description": "Define corrective actions for the near-miss incident",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "corrective_actions": {
+                "type": "object",
+                "description": "Actions to address root causes and prevent recurrence",
+                "reasoning": "Ensures systematic implementation of preventive measures",
+                "properties": {
+                    "actions": {
+                        "type": "array",
+                        "description": "List of corrective actions",
+                        "reasoning": "Captures all necessary actions for incident prevention",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "action_id": {
+                                    "type": "string",
+                                    "description": "Unique identifier for the action",
+                                    "reasoning": "Enables tracking and reference of specific actions"
+                                },
+                                "recommendation": {
+                                    "type": "string",
+                                    "description": "Detailed description of recommended action",
+                                    "reasoning": "Clearly specifies what needs to be done"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "enum": ["Immediate", "Short-term", "Long-term", "System Change"],
+                                    "description": "Type of corrective action",
+                                    "reasoning": "Categorizes actions by implementation timeframe and scope"
+                                },
+                                "responsibility": {
+                                    "type": "string",
+                                    "description": "Person or role responsible for implementation",
+                                    "reasoning": "Assigns clear ownership for action completion"
+                                },
+                                "target_date": {
+                                    "type": "string",
+                                    "format": "date",
+                                    "description": "Planned completion date",
+                                    "reasoning": "Sets clear timeline for implementation"
+                                },
+                                "completion_date": {
+                                    "type": "string",
+                                    "format": "date",
+                                    "description": "Actual completion date",
+                                    "reasoning": "Tracks actual implementation timing"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "enum": ["Open", "In Progress", "Completed", "Overdue", "Verified"],
+                                    "description": "Current status of the action",
+                                    "reasoning": "Tracks progress of implementation"
+                                }
+                            },
+                            "required": ["action_id", "recommendation", "type", "responsibility", "target_date", "status"]
+                        }
+                    }
+                },
+                "required": ["actions"]
+            },
+            "reasoning": {
+                "type": "string",
+                "description": "Detailed explanation of corrective action decisions",
+                "reasoning": "Documents the thought process behind action selection and prioritization"
+            }
+        },
+        "required": ["corrective_actions", "reasoning"]
+    }
+} 

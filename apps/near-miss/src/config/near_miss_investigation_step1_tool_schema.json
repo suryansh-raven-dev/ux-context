@@ -1,0 +1,63 @@
+{
+    "name": "process_near_miss_investigation_step1",
+    "description": "Initial assessment and classification of near-miss incidents",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "investigation_metadata": {
+                "type": "object",
+                "description": "Basic metadata for the investigation",
+                "reasoning": "Essential context needed to start investigation process",
+                "properties": {
+                    "investigation_id": {
+                        "type": "string",
+                        "description": "Unique identifier for the investigation",
+                        "reasoning": "Required to track investigation throughout process"
+                    },
+                    "report_id": {
+                        "type": "string",
+                        "description": "Reference to original near-miss report",
+                        "reasoning": "Links investigation to original report"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "Date of investigation initiation",
+                        "reasoning": "Required for investigation timeline tracking"
+                    },
+                    "time": {
+                        "type": "string",
+                        "format": "time",
+                        "description": "Time of investigation initiation",
+                        "reasoning": "Required for investigation timeline tracking"
+                    }
+                },
+                "required": ["investigation_id", "report_id", "date", "time"]
+            },
+            "incident_classification": {
+                "type": "object",
+                "description": "Initial classification of the near-miss incident",
+                "reasoning": "Critical first step to determine investigation scope and approach",
+                "properties": {
+                    "workplace_safety_near_miss": {
+                        "type": "boolean",
+                        "description": "Incident related to workplace safety",
+                        "reasoning": "Determines if workplace safety protocols need review"
+                    },
+                    "process_safety_near_miss": {
+                        "type": "boolean",
+                        "description": "Incident related to process safety",
+                        "reasoning": "Determines if process safety systems need review"
+                    }
+                },
+                "required": ["workplace_safety_near_miss", "process_safety_near_miss"]
+            },
+            "reasoning": {
+                "type": "string",
+                "description": "Detailed explanation of classification decisions and choices made",
+                "reasoning": "Documents the thought process and justification for classification choices to ensure transparency and aid future reviews"
+            }
+        },
+        "required": ["investigation_metadata", "incident_classification", "reasoning_generated"]
+    }
+} 

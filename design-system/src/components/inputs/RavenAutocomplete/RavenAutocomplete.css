@@ -1,0 +1,358 @@
+/* ============================================================
+   RavenAutocomplete — Raven Design System
+   Full MUI v6 Autocomplete styling with Raven tokens
+   ============================================================ */
+
+/* --- Root --- */
+.raven-autocomplete.MuiAutocomplete-root {
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+/* --- Text Field / Input --- */
+.raven-autocomplete .MuiInputBase-root {
+  font-family: 'Source Sans 3', sans-serif;
+  border-radius: var(--raven-radius-default);
+  background-color: var(--raven-bg-input);
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+}
+
+.raven-autocomplete .MuiInputBase-input {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  color: var(--raven-text-primary);
+}
+
+.raven-autocomplete .MuiInputBase-input::placeholder {
+  color: var(--raven-text-secondary);
+  opacity: 1;
+}
+
+/* --- Label --- */
+.raven-autocomplete .MuiInputLabel-root {
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--raven-text-secondary);
+  font-size: 1rem;
+}
+
+.raven-autocomplete .MuiInputLabel-root.Mui-focused {
+  color: var(--raven-purple-900);
+}
+
+.raven-autocomplete .MuiInputLabel-root.Mui-error {
+  color: var(--raven-red-main);
+}
+
+.raven-autocomplete .MuiOutlinedInput-notchedOutline legend {
+  font-family: 'Source Sans 3', sans-serif;
+}
+.raven-autocomplete .MuiOutlinedInput-notchedOutline legend > span {
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+/* --- Outlined variant borders --- */
+.raven-autocomplete .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: var(--raven-border-default);
+  transition: border-color 200ms ease;
+}
+
+.raven-autocomplete .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--raven-purple-800);
+}
+
+.raven-autocomplete .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--raven-purple-900);
+  border-width: 2px;
+}
+
+.raven-autocomplete .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+  border-color: var(--raven-red-main);
+}
+
+.raven-autocomplete .MuiOutlinedInput-root.Mui-focused {
+  background-color: var(--raven-bg-paper);
+  box-shadow: var(--raven-shadow-chat-input);
+}
+
+/* --- Disabled state --- */
+.raven-autocomplete .MuiOutlinedInput-root.Mui-disabled {
+  background-color: var(--raven-bg-neutral);
+}
+
+.raven-autocomplete .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline {
+  border-color: var(--raven-border-default);
+}
+
+.raven-autocomplete .MuiInputBase-input.Mui-disabled {
+  color: var(--raven-text-disabled);
+  -webkit-text-fill-color: var(--raven-text-disabled);
+}
+
+/* --- Helper text --- */
+.raven-autocomplete + .MuiFormHelperText-root,
+.raven-autocomplete .MuiFormHelperText-root {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.8125rem;
+  margin-top: 4px;
+}
+
+/* --- Dropdown Paper / Listbox --- */
+.raven-autocomplete__paper.MuiAutocomplete-paper,
+.MuiAutocomplete-popper .MuiPaper-root {
+  font-family: 'Source Sans 3', sans-serif;
+  border-radius: var(--raven-radius-default);
+  box-shadow: var(--raven-shadow-brand);
+  border: 1px solid var(--raven-border-default);
+  margin-top: 4px;
+}
+
+.MuiAutocomplete-listbox {
+  padding: 6px 0;
+  max-height: 300px;
+}
+
+/* --- Options --- */
+.MuiAutocomplete-listbox .MuiAutocomplete-option {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.9375rem;
+  padding: 8px 16px;
+  min-height: 40px;
+  border-radius: 0;
+  margin: 0;
+  transition: background-color 150ms ease;
+}
+
+.MuiAutocomplete-listbox .MuiAutocomplete-option:hover,
+.MuiAutocomplete-listbox .MuiAutocomplete-option[data-focus="true"] {
+  background-color: var(--raven-purple-100);
+}
+
+.MuiAutocomplete-listbox .MuiAutocomplete-option[aria-selected="true"] {
+  background-color: var(--raven-purple-100);
+  color: var(--raven-purple-900);
+  font-weight: 500;
+}
+
+.MuiAutocomplete-listbox .MuiAutocomplete-option[aria-selected="true"]:hover,
+.MuiAutocomplete-listbox .MuiAutocomplete-option[aria-selected="true"][data-focus="true"] {
+  background-color: var(--raven-purple-200);
+}
+
+.MuiAutocomplete-listbox .MuiAutocomplete-option[aria-disabled="true"] {
+  opacity: 0.5;
+  color: var(--raven-text-disabled);
+}
+
+/* --- Group header & items --- */
+.raven-autocomplete__group-header {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--raven-purple-900);
+  padding: 8px 16px 4px;
+  position: sticky;
+  top: -6px;
+  background-color: var(--raven-bg-paper);
+  z-index: 1;
+}
+
+.raven-autocomplete__group-items {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.MuiAutocomplete-groupLabel {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--raven-purple-900);
+  background-color: var(--raven-bg-paper);
+}
+
+.MuiAutocomplete-groupUl {
+  padding: 0;
+}
+
+/* --- Tags / Chips (multiple mode) --- */
+.raven-autocomplete .MuiChip-root {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  height: 28px;
+  background-color: var(--raven-purple-100);
+  color: var(--raven-purple-900);
+  border-radius: var(--raven-radius-pill);
+  border: 1px solid var(--raven-purple-200);
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.raven-autocomplete .MuiChip-root:hover {
+  background-color: var(--raven-purple-200);
+  border-color: var(--raven-purple-300);
+}
+
+.raven-autocomplete .MuiChip-root .MuiChip-deleteIcon {
+  color: var(--raven-purple-800);
+  font-size: 1rem;
+}
+
+.raven-autocomplete .MuiChip-root .MuiChip-deleteIcon:hover {
+  color: var(--raven-purple-900);
+}
+
+.raven-autocomplete .MuiChip-root.Mui-disabled {
+  opacity: 0.6;
+  background-color: var(--raven-bg-neutral);
+  color: var(--raven-text-disabled);
+  border-color: var(--raven-border-default);
+}
+
+/* --- Checkbox (checkboxSelection mode) --- */
+.raven-autocomplete__checkbox.MuiCheckbox-root {
+  margin-right: 8px;
+  padding: 4px;
+  color: var(--raven-purple-300);
+}
+
+.raven-autocomplete__checkbox.MuiCheckbox-root.Mui-checked {
+  color: var(--raven-purple-900);
+}
+
+/* --- Clear / Popup indicators --- */
+.raven-autocomplete .MuiAutocomplete-clearIndicator {
+  color: var(--raven-text-secondary);
+  transition: color 150ms ease;
+}
+
+.raven-autocomplete .MuiAutocomplete-clearIndicator:hover {
+  color: var(--raven-purple-900);
+  background-color: var(--raven-purple-100);
+}
+
+.raven-autocomplete .MuiAutocomplete-popupIndicator {
+  color: var(--raven-text-secondary);
+  transition: color 150ms ease, transform 200ms ease;
+}
+
+.raven-autocomplete .MuiAutocomplete-popupIndicator:hover {
+  color: var(--raven-purple-900);
+  background-color: var(--raven-purple-100);
+}
+
+.raven-autocomplete .MuiAutocomplete-popupIndicatorOpen {
+  color: var(--raven-purple-900);
+}
+
+/* --- Loading & No options --- */
+.MuiAutocomplete-loading {
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--raven-text-secondary);
+  font-size: 0.9375rem;
+  padding: 12px 16px;
+}
+
+.MuiAutocomplete-noOptions {
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--raven-text-secondary);
+  font-size: 0.9375rem;
+  padding: 12px 16px;
+}
+
+/* --- Size: Small variant --- */
+.raven-autocomplete--small .MuiInputBase-root {
+  font-size: 0.8125rem;
+}
+
+.raven-autocomplete--small .MuiInputBase-input {
+  font-size: 0.8125rem;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.raven-autocomplete--small .MuiInputLabel-root {
+  font-size: 0.8125rem;
+}
+
+.raven-autocomplete--small .MuiChip-root {
+  height: 22px;
+  font-size: 0.75rem;
+}
+
+/* --- Read-only state --- */
+.raven-autocomplete .MuiOutlinedInput-root.Mui-readOnly .MuiOutlinedInput-notchedOutline {
+  border-style: dashed;
+  border-color: var(--raven-border-default);
+}
+
+.raven-autocomplete .MuiOutlinedInput-root.Mui-readOnly {
+  background-color: var(--raven-bg-neutral);
+}
+
+/* --- Free-solo input styling --- */
+.raven-autocomplete--freesolo .MuiOutlinedInput-root {
+  background-color: var(--raven-bg-paper);
+}
+
+/* --- Story / Demo helpers --- */
+.raven-autocomplete-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 480px;
+  padding: 24px;
+}
+
+.raven-autocomplete-demo--row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+.raven-autocomplete-demo__section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.raven-autocomplete-demo__section-title {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--raven-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.raven-autocomplete-demo__state-display {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.875rem;
+  color: var(--raven-text-secondary);
+  padding: 8px 12px;
+  background-color: var(--raven-bg-neutral);
+  border-radius: var(--raven-radius-default);
+  border: 1px solid var(--raven-border-default);
+}
+
+/* --- Country select flag --- */
+.raven-autocomplete__country-flag {
+  margin-right: 10px;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.raven-autocomplete__country-label {
+  flex-grow: 1;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.raven-autocomplete__country-code {
+  color: var(--raven-text-secondary);
+  font-size: 0.8125rem;
+  margin-left: 4px;
+}

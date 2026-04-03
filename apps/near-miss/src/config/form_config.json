@@ -1,0 +1,212 @@
+{
+  "initial_report_template": {
+    "report_metadata": {
+      "report_id": "string",
+      "date": "date",
+      "time": "time"
+    },
+    "location_info": {
+      "plant_department": "string",
+      "exact_location": "string",
+      "equipment": {
+        "tag_no": "string",
+        "description": "string"
+      }
+    },
+    "incident_details": {
+      "short_description": "string",
+      "immediate_action": "string"
+    },
+    "reporter_info": {
+      "name": "string",
+      "id_no": "string",
+      "department": "string",
+      "report_date": "date",
+      "report_time": "time"
+    },
+    "safety_validation": {
+      "classification": {
+        "options": {
+          "workplace_safety_near_miss": "boolean",
+          "process_safety_near_miss": "boolean",
+          "unsafe_condition": "boolean",
+          "unsafe_act": "boolean",
+          "other": "boolean"
+        }
+      },
+      "status": {
+        "options": ["Accepted", "Rejected"]
+      },
+      "validator_name": "string",
+      "validator_signature": "string",
+      "validation_date": "date"
+    }
+  },
+  "investigation_report_template": {
+    "investigation_metadata": {
+      "investigation_id": "string",
+      "report_id": "string",
+      "date": "date",
+      "time": "time",
+      "plant_department": "string",
+      "location": "string",
+      "equipment": {
+        "tag_no": "string",
+        "description": "string"
+      }
+    },
+    "incident_classification": {
+      "workplace_safety_near_miss": "boolean",
+      "process_safety_near_miss": "boolean"
+    },
+    "investigation_findings": {
+      "sequence_of_events": "string"
+    },
+    "direct_causes": {
+      "unsafe_conditions": {
+        "equipment_related": {
+          "options": {
+            "inadequate_guards": "Inadequate/Defective guards",
+            "inadequate_warning": "Inadequate/Defective warning systems",
+            "inadequate_ppe": "Inadequate/Defective PPE",
+            "energized_electrical": "Energized electrical systems",
+            "mechanical_hazards": "Mechanical hazards"
+          }
+        },
+        "workplace_related": {
+          "options": {
+            "poor_housekeeping": "Clutter or debris or poor housekeeping",
+            "slippery_surfaces": "Slippery floors or walkways",
+            "congested_space": "Congestion or restricted layout/workplace",
+            "poor_accessibility": "Locations out of reach or sight",
+            "unprotected_height": "Unprotected height"
+          }
+        },
+        "environmental_related": {
+          "options": {
+            "noise": "Noise",
+            "static_electricity": "Static electricity",
+            "radiation": "Radiation",
+            "temperature_extremes": "Temperature extremes",
+            "hazardous_materials": "Presence Hazardous chemicals/biological substances",
+            "poor_illumination": "Inadequate or excessive illumination",
+            "poor_ventilation": "Inadequate ventilation",
+            "vibration": "Vibration"
+          }
+        }
+      },
+      "unsafe_acts": {
+        "procedural": {
+          "options": {
+            "unauthorized_operation": "Operation of equipment without authority",
+            "improper_speed": "Work or motion at improper speed",
+            "equipment_misuse": "Operation of equipment at improper speed",
+            "equipment_servicing": "Servicing of equipment in operation",
+            "procedure_violation": "Work sequence/method statement not followed",
+            "energized_servicing": "Servicing of energized equipment"
+          }
+        },
+        "behavioral": {
+          "options": {
+            "improper_position": "Improper position or posture for the task",
+            "improper_placement": "Improper placement of tools, equipment or materials",
+            "poor_judgment": "Improper decision making or lack of judgement",
+            "inattention": "Inattention to footing and surroundings",
+            "horseplay": "Horseplay",
+            "substance_abuse": "Drugs or alcohol intoxication"
+          }
+        },
+        "organizational": {
+          "options": {
+            "ppe_not_used": "Personal protective equipment not used",
+            "improper_ppe": "Improper use of proper PPEs",
+            "unsecured_equipment": "Equipment of materials not secured",
+            "disabled_safety": "Disabled guards, warning systems or safety devices",
+            "removed_safety": "Removal of guards, warning systems or safety devices",
+            "violence": "Acts of violence/Sabotage"
+          }
+        }
+      }
+    },
+    "root_cause_analysis": {
+      "system_factors": {
+        "options": {
+          "hazard_identification": "Hazard Identification & risk assessment",
+          "procedures": "Procedures & Practices",
+          "work_permit": "Work Permit System",
+          "training": "Personnel Training",
+          "mechanical_integrity": "Mechanical Integrity",
+          "quality_assurance": "Quality assurance of material",
+          "safeguards": "Safeguards, Controls & Layers of Protection",
+          "maintenance": "Preventive Maintenance",
+          "moc": "Management of Change",
+          "contractor": "Contractor Management",
+          "design": "Design",
+          "facility": "Facility Siting",
+          "psrv": "Pre-startup Safety Review",
+          "emergency": "Emergency Preparedness and Response",
+          "resources": "Inadequate resources",
+          "planning": "Poor work planning"
+        }
+      },
+      "physical_factors": {
+        "options": {
+          "plant_design": "Poor design of plant and equipment",
+          "maintenance": "Poorly maintained equipment",
+          "workplace": "Workplace design/preparation",
+          "equipment": "Work equipment",
+          "tools": "Tools",
+          "material": "Substandard material"
+        }
+      },
+      "human_factors": {
+        "options": {
+          "awareness": "Lack of awareness",
+          "competence": "Low skill and competence levels",
+          "medical": "Individual medical problems",
+          "supervision": "Inadequate supervision",
+          "fatigue": "Fatigued Staffs",
+          "physical": "Physical capability",
+          "environmental": "Diminished performance due environment"
+        }
+      }
+    },
+    "barrier_analysis": {
+      "failed": ["string"],
+      "successful": ["string"],
+      "missing": ["string"]
+    },
+    "conclusions": {
+      "incident_cause": "string",
+      "prevention_possibility": "string"
+    },
+    "corrective_actions": {
+      "types": ["Immediate", "Short-term", "Long-term", "System Change"],
+      "status_options": ["Open", "In Progress", "Completed", "Overdue", "Verified"],
+      "severity_levels": ["High", "Medium", "Low"],
+      "template": {
+        "action_id": "string",
+        "recommendation": "string",
+        "type": "string",
+        "responsibility": "string",
+        "target_date": "date",
+        "completion_date": "date",
+        "status": "string"
+      }
+    },
+    "investigation_team": [
+      {
+        "name": "string",
+        "department": "string",
+        "role": "string",
+        "signature": "string"
+      }
+    ],
+    "approval": {
+      "reviewed_by": "string",
+      "designation": "string",
+      "signature": "string",
+      "date": "date"
+    }
+  }
+}

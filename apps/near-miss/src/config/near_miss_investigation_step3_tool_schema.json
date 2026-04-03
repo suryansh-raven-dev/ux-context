@@ -1,0 +1,297 @@
+{
+    "name": "process_near_miss_investigation_step3",
+    "description": "Analyze direct causes of the near-miss incident",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "direct_causes": {
+                "type": "object",
+                "description": "Analysis of immediate causes that led to the incident",
+                "reasoning": "Identifies the direct factors that contributed to the incident",
+                "properties": {
+                    "unsafe_conditions": {
+                        "type": "object",
+                        "description": "Physical conditions that contributed to the incident",
+                        "reasoning": "Identifies environmental and physical factors that need to be addressed",
+                        "properties": {
+                            "equipment_related": {
+                                "type": "object",
+                                "description": "Equipment-related unsafe conditions",
+                                "reasoning": "Identifies equipment issues that need maintenance or replacement",
+                                "properties": {
+                                    "options": {
+                                        "type": "object",
+                                        "properties": {
+                                            "inadequate_guards": {
+                                                "type": "boolean",
+                                                "description": "Inadequate/Defective guards",
+                                                "reasoning": "Safety guards are critical for preventing accidents"
+                                            },
+                                            "inadequate_warning": {
+                                                "type": "boolean",
+                                                "description": "Inadequate/Defective warning systems",
+                                                "reasoning": "Warning systems alert personnel to potential hazards"
+                                            },
+                                            "inadequate_ppe": {
+                                                "type": "boolean",
+                                                "description": "Inadequate/Defective PPE",
+                                                "reasoning": "Personal protective equipment is last line of defense"
+                                            },
+                                            "energized_electrical": {
+                                                "type": "boolean",
+                                                "description": "Energized electrical systems",
+                                                "reasoning": "Electrical hazards pose serious safety risks"
+                                            },
+                                            "mechanical_hazards": {
+                                                "type": "boolean",
+                                                "description": "Mechanical hazards",
+                                                "reasoning": "Moving parts and mechanical systems can cause injuries"
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["options"]
+                            },
+                            "workplace_related": {
+                                "type": "object",
+                                "description": "Workplace environment conditions",
+                                "reasoning": "Identifies workplace layout and housekeeping issues",
+                                "properties": {
+                                    "options": {
+                                        "type": "object",
+                                        "properties": {
+                                            "poor_housekeeping": {
+                                                "type": "boolean",
+                                                "description": "Clutter or debris or poor housekeeping",
+                                                "reasoning": "Poor housekeeping creates trip hazards and impedes movement"
+                                            },
+                                            "slippery_surfaces": {
+                                                "type": "boolean",
+                                                "description": "Slippery floors or walkways",
+                                                "reasoning": "Slippery surfaces increase fall risks"
+                                            },
+                                            "congested_space": {
+                                                "type": "boolean",
+                                                "description": "Congestion or restricted layout/workplace",
+                                                "reasoning": "Congested spaces limit movement and emergency response"
+                                            },
+                                            "poor_accessibility": {
+                                                "type": "boolean",
+                                                "description": "Locations out of reach or sight",
+                                                "reasoning": "Poor accessibility can lead to unsafe workarounds"
+                                            },
+                                            "unprotected_height": {
+                                                "type": "boolean",
+                                                "description": "Unprotected height",
+                                                "reasoning": "Fall hazards from heights are a major safety concern"
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["options"]
+                            },
+                            "environmental_related": {
+                                "type": "object",
+                                "description": "Environmental conditions and hazards",
+                                "reasoning": "Identifies environmental factors that affect safety",
+                                "properties": {
+                                    "options": {
+                                        "type": "object",
+                                        "properties": {
+                                            "noise": {
+                                                "type": "boolean",
+                                                "description": "Noise",
+                                                "reasoning": "Excessive noise can impair communication and cause stress"
+                                            },
+                                            "static_electricity": {
+                                                "type": "boolean",
+                                                "description": "Static electricity",
+                                                "reasoning": "Static electricity can ignite flammable materials"
+                                            },
+                                            "radiation": {
+                                                "type": "boolean",
+                                                "description": "Radiation",
+                                                "reasoning": "Radiation exposure poses health risks"
+                                            },
+                                            "temperature_extremes": {
+                                                "type": "boolean",
+                                                "description": "Temperature extremes",
+                                                "reasoning": "Extreme temperatures affect human performance"
+                                            },
+                                            "hazardous_materials": {
+                                                "type": "boolean",
+                                                "description": "Presence Hazardous chemicals/biological substances",
+                                                "reasoning": "Hazardous materials require special handling"
+                                            },
+                                            "poor_illumination": {
+                                                "type": "boolean",
+                                                "description": "Inadequate or excessive illumination",
+                                                "reasoning": "Proper lighting is essential for safe operations"
+                                            },
+                                            "poor_ventilation": {
+                                                "type": "boolean",
+                                                "description": "Inadequate ventilation",
+                                                "reasoning": "Proper ventilation prevents hazardous atmospheres"
+                                            },
+                                            "vibration": {
+                                                "type": "boolean",
+                                                "description": "Vibration",
+                                                "reasoning": "Excessive vibration can cause equipment failure"
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["options"]
+                            }
+                        },
+                        "required": ["equipment_related", "workplace_related", "environmental_related"]
+                    },
+                    "unsafe_acts": {
+                        "type": "object",
+                        "description": "Human actions that contributed to the incident",
+                        "reasoning": "Identifies behavioral and procedural issues that need addressing",
+                        "properties": {
+                            "procedural": {
+                                "type": "object",
+                                "description": "Procedure-related unsafe acts",
+                                "reasoning": "Identifies violations or deviations from procedures",
+                                "properties": {
+                                    "options": {
+                                        "type": "object",
+                                        "properties": {
+                                            "unauthorized_operation": {
+                                                "type": "boolean",
+                                                "description": "Operation of equipment without authority",
+                                                "reasoning": "Unauthorized operations bypass safety controls"
+                                            },
+                                            "improper_speed": {
+                                                "type": "boolean",
+                                                "description": "Work or motion at improper speed",
+                                                "reasoning": "Rushing or working too slowly can cause accidents"
+                                            },
+                                            "equipment_misuse": {
+                                                "type": "boolean",
+                                                "description": "Operation of equipment at improper speed",
+                                                "reasoning": "Equipment misuse can lead to failures"
+                                            },
+                                            "equipment_servicing": {
+                                                "type": "boolean",
+                                                "description": "Servicing of equipment in operation",
+                                                "reasoning": "Working on operating equipment is dangerous"
+                                            },
+                                            "procedure_violation": {
+                                                "type": "boolean",
+                                                "description": "Work sequence/method statement not followed",
+                                                "reasoning": "Not following procedures bypasses safety measures"
+                                            },
+                                            "energized_servicing": {
+                                                "type": "boolean",
+                                                "description": "Servicing of energized equipment",
+                                                "reasoning": "Working on energized equipment poses shock hazards"
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["options"]
+                            },
+                            "behavioral": {
+                                "type": "object",
+                                "description": "Individual behavior-related unsafe acts",
+                                "reasoning": "Identifies personal conduct issues that need correction",
+                                "properties": {
+                                    "options": {
+                                        "type": "object",
+                                        "properties": {
+                                            "improper_position": {
+                                                "type": "boolean",
+                                                "description": "Improper position or posture for the task",
+                                                "reasoning": "Poor ergonomics can cause injuries"
+                                            },
+                                            "improper_placement": {
+                                                "type": "boolean",
+                                                "description": "Improper placement of tools, equipment or materials",
+                                                "reasoning": "Poor placement creates hazards"
+                                            },
+                                            "poor_judgment": {
+                                                "type": "boolean",
+                                                "description": "Improper decision making or lack of judgement",
+                                                "reasoning": "Poor decisions can lead to accidents"
+                                            },
+                                            "inattention": {
+                                                "type": "boolean",
+                                                "description": "Inattention to footing and surroundings",
+                                                "reasoning": "Lack of attention causes accidents"
+                                            },
+                                            "horseplay": {
+                                                "type": "boolean",
+                                                "description": "Horseplay",
+                                                "reasoning": "Inappropriate behavior creates risks"
+                                            },
+                                            "substance_abuse": {
+                                                "type": "boolean",
+                                                "description": "Drugs or alcohol intoxication",
+                                                "reasoning": "Substance abuse impairs judgment"
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["options"]
+                            },
+                            "organizational": {
+                                "type": "object",
+                                "description": "Organization-related unsafe acts",
+                                "reasoning": "Identifies systemic issues in safety practices",
+                                "properties": {
+                                    "options": {
+                                        "type": "object",
+                                        "properties": {
+                                            "ppe_not_used": {
+                                                "type": "boolean",
+                                                "description": "Personal protective equipment not used",
+                                                "reasoning": "Not using PPE removes protection"
+                                            },
+                                            "improper_ppe": {
+                                                "type": "boolean",
+                                                "description": "Improper use of proper PPEs",
+                                                "reasoning": "Incorrect PPE use reduces effectiveness"
+                                            },
+                                            "unsecured_equipment": {
+                                                "type": "boolean",
+                                                "description": "Equipment of materials not secured",
+                                                "reasoning": "Unsecured items can fall or move"
+                                            },
+                                            "disabled_safety": {
+                                                "type": "boolean",
+                                                "description": "Disabled guards, warning systems or safety devices",
+                                                "reasoning": "Disabling safety systems removes protection"
+                                            },
+                                            "removed_safety": {
+                                                "type": "boolean",
+                                                "description": "Removal of guards, warning systems or safety devices",
+                                                "reasoning": "Removing safety devices creates hazards"
+                                            },
+                                            "violence": {
+                                                "type": "boolean",
+                                                "description": "Acts of violence/Sabotage",
+                                                "reasoning": "Intentional harmful acts threaten safety"
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["options"]
+                            }
+                        },
+                        "required": ["procedural", "behavioral", "organizational"]
+                    }
+                },
+                "required": ["unsafe_conditions", "unsafe_acts"]
+            },
+            "reasoning": {
+                "type": "string",
+                "description": "Detailed explanation of identified direct causes and their selection",
+                "reasoning": "Documents the thought process behind cause identification and classification"
+            }
+        },
+        "required": ["direct_causes", "reasoning"]
+    }
+} 

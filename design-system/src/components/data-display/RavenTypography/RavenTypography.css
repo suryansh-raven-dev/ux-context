@@ -1,0 +1,166 @@
+/* ── RavenTypography ─────────────────────────────────────── */
+
+.raven-typography.MuiTypography-root {
+  font-family: "Source Sans 3", "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+/* ── Heading Variants ────────────────────────────────────── */
+
+.raven-typography.MuiTypography-h1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.167;
+  letter-spacing: -1.5px;
+}
+
+.raven-typography.MuiTypography-h2 {
+  font-size: 3.75rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.raven-typography.MuiTypography-h3 {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.167;
+  letter-spacing: 0;
+}
+
+.raven-typography.MuiTypography-h4 {
+  font-size: 2.125rem;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.25px;
+}
+
+.raven-typography.MuiTypography-h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0;
+}
+
+.raven-typography.MuiTypography-h6 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0.15px;
+}
+
+/* ── Subtitle Variants ───────────────────────────────────── */
+
+.raven-typography.MuiTypography-subtitle1 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.15px;
+}
+
+.raven-typography.MuiTypography-subtitle2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.1px;
+}
+
+/* ── Body Variants ───────────────────────────────────────── */
+
+.raven-typography.MuiTypography-body1 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.15px;
+}
+
+.raven-typography.MuiTypography-body2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+/* ── Custom Raven Variants ───────────────────────────────── */
+
+.raven-typography.MuiTypography-body1Bold {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.75;
+  letter-spacing: 0.15px;
+}
+
+.raven-typography.MuiTypography-tableHeader {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.17px;
+}
+
+/* ── Utility Variants ────────────────────────────────────── */
+
+.raven-typography.MuiTypography-button {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.raven-typography.MuiTypography-caption {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.4px;
+}
+
+.raven-typography.MuiTypography-overline {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ── Alignment ───────────────────────────────────────────── */
+
+.raven-typography.MuiTypography-alignCenter {
+  text-align: center;
+}
+
+.raven-typography.MuiTypography-alignJustify {
+  text-align: justify;
+}
+
+.raven-typography.MuiTypography-alignLeft {
+  text-align: left;
+}
+
+.raven-typography.MuiTypography-alignRight {
+  text-align: right;
+}
+
+/* ── Gutter & Wrap ───────────────────────────────────────── */
+
+.raven-typography.MuiTypography-gutterBottom {
+  margin-bottom: 0.35em;
+}
+
+.raven-typography.MuiTypography-noWrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.raven-typography.MuiTypography-paragraph {
+  margin-bottom: 16px;
+}
+
+/* ── Brand colors applied via CSS custom properties ──────── */
+
+.raven-typography[class*="colorPrimary"] {
+  color: #4a148c;
+}
+
+.raven-typography[class*="colorSecondary"] {
+  color: #6a1b9a;
+}

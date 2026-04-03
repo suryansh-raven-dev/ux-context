@@ -1,0 +1,32 @@
+.raven-list {
+  font-family: 'Source Sans 3', sans-serif;
+  border: 1px solid #E1BEE7;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.raven-list__item-button {
+  border-bottom: 1px solid #F3E5F5;
+}
+
+.raven-list__item-button:last-child {
+  border-bottom: none;
+}
+
+.raven-list__item-button.Mui-selected {
+  background-color: #F3E5F5;
+}
+
+.raven-list__item-button.Mui-selected:hover {
+  background-color: #E1BEE7;
+}
+
+.raven-list__item-button:hover {
+  background-color: #FAFAFA;
+}
+
+.raven-list__item-button .MuiListItemIcon-root {
+  color: #4A148C;
+  min-width: 40px;
+}

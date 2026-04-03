@@ -1,0 +1,1366 @@
+{
+  "metadata": {
+    "generated_at": "2025-02-06T17:17:37.392758",
+    "num_reports": 10
+  },
+  "reports": [
+    {
+      "report_metadata": {
+        "report_id": "RM-20231022-001",
+        "date": "2023-10-22",
+        "time": "14:12:00"
+      },
+      "location_info": {
+        "plant_department": "Refrigeration Section",
+        "exact_location": "Compressor Room near unit RC-COMP-05",
+        "equipment": {
+          "tag_no": "RC-COMP-05",
+          "description": "Ammonia Refrigeration Compressor \u2013 used to compress refrigerant ammonia for circulation"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine inspection in the compressor room, I noticed a slight leak near the compressor seal of unit RC-COMP-05. The scope of the leak wasn\u2019t immediately clear, but the hissing sound and visible condensation were concerning.",
+        "immediate_action": "I immediately shut down the unit and isolated the section by closing the associated isolation valves. I alerted the control room and maintenance team, and evacuated the immediate area as a precaution."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "RD-4572",
+        "department": "Refrigeration",
+        "report_date": "2023-10-22",
+        "report_time": "14:30:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": false,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Robert Smith",
+        "validator_signature": "RS",
+        "validation_date": "2023-10-23"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "RNR-20231010-003",
+        "date": "2023-10-10",
+        "time": "15:10:00"
+      },
+      "location_info": {
+        "plant_department": "Reforming Section",
+        "exact_location": "Reforming Reactor Unit area, adjacent to control panel of RF-RF-07",
+        "equipment": {
+          "tag_no": "RF-RF-07",
+          "description": "High-temperature reforming reactor and associated control panel"
+        }
+      },
+      "incident_details": {
+        "short_description": "Today during my routine check in the Reforming Section I noticed something off with reactor RF-RF-07. The control panel unexpectedly started flashing red alarms and the temperature reading began fluctuating wildly. At first, I thought it might be a minor sensor glitch, but the rapid changes and the unusual noise coming from the panel made me very uneasy. I immediately suspected that there could be a potential malfunction with the temperature sensor or even a risk for process upset.",
+        "immediate_action": "I quickly informed the maintenance team over the radio and manually isolated the sensor circuit as a precaution. I then engaged the manual override in the control system to stabilize the process and notified the control room supervisor. Throughout, I kept a close eye on the readings to make sure the situation didn't escalate."
+      },
+      "reporter_info": {
+        "name": "Luis Ramirez",
+        "id_no": "OP-0987",
+        "department": "Reforming Operations",
+        "report_date": "2023-10-10",
+        "report_time": "15:20:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Maria Gonzalez",
+        "validator_signature": "MGonzalez",
+        "validation_date": "2023-10-10"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-20231015-CO2-001",
+        "date": "2023-10-15",
+        "time": "14:30:00"
+      },
+      "location_info": {
+        "plant_department": "CO2 Removal Section",
+        "exact_location": "Control Room near the absorber unit",
+        "equipment": {
+          "tag_no": "CV-CO2-03",
+          "description": "Control Valve for CO2 gas inlet"
+        }
+      },
+      "incident_details": {
+        "short_description": "While performing a routine check in the CO2 Removal area, I noticed a hissing sound and observed a small leak at the flange of control valve CV-CO2-03. The pressure gauge nearby also spiked unexpectedly.",
+        "immediate_action": "I immediately shut the valve to isolate the potential leak and alerted my supervisor. Additionally, the area was cordoned off until maintenance could arrive for an in-depth inspection."
+      },
+      "reporter_info": {
+        "name": "Mark Jensen",
+        "id_no": "OP-6754",
+        "department": "Plant Operations",
+        "report_date": "2023-10-15",
+        "report_time": "14:45:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Susan Miller",
+        "validator_signature": "SM-VALID",
+        "validation_date": "2023-10-15"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NRM-20231004-001",
+        "date": "2023-10-04",
+        "time": "14:35"
+      },
+      "location_info": {
+        "plant_department": "Recovery Section",
+        "exact_location": "Adjacent to the control room and rear equipment bay",
+        "equipment": {
+          "tag_no": "RCV-REC-03",
+          "description": "Recovery Column Servo Valve and associated piping"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine inspection in the Recovery Section, I noticed unusual vibrations and a faint hissing sound near the servo valve on the recovery column. I suspected that the seal might be starting to fail, which could have led to a potential release of ammonia vapors if it deteriorated further.",
+        "immediate_action": "I immediately isolated the affected valve by closing the local block valve, notified the shift supervisor, and initiated a partial process shutdown to prevent any escalation until further inspection could be completed by the maintenance team."
+      },
+      "reporter_info": {
+        "name": "Michael Chen",
+        "id_no": "OP-785",
+        "department": "Recovery Section Operations",
+        "report_date": "2023-10-04",
+        "report_time": "14:40"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Alice Brown",
+        "validator_signature": "AB-SIG",
+        "validation_date": "2023-10-04"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NR-20231011-03",
+        "date": "2023-10-11",
+        "time": "15:45:00"
+      },
+      "location_info": {
+        "plant_department": "CO2 Removal Section",
+        "exact_location": "Near the flange of the control valve in CO2 scrubber unit",
+        "equipment": {
+          "tag_no": "CV-CO2-03",
+          "description": "Control Valve for CO2 scrubbing system - responsible for regulating CO2 flow during the removal process"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine walk-through in the CO2 Removal area, I heard a distinct hissing sound coming from the flange of control valve CV-CO2-03. I observed a small leak and a simultaneous spike in the nearby pressure gauge. At first, I thought it might be a sensor fluctuation, but the audible leak and rapid pressure change convinced me it could be a sign of a potential equipment malfunction that might endanger the process if it worsened.",
+        "immediate_action": "I immediately alerted the shift supervisor and isolated the valve section. I then informed the control room and set up continuous monitoring of the pressure gauge and surrounding lines to ensure no further escalation while maintenance and engineering teams were mobilized."
+      },
+      "reporter_info": {
+        "name": "Alex Rodriguez",
+        "id_no": "OP-4821",
+        "department": "CO2 Removal Section",
+        "report_date": "2023-10-11",
+        "report_time": "16:05:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Sarah Mills",
+        "validator_signature": "SMSign",
+        "validation_date": "2023-10-11"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-DEC-20231007-001",
+        "date": "2023-10-07",
+        "time": "09:45"
+      },
+      "location_info": {
+        "plant_department": "Decomposition Section",
+        "exact_location": "Decomposer Unit #3, near the control panel",
+        "equipment": {
+          "tag_no": "CV-DEC-02",
+          "description": "Control valve for the decomposition reactor outflow"
+        }
+      },
+      "incident_details": {
+        "short_description": "While conducting my morning routine check in the Decomposition Section, I heard a distinct hissing sound coming from the area around control valve CV-DEC-02. On closer inspection, I observed a small leak at the valve's gasket. The nearby pressure gauge showed a minor spike which made me suspect a potential seal failure. I immediately isolated the valve from service by closing the local bleed-off and alerted the on-call maintenance team to handle a more thorough inspection. I felt quite uneasy knowing that if left unattended, this could have led to an unintentional release of process fluids or even an upset in process conditions.",
+        "immediate_action": "I immediately shut in the affected valve, isolated the process line, and notified maintenance to assess and repair the potential gasket issue to prevent a full-scale equipment failure."
+      },
+      "reporter_info": {
+        "name": "John Smith",
+        "id_no": "OP-DEC-078",
+        "department": "Decomposition Operations",
+        "report_date": "2023-10-07",
+        "report_time": "10:05"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Emily Johnson",
+        "validator_signature": "EJ_Validator_Sign_20231007",
+        "validation_date": "2023-10-07"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:45:00"
+      },
+      "location_info": {
+        "plant_department": "Refrigeration Section",
+        "exact_location": "Chiller Room adjacent to Process Control Building",
+        "equipment": {
+          "tag_no": "RFG-SV-12",
+          "description": "Servo Valve on the Refrigerant Header Line for Chiller #3"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine inspection in the Refrigeration Section, I noticed unusual vibrations and a hissing noise coming from the servo valve RFG-SV-12. At first, I thought it was just normal ambient noise, but the vibration was more pronounced than usual, suggesting the seal might be starting to fail.",
+        "immediate_action": "I immediately closed the local isolation valve feeding the affected servo valve to minimize any risk of a refrigerant leak. I then alerted the shift supervisor and notified the maintenance team for a full inspection before restarting the unit."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OP-4567",
+        "department": "Refrigeration",
+        "report_date": "2023-10-10",
+        "report_time": "15:00:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Smith",
+        "validator_signature": "JS1234",
+        "validation_date": "2023-10-11"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "RPT-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:45"
+      },
+      "location_info": {
+        "plant_department": "Refrigeration Section",
+        "exact_location": "Cooling system control station near servo valve installation",
+        "equipment": {
+          "tag_no": "RFG-SV-12",
+          "description": "Refrigeration Servo Valve controlling coolant flow in the cooling circuit"
+        }
+      },
+      "incident_details": {
+        "short_description": "While performing my routine walk-through in the Refrigeration Section, I noticed unusual vibrations accompanied by a clear hissing noise from servo valve RFG-SV-12.",
+        "immediate_action": "I immediately stopped further operations in the affected area, secured the surrounding panel to prevent accidental contact, and alerted the on-call maintenance team. I also noted gauge readings and physical signs of seal wear to help troubleshoot the issue later."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OPR-56789",
+        "department": "Refrigeration",
+        "report_date": "2023-10-10",
+        "report_time": "14:45"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": false,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Smith",
+        "validator_signature": "JSmithSig",
+        "validation_date": "2023-10-10"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "GRN/NM/20231011-001",
+        "date": "2023-10-11",
+        "time": "07:45"
+      },
+      "location_info": {
+        "plant_department": "Granulation Section",
+        "exact_location": "Near the feed hopper and reactor vessel area",
+        "equipment": {
+          "tag_no": "CV-GR-05",
+          "description": "Granulation Reactor Heater Control Valve"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my morning check in the Granulation Section, I immediately noticed a hissing noise coming from control valve CV-GR-05 accompanied by an unusual drop in the reactor temperature gauge. I suspected a potential seal failure and acted quickly.",
+        "immediate_action": "I isolated the control valve by shutting down the local bleed-off line, secured the surrounding area, and alerted the on-call maintenance team along with notifying the control room to monitor process conditions. I also documented the incident for further investigation."
+      },
+      "reporter_info": {
+        "name": "John Allen",
+        "id_no": "OP-9876",
+        "department": "Granulation Section",
+        "report_date": "2023-10-11",
+        "report_time": "07:50"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Maria Lopez",
+        "validator_signature": "M.L.",
+        "validation_date": "2023-10-11"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:45:00"
+      },
+      "location_info": {
+        "plant_department": "Steam Systems",
+        "exact_location": "Main Steam Header near Boiler House",
+        "equipment": {
+          "tag_no": "ST-SV-07",
+          "description": "Steam isolation valve on the main steam feed"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine check in the Steam Systems area, I noticed an unusual vibration and a sharp rattling noise coming from isolation valve ST-SV-07. The valve seemed to be oscillating more than usual and there was a slight release of steam. I immediately suspected that the valve\u2019s internal seals might be deteriorating, which, if left unchecked, could lead to a steam leak.",
+        "immediate_action": "I immediately isolated the affected section by closing the upstream steam circuit and then alerted the shift supervisor. I also initiated a low-pressure shutdown to safely inspect the valve area and prevent any further escalation."
+      },
+      "reporter_info": {
+        "name": "Samir Ahmed",
+        "id_no": "OP-345",
+        "department": "Steam Systems",
+        "report_date": "2023-10-10",
+        "report_time": "14:45:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": false,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "John Carter",
+        "validator_signature": "JCarter-Sig",
+        "validation_date": "2023-10-10"
+      }
+    }
+  ],
+  "investigations": [
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231022-001",
+        "report_id": "RM-20231022-001",
+        "date": "2023-10-22",
+        "time": "14:12:00",
+        "plant_department": "Refrigeration Section",
+        "location": "Compressor Room near unit RC-COMP-05",
+        "equipment": {
+          "tag_no": "RC-COMP-05",
+          "description": "Ammonia Refrigeration Compressor \u2013 used to compress refrigerant ammonia for circulation"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": false
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine inspection in the compressor room, the inspector detected a hissing sound and observed visible condensation near the compressor seal of unit RC-COMP-05. The leak source was not immediately clear. The inspector activated emergency procedures by shutting down the compressor unit, isolating the affected section by closing isolation valves, alerting the control room and maintenance team, and evacuating the nearby area for safety."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical_hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Compressor seal integrity barrier - the protective function of the seal was compromised due to wear and insufficient preventive check"
+        ],
+        "successful": [
+          "Immediate shutdown and isolation prevented further ammonia release",
+          "Prompt evacuation of the area minimized personnel exposure"
+        ],
+        "missing": [
+          "Real-time leak detection sensors that could have provided early warning",
+          "Enhanced maintenance surveillance specifically targeting compressor seal wear"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was caused by a worn compressor seal, which led to a minor ammonia leak. Inadequate preventive maintenance and insufficient early leak detection measures contributed to the unsafe condition.",
+        "prevention_possibility": "Regular maintenance checks, timely replacement of critical components and installation of advanced leak detection systems could prevent a recurrence of this event."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231022-001",
+          "recommendation": "Replace the compromised compressor seal, review and update the preventive maintenance procedures, and install advanced leak detection sensors in the compressor room.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Team",
+          "target_date": "2023-10-25",
+          "completion_date": "2023-10-25",
+          "status": "In Progress"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Johnson",
+          "department": "Safety",
+          "role": "Investigator",
+          "signature": "AJ"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Robert Smith",
+        "designation": "Chief Safety Officer",
+        "signature": "RS",
+        "date": "2023-10-23"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231010-003",
+        "report_id": "RNR-20231010-003",
+        "date": "2023-10-10",
+        "time": "15:10:00",
+        "plant_department": "Reforming Section",
+        "location": "Reforming Reactor Unit area, adjacent to control panel of RF-RF-07",
+        "equipment": {
+          "tag_no": "RF-RF-07",
+          "description": "High-temperature reforming reactor and associated control panel"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine inspection in the Reforming Section, the inspector noticed that the control panel on reactor RF-RF-07 began flashing red alarms while the temperature readings fluctuated erratically. A distinct and unusual noise emanated from the panel. Recognizing the potential malfunction of the temperature sensor or associated control circuitry, the inspector quickly informed the maintenance team, isolated the sensor circuit, and engaged a manual override to stabilize the process. These immediate corrective measures prevented any process upset."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "Inadequate/Defective warning systems",
+            "Temperature extremes"
+          ],
+          "workplace_related": [],
+          "environmental_related": [
+            "Noise"
+          ]
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "Procedures & Practices",
+          "Preventive Maintenance"
+        ],
+        "physical_factors": [
+          "Work equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Regular sensor calibration and diagnostic checks were not adequately enforced."
+        ],
+        "successful": [
+          "Immediate communication with maintenance and quick activation of manual override prevented escalation."
+        ],
+        "missing": [
+          "Structured post-alarm diagnostic procedures and enhanced monitoring of control panel performance."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The incident was primarily caused by a malfunctioning temperature sensor/control panel assembly that led to erratic temperature readings and inadequate warning signals.",
+        "prevention_possibility": "Enhanced preventive maintenance, regular sensor calibration, and improved diagnostic protocols could prevent such near-miss events."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231010-001",
+          "recommendation": "Conduct a detailed inspection and recalibration of the reactor's temperature sensors and control panel, and update the maintenance schedule.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Supervisor",
+          "target_date": "2023-10-12",
+          "completion_date": "2023-10-12",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Carlos Mendez",
+          "department": "Reforming Operations",
+          "role": "Investigator",
+          "signature": "CMendez"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Eng. Roberto Diaz",
+        "designation": "Senior Process Safety Engineer",
+        "signature": "RDiaz",
+        "date": "2023-10-10"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231015-CO2-001",
+        "report_id": "NM-20231015-CO2-001",
+        "date": "2023-10-15",
+        "time": "14:30:00",
+        "plant_department": "CO2 Removal Section",
+        "location": "Control Room near the absorber unit",
+        "equipment": {
+          "tag_no": "CV-CO2-03",
+          "description": "Control Valve for CO2 gas inlet"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine check in the CO2 Removal Section, the operator noticed a hissing noise and observed a small leak at the flange of the control valve (CV-CO2-03). A nearby pressure gauge spiked unexpectedly, prompting immediate isolation of the valve and cordoning of the area. Subsequent review indicated that the leak was likely due to degradation of the valve seal, exacerbated by pressure fluctuations, although no immediate injury or release occurred."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical_hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "maintenance"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Control valve design did not provide early leak detection.",
+          "Preventive maintenance schedules were not sufficiently robust to catch seal degradation."
+        ],
+        "successful": [
+          "Operator promptly recognized the abnormal hissing sound.",
+          "Immediate isolation of the valve minimized potential escalation.",
+          "Area was cordoned off and supervisor alerted without delay."
+        ],
+        "missing": [
+          "Detailed inspection procedures and effective condition monitoring for the valve seals."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "Minor equipment degradation leading to a leak at the control valve flange was compounded by fluctuating pressure readings, triggering an alarm.",
+        "prevention_possibility": "Enhanced preventive maintenance and regular condition assessments of critical control valves would likely prevent similar near-miss incidents."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231015-01",
+          "recommendation": "Conduct a detailed inspection and condition assessment of control valve CV-CO2-03, and update preventive maintenance schedule to include frequent checks of valve seals.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-22",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Susan Miller",
+          "department": "Plant Safety",
+          "role": "Safety Validator",
+          "signature": "SM-VALID"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "John Doe",
+        "designation": "Plant Manager",
+        "signature": "JD-MGR",
+        "date": "2023-10-16"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231004-001",
+        "report_id": "NRM-20231004-001",
+        "date": "2023-10-04",
+        "time": "14:50",
+        "plant_department": "Recovery Section",
+        "location": "Adjacent to the control room and rear equipment bay",
+        "equipment": {
+          "tag_no": "RCV-REC-03",
+          "description": "Recovery Column Servo Valve and associated piping"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During the routine inspection, the operator detected unusual vibrations and a faint hissing sound near the servo valve in the Recovery Section. Recognizing the potential for a seal failure that could lead to an ammonia vapor release, the operator immediately isolated the valve by closing the local block valve, notified the shift supervisor, and initiated a partial process shutdown. Preliminary analysis indicated that the seal degradation was likely a result of deferred maintenance, and no unsafe acts by personnel were observed."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "vibration"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "maintenance"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Regular maintenance checks were not performed on the servo valve seal in line with the preventive maintenance schedule."
+        ],
+        "successful": [
+          "The operator detected abnormal vibrations and hissing sounds promptly and isolated the affected valve immediately."
+        ],
+        "missing": [
+          "Comprehensive documentation of recent maintenance activities and seal integrity inspections was lacking."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "A failing servo valve seal, likely due to inadequate preventive maintenance, resulted in abnormal vibrations and a faint hissing sound, posing a potential risk for an ammonia vapor release.",
+        "prevention_possibility": "Implementation of a rigorous preventive maintenance schedule, timely seal replacement, and enhanced monitoring of vibration and pressure indicators can prevent similar near-miss events."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-REC-001",
+          "recommendation": "Replace the servo valve seal and conduct a comprehensive inspection of the recovery column piping and associated instrumentation to ensure integrity.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Team",
+          "target_date": "2023-10-07",
+          "completion_date": "2023-10-07",
+          "status": "Completed"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Brown",
+          "department": "Recovery Section Safety",
+          "role": "Lead Investigator",
+          "signature": "AL-BR-SIG"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "David Lee",
+        "designation": "Safety Manager",
+        "signature": "DL-SIG",
+        "date": "2023-10-04"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231011-03",
+        "report_id": "NR-20231011-03",
+        "date": "2023-10-11",
+        "time": "15:45:00",
+        "plant_department": "CO2 Removal Section",
+        "location": "Near the flange of the control valve in CO2 scrubber unit",
+        "equipment": {
+          "tag_no": "CV-CO2-03",
+          "description": "Control Valve for CO2 scrubbing system - responsible for regulating CO2 flow during the removal process"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine walk-through, operator Alex Rodriguez heard a distinct hissing sound from the flange of control valve CV-CO2-03 and observed a small leak. The nearby pressure gauge spiked unexpectedly, indicating an abnormal pressure surge. Immediate actions were taken to isolate the affected section and alert the control room. Subsequent review pointed to a possible degradation of the valve flange gasket, a subject for further inspection and maintenance attention."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical_hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance",
+          "mechanical_integrity"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Flange gasket integrity did not prevent leak under operational stress"
+        ],
+        "successful": [
+          "Prompt detection by the operator",
+          "Immediate isolation of the affected valve section minimized escalation"
+        ],
+        "missing": [
+          "Early leak detection sensor integration",
+          "A periodic detailed inspection schedule for control valves in the CO2 removal area"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "Deterioration of the valve flange gasket led to a small leak accompanied by a pressure spike, indicating potential equipment malfunction.",
+        "prevention_possibility": "Enhanced preventive maintenance routines and improved early detection systems could have prevented this near-miss."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231011-01",
+          "recommendation": "Conduct a detailed inspection and replace the faulty flange gasket on control valve CV-CO2-03.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Manager",
+          "target_date": "2023-10-15",
+          "completion_date": "",
+          "status": "Open"
+        },
+        {
+          "action_id": "CA-20231011-02",
+          "recommendation": "Review and update preventive maintenance schedules for all control valves in the CO2 Removal Section.",
+          "type": "Short-term",
+          "responsibility": "Process Engineering",
+          "target_date": "2023-10-20",
+          "completion_date": "",
+          "status": "In Progress"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Carter",
+          "department": "Engineering",
+          "role": "Lead Investigator",
+          "signature": "JCSign"
+        },
+        {
+          "name": "Emily Nguyen",
+          "department": "Maintenance",
+          "role": "Technical Support",
+          "signature": "ENGSign"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Michael Smith",
+        "designation": "Safety Manager",
+        "signature": "MSign",
+        "date": "2023-10-11"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-DEC-20231007-001",
+        "report_id": "NM-DEC-20231007-001",
+        "date": "2023-10-07",
+        "time": "09:45",
+        "plant_department": "Decomposition Section",
+        "location": "Decomposer Unit #3, near the control panel",
+        "equipment": {
+          "tag_no": "CV-DEC-02",
+          "description": "Control valve for the decomposition reactor outflow"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During the routine morning inspection in the Decomposition Section, the operator detected a distinct hissing near the control valve CV-DEC-02. A closer look revealed a minor leak at the valve gasket and a simultaneous minor spike in the nearby pressure gauge. The operator immediately isolated the valve by closing the local bleed-off and notified the on-call maintenance team to prevent any escalation. The investigation reveals that early signs of gasket deterioration, likely accompanied by vibrations and noise, were indicators of a potential equipment failure."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical hazards",
+            "vibration"
+          ],
+          "workplace_related": [],
+          "environmental_related": [
+            "noise"
+          ]
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "The routine maintenance regime did not identify early signs of gasket wear."
+        ],
+        "successful": [
+          "The operator promptly isolated the valve to prevent process upset.",
+          "Immediate reporting ensured that maintenance was alerted without delay."
+        ],
+        "missing": [
+          "A robust leak detection alarm for the control valve area to alert personnel at the earliest sign of failure."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near miss was primarily caused by gasket degradation in the control valve due to lapses in preventive maintenance, evidenced by abnormal vibration and leak indications.",
+        "prevention_possibility": "Enhanced preventive maintenance and improved leak detection systems would likely have prevented the incident."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-DEC-20231007-001",
+          "recommendation": "Replace the faulty gasket on control valve CV-DEC-02, review and optimize the preventive maintenance schedule for similar equipment, and upgrade the leak detection system.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-10",
+          "completion_date": "",
+          "status": "In Progress"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Smith",
+          "department": "Decomposition Operations",
+          "role": "Lead Investigator",
+          "signature": "JS_Sign_20231007"
+        },
+        {
+          "name": "Michael Brown",
+          "department": "Maintenance",
+          "role": "Technical Support",
+          "signature": "MB_Sign_20231007"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Emily Johnson",
+        "designation": "Safety Manager",
+        "signature": "EJ_Sign_20231007",
+        "date": "2023-10-07"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "NM-INV-20231010-01",
+        "report_id": "NM-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:45:00",
+        "plant_department": "Refrigeration Section",
+        "location": "Chiller Room adjacent to Process Control Building",
+        "equipment": {
+          "tag_no": "RFG-SV-12",
+          "description": "Servo Valve on the Refrigerant Header Line for Chiller #3"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine inspection in the Refrigeration Section, the operator detected abnormal vibrations and a hissing sound from servo valve RFG-SV-12. Initially thought to be ambient noise, the pronounced vibration prompted further inspection. The valve was isolated by closing the local isolation valve. The incident was immediately escalated to the shift supervisor and maintenance team for a thorough evaluation. Preliminary inspection indicates that seal degradation in the servo valve may be developing, potentially leading to a refrigerant leak if unaddressed."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "vibration",
+            "noise"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "early detection of seal degradation through automated sensor alarms"
+        ],
+        "successful": [
+          "routine operator inspection",
+          "immediate isolation of the affected equipment",
+          "timely notification to the maintenance team"
+        ],
+        "missing": [
+          "predictive maintenance program including regular vibration analysis",
+          "detailed trend monitoring of servo valve performance"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was caused by emerging seal degradation in the servo valve, leading to abnormal vibrations and hissing noise indicative of a potential refrigerant leak.",
+        "prevention_possibility": "Enhanced monitoring through vibration analysis and an improved preventive maintenance schedule could have detected the seal degradation earlier and prevented the near-miss."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231010-01",
+          "recommendation": "Conduct a detailed inspection of the servo valve seal along with a vibration analysis to verify the extent of degradation. Replace faulty seals as necessary.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Team",
+          "target_date": "2023-10-20",
+          "completion_date": "",
+          "status": "Open"
+        },
+        {
+          "action_id": "CA-20231010-02",
+          "recommendation": "Review and update the preventive maintenance program to include regular vibration trend monitoring and seal performance audits across all similar valves.",
+          "type": "Long-term",
+          "responsibility": "Process Engineering",
+          "target_date": "2023-11-15",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Doe",
+          "department": "Refrigeration",
+          "role": "Reporting Operator",
+          "signature": "JD4567"
+        },
+        {
+          "name": "Alice Roberts",
+          "department": "Maintenance",
+          "role": "Investigation Lead",
+          "signature": "AR7890"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Mark Taylor",
+        "designation": "Plant Safety Manager",
+        "signature": "MT2023",
+        "date": "2023-10-11"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231010-001",
+        "report_id": "RPT-20231010-001",
+        "date": "2023-10-10",
+        "time": "15:00",
+        "plant_department": "Refrigeration Section",
+        "location": "Cooling system control station near servo valve installation",
+        "equipment": {
+          "tag_no": "RFG-SV-12",
+          "description": "Refrigeration Servo Valve controlling coolant flow in the cooling circuit"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": false
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine walk-through in the Refrigeration Section, the operator detected unusual vibrations and a hissing noise emanating from the servo valve RFG-SV-12. Immediate actions were taken to halt operations in the affected area, secure the control panel to prevent accidental contact, and alert the on-call maintenance team. Preliminary gauge readings confirmed abnormal fluctuations, and a visual inspection revealed early signs of seal wear."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "vibration"
+          ],
+          "workplace_related": [
+            "inadequate_warning"
+          ],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Regular inspection routines did not detect the early seal wear, allowing abnormal vibrations to intensify without triggering an automated alarm.",
+          "The existing monitoring system lacked specific alerts for vibration levels at the servo valve."
+        ],
+        "successful": [
+          "The operator\u2019s vigilance during routine walk-through prevented potential escalation by promptly halting operations and initiating a safety review."
+        ],
+        "missing": [
+          "A more robust and sensitive vibration monitoring system, which could have provided earlier detection and warning of seal degradation."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was initiated by early seal degradation in the servo valve leading to unusual vibrations and hissing. The issue went undetected due to limitations in the existing monitoring system.",
+        "prevention_possibility": "Enhanced monitoring combined with updated preventive maintenance procedures could detect early signs of equipment wear and prevent similar incidents."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231010-001",
+          "recommendation": "Implement an advanced vibration monitoring system for servo valves and review alarm thresholds to detect early signs of seal wear.",
+          "type": "System Change",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-20",
+          "completion_date": "",
+          "status": "Open"
+        },
+        {
+          "action_id": "CA-20231010-002",
+          "recommendation": "Revise and enhance the preventive maintenance schedule for all servo valves in the Refrigeration Section to include detailed seal inspections.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-15",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Doe",
+          "department": "Refrigeration",
+          "role": "Reporting Operator",
+          "signature": "JDoeSig"
+        },
+        {
+          "name": "Jane Smith",
+          "department": "Maintenance",
+          "role": "Safety Validator/Investigator",
+          "signature": "JSmithSig"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Mike Thompson",
+        "designation": "Safety Manager",
+        "signature": "MThompsonSig",
+        "date": "2023-10-10"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-GRN-20231011-001",
+        "report_id": "GRN/NM/20231011-001",
+        "date": "2023-10-11",
+        "time": "08:15",
+        "plant_department": "Granulation Section",
+        "location": "Near the feed hopper and reactor vessel area",
+        "equipment": {
+          "tag_no": "CV-GR-05",
+          "description": "Granulation Reactor Heater Control Valve"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During the morning check, the operator detected a hissing noise from control valve CV-GR-05 and observed an abnormal drop in the reactor temperature gauge. The operator immediately isolated the affected valve by shutting down the local bleed-off line, secured the area, and notified both the on-call maintenance team and the control room. This quick response prevented escalation and ensured that the process conditions were monitored closely following the incident."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "Mechanical hazards"
+          ],
+          "workplace_related": [
+            "Noise"
+          ],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "Mechanical Integrity",
+          "Preventive Maintenance"
+        ],
+        "physical_factors": [
+          "Work equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Valve seal integrity not maintained",
+          "Lack of automated alarm specifically for temperature decline"
+        ],
+        "successful": [
+          "Operator's immediate response and isolation of the affected line",
+          "Prompt communication to maintenance and control room"
+        ],
+        "missing": [
+          "Enhanced preventive maintenance schedule",
+          "Advanced process monitoring for early fault detection"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The control valve CV-GR-05 experienced a seal failure that led to a hissing noise and an abnormal drop in reactor temperature.",
+        "prevention_possibility": "Regular preventive maintenance, improved monitoring systems, and updated alarm thresholds could prevent future occurrences."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231011-01",
+          "recommendation": "Inspect all control valves in the Granulation Section with emphasis on seal integrity; update preventive maintenance procedures and consider installing advanced alarm systems for early detection.",
+          "type": "Short-term",
+          "responsibility": "Granulation Maintenance Supervisor",
+          "target_date": "2023-10-15",
+          "completion_date": "2023-10-15",
+          "status": "In Progress"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Allen",
+          "department": "Granulation Section",
+          "role": "Reporting Operator",
+          "signature": "J.A."
+        },
+        {
+          "name": "David Kim",
+          "department": "Process Safety",
+          "role": "Investigator",
+          "signature": "D.K."
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Emily Carter",
+        "designation": "Safety Manager",
+        "signature": "E.C.",
+        "date": "2023-10-11"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231010-001",
+        "report_id": "NM-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:45:00",
+        "plant_department": "Steam Systems",
+        "location": "Main Steam Header near Boiler House",
+        "equipment": {
+          "tag_no": "ST-SV-07",
+          "description": "Steam isolation valve on the main steam feed"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": false
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine check in the Steam Systems area, an operator observed unusual vibrations and a sharp rattling noise emanating from the isolation valve ST-SV-07. Simultaneously, a slight release of steam was noted. The operator immediately isolated the affected section by closing the upstream steam circuit and initiated a low-pressure shutdown to assess the situation. Initial inspection indicated that the valve\u2019s internal seals might be deteriorating, which, if not addressed, could have led to a significant steam leak."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "vibration",
+            "noise",
+            "mechanical hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "maintenance"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Predictive maintenance alerts due to sensor calibration issues",
+          "Seal integrity monitoring during routine inspections"
+        ],
+        "successful": [
+          "Operator vigilance leading to early detection and isolation of the issue"
+        ],
+        "missing": [
+          "Regular vibration analysis of isolation valves",
+          "Enhanced condition monitoring for seal deterioration"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "Deterioration of internal valve seals, likely due to insufficient preventive maintenance and monitoring, led to abnormal vibration and a minor steam leak.",
+        "prevention_possibility": "Regular, detailed inspections, proper calibration of vibration sensors, and an updated preventive maintenance schedule can effectively prevent such near-misses."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231010-001",
+          "recommendation": "Conduct a detailed inspection of valve ST-SV-07 and replace the deteriorating seals. Install upgraded vibration monitoring sensors and revise the maintenance schedule to include more frequent checks of high-risk valves.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Supervisor",
+          "target_date": "2023-10-12",
+          "completion_date": "2023-10-12",
+          "status": "Completed"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Samir Ahmed",
+          "department": "Steam Systems",
+          "role": "Reporter",
+          "signature": "SA-Sig"
+        },
+        {
+          "name": "Alice Bennett",
+          "department": "Maintenance",
+          "role": "Lead Investigator",
+          "signature": "AB-Sig"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Franklin Moore",
+        "designation": "Plant Manager",
+        "signature": "FM-Sig",
+        "date": "2023-10-10"
+      }
+    }
+  ]
+}

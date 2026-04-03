@@ -1,0 +1,26 @@
+{
+  "apps": {
+    "raven": {
+      "defaultEnvironment": "staging",
+      "environments": {
+        "staging": {
+          "baseUrl": "https://ifz.startraven.com",
+          "notes": "Primary environment for discovery and regression runs"
+        }
+      }
+    },
+    "near-miss": {
+      "defaultEnvironment": "staging",
+      "environments": {
+        "production": {
+          "baseUrl": "https://nmms.startraven.com",
+          "notes": "Production environment — use only when explicitly approved"
+        },
+        "staging": {
+          "baseUrl": "https://nmms.staging.startraven.com",
+          "notes": "Primary environment for testing and discovery"
+        }
+      }
+    }
+  }
+}

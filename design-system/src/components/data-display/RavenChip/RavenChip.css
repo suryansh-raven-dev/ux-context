@@ -1,0 +1,65 @@
+.raven-chip {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+.raven-chip--default {
+  background-color: #f5f5f5;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.raven-chip--success {
+  background-color: #E8F5E9;
+  color: #1B5E20;
+}
+
+.raven-chip--error {
+  background-color: #FFEBEE;
+  color: #B71C1C;
+}
+
+.raven-chip--warning {
+  background-color: #FFF8E1;
+  color: #FF6F00;
+}
+
+.raven-chip--info {
+  background-color: #E1F5FE;
+  color: #01579B;
+}
+
+.raven-chip--primary {
+  background-color: #F3E5F5;
+  color: #4A148C;
+}
+
+/* Outlined variants inherit text color but remove background */
+.raven-chip.MuiChip-outlined.raven-chip--default {
+  background-color: transparent;
+}
+
+.raven-chip.MuiChip-outlined.raven-chip--success {
+  background-color: transparent;
+  border-color: #4CAF50;
+}
+
+.raven-chip.MuiChip-outlined.raven-chip--error {
+  background-color: transparent;
+  border-color: #F44336;
+}
+
+.raven-chip.MuiChip-outlined.raven-chip--warning {
+  background-color: transparent;
+  border-color: #FF9800;
+}
+
+.raven-chip.MuiChip-outlined.raven-chip--info {
+  background-color: transparent;
+  border-color: #0288D1;
+}
+
+.raven-chip.MuiChip-outlined.raven-chip--primary {
+  background-color: transparent;
+  border-color: #4A148C;
+}

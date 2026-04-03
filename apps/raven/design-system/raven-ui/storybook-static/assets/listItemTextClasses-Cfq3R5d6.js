@@ -1,1 +1,0 @@
-import{g as e,b as s}from"./memoTheme-CQZK3ANR.js";function a(t){return e("MuiListItemText",t)}const l=s("MuiListItemText",["root","multiline","dense","inset","primary","secondary"]);export{a as g,l};

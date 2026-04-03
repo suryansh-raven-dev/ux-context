@@ -1,0 +1,1351 @@
+{
+  "metadata": {
+    "generated_at": "2025-02-06T16:52:49.627460",
+    "num_reports": 10
+  },
+  "reports": [
+    {
+      "report_metadata": {
+        "report_id": "NM-20231017-001",
+        "date": "2023-10-17",
+        "time": "14:45"
+      },
+      "location_info": {
+        "plant_department": "Recovery Section",
+        "exact_location": "Recovery Condenser Column area, adjacent to Control Panel RS-101",
+        "equipment": {
+          "tag_no": "REC-RCV-03",
+          "description": "Recovery Condenser Column with integrated cooling loop pump (RP-07)"
+        }
+      },
+      "incident_details": {
+        "short_description": "Today while on routine monitoring, I noticed an unexpected spike in pressure and abnormal vibrations near the recovery condenser column. The control panel alarm on RS-101 began flashing, and I quickly observed that the cooling pump RP-07 was cycling erratically, which could have led to significant process upset.",
+        "immediate_action": "I immediately initiated a safe shut down of the cooling pump (RP-07) and isolated the affected line. I also alerted the shift supervisor and ensured that emergency procedures were readied to prevent any potential chemical release or escalation to a fire/explosion scenario."
+      },
+      "reporter_info": {
+        "name": "Alex Johnson",
+        "id_no": "A12345",
+        "department": "Recovery Section",
+        "report_date": "2023-10-17",
+        "report_time": "15:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Catherine Lee",
+        "validator_signature": "CLEE",
+        "validation_date": "2023-10-17"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-CR-20231020-001",
+        "date": "2023-10-20",
+        "time": "15:47"
+      },
+      "location_info": {
+        "plant_department": "CO2 Removal Section",
+        "exact_location": "North wing, adjacent to the CO2 Scrubber Column",
+        "equipment": {
+          "tag_no": "CR-001",
+          "description": "CO2 Scrubber Column and associated control valve CV-07"
+        }
+      },
+      "incident_details": {
+        "short_description": "While performing my regular checks in the CO2 Removal area, I suddenly noticed the pressure gauge on the CO2 scrubber column (CR-001) spiking unexpectedly. At the same time, the control panel alarm started flashing and there was noticeable vibration in the nearby piping. I felt a surge of concern as I recognized the potential for a significant process upset if the abnormal conditions were not addressed immediately.",
+        "immediate_action": "I immediately alerted the shift supervisor and initiated a manual override to reduce the feed valve to the scrubber. I then isolated the affected area by closing the emergency shut-off valve and began communicating with the central control room for further instructions. Throughout the process, I monitored the pressure and vibration levels to ensure no further escalation occurred."
+      },
+      "reporter_info": {
+        "name": "Mark Thompson",
+        "id_no": "OP-4521",
+        "department": "Operations - CO2 Removal Section",
+        "report_date": "2023-10-20",
+        "report_time": "16:05"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Alice Miller",
+        "validator_signature": "AliceM_Seal#987",
+        "validation_date": "2023-10-20"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-RS-20231015-001",
+        "date": "2023-10-15",
+        "time": "09:45:00"
+      },
+      "location_info": {
+        "plant_department": "Recovery Section",
+        "exact_location": "Near the Recovery Condenser Column area (RS-101)",
+        "equipment": {
+          "tag_no": "RP-07",
+          "description": "Cooling pump responsible for circulating coolant to the Recovery Condenser"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine check in the Recovery Section, I noticed unusual vibrations and a spike in the pressure reading near the RS-101 condenser column. The cooling pump RP-07 was cycling erratically, and the RS-101 control panel alarm started flashing continuously.",
+        "immediate_action": "I immediately flagged the situation and manually adjusted the pump\u2019s control settings to stabilize its operation. I then called the control room and activated the emergency monitoring protocols to keep a close watch on the pressure readings. After securing the shutdown procedure for RP-07 if necessary, I documented every step to ensure the incident was fully recorded."
+      },
+      "reporter_info": {
+        "name": "Alex Martinez",
+        "id_no": "OPR-1574",
+        "department": "Recovery Section Operations",
+        "report_date": "2023-10-15",
+        "report_time": "10:10:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Rebecca Jenkins",
+        "validator_signature": "R.Jenkins",
+        "validation_date": "2023-10-15"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "SYN-20231011-001",
+        "date": "2023-10-11",
+        "time": "08:45"
+      },
+      "location_info": {
+        "plant_department": "Synthesis Section",
+        "exact_location": "Reactor SX-102 feed line area",
+        "equipment": {
+          "tag_no": "FP-22",
+          "description": "Feed pump responsible for ammonia injection into reactor SX-102"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine check in the Synthesis Section, I noticed an unusual fluctuation in the temperature readout on the SX-102 reactor control panel. At the same time, I observed that the feed pump FP-22 was cycling erratically and the control panel alarm started flashing red. I quickly isolated the feed line by closing the nearby valve, which prevented the unstable feed from reaching the reactor.",
+        "immediate_action": "I immediately shut down the feed pump FP-22 and isolated the valve to stabilize the process. I then notified the shift supervisor and maintenance team for further inspection to ensure all equipment was functioning normally."
+      },
+      "reporter_info": {
+        "name": "John Smith",
+        "id_no": "OP-4872",
+        "department": "Synthesis Operations",
+        "report_date": "2023-10-11",
+        "report_time": "08:50"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Alice Johnson",
+        "validator_signature": "AJ_Signature",
+        "validation_date": "2023-10-11"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "RM-20231015-007",
+        "date": "2023-10-15",
+        "time": "14:30:00"
+      },
+      "location_info": {
+        "plant_department": "Refrigeration Section",
+        "exact_location": "Compressor Room near RC-302",
+        "equipment": {
+          "tag_no": "RC-302",
+          "description": "High-capacity Refrigeration Compressor used for critical cooling operations"
+        }
+      },
+      "incident_details": {
+        "short_description": "While on my routine walk-through in the Refrigeration Section, I noticed that the temperature gauge on compressor RC-302 started spiking unexpectedly. At the same time, the control panel flashed a sensor error and I felt a vibration in the nearby piping. I quickly suspected that a faulty sensor might be misleading us or even worse, hinting at a refrigerant leak that could result in pressure buildup.",
+        "immediate_action": "I immediately initiated a shutdown of RC-302 and isolated the affected system to prevent any further escalation. I then informed the control room and maintenance team to perform a detailed inspection of the sensor connection and compressor system to rule out any refrigerant release or process upset."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OPR-047",
+        "department": "Refrigeration Section",
+        "report_date": "2023-10-15",
+        "report_time": "15:00:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Smith",
+        "validator_signature": "JS_Signature_101",
+        "validation_date": "2023-10-15"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "RM-20231005-001",
+        "date": "2023-10-05",
+        "time": "14:30"
+      },
+      "location_info": {
+        "plant_department": "Refrigeration Section",
+        "exact_location": "Compressor Room, near unit RC-302",
+        "equipment": {
+          "tag_no": "RC-302",
+          "description": "Refrigeration compressor used for chilled ammonia storage"
+        }
+      },
+      "incident_details": {
+        "short_description": "I was doing my routine walk-through in the Refrigeration Section and noticed that the temperature gauge on compressor RC-302 started rapidly spiking. At the same time, the control panel flashed a sensor error message and there was a noticeable vibration in the piping nearby. It immediately struck me that this might indicate a potential refrigerant leak which, if left unchecked, could lead to a dangerous pressure buildup.",
+        "immediate_action": "I immediately informed the maintenance team about the erratic readings and isolated compressor RC-302 from the main operating circuit. I then manually verified the gauge readings and ensured that all nearby personnel were clear from the area."
+      },
+      "reporter_info": {
+        "name": "Alex Johnson",
+        "id_no": "OP-4578",
+        "department": "Refrigeration",
+        "report_date": "2023-10-05",
+        "report_time": "15:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Sam Peterson",
+        "validator_signature": "S.Peterson",
+        "validation_date": "2023-10-05"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-20231015-001",
+        "date": "2023-10-15",
+        "time": "14:35"
+      },
+      "location_info": {
+        "plant_department": "Refrigeration Section",
+        "exact_location": "Compressor Room, near the RC-302 unit",
+        "equipment": {
+          "tag_no": "RC-302",
+          "description": "Main Refrigeration Compressor used in cooling the ammonia process"
+        }
+      },
+      "incident_details": {
+        "short_description": "While on my routine walk-through, I noticed that the temperature gauge on compressor RC-302 began to spike rapidly and the control panel flashed a sensor error message. At the same moment, I felt noticeable vibrations in the nearby piping. I suspected that there might be a faulty sensor or a refrigerant leak that could potentially cause a dangerous pressure buildup.",
+        "immediate_action": "I immediately alerted the on-duty maintenance team and initiated a controlled shutdown procedure for the affected compressor. I also isolated the feed line to minimize further risk while we could investigate the cause of the sensor error and vibrations."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "EMP45678",
+        "department": "Refrigeration Maintenance",
+        "report_date": "2023-10-15",
+        "report_time": "14:40"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Smith",
+        "validator_signature": "JaneS_Sig",
+        "validation_date": "2023-10-15"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM123456",
+        "date": "2023-10-11",
+        "time": "15:30:00"
+      },
+      "location_info": {
+        "plant_department": "Granulation Section",
+        "exact_location": "Granulation Hall near the mixing cell",
+        "equipment": {
+          "tag_no": "GM-201",
+          "description": "Granulator Mixer used in granulation processing"
+        }
+      },
+      "incident_details": {
+        "short_description": "Near-miss observed with granulator mixer GM-201 experiencing unexpected vibrations and erratic sensor readings.",
+        "immediate_action": "I noticed the alarm flash on the control panel along with increased vibration, so I immediately pressed the emergency stop on GM-201 and alerted the control room. I also isolated the equipment to prevent any further risk until maintenance could inspect the sensor and internal alignment."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OP789",
+        "department": "Operations",
+        "report_date": "2023-10-11",
+        "report_time": "16:00:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Smith",
+        "validator_signature": "JS-Sign",
+        "validation_date": "2023-10-11"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "RFR-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:35"
+      },
+      "location_info": {
+        "plant_department": "Reforming Section",
+        "exact_location": "Near Reactor RFR-203 and adjoining vent systems",
+        "equipment": {
+          "tag_no": "RFR-203",
+          "description": "Catalytic Reforming Reactor used for processing hydrocarbon feed"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine walk-through in the Reforming Section, I noticed that the pressure gauge on Reactor RFR-203 started spiking unexpectedly, reading nearly 35 psi above its normal range. I also observed some minor water traces on the piping near the vent outlet, which raised my suspicion that there might be an issue with the pressure relief valves. I immediately halted any operations on that unit and alerted the control room to secure the area.",
+        "immediate_action": "Shut down the operations for Reactor RFR-203 immediately, notified the control center, and initiated a safe isolation procedure. I also ensured that all team members were evacuated from the immediate vicinity of the equipment until further inspection."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OP-1205",
+        "department": "Reforming Section",
+        "report_date": "2023-10-10",
+        "report_time": "14:45"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Smith",
+        "validator_signature": "JSmith",
+        "validation_date": "2023-10-11"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-RS-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:30"
+      },
+      "location_info": {
+        "plant_department": "Refrigeration Section",
+        "exact_location": "Area adjacent to the ammonia cold box",
+        "equipment": {
+          "tag_no": "RC-305",
+          "description": "Refrigeration Compressor with integrated temperature and pressure sensors"
+        }
+      },
+      "incident_details": {
+        "short_description": "While on my routine walk-through, I noticed that the temperature gauge on Compressor RC-305 started spiking unusually fast, and the control panel displayed a recurring sensor error message. At the same time, the piping near the unit began to vibrate noticeably, which made me suspect there could be either a sensor malfunction or a small refrigerant leak. I paused operations for a closer look, confirmed that readings were not stabilizing, and then immediately isolated the compressor and notified the control room.",
+        "immediate_action": "I reduced the process load to minimize potential stress on the equipment and shut down Compressor RC-305 temporarily. I also informed the shift supervisor and control room so that further inspection and maintenance could be arranged. The area was secured and marked with a temporary hazard sign pending further evaluation."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OP-345",
+        "department": "Refrigeration Section",
+        "report_date": "2023-10-12",
+        "report_time": "14:45"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Smith",
+        "validator_signature": "JS-Sign",
+        "validation_date": "2023-10-12"
+      }
+    }
+  ],
+  "investigations": [
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231017-001",
+        "report_id": "NM-20231017-001",
+        "date": "2023-10-17",
+        "time": "15:15",
+        "plant_department": "Recovery Section",
+        "location": "Recovery Condenser Column area, adjacent to Control Panel RS-101",
+        "equipment": {
+          "tag_no": "REC-RCV-03",
+          "description": "Recovery Condenser Column with integrated cooling loop pump (RP-07)"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During routine monitoring, the operator detected a sudden spike in pressure accompanied by abnormal vibrations near the recovery condenser column. The control panel RS-101 alarm began flashing, and subsequent observation confirmed that cooling pump RP-07 was cycling erratically. The operator promptly initiated a safe shutdown and isolation of the affected line, preventing any escalation into a release or fire hazard."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "vibration",
+            "mechanical_hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance",
+          "mechanical_integrity"
+        ],
+        "physical_factors": [
+          "maintenance"
+        ],
+        "human_factors": [
+          "awareness"
+        ]
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Cooling pump control loop calibration",
+          "Instrumentation sensor accuracy"
+        ],
+        "successful": [
+          "Operator\u2019s immediate recognition of abnormal conditions",
+          "Prompt shutdown of RP-07 keeping the incident contained"
+        ],
+        "missing": [
+          "Regular preventive maintenance and calibration checks on RP-07 and related control systems",
+          "Automated diagnostic alerts for erratic pump cycling"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The erratic cycling of the RP-07 pump, likely due to maintenance and control loop calibration issues, resulted in abnormal vibrations and a pressure spike. This created a process safety near-miss that could have escalated into a serious incident.",
+        "prevention_possibility": "Enhanced preventive maintenance, accurate sensor calibration, and improved monitoring of control systems could prevent recurrence."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231017-001",
+          "recommendation": "Conduct a comprehensive inspection and calibration of pump RP-07 and its control loop. Revise preventive maintenance schedules and review alarm systems for adequacy.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-20",
+          "completion_date": "2023-10-20",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alex Johnson",
+          "department": "Recovery Section",
+          "role": "Incident Reporter/Investigator",
+          "signature": "AJ"
+        },
+        {
+          "name": "Catherine Lee",
+          "department": "Safety",
+          "role": "Safety Validator",
+          "signature": "CLEE"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "John Smith",
+        "designation": "Plant Manager",
+        "signature": "JSmith",
+        "date": "2023-10-18"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-CR-20231020-001",
+        "report_id": "NM-CR-20231020-001",
+        "date": "2023-10-20",
+        "time": "16:30",
+        "plant_department": "CO2 Removal Section",
+        "location": "North wing, adjacent to the CO2 Scrubber Column",
+        "equipment": {
+          "tag_no": "CR-001",
+          "description": "CO2 Scrubber Column and associated control valve CV-07"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine check in the CO2 Removal area, the operator observed an unexpected spike in the pressure gauge of the CO2 Scrubber Column (CR-001). At the same time, the control panel alarm began flashing and nearby piping exhibited abnormal vibrations. The operator promptly alerted the shift supervisor, manually overrode the feed valve to reduce process flow, and isolated the affected section. This timely intervention prevented further escalation of the situation."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "vibration"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Control system failed to prevent abnormal pressure rise",
+          "Alarm system did not provide clear troubleshooting guidelines"
+        ],
+        "successful": [
+          "Operator quickly recognized abnormal conditions",
+          "Immediate manual intervention mitigated risk"
+        ],
+        "missing": [
+          "Routine sensor calibration review",
+          "Detailed data logging for trend analysis"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was primarily due to abnormal sensor readings that led to an unexpected pressure spike and resultant vibrations. While the control system alerted operators in time, shortcomings in preventive maintenance and sensor calibration allowed the anomaly to develop.",
+        "prevention_possibility": "Regular maintenance and calibration of pressure sensors and alarm thresholds, along with enhanced trend monitoring, can significantly reduce the risk of recurrence."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-CR-20231020-001",
+          "recommendation": "Review and recalibrate the CO2 scrubber pressure sensors and adjust alarm thresholds. Implement a more rigorous routine maintenance schedule to monitor sensor performance.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Department & Instrumentation Team",
+          "target_date": "2023-10-30",
+          "completion_date": "2023-10-30",
+          "status": "In Progress"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Miller",
+          "department": "Safety",
+          "role": "Lead Investigator",
+          "signature": "AliceM_Seal#987"
+        },
+        {
+          "name": "Mark Thompson",
+          "department": "Operations - CO2 Removal Section",
+          "role": "Reporting Operator",
+          "signature": "MT_Review#4521"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "John Carter",
+        "designation": "Plant Manager",
+        "signature": "JC_Sign#2023",
+        "date": "2023-10-20"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-RS-20231015-001",
+        "report_id": "NM-RS-20231015-001",
+        "date": "2023-10-15",
+        "time": "09:45:00",
+        "plant_department": "Recovery Section",
+        "location": "Near the Recovery Condenser Column area (RS-101)",
+        "equipment": {
+          "tag_no": "RP-07",
+          "description": "Cooling pump responsible for circulating coolant to the Recovery Condenser"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine inspection in the Recovery Section, the operator observed abnormal vibrations and a sudden spike in the pressure reading near the RS-101 condenser column. The control panel alarm started flashing, and the cooling pump RP-07 began cycling erratically. The operator promptly adjusted the pump control settings and activated emergency monitoring protocols while documenting the incident for further review."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "vibration"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance",
+          "procedures"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Control panel alarm did not isolate the fault effectively",
+          "Pump control system instability was not flagged by automated diagnostics"
+        ],
+        "successful": [
+          "Operator quick recognition and response",
+          "Activation of emergency monitoring protocols"
+        ],
+        "missing": [
+          "Preventive maintenance check on RP-07 control system",
+          "Redundancy in alarm and fault verification systems"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The erratic cycling of the cooling pump RP-07, likely due to control system instability compounded by a gap in preventive maintenance, led to abnormal vibrations and a pressure spike near the RS-101 condenser column.",
+        "prevention_possibility": "Enhanced preventive maintenance routines, regular diagnostics of the pump control system, and improved alarm functionality can help prevent similar incidents."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-RS-20231015-001",
+          "recommendation": "Conduct a comprehensive review and maintenance of the RP-07 control system and associated alarm indicators. Implement scheduled diagnostic tests to ensure reliable operation and reduce the likelihood of erratic cycling.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Supervisor, Recovery Section",
+          "target_date": "2023-10-20",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alex Martinez",
+          "department": "Recovery Section Operations",
+          "role": "Reporting Operator",
+          "signature": "A.Martinez"
+        },
+        {
+          "name": "Rebecca Jenkins",
+          "department": "Process Safety",
+          "role": "Validator",
+          "signature": "R.Jenkins"
+        },
+        {
+          "name": "Samuel Lee",
+          "department": "Maintenance",
+          "role": "Lead Investigator",
+          "signature": "S.Lee"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Laura Thompson",
+        "designation": "Safety Manager",
+        "signature": "L.Thompson",
+        "date": "2023-10-15"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-SYN-20231011-001",
+        "report_id": "SYN-20231011-001",
+        "date": "2023-10-11",
+        "time": "08:45",
+        "plant_department": "Synthesis Section",
+        "location": "Reactor SX-102 feed line area",
+        "equipment": {
+          "tag_no": "FP-22",
+          "description": "Feed pump responsible for ammonia injection into reactor SX-102"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "At approximately 08:45, the operator detected an unusual fluctuation in the temperature readout at the reactor SX-102 control panel. Simultaneously, the feed pump FP-22 was observed to be cycling erratically and the control panel alarm flashed red. The operator promptly isolated the feed line by closing the nearby valve and then notified the shift supervisor and maintenance team. Initial onsite checks indicated that the erratic pump operation and temperature fluctuations may have been linked to a mechanical issue or degradation in the pump\u2019s performance."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": [
+            "temperature_extremes"
+          ]
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Automated shutdown function for FP-22 did not trigger upon detection of irregular cycling."
+        ],
+        "successful": [
+          "Operator quickly identified the abnormal conditions and isolated the feed line, preventing unstable feed from reaching the reactor."
+        ],
+        "missing": [
+          "A detailed procedure for verifying and responding to erratic pump cycling prior to shutdown."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "Erratic cycling of the feed pump FP-22, likely due to inadequate maintenance and progressive mechanical wear, led to unstable process conditions.",
+        "prevention_possibility": "Enhanced preventive maintenance protocols, timely equipment inspections, and improved alarm system functionalities could prevent recurrence of such events."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-001",
+          "recommendation": "Inspect and service feed pump FP-22, update the preventive maintenance schedule, and verify the functionality of the alarm and shutdown systems related to FP-22.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-15",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Johnson",
+          "department": "Safety",
+          "role": "Lead Safety Investigator",
+          "signature": "AJ_Signature"
+        },
+        {
+          "name": "Robert Lee",
+          "department": "Maintenance",
+          "role": "Maintenance Specialist",
+          "signature": "RL_Signature"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Mark Thompson",
+        "designation": "Safety Manager",
+        "signature": "MT_Signature",
+        "date": "2023-10-11"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231015-007",
+        "report_id": "RM-20231015-007",
+        "date": "2023-10-15",
+        "time": "15:15:00",
+        "plant_department": "Refrigeration Section",
+        "location": "Compressor Room near RC-302",
+        "equipment": {
+          "tag_no": "RC-302",
+          "description": "High-capacity Refrigeration Compressor used for critical cooling operations"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine walk-through, the operator observed an unexpected spike in the temperature gauge on compressor RC-302 along with flashing sensor error alerts on the control panel. A noticeable vibration in the adjacent piping heightened concerns of a potential refrigerant leak and pressure buildup. The operator rapidly initiated a shutdown of the compressor and isolated the affected system, followed by immediate notification to the control room and maintenance team. Preliminary inspection suggests that a faulty sensor may have provided misleading readings, masking a developing refrigerant leak condition."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "vibration"
+          ],
+          "workplace_related": [
+            "inadequate_warning"
+          ],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "maintenance"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Sensor warning system did not detect the anomaly before the temperature spike",
+          "Compressor vibration monitoring failed to trigger an earlier alarm"
+        ],
+        "successful": [
+          "Operator\u2019s prompt detection and immediate shutdown prevented further escalation"
+        ],
+        "missing": [
+          "Regular sensor diagnostics and calibration as part of preventive maintenance",
+          "Automated pressure relief checks integrated with the sensor system"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "A faulty temperature sensor led to misleading high readings and masked the early signs of a refrigerant leak, which could have resulted in a dangerous pressure buildup.",
+        "prevention_possibility": "Enhanced preventive maintenance, regular sensor diagnostics, and calibration, along with improved automated alarms, could have prevented the near-miss."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231015-01",
+          "recommendation": "Conduct a full diagnostic inspection of RC-302\u2019s sensor and associated warning system. Recalibrate or replace the sensor as necessary and review the preventive maintenance schedule for compressor sensors.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-20",
+          "completion_date": "2023-10-20",
+          "status": "In Progress"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Brown",
+          "department": "Maintenance",
+          "role": "Lead Investigator",
+          "signature": "AB_Signature_20231015"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Michael Lee",
+        "designation": "Safety Manager",
+        "signature": "ML_Signature_20231015",
+        "date": "2023-10-15"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231005-001",
+        "report_id": "RM-20231005-001",
+        "date": "2023-10-05",
+        "time": "14:30",
+        "plant_department": "Refrigeration Section",
+        "location": "Compressor Room, near unit RC-302",
+        "equipment": {
+          "tag_no": "RC-302",
+          "description": "Refrigeration compressor used for chilled ammonia storage"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine walk-through, the technician observed rapid spiking of the temperature gauge on compressor RC-302 accompanied by a flashing sensor error message on the control panel and noticeable vibration in the adjacent piping. The technician immediately isolated the unit from the main operating circuit, manually verified the gauge readings, and cleared the area of nearby personnel. This prompt action prevented any escalation while highlighting potential issues with sensor reliability and equipment maintenance."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "vibration",
+            "hazardous_materials"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": [
+          "awareness"
+        ]
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Regular sensor calibration was not effective in detecting the malfunction in time",
+          "Vibration monitoring protocols did not provide an early warning for potential refrigerant leak"
+        ],
+        "successful": [
+          "Immediate isolation of the compressor from the operating circuit",
+          "Prompt manual verification of sensor readings and timely communication with the maintenance team"
+        ],
+        "missing": [
+          "A follow-up inspection procedure for recurring sensor errors was not in place"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "A faulty sensor in compressor unit RC-302 caused erroneous temperature readings and induced vibration signals that indicated a potential refrigerant leak.",
+        "prevention_possibility": "Routine maintenance, including regular sensor calibration and enhanced vibration monitoring could have detected the sensor malfunction earlier, preventing the near-miss."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231005-001",
+          "recommendation": "Inspect, recalibrate, and, if necessary, replace the faulty sensor on RC-302. Review and update the maintenance schedule and inspection protocol for similar equipment.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Team / Refrigeration Department",
+          "target_date": "2023-10-10",
+          "completion_date": "2023-10-10",
+          "status": "Completed"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Sam Peterson",
+          "department": "Refrigeration",
+          "role": "Safety Validator",
+          "signature": "S.Peterson"
+        },
+        {
+          "name": "Linda Carter",
+          "department": "Maintenance",
+          "role": "Equipment Specialist",
+          "signature": "L.Carter"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "John Miller",
+        "designation": "Senior Safety Manager",
+        "signature": "J.Miller",
+        "date": "2023-10-06"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231015-001",
+        "report_id": "NM-20231015-001",
+        "date": "2023-10-15",
+        "time": "14:35",
+        "plant_department": "Refrigeration Section",
+        "location": "Compressor Room, near the RC-302 unit",
+        "equipment": {
+          "tag_no": "RC-302",
+          "description": "Main Refrigeration Compressor used in cooling the ammonia process"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine walk-through, the temperature gauge on compressor RC-302 began spiking rapidly while a sensor error message flashed on the control panel. At the same time, noticeable vibrations were felt in the nearby piping. The operator suspected either a faulty sensor or a developing refrigerant leak that could lead to dangerous pressure buildup. Immediate communication with the maintenance team led to a controlled shutdown and isolation of the feed line for further investigation."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "temperature_extremes",
+            "vibration"
+          ],
+          "workplace_related": [
+            "inadequate_warning"
+          ],
+          "environmental_related": [
+            "hazardous_materials"
+          ]
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Reliable sensor diagnostics on RC-302 failed to correctly indicate sensor status"
+        ],
+        "successful": [
+          "Immediate operator detection of abnormal conditions",
+          "Quick activation of compressor shutdown procedure"
+        ],
+        "missing": [
+          "Secondary alarm system for refrigerant leak detection"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The primary cause was a faulty sensor reading possibly combined with sensor mounting or wiring issues, leading to misrepresentation of temperature data and abnormal vibrations suggestive of a refrigerant leak.",
+        "prevention_possibility": "Regular sensor calibration, improved preventive maintenance, installation of redundant alarm systems, and enhanced diagnostic protocols could prevent similar incidents."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231015-01",
+          "recommendation": "Inspect and recalibrate the temperature sensor and associated wiring on compressor RC-302. Replace any faulty components and review the preventive maintenance schedule to include enhanced sensor diagnostics. Install redundancy in alarm systems for early refrigerant leak detection.",
+          "type": "Immediate",
+          "responsibility": "Refrigeration Maintenance Team",
+          "target_date": "2023-10-18",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Doe",
+          "department": "Refrigeration Maintenance",
+          "role": "Initial Reporter/Investigator",
+          "signature": "JD_Sig"
+        },
+        {
+          "name": "Jane Smith",
+          "department": "Process Safety",
+          "role": "Validator",
+          "signature": "JS_Sig"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Michael Brown",
+        "designation": "Plant Safety Manager",
+        "signature": "MB_Sig",
+        "date": "2023-10-15"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231011-001",
+        "report_id": "NM123456",
+        "date": "2023-10-11",
+        "time": "15:30:00",
+        "plant_department": "Granulation Section",
+        "location": "Granulation Hall near the mixing cell",
+        "equipment": {
+          "tag_no": "GM-201",
+          "description": "Granulator Mixer used in granulation processing"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During the routine walk-through, the operator observed unexpected vibrations and erratic sensor readings from the granulator mixer GM-201. The control panel alarm activated and the equipment was immediately shut down using the emergency stop. Subsequent isolation of the mixer prevented further process disturbances, and an initial review indicated potential sensor malfunction combined with mechanical misalignment."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "vibration"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Routine sensor checks were not comprehensive enough",
+          "Preventive maintenance schedule for the sensor was not strictly followed"
+        ],
+        "successful": [
+          "Operator recognized abnormal vibration and shut down equipment promptly",
+          "Alarm system alerted to the potential issue"
+        ],
+        "missing": [
+          "Additional diagnostic checks on sensor alignment",
+          "Advanced vibration monitoring technology to detect early anomalies"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was primarily caused by a sensor malfunction and possible mechanical misalignment due to gaps in the preventive maintenance schedule.",
+        "prevention_possibility": "Regular, rigorous inspection and maintenance of sensors and mechanical alignment, along with upgrading monitoring systems, could prevent recurrence."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-001",
+          "recommendation": "Conduct a full inspection of the GM-201 sensor and mechanical assembly; recalibrate sensors and realign mechanical components immediately. Review and update the preventive maintenance protocol.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Team",
+          "target_date": "2023-10-12",
+          "completion_date": "2023-10-12",
+          "status": "Completed"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Johnson",
+          "department": "Safety",
+          "role": "Safety Officer",
+          "signature": "AJ-Sign"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Robert Brown",
+        "designation": "Plant Manager",
+        "signature": "RB-Sign",
+        "date": "2023-10-11"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-RFR-20231010-001",
+        "report_id": "RFR-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:35",
+        "plant_department": "Reforming Section",
+        "location": "Near Reactor RFR-203 and adjoining vent systems",
+        "equipment": {
+          "tag_no": "RFR-203",
+          "description": "Catalytic Reforming Reactor used for processing hydrocarbon feed"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine walk-through, the operator observed an unexpected pressure spike on Reactor RFR-203\u2019s gauge, recording nearly 35 psi above normal. Simultaneously, minor water traces were seen on piping near the vent outlet. This combination raised suspicions about a faulty pressure relief system. The operator halted operations immediately and isolated the unit while notifying the control center, preventing further escalation."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical_hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Pressure relief valve monitoring and automatic fault detection were not effective",
+          "Sensor calibration was inadequate, leading to ambiguous high readings"
+        ],
+        "successful": [
+          "Operator detected the anomaly during the routine walk-through",
+          "Immediate shutdown and isolation of Reactor RFR-203 prevented potential escalation"
+        ],
+        "missing": [
+          "Automated system fault diagnostic for the pressure gauge",
+          "Redundancy in sensor systems for critical pressure measurements"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "A faulty pressure gauge reading combined with a potential malfunction in the pressure relief system caused an abnormal pressure spike in Reactor RFR-203.",
+        "prevention_possibility": "Regular preventive maintenance, enhanced sensor calibration, and the implementation of a redundant automated monitoring system could have prevented this near-miss."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-RFR-20231010-001",
+          "recommendation": "Conduct a comprehensive inspection and calibration of the Reactor RFR-203 pressure gauge and associated pressure relief valves. Establish an improved preventive maintenance schedule and verify the functionality of automated monitoring systems.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-15",
+          "completion_date": "2023-10-15",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Baker",
+          "department": "Safety",
+          "role": "Investigation Lead",
+          "signature": "ABaker"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Jane Smith",
+        "designation": "Safety Manager",
+        "signature": "JSmith",
+        "date": "2023-10-11"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-RS-20231012-001",
+        "report_id": "NM-RS-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:45",
+        "plant_department": "Refrigeration Section",
+        "location": "Area adjacent to the ammonia cold box",
+        "equipment": {
+          "tag_no": "RC-305",
+          "description": "Refrigeration Compressor with integrated temperature and pressure sensors"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine walk-through, the operator observed rapid temperature spikes and recurring sensor error messages on Compressor RC-305. Simultaneously, the piping near the compressor began to vibrate noticeably. The operator suspended operations and isolated the compressor, suspecting either a sensor malfunction or a minor refrigerant leak. Immediate actions were taken to reduce process load and secure the area, preventing potential escalation."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "vibration"
+          ],
+          "workplace_related": [],
+          "environmental_related": [
+            "temperature_extremes"
+          ]
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Regular sensor calibration and preventive maintenance checks were not adequately performed."
+        ],
+        "successful": [
+          "Immediate isolation of the compressor and prompt notification to the control room prevented further risk."
+        ],
+        "missing": [
+          "A robust warning system to indicate sensor degradation ahead of malfunction."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "A combination of potential sensor malfunction and early signs of refrigerant system issues led to unstable process readings and vibration in Compressor RC-305.",
+        "prevention_possibility": "Enhanced preventive maintenance, regular sensor calibration, and improved diagnostic warning systems could mitigate future risks."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-001",
+          "recommendation": "Conduct a comprehensive inspection and calibration of Compressor RC-305 sensors and verify the integrity of the adjacent refrigerant piping. Review maintenance records and update the preventive maintenance schedule.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Team",
+          "target_date": "2023-10-20",
+          "completion_date": "2023-10-20",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Johnson",
+          "department": "Technical Services",
+          "role": "Lead Investigator",
+          "signature": "AJ-Sign"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Robert Miller",
+        "designation": "Safety Manager",
+        "signature": "RM-Sign",
+        "date": "2023-10-13"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1368 @@
+{
+  "metadata": {
+    "generated_at": "2025-02-06T17:11:12.925293",
+    "num_reports": 10
+  },
+  "reports": [
+    {
+      "report_metadata": {
+        "report_id": "NM-20231005-001",
+        "date": "2023-10-05",
+        "time": "14:23"
+      },
+      "location_info": {
+        "plant_department": "Recovery Section",
+        "exact_location": "Ammonia Recovery Vessel Area, near Vessel RS-307",
+        "equipment": {
+          "tag_no": "RS-307/EP-07",
+          "description": "Ammonia Recovery Vessel with Emergency Pressure Release Valve (EP-07) and Control Valve CV-112"
+        }
+      },
+      "incident_details": {
+        "short_description": "While on my regular round in the Recovery Section, I noticed the pressure gauge on Vessel RS-307 was spiking unexpectedly. It turned out that Control Valve CV-112 had become stuck and wasn\u2019t responding properly. This caused a transient overpressure which almost triggered the emergency release valve (EP-07). I felt really alarmed when I saw the pressure jump, as I was worried it might result in an uncontrolled ammonia release.",
+        "immediate_action": "I immediately attempted to manually override the faulty CV-112, and in doing so, I inadvertently partially activated the emergency pressure release. Recognizing the mistake, I quickly closed the release valve manually and notified my Shift Supervisor. I also isolated the affected section to ensure no ammonia was accidentally vented."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OP-4523",
+        "department": "Recovery Section",
+        "report_date": "2023-10-05",
+        "report_time": "15:10"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Smith",
+        "validator_signature": "JS-Signature",
+        "validation_date": "2023-10-05"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "REP-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:30"
+      },
+      "location_info": {
+        "plant_department": "Reforming Section",
+        "exact_location": "Catalytic Reforming Reactor Area",
+        "equipment": {
+          "tag_no": "R-201",
+          "description": "Catalytic Reforming Reactor responsible for converting naphtha feedstock into high-octane products."
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine walk through the Reforming Section, I noticed the temperature gauge on Reactor R-201 spiking unexpectedly. After checking the control panel, I discovered that control valve CV-45 was not modulating properly\u2014it appeared to be stuck mid-open, causing an irregular flow and a buildup of heat. I was really alarmed as this could have led to a runaway reaction if not caught quickly.",
+        "immediate_action": "I immediately alerted my shift supervisor and manually initiated an emergency shutdown of the affected feed line to isolate Reactor R-201. The area was then secured until the maintenance team could inspect the control valve and associated systems."
+      },
+      "reporter_info": {
+        "name": "Robert Harris",
+        "id_no": "OP-237",
+        "department": "Reforming Section",
+        "report_date": "2023-10-10",
+        "report_time": "14:35"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Sara Thompson",
+        "validator_signature": "SaraThompsonDigitalSig45",
+        "validation_date": "2023-10-11"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NS-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:32:00"
+      },
+      "location_info": {
+        "plant_department": "Synthesis Section",
+        "exact_location": "Reactor R-407 control area",
+        "equipment": {
+          "tag_no": "CV-18",
+          "description": "Control Valve for Reactor R-407 feed line"
+        }
+      },
+      "incident_details": {
+        "short_description": "While doing my regular round in the Synthesis Section, I observed that the pressure gauge on Reactor R-407 started spiking suddenly. Upon further inspection, I found that Control Valve CV-18 was jammed and failing to modulate properly, which led to a brief buildup of pressure. I felt quite alarmed because I knew this could have enabled a runaway reaction or triggered our safety systems.",
+        "immediate_action": "I immediately isolated the reactor by manually adjusting the feed and alerted the control room. We then initiated a precautionary shutdown of the affected feed line to prevent any escalation. I stayed on scene until the backup systems confirmed the pressure had normalized."
+      },
+      "reporter_info": {
+        "name": "John D. Smith",
+        "id_no": "OP-0923",
+        "department": "Synthesis",
+        "report_date": "2023-10-10",
+        "report_time": "14:32:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Mary Allen",
+        "validator_signature": "MASIGN",
+        "validation_date": "2023-10-10"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "REP-0923-001",
+        "date": "2023-10-29",
+        "time": "14:35"
+      },
+      "location_info": {
+        "plant_department": "Refrigeration Section",
+        "exact_location": "Compressor Room near the main control panel",
+        "equipment": {
+          "tag_no": "RC-501",
+          "description": "Ammonia Refrigeration Compressor"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine walk in the Refrigeration Section today, I noticed that the pressure gauge on Compressor RC-501 was spiking erratically. After a closer look, I discovered that Control Valve CV-210, which regulates the bypass flow, appeared to be stuck in a partially open position. This malfunction caused a rapid pressure increase within the compressor system.",
+        "immediate_action": "I immediately isolated Compressor RC-501 from the process line to prevent further pressure build-up and potential refrigerant release. I then informed the on-call maintenance team and updated the control room for further investigation."
+      },
+      "reporter_info": {
+        "name": "Mark Reynolds",
+        "id_no": "OP-1123",
+        "department": "Refrigeration",
+        "report_date": "2023-10-29",
+        "report_time": "14:50"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": false,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Alice Peterson",
+        "validator_signature": "APeterson",
+        "validation_date": "2023-10-29"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:35"
+      },
+      "location_info": {
+        "plant_department": "Refrigeration Section",
+        "exact_location": "Compressor Room near unit RC-501",
+        "equipment": {
+          "tag_no": "RC-501",
+          "description": "Main refrigeration compressor unit responsible for primary cooling operations"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine walk on the afternoon shift, I noticed that the pressure gauge on Compressor RC-501 was spiking erratically. On closer inspection, I discovered that the bypass control valve, CV-210, was stuck in a partially open position. This malfunction led to a rapid pressure increase within the compressor system.",
+        "immediate_action": "I immediately notified the shift supervisor and isolated the compressor to prevent further escalation. I then manually intervened by adjusting the bypass valve to stabilize the pressure and monitored the system until it was safe."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OP-345",
+        "department": "Refrigeration",
+        "report_date": "2023-10-10",
+        "report_time": "14:40"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Alice Smith",
+        "validator_signature": "ASmithSigned",
+        "validation_date": "2023-10-10"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "GRN-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:35"
+      },
+      "location_info": {
+        "plant_department": "Granulation Section",
+        "exact_location": "Granulation Reactor Area near GR-321",
+        "equipment": {
+          "tag_no": "GR-321",
+          "description": "Granulation Reactor"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine round in the granulation area, I observed the pressure gauge on reactor GR-321 spiking unexpectedly. After a closer look, I discovered that a vent line appeared to be partially blocked by accumulated granule dust, causing a pressure buildup. I immediately closed the associated bypass valve and alerted the maintenance team. I was really shaken by how quickly the situation escalated, as it could have led to an uncontrolled release of ammonia or even triggered a minor explosion if the reactor pressure continued to climb.",
+        "immediate_action": "I promptly closed the bypass valve to stabilize the pressure in the reactor and contacted the maintenance team to clear the blockage from the vent line. I also notified the shift supervisor about the abnormal readings and potential hazards to take further precautionary measures."
+      },
+      "reporter_info": {
+        "name": "Carlos Ramirez",
+        "id_no": "OP-4572",
+        "department": "Granulation Section",
+        "report_date": "2023-10-12",
+        "report_time": "14:45"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Alexandra Lee",
+        "validator_signature": "AlexandraLee_ES",
+        "validation_date": "2023-10-12"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-20231020-001",
+        "date": "2023-10-20",
+        "time": "14:35:00"
+      },
+      "location_info": {
+        "plant_department": "Granulation Section",
+        "exact_location": "Near Reactor GR-321, vent line assembly area",
+        "equipment": {
+          "tag_no": "GR-321",
+          "description": "Granulation Reactor with inlet pressure gauge and associated vent line"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine round in the Granulation Section, I noticed the pressure gauge on Reactor GR-321 spiking unexpectedly. On closer inspection, I found that the vent line was partially blocked due to a buildup of granule dust. This blockage caused a rapid pressure increase, which if left unaddressed, could have resulted in an uncontrolled ammonia release or even an explosive situation.",
+        "immediate_action": "I immediately opened the emergency bypass vent manually to relieve the pressure, secured the area, and notified the maintenance team to inspect and clean the vent line."
+      },
+      "reporter_info": {
+        "name": "Samir Patel",
+        "id_no": "OP-3456",
+        "department": "Granulation Operations",
+        "report_date": "2023-10-20",
+        "report_time": "14:50:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Linda Carver",
+        "validator_signature": "LindaC",
+        "validation_date": "2023-10-20"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-20231012-001",
+        "date": "2023-10-12",
+        "time": "15:35"
+      },
+      "location_info": {
+        "plant_department": "Steam System",
+        "exact_location": "Boiler House, near Boiler SB-102",
+        "equipment": {
+          "tag_no": "SB-102",
+          "description": "Steam Boiler used for process steam generation"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine walk in the Boiler House this afternoon, I noticed that the steam pressure gauge on Boiler SB-102 was spiking erratically. On closer inspection, the issue seemed to originate from the associated safety relief valve, SRV-518, which was not responding as expected. It appeared mechanically stuck, which could have prevented proper pressure relief and led to an overpressure situation.",
+        "immediate_action": "I immediately initiated the emergency shutdown procedure for the affected boiler, manually secured the safety relief valve, and alerted the on-call maintenance team to inspect and recalibrate SRV-518. I also monitored the pressure closely until the system stabilized to ensure no further escalation."
+      },
+      "reporter_info": {
+        "name": "John Martin",
+        "id_no": "OP-0457",
+        "department": "Steam Systems Operations",
+        "report_date": "2023-10-12",
+        "report_time": "15:45"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Sarah Johnson",
+        "validator_signature": "SJohnsonSig",
+        "validation_date": "2023-10-12"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "RM-20231011-001",
+        "date": "2023-10-11",
+        "time": "14:30:00"
+      },
+      "location_info": {
+        "plant_department": "Refrigeration Section",
+        "exact_location": "Compressor Room near unit CMP-204",
+        "equipment": {
+          "tag_no": "CMP-204",
+          "description": "Main refrigeration compressor handling the R-404A system"
+        }
+      },
+      "incident_details": {
+        "short_description": "Today, during my routine check in the Refrigeration Section, I noticed the pressure gauge on compressor CMP-204 suddenly spiked to a high value. After a closer look, I suspected that the associated safety relief valve (SRV-102) was not responding properly. There appeared to be some ice buildup causing partial blockage in the valve. This could have led to an uncontrolled refrigerant release if the pressure kept rising. I was quite shaken by how quickly the situation escalated and knew immediate action was necessary.",
+        "immediate_action": "I immediately switched off compressor CMP-204 and isolated the affected circuit to prevent further refrigerant flow. I then contacted the maintenance team to inspect and clean the relief valve system, ensuring no additional hazards were present."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OP-4582",
+        "department": "Refrigeration Operations",
+        "report_date": "2023-10-11",
+        "report_time": "14:45:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": false,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Smith",
+        "validator_signature": "JS",
+        "validation_date": "2023-10-11"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NH-SS-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:32"
+      },
+      "location_info": {
+        "plant_department": "Steam System",
+        "exact_location": "Boiler House \u2013 near Steam Boiler SB-205",
+        "equipment": {
+          "tag_no": "SB-205",
+          "description": "High Pressure Steam Boiler with integrated pressure gauge and safety relief system"
+        }
+      },
+      "incident_details": {
+        "short_description": "While performing my routine check in the Boiler House, I noticed the pressure gauge on Steam Boiler SB-205 was spiking erratically. Upon a closer look, I suspected a blockage forming near the safety relief valve, likely caused by condensation buildup. The readings were climbing rapidly, and it was clear that the situation could have escalated into a dangerous overpressure incident leading to an uncontrolled steam release.",
+        "immediate_action": "I immediately closed the nearby steam isolation valve to contain the issue and alerted the control room. I then informed maintenance to inspect and clear the blockage. Throughout the event, I remained calm but alarmed by the potential risk of equipment failure or personnel injury."
+      },
+      "reporter_info": {
+        "name": "Mark Thompson",
+        "id_no": "OP-439",
+        "department": "Steam System Operations",
+        "report_date": "2023-10-12",
+        "report_time": "15:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": false,
+          "rejected": false
+        },
+        "validator_name": "",
+        "validator_signature": "",
+        "validation_date": ""
+      }
+    }
+  ],
+  "investigations": [
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231005-001",
+        "report_id": "NM-20231005-001",
+        "date": "2023-10-05",
+        "time": "14:23",
+        "plant_department": "Recovery Section",
+        "location": "Ammonia Recovery Vessel Area, near Vessel RS-307",
+        "equipment": {
+          "tag_no": "RS-307/EP-07",
+          "description": "Ammonia Recovery Vessel with Emergency Pressure Release Valve (EP-07) and Control Valve CV-112"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine round in the Recovery Section, the operator observed that the pressure gauge on Vessel RS-307 began spiking unexpectedly. Upon further investigation, it was determined that Control Valve CV-112 had become stuck and was not responding as designed. The stuck valve led to a transient overpressure condition which nearly triggered the emergency pressure release valve (EP-07). In an attempt to mitigate the situation, the operator manually overrode CV-112, inadvertently partially activating the emergency release. The operator then quickly closed the release valve manually and notified the Shift Supervisor, while isolating the affected section to avoid any ammonia venting."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical_hazards"
+          ],
+          "workplace_related": [
+            "inadequate_warning"
+          ],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [
+            "procedure_violation"
+          ],
+          "behavioral": [
+            "poor_judgment"
+          ],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance",
+          "procedures"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": [
+          "competence"
+        ]
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Control Valve CV-112 malfunctioned due to inadequate preventive maintenance.",
+          "Existing procedural guidelines for manual override were not clearly defined."
+        ],
+        "successful": [
+          "Emergency Pressure Release Valve (EP-07) acted as a final barrier to prevent an uncontrolled release.",
+          "Operator\u2019s prompt action to isolate the section prevented further escalation."
+        ],
+        "missing": [
+          "Clear and effective manual override procedures for valve malfunction scenarios.",
+          "Comprehensive training for addressing transient overpressure events."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was primarily caused by the malfunction of Control Valve CV-112, which was not maintained properly. In addition, unclear procedures for manual override contributed to an improper response that nearly triggered an emergency release.",
+        "prevention_possibility": "With regular preventive maintenance, updated control valve performance checks and comprehensive training along with revised procedural guidelines for manual override, this near-miss event can be prevented in the future."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231005-001",
+          "recommendation": "Immediately inspect and recalibrate Control Valve CV-112, update the preventive maintenance schedule, and revise the manual override procedures. Conduct refresher training for all operators regarding the revised procedures.",
+          "type": "Immediate",
+          "responsibility": "Plant Maintenance Lead",
+          "target_date": "2023-10-10",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Johnson",
+          "department": "Maintenance",
+          "role": "Lead Investigator",
+          "signature": "AJ-Signature"
+        },
+        {
+          "name": "Bob Lee",
+          "department": "Process Safety",
+          "role": "Safety Analyst",
+          "signature": "BL-Signature"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Michael Carter",
+        "designation": "Safety Manager",
+        "signature": "MC-Signature",
+        "date": "2023-10-05"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231010-101",
+        "report_id": "REP-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:45",
+        "plant_department": "Reforming Section",
+        "location": "Catalytic Reforming Reactor Area",
+        "equipment": {
+          "tag_no": "R-201",
+          "description": "Catalytic Reforming Reactor responsible for converting naphtha feedstock into high-octane products."
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine inspection, the temperature gauge on Reactor R-201 was observed spiking unexpectedly. An investigation of the control panel revealed that control valve CV-45 was stuck in a mid-open position. This malfunction led to an irregular flow of feedstock, causing a rapid buildup of heat that could have escalated into a runaway reaction. The incident was promptly managed by initiating an emergency shutdown of the affected feed line."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "temperature_extremes"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": [
+          "supervision"
+        ]
+      },
+      "barrier_analysis": {
+        "failed": [
+          "The malfunctioning control valve CV-45 was not detected in time by the automated monitoring system."
+        ],
+        "successful": [
+          "The emergency shutdown procedure was successfully activated to isolate Reactor R-201."
+        ],
+        "missing": [
+          "Regular preventive maintenance and inspection of control valves, especially CV-45, to ensure proper modulation were lacking."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was primarily caused by a mechanical malfunction of control valve CV-45 due to inadequate maintenance, resulting in abnormal temperature extremes at Reactor R-201.",
+        "prevention_possibility": "Enhanced preventive maintenance schedules, improved monitoring of control valve performance, and timely technical interventions could prevent recurrence of such events."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-001",
+          "recommendation": "Inspect, repair, and replace control valve CV-45 as necessary. Additionally, review and update the maintenance schedule for all similar control valves.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-15",
+          "completion_date": "2023-10-14",
+          "status": "Completed"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "James Miller",
+          "department": "Process Safety",
+          "role": "Lead Investigator",
+          "signature": "JamesMillerSignature07"
+        },
+        {
+          "name": "Laura Kim",
+          "department": "Maintenance",
+          "role": "Technical Specialist",
+          "signature": "LauraKimSign08"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Michael Brown",
+        "designation": "Safety Manager",
+        "signature": "MichaelBrownSig",
+        "date": "2023-10-12"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231010-001",
+        "report_id": "NS-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:32:00",
+        "plant_department": "Synthesis Section",
+        "location": "Reactor R-407 control area",
+        "equipment": {
+          "tag_no": "CV-18",
+          "description": "Control Valve for Reactor R-407 feed line"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine round in the Synthesis Section, the operator observed an abnormal spike in the pressure gauge at Reactor R-407. A prompt inspection revealed that Control Valve CV-18 was jammed and not modulating as expected, leading to a transient pressure build-up. Quick manual isolation of the reactor feed and a precautionary shutdown were executed before the pressure could attain dangerous levels."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical_hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "maintenance"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Control Valve CV-18 failed to operate as designed due to sticking.",
+          "Lack of an early warning alarm specific to valve performance degradation."
+        ],
+        "successful": [
+          "Operator quickly identified the pressure spike and acted to isolate the reactor feed.",
+          "Emergency procedures were initiated promptly to prevent escalation."
+        ],
+        "missing": [
+          "Routine maintenance records and timely inspection data for CV-18.",
+          "Enhanced monitoring system to detect gradual performance degradation in control valves."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was primarily caused by a mechanical failure of Control Valve CV-18 due to inadequate preventive maintenance, resulting in a transient overpressure condition.",
+        "prevention_possibility": "Implementing robust maintenance procedures, upgrading monitoring systems for real-time valve performance, and ensuring timely corrective actions could prevent such incidents."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231010-01",
+          "recommendation": "Immediately inspect and service Control Valve CV-18 to restore proper functionality and calibrate the Reactor R-407 pressure gauge.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-15",
+          "completion_date": "",
+          "status": "Open"
+        },
+        {
+          "action_id": "CA-20231010-02",
+          "recommendation": "Review and update the preventive maintenance schedule for all control valves in the Synthesis Section to ensure early detection of similar issues.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-25",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Johnson",
+          "department": "Process Safety",
+          "role": "Lead Investigator",
+          "signature": "AJSIGN"
+        },
+        {
+          "name": "Michael Brown",
+          "department": "Maintenance",
+          "role": "Technical Specialist",
+          "signature": "MBSIGN"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Mary Allen",
+        "designation": "Process Safety Manager",
+        "signature": "MASIGN",
+        "date": "2023-10-10"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-0923-001",
+        "report_id": "REP-0923-001",
+        "date": "2023-10-29",
+        "time": "14:35",
+        "plant_department": "Refrigeration Section",
+        "location": "Compressor Room near the main control panel",
+        "equipment": {
+          "tag_no": "RC-501",
+          "description": "Ammonia Refrigeration Compressor"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": false
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During routine inspection, the operator observed the pressure gauge on Compressor RC-501 spiking erratically. On closer inspection, it was found that Control Valve CV-210, which regulates the bypass flow, was malfunctioning by remaining partially open. This allowed rapid pressure build-up in the compressor system. The immediate isolation of the compressor prevented a potential incident, and the on-call maintenance team was promptly notified. Preliminary analysis indicates that an inadequacy in the preventive maintenance program may have contributed to the control valve failure."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical_hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "maintenance"
+        ],
+        "human_factors": [
+          "awareness"
+        ]
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Automated alert systems did not detect the malfunction of CV-210 in real-time."
+        ],
+        "successful": [
+          "Operator's routine inspection promptly identified the abnormal pressure reading."
+        ],
+        "missing": [
+          "Regular performance diagnostics and real-time monitoring for control valve modulation issues."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "A malfunctioning control valve due to inadequate preventive maintenance led to a rapid pressure increase in the compressor system.",
+        "prevention_possibility": "Enhanced inspection routines, improved maintenance scheduling, and integration of real-time alerts could prevent similar incidents."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-0923-001",
+          "recommendation": "Replace the faulty Control Valve CV-210, review and update the preventive maintenance program for bypass control valves, and install automated monitoring for valve performance.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-11-05",
+          "completion_date": "",
+          "status": "In Progress"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Peterson",
+          "department": "Safety",
+          "role": "Safety Investigator",
+          "signature": "APeterson"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "John Smith",
+        "designation": "Plant Manager",
+        "signature": "JSmith",
+        "date": "2023-10-29"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231010-001",
+        "report_id": "NM-20231010-001",
+        "date": "2023-10-10",
+        "time": "14:35",
+        "plant_department": "Refrigeration Section",
+        "location": "Compressor Room near unit RC-501",
+        "equipment": {
+          "tag_no": "RC-501",
+          "description": "Main refrigeration compressor unit responsible for primary cooling operations"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During the routine walk on the afternoon shift, the operator noticed erratic readings on the pressure gauge of Compressor RC-501. Further investigation revealed that the bypass control valve, CV-210, was stuck in a partially open position, leading to a rapid pressure increase. The compressor was promptly isolated and manual intervention was applied to stabilize the system, preventing escalation."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Bypass control valve CV-210 failed to modulate as designed."
+        ],
+        "successful": [
+          "Pressure gauge provided accurate real-time data.",
+          "Operator\u2019s prompt action isolated the equipment and stabilized the pressure."
+        ],
+        "missing": [
+          "Routine diagnostic check on control valve performance.",
+          "Redundant control features for critical valves were lacking."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "A mechanical failure in the bypass control valve CV-210 caused it to become stuck in a partially open position, leading to a rapid pressure build-up in the compressor system.",
+        "prevention_possibility": "Enhanced preventive maintenance procedures, periodic diagnostics, and an update of maintenance protocols for critical control valves would have likely prevented this near-miss."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-001",
+          "recommendation": "Conduct a comprehensive inspection and testing of bypass control valve CV-210 and its associated control systems. Update maintenance procedures to include frequent diagnostics.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-15",
+          "completion_date": "",
+          "status": "Open"
+        },
+        {
+          "action_id": "CA-002",
+          "recommendation": "Review and update the preventive maintenance plan for all control valves in the refrigeration section, ensuring redundancy and diagnostic checks are incorporated.",
+          "type": "Long-term",
+          "responsibility": "Engineering Department",
+          "target_date": "2023-11-10",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Smith",
+          "department": "Safety",
+          "role": "Lead Investigator",
+          "signature": "ASmithSigned"
+        },
+        {
+          "name": "Robert Lee",
+          "department": "Maintenance",
+          "role": "Maintenance Oversight",
+          "signature": "RLeeSigned"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Michael Johnson",
+        "designation": "Plant Manager",
+        "signature": "MJohnsonSigned",
+        "date": "2023-10-11"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "GRN-INV-20231012-001",
+        "report_id": "GRN-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:35",
+        "plant_department": "Granulation Section",
+        "location": "Granulation Reactor Area near GR-321",
+        "equipment": {
+          "tag_no": "GR-321",
+          "description": "Granulation Reactor"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine round in the granulation area, the operator observed that the pressure gauge on reactor GR-321 was spiking unexpectedly. Upon further inspection, it was found that accumulated granule dust had partially blocked a vent line, leading to rapid pressure buildup. The operator immediately closed the bypass valve and alerted the maintenance team, thereby preventing a potential uncontrolled ammonia release or explosion."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [],
+          "workplace_related": [
+            "poor_housekeeping"
+          ],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [
+            "procedure_violation"
+          ],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "procedures",
+          "maintenance"
+        ],
+        "physical_factors": [],
+        "human_factors": [
+          "awareness"
+        ]
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Regular maintenance protocols did not detect the dust accumulation on the vent line",
+          "Inspection procedures failed to include a detailed check for vent line blockage"
+        ],
+        "successful": [
+          "The operator quickly identified the abnormal pressure readings",
+          "Immediate closure of the bypass valve helped stabilize reactor pressure"
+        ],
+        "missing": [
+          "A dedicated preventive cleaning schedule for vent lines",
+          "Clear guidelines for monitoring and managing dust accumulation in critical areas"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "Accumulated granule dust in the vent line caused a blockage, leading to rapid pressure buildup in reactor GR-321. The underlying causes were inadequate housekeeping and lapses in maintenance procedures.",
+        "prevention_possibility": "Regular cleaning and thorough inspection of vent lines, along with updated housekeeping protocols and monitoring guidelines, could have prevented this incident."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231012-001",
+          "recommendation": "Implement a strict cleaning schedule for vent lines and update inspection checklists to include checks for dust accumulation.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Manager",
+          "target_date": "2023-10-20",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alexandra Lee",
+          "department": "Granulation Section",
+          "role": "Safety Officer",
+          "signature": "AlexandraLee_ES"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "John Doe",
+        "designation": "Plant Manager",
+        "signature": "JohnDoe_PM",
+        "date": "2023-10-12"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231020-001",
+        "report_id": "NM-20231020-001",
+        "date": "2023-10-20",
+        "time": "14:35:00",
+        "plant_department": "Granulation Section",
+        "location": "Near Reactor GR-321, vent line assembly area",
+        "equipment": {
+          "tag_no": "GR-321",
+          "description": "Granulation Reactor with inlet pressure gauge and associated vent line"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine round, the operator observed erratic pressure gauge readings on Reactor GR-321. Subsequent inspection revealed that a buildup of granule dust had partially blocked the vent line, leading to a rapid increase in reactor pressure. The operator immediately activated the emergency bypass vent, relieving the pressure and preventing a potential uncontrolled ammonia release or explosive situation."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "poor_housekeeping"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance",
+          "procedures"
+        ],
+        "physical_factors": [
+          "plant_design"
+        ],
+        "human_factors": [
+          "awareness"
+        ]
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Routine inspections did not detect the gradual dust accumulation in the vent line before it led to a pressure spike."
+        ],
+        "successful": [
+          "The operator quickly recognized the abnormal pressure readings and successfully activated the emergency bypass vent."
+        ],
+        "missing": [
+          "A scheduled preventive cleaning procedure for the vent line and clear dust control protocols."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "A buildup of granule dust in the vent line led to partial blockage, causing a rapid pressure increase in Reactor GR-321. This was primarily due to gaps in routine housekeeping and maintenance procedures.",
+        "prevention_possibility": "Regular cleaning of the vent line, improved dust control measures, and updated preventive maintenance procedures could have prevented the incident."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231020-001",
+          "recommendation": "Implement a scheduled cleaning and inspection program for the vent lines and update dust control measures in the granulation area.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Supervisor",
+          "target_date": "2023-10-25",
+          "completion_date": "",
+          "status": "Open"
+        },
+        {
+          "action_id": "CA-20231020-002",
+          "recommendation": "Conduct refresher training for granulation operators on early identification of dust accumulation and proper reporting procedures.",
+          "type": "Long-term",
+          "responsibility": "Operations Manager",
+          "target_date": "2023-11-05",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alex Hightower",
+          "department": "Process Safety",
+          "role": "Investigator",
+          "signature": "AlexH"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Linda Carver",
+        "designation": "Safety Manager",
+        "signature": "LindaC",
+        "date": "2023-10-20"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231012-001",
+        "report_id": "NM-20231012-001",
+        "date": "2023-10-12",
+        "time": "15:35",
+        "plant_department": "Steam System",
+        "location": "Boiler House, near Boiler SB-102",
+        "equipment": {
+          "tag_no": "SB-102",
+          "description": "Steam Boiler used for process steam generation"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "At approximately 15:35 on 2023-10-12, during a routine walk in the Boiler House, the steam pressure gauge on Boiler SB-102 began spiking erratically. Inspection revealed that the associated safety relief valve, SRV-518, was mechanically stuck and failed to relieve excess pressure. The operator immediately initiated an emergency shutdown, manually secured the valve, and closely monitored system parameters until stabilization. It appears that inadequate preventive maintenance contributed to the valve malfunction."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical_hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "maintenance"
+        ],
+        "human_factors": [
+          "supervision"
+        ]
+      },
+      "barrier_analysis": {
+        "failed": [
+          "The safety relief valve (SRV-518) failed to operate due to mechanical sticking.",
+          "The preventive maintenance barrier did not detect the early signs of deterioration in the valve."
+        ],
+        "successful": [
+          "The operator\u2019s immediate action in shutting down the boiler prevented a potential overpressure release.",
+          "Real-time monitoring of the steam pressure provided crucial data that enabled swift response."
+        ],
+        "missing": [
+          "A robust and up-to-date preventive maintenance schedule for safety relief valves.",
+          "Additional diagnostic checks to identify early indications of equipment malfunction."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "Mechanical failure of SRV-518 due to inadequate preventive maintenance.",
+        "prevention_possibility": "The incident could likely have been prevented by enhancing the maintenance routine and performing regular functional tests on critical safety equipment."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231012-001",
+          "recommendation": "Conduct an immediate comprehensive inspection and recalibration of SRV-518. Review and update the preventive maintenance schedule for all safety relief valves to ensure early detection of similar issues.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Team",
+          "target_date": "2023-10-15",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Martin",
+          "department": "Steam Systems Operations",
+          "role": "Reporting Operator",
+          "signature": "JMartinSig"
+        },
+        {
+          "name": "Mark Lee",
+          "department": "Maintenance",
+          "role": "Maintenance Engineer",
+          "signature": "MLeeSig"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Robert Thompson",
+        "designation": "Plant Safety Manager",
+        "signature": "RThompsonSig",
+        "date": "2023-10-12"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231011-001",
+        "report_id": "RM-20231011-001",
+        "date": "2023-10-11",
+        "time": "14:30:00",
+        "plant_department": "Refrigeration Section",
+        "location": "Compressor Room near unit CMP-204",
+        "equipment": {
+          "tag_no": "CMP-204",
+          "description": "Main refrigeration compressor handling the R-404A system"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": false
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine check, the operator observed an unexpected pressure spike on the gauge of compressor CMP-204. Subsequent inspection revealed that the safety relief valve (SRV-102) exhibited signs of icing, which had partially blocked the valve. The immediate action involved shutting down the compressor and isolating the circuit to prevent further refrigerant flow. The incident was contained due to this rapid response, averting any uncontrolled refrigerant release."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical_hazards"
+          ],
+          "workplace_related": [
+            "poor_housekeeping"
+          ],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance",
+          "safeguards"
+        ],
+        "physical_factors": [
+          "equipment"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Safety relief valve de-icing mechanism did not activate as expected",
+          "Regular inspection for ice buildup on critical components was not enforced"
+        ],
+        "successful": [
+          "Pressure gauge alarm functioned correctly, alerting the operator to abnormal conditions",
+          "Immediate compressor shutdown limited potential refrigerant release"
+        ],
+        "missing": [
+          "Automated de-icing or defrost system for safety relief valves",
+          "Enhanced monitoring sensors to detect early ice formation"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "Ice buildup on SRV-102 led to a partial blockage, which triggered an abnormal pressure spike on compressor CMP-204, risking an uncontrolled refrigerant release.",
+        "prevention_possibility": "This near-miss could be prevented by enhancing maintenance protocols, implementing de-icing measures on safety relief valves, and upgrading monitoring systems for early detection of ice buildup."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-001",
+          "recommendation": "Immediately inspect and clean SRV-102, review and update the maintenance schedule to include checks for ice buildup, and install additional sensors to monitor for early signs of icing.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-15",
+          "completion_date": "2023-10-15",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Jane Smith",
+          "department": "Safety",
+          "role": "Investigator",
+          "signature": "JS"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Robert Brown",
+        "designation": "Safety Manager",
+        "signature": "RB",
+        "date": "2023-10-11"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231012-001",
+        "report_id": "NH-SS-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:32",
+        "plant_department": "Steam System",
+        "location": "Boiler House \u2013 near Steam Boiler SB-205",
+        "equipment": {
+          "tag_no": "SB-205",
+          "description": "High Pressure Steam Boiler with integrated pressure gauge and safety relief system"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine check, the operator observed erratic pressure gauge readings on Boiler SB-205. On closer visual inspection near the safety relief valve, condensation buildup was noted. This buildup was restricting the valve\u2019s performance, causing the pressure to climb rapidly. Immediate action was taken to isolate the boiler by closing the steam isolation valve and alerting the control room to prevent escalation into an overpressure event."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": [
+            "mechanical_hazards"
+          ],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": [
+          "maintenance"
+        ],
+        "physical_factors": [
+          "maintenance"
+        ],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Regular inspection procedures did not detect the progressive condensation buildup in a timely manner."
+        ],
+        "successful": [
+          "The operator\u2019s prompt recognition of the abnormal gauge readings and quick isolation of the boiler prevented escalation."
+        ],
+        "missing": [
+          "A real-time monitoring system on the safety relief valve performance and condensation levels was not in place."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "A condensation buildup near the safety relief valve on Boiler SB-205 blocked proper pressure relief, leading to erratic gauge readings and a potential overpressure scenario.",
+        "prevention_possibility": "Enhancements in preventive maintenance procedures and the installation of automated monitoring systems could have prevented the buildup from causing a safety hazard."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231012-001",
+          "recommendation": "Conduct a detailed inspection and cleaning of the safety relief valve and associated piping. Update and enforce the maintenance schedule to include regular checks for condensation buildup.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Supervisor",
+          "target_date": "2023-10-15",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Richards",
+          "department": "Technical Safety",
+          "role": "Lead Investigator",
+          "signature": "JRichardsSig"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Emily Carter",
+        "designation": "Plant Manager",
+        "signature": "ECarterSig",
+        "date": "2023-10-12"
+      }
+    }
+  ]
+}

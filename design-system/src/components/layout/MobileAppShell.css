@@ -1,0 +1,45 @@
+.raven-mobile-shell {
+  max-width: 402px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #fcf6fe;
+}
+
+.raven-mobile-shell__header {
+  background-color: rgba(252, 246, 254, 0.72) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid #dedcea;
+}
+
+.raven-mobile-shell__toolbar {
+  padding-left: 8px;
+  padding-right: 8px;
+  min-height: 56px;
+  gap: 4px;
+}
+
+.raven-mobile-shell__menu {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.raven-mobile-shell__title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.raven-mobile-shell__header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.raven-mobile-shell__content {
+  padding: 16px;
+}

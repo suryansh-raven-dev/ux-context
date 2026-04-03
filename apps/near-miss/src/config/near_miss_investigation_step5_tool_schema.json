@@ -1,0 +1,47 @@
+{
+    "name": "process_near_miss_investigation_step5",
+    "description": "Analyze safety barriers in the near-miss incident",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "barrier_analysis": {
+                "type": "object",
+                "description": "Analysis of safety barriers that failed, succeeded, or were missing",
+                "reasoning": "Identifies effectiveness and gaps in safety barrier systems",
+                "properties": {
+                    "failed": {
+                        "type": "array",
+                        "description": "Safety barriers that failed to prevent or mitigate the incident",
+                        "reasoning": "Identifies barriers that need improvement or replacement",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "successful": {
+                        "type": "array",
+                        "description": "Safety barriers that worked as intended",
+                        "reasoning": "Identifies effective barriers that prevented escalation",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "missing": {
+                        "type": "array",
+                        "description": "Safety barriers that should have been in place",
+                        "reasoning": "Identifies gaps in the barrier system that need to be addressed",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": ["failed", "successful", "missing"]
+            },
+            "reasoning": {
+                "type": "string",
+                "description": "Detailed explanation of barrier analysis findings",
+                "reasoning": "Documents the thought process behind barrier identification and assessment"
+            }
+        },
+        "required": ["barrier_analysis", "reasoning"]
+    }
+} 

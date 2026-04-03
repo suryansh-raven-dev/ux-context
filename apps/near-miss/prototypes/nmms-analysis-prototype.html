@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NMMS Analysis Dashboard - Prototype</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    /* === Raven Brand / Primary === */
+    --raven-purple-900: #4A148C;
+    --raven-purple-800: #6A1B9A;
+    --raven-purple-300: #CE93D8;
+    --raven-purple-200: #E1BEE7;
+    --raven-purple-100: #F3E5F5;
+
+    /* === Raven Backgrounds === */
+    --raven-bg-page: #FCF6FE;
+    --raven-bg-paper: #FFFFFF;
+    --raven-bg-form: #FDFAFE;
+    --raven-bg-neutral: #F5F5F5;
+    --raven-bg-input: #FAFAFA;
+
+    /* === Raven Status / Semantic === */
+    --raven-green-main: #4CAF50;
+    --raven-green-dark: #1B5E20;
+    --raven-green-light: #E8F5E9;
+    --raven-red-main: #F44336;
+    --raven-red-dark: #B71C1C;
+    --raven-red-light: #FFEBEE;
+    --raven-orange-main: #FF9800;
+    --raven-orange-dark: #FF6F00;
+    --raven-amber-light: #FFF8E1;
+    --raven-blue-main: #0288D1;
+    --raven-blue-light: #E1F5FE;
+    --raven-lightgreen-dark: #33691E;
+    --raven-lightgreen-light: #F1F8E9;
+
+    /* === Raven Borders === */
+    --raven-border-default: #E0E0E0;
+    --raven-border-brand: #F3E5F5;
+    --raven-border-mobile-header: #DEDCEA;
+
+    /* === Raven Gradients === */
+    --raven-gradient-accent: linear-gradient(135deg, #7B1FA2, #00BCD4);
+    --raven-gradient-org-avatar: linear-gradient(135deg, #9C27B0, #00ACC1);
+
+    /* === Mapped aliases (old names -> Raven tokens) === */
+    --purple-600: var(--raven-purple-900);
+    --purple-500: var(--raven-purple-800);
+    --purple-100: var(--raven-purple-100);
+    --purple-50: var(--raven-bg-page);
+    --green-600: var(--raven-green-main);
+    --green-100: var(--raven-green-light);
+    --red-500: var(--raven-red-main);
+    --red-100: var(--raven-red-light);
+    --orange-500: var(--raven-orange-main);
+    --orange-100: var(--raven-amber-light);
+    --yellow-500: #FFC107;
+    --teal-500: #009688;
+    --blue-500: var(--raven-blue-main);
+    --pink-500: #E91E63;
+    --gray-50: var(--raven-bg-input);
+    --gray-100: var(--raven-bg-neutral);
+    --gray-200: var(--raven-border-default);
+    --gray-300: #BDBDBD;
+    --gray-400: #9E9E9E;
+    --gray-500: #757575;
+    --gray-600: #616161;
+    --gray-700: #424242;
+    --gray-800: #212121;
+    --gray-900: #121212;
+    --sidebar-width: 240px;
+    --sidebar-collapsed: 68px;
+    --bg-page: var(--raven-bg-page);
+    --bg-card: var(--raven-bg-paper);
+    --bg-section: var(--raven-bg-form);
+  }
+
+  body {
+    font-family: 'Source Sans 3', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    background: var(--bg-page);
+    color: var(--gray-800);
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.75;
+    letter-spacing: 0.15px;
+  }
+
+  /* ===== LAYOUT ===== */
+  .app-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar {
+    width: var(--sidebar-width);
+    background: #FCF6FE;
+    
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 100;
+    transition: width 0.3s ease, transform 0.3s ease;
+  }
+
+  .sidebar-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .sidebar-hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .sidebar-hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--gray-600);
+    border-radius: 1px;
+  }
+
+  .sidebar-logo {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--raven-purple-900);
+    letter-spacing: 1px;
+  }
+  .sidebar-logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: var(--raven-gradient-accent);
+    color: white;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    padding: 8px 0;
+    overflow-y: auto;
+  }
+
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .sidebar-item:hover {
+    background: var(--gray-50);
+    color: var(--gray-800);
+  }
+  .sidebar-item.active {
+    background: #E1BEE7;
+    color: #4A148C;
+    font-weight: 600;
+    border-radius: 8px;
+    border-left: none;
+  }
+  .sidebar-item .icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .sidebar-sub-item {
+    padding-left: 48px;
+    font-size: 13px;
+  }
+
+  .sidebar-section-label {
+    padding: 16px 16px 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .sidebar-footer {
+    border-top: 1px solid var(--gray-100);
+    padding: 8px 0;
+  }
+
+  .sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+  }
+  .sidebar-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #737373, #1a1a1a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .sidebar-user-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.6);
+  }
+  .sidebar-user-by {
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* ===== MAIN CONTENT ===== */
+  .main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+  }
+
+  /* ===== TOP BAR ===== */
+  .top-bar {
+    background: white;
+    border-bottom: 1px solid #F3E5F5;
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .top-bar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .page-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.87);
+    letter-spacing: 0.15px;
+  }
+
+  .export-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    color: #4A148C;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .export-btn:hover { color: var(--raven-purple-900); }
+  .export-btn svg { width: 18px; height: 18px; }
+
+  /* ===== TABS & FILTERS ROW ===== */
+  .tabs-filters-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: white;
+    border-bottom: 1px solid #F3E5F5;
+    padding-bottom: 0;
+  }
+
+  .tabs-group {
+    display: flex;
+    gap: 0;
+    flex-shrink: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tabs-group::-webkit-scrollbar { display: none; }
+
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+    background: none;
+    border: none;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.46px;
+    transition: all 0.15s;
+  }
+  .tab-btn:hover { color: var(--gray-700); }
+  .tab-btn.active {
+    color: #4A148C;
+    border-bottom-color: #4A148C;
+  }
+
+  .filters-group {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 8px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+
+  .filter-select {
+    padding: 8px 12px;
+    border: 1px solid rgba(0,0,0,0.23);
+    border-radius: 8px;
+    background: white;
+    font-size: 16px;
+    width: 192px;
+    color: var(--gray-700);
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    min-width: 140px;
+  }
+
+  .filter-date {
+    padding: 8px 12px;
+    border: 1px solid var(--raven-border-default);
+    border-radius: 8px;
+    background: var(--raven-bg-input);
+    font-size: 13px;
+    color: var(--gray-700);
+    cursor: pointer;
+    min-width: 140px;
+  }
+
+  /* ===== SUB TABS (Near Miss) ===== */
+  .sub-tabs {
+    display: flex;
+    gap: 0;
+    background: var(--raven-bg-neutral);
+    border-radius: 24px;
+    padding: 3px;
+    margin: 16px 24px 0;
+    width: fit-content;
+  }
+  .sub-tab {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-600);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .sub-tab.active {
+    background: white;
+    color: var(--gray-800);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  /* ===== CONTENT AREA ===== */
+  .content-area {
+    padding: 20px 24px 40px;
+  }
+
+  /* ===== SECTION CARD ===== */
+  .section-card {
+    background: white;
+    border-radius: 32px;
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #F3E5F5;
+    box-shadow: 0px 2px 8px rgba(63,81,181,0.04);
+  }
+
+  .section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.87);
+    text-transform: uppercase;
+    letter-spacing: 0.17px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 8px;
+  }
+
+  .closure-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 4px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .closure-badge.green {
+    background: #E8F5E9;
+    color: #1B5E20;
+  }
+  .closure-badge.red {
+    background: var(--raven-red-light);
+    color: var(--raven-red-dark);
+  }
+
+  .info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid currentColor;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: help;
+    position: relative;
+  }
+  .info-icon::after { content: 'i'; }
+
+  /* ===== STAT CARDS ROW ===== */
+  .stat-cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid #F3E5F5;
+  }
+  .stat-card .stat-value {
+    font-size: 34px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.87);
+    line-height: 40px;
+  }
+  .stat-card .stat-label {
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    margin-top: 4px;
+    line-height: 1.3;
+    letter-spacing: 0.4px;
+  }
+
+
+  /* Combined stat card for middle row */
+  .stat-card-combined {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid #F3E5F5;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+  }
+  .stat-card-combined:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .stat-card-half {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .stat-card-half:first-child {
+    padding-right: 16px;
+  }
+  .stat-card-half:last-child {
+    padding-left: 16px;
+  }
+
+  .stat-card-divider {
+    width: 1px;
+    background: #F3E5F5;
+    flex-shrink: 0;
+  }
+
+  .stat-card-half .stat-value {
+    font-size: 34px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.87);
+    line-height: 40px;
+  }
+  .stat-card-half .stat-label {
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    margin-top: 4px;
+    line-height: 1.3;
+    letter-spacing: 0.4px;
+  }
+  /* ===== DETAIL CARDS (Reports, Investigations, Recommendations) ===== */
+  .detail-cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+
+  .detail-card {
+    background: linear-gradient(to bottom, white, #FCF6FE);
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid #F3E5F5;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+  }
+  .detail-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .detail-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .detail-card-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .detail-card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .detail-card-icon.reports { background: #E1F5FE; color: #0288D1; }
+  .detail-card-icon.investigations { background: #E8EAF6; color: #0288D1; }
+  .detail-card-icon.recommendations { background: #F1F8E9; color: #1B5E20; }
+
+  .detail-card-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.87);
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1.3;
+  }
+
+  .detail-card-value {
+    font-size: 34px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.87);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .detail-card-value .arrow {
+    font-size: 20px;
+    color: var(--gray-400);
+  }
+
+  .detail-card-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid #F3E5F5;
+    padding-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .detail-row .label { color: rgba(0,0,0,0.6); letter-spacing: 0.25px; }
+  .detail-row .value { font-weight: 400; color: rgba(0,0,0,0.87); letter-spacing: 0.25px; }
+
+  .detail-card-footer {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    border-top: 1px solid var(--gray-100);
+  }
+
+  /* ===== DEMOGRAPHICS ===== */
+  .demographics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    background: var(--raven-bg-paper);
+    border-radius: 12px;
+    border: 1px solid var(--raven-border-default);
+    overflow: hidden;
+  }
+
+  .demo-group {
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .demo-group:first-child {
+    border-right: 1px solid var(--gray-200);
+  }
+
+  .demo-stat .demo-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gray-900);
+  }
+  .demo-stat .demo-label {
+    font-size: 11px;
+    color: var(--gray-500);
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+
+  /* ===== CHART SECTIONS ===== */
+  .chart-card {
+    background: white;
+    border-radius: 20px;
+    padding: 0;
+    margin-bottom: 20px;
+    border: 1px solid #F3E5F5;
+    overflow: hidden;
+  }
+
+  .chart-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.87);
+    margin-bottom: 2px;
+    letter-spacing: 0.15px;
+  }
+
+  .chart-subtitle {
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 16px;
+    letter-spacing: 0.4px;
+  }
+
+
+  .chart-header {
+    border-bottom: 1px solid #F3E5F5;
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .chart-body {
+    padding: 24px;
+  }
+  /* ===== BAR CHART (CSS-based) ===== */
+  .bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px 0;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .bar-label {
+    width: 100px;
+    text-align: right;
+    font-size: 12px;
+    color: var(--gray-600);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 18px;
+    display: flex;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    background: var(--gray-100);
+  }
+
+  .bar-fill {
+    height: 100%;
+    transition: width 0.6s ease;
+    min-width: 2px;
+  }
+  .bar-fill.blue { background: var(--raven-blue-main); }
+  .bar-fill.orange { background: var(--raven-orange-main); }
+  .bar-fill.pink { background: #E91E63; }
+  .bar-fill.yellow { background: #FFC107; }
+  .bar-fill.teal { background: #009688; }
+  .bar-fill.red { background: var(--raven-red-main); }
+
+  .chart-legend {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--gray-600);
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ===== DEPARTMENT SUMMARY TABS ===== */
+  .dept-tabs {
+    display: flex;
+    gap: 0;
+    background: var(--raven-bg-neutral);
+    border-radius: 24px;
+    padding: 3px;
+    width: fit-content;
+  }
+  .dept-tab {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-500);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .dept-tab.active {
+    background: var(--raven-purple-900);
+    color: white;
+  }
+
+  .dept-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* ===== STACKED BAR ===== */
+  .stacked-bar-track {
+    flex: 1;
+    height: 18px;
+    display: flex;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  /* ===== INCIDENT ANALYSIS ===== */
+  .analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+
+  .analysis-chart-card {
+    background: white;
+    border-radius: 20px;
+    padding: 0;
+    border: 1px solid #F3E5F5;
+    overflow: hidden;
+  }
+
+  /* ===== LINE CHART (SVG) ===== */
+  .line-chart-container {
+    width: 100%;
+    height: 280px;
+    position: relative;
+  }
+  .line-chart-container svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ===== GROUPED BAR CHART ===== */
+  .grouped-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+    height: 240px;
+    padding: 0 20px;
+    justify-content: space-around;
+  }
+
+  .grouped-bar-month {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .grouped-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 200px;
+  }
+
+  .g-bar {
+    width: 24px;
+    border-radius: 3px 3px 0 0;
+    transition: height 0.4s ease;
+    min-height: 2px;
+  }
+  .g-bar.near-miss { background: var(--raven-blue-main); }
+  .g-bar.unsafe-cond { background: var(--raven-orange-main); }
+  .g-bar.unsafe-act { background: var(--raven-red-main); }
+
+  .month-label {
+    font-size: 11px;
+    color: var(--gray-500);
+    margin-top: 4px;
+  }
+
+  /* ===== TOOLTIP ===== */
+  .tooltip-trigger {
+    position: relative;
+    cursor: help;
+  }
+  .tooltip-trigger:hover .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .tooltip-content {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: var(--gray-800);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* ===== ISSUE ANNOTATIONS ===== */
+  .issue-badge {
+    position: absolute;
+    background: #FF6B35;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    z-index: 20;
+    pointer-events: none;
+    white-space: nowrap;
+    animation: pulse-badge 2s infinite;
+  }
+
+  @keyframes pulse-badge {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* ===== RESPONSIVE ===== */
+
+  /* iPad Air landscape & medium tablets (~820px - 1024px) */
+  @media (max-width: 1100px) {
+    .sidebar {
+      width: var(--sidebar-collapsed);
+    }
+    .sidebar .sidebar-logo,
+    .sidebar .sidebar-item span,
+    .sidebar .sidebar-user-name,
+    .sidebar .sidebar-user-by,
+    .sidebar .sidebar-sub-item span {
+      display: none;
+    }
+    .sidebar-item { justify-content: center; padding: 12px; }
+    .sidebar-sub-item { padding-left: 12px; }
+    .main-content { margin-left: var(--sidebar-collapsed); }
+
+    .detail-cards-row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .analysis-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* iPad Air portrait (~820px) */
+  @media (max-width: 900px) {
+    .stat-cards-row {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .detail-cards-row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .detail-card-value { font-size: 28px; }
+    .demographics-grid {
+      grid-template-columns: 1fr;
+    }
+    .demo-group:first-child {
+      border-right: none;
+      border-bottom: 1px solid var(--gray-200);
+    }
+  }
+
+  @media (max-width: 820px) {
+    .tabs-filters-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .filters-group {
+      padding-bottom: 12px;
+      width: 100%;
+    }
+    .filter-select, .filter-date {
+      min-width: 0;
+      flex: 1;
+    }
+    .analysis-grid {
+      grid-template-columns: 1fr;
+    }
+    .detail-cards-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.open { transform: translateX(0); }
+    .main-content { margin-left: 0; }
+    .stat-cards-row { grid-template-columns: repeat(2, 1fr); }
+    .detail-cards-row { grid-template-columns: 1fr; }
+    .content-area { padding: 16px; }
+  }
+
+  /* Smooth transitions for interactive elements */
+  .clickable { cursor: pointer; transition: all 0.15s ease; }
+  .clickable:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+  /* Active state overlay */
+  .overlay-dimmer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 90;
+  }
+  .overlay-dimmer.show { display: block; }
+
+  /* Issue callout panel */
+  .issues-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 100vh;
+    background: white;
+    z-index: 200;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    padding: 24px;
+  }
+  .issues-panel.open { transform: translateX(0); }
+
+  .issues-panel h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--gray-900);
+  }
+
+  .issue-item {
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid;
+  }
+  .issue-item.critical { background: #FEF2F2; border-color: #FECACA; }
+  .issue-item.warning { background: #FFFBEB; border-color: #FDE68A; }
+  .issue-item.info { background: #EFF6FF; border-color: #BFDBFE; }
+
+  .issue-item .issue-severity {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .issue-item.critical .issue-severity { color: var(--red-500); }
+  .issue-item.warning .issue-severity { color: var(--orange-500); }
+  .issue-item.info .issue-severity { color: var(--blue-500); }
+
+  .issue-item .issue-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 4px;
+  }
+  .issue-item .issue-desc {
+    font-size: 12px;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
+
+  .issues-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 150;
+    background: var(--raven-purple-900);
+    color: white;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(74,20,140,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .issues-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(74,20,140,0.4);
+  }
+  .issues-toggle .badge-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--red-500);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="app-layout" id="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <button class="sidebar-hamburger" onclick="toggleSidebar()">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="sidebar-logo"><span class="sidebar-logo-icon">&#10047;</span>raven</div>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="sidebar-item" href="#">
+        <span class="icon">+</span>
+        <span>Report Incident</span>
+      </a>
+      <a class="sidebar-item" href="#" style="color: var(--raven-purple-900); font-weight: 600;">
+        <span class="icon">&#9888;</span>
+        <span>Incidents</span>
+      </a>
+      <a class="sidebar-item sidebar-sub-item" href="#">
+        <span class="icon">&#9632;</span>
+        <span>Reports</span>
+      </a>
+      <a class="sidebar-item sidebar-sub-item" href="#">
+        <span class="icon">&#128269;</span>
+        <span>Investigations</span>
+      </a>
+      <a class="sidebar-item sidebar-sub-item" href="#">
+        <span class="icon">&#9899;</span>
+        <span>Recommendations</span>
+      </a>
+      <a class="sidebar-item active" href="#">
+        <span class="icon">&#128202;</span>
+        <span>Analysis</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a class="sidebar-item" href="#">
+        <span class="icon">?</span>
+        <span>Help and Support</span>
+      </a>
+      <a class="sidebar-item" href="#">
+        <span class="icon">&#9881;</span>
+        <span>Settings</span>
+      </a>
+      <div class="sidebar-user">
+        <div class="sidebar-avatar">MA</div>
+        <div>
+          <div class="sidebar-user-name">Manikandan</div>
+          <div class="sidebar-user-by">By <span style="color:var(--raven-purple-900);font-weight:600;">raven</span></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="top-bar-header">
+        <h1 class="page-title">Analysis</h1>
+        <button class="export-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          EXPORT
+          <span style="font-size:10px;">&#9660;</span>
+        </button>
+      </div>
+      <div class="tabs-filters-row">
+        <div class="tabs-group">
+          <button class="tab-btn active" onclick="switchTab(this, 'all')">All Incidents</button>
+          <button class="tab-btn" onclick="switchTab(this, 'nearMiss')">Near Miss</button>
+          <button class="tab-btn" onclick="switchTab(this, 'unsafeConditions')">Unsafe Conditions</button>
+          <button class="tab-btn" onclick="switchTab(this, 'unsafeActs')">Unsafe Acts</button>
+        </div>
+        <div class="filters-group">
+          <select class="filter-select"><option>All Units</option></select>
+          <select class="filter-select"><option>All Departments</option></select>
+          <input type="text" class="filter-date" value="Year to Date" readonly>
+        </div>
+      </div>
+    </div>
+
+    <!-- Near Miss sub-tabs (hidden by default) -->
+    <div class="sub-tabs" id="nearMissSubTabs" style="display:none;">
+      <button class="sub-tab active" onclick="switchSubTab(this)">Process Safety</button>
+      <button class="sub-tab" onclick="switchSubTab(this)">Workplace Safety</button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content-area">
+
+      <!-- INCIDENTS SUMMARY -->
+      <div class="section-card">
+        <div class="section-title">
+          Incidents Summary
+          <span class="closure-badge green">48% Closure Rate <span class="info-icon"></span></span>
+        </div>
+        <div class="stat-cards-row">
+          <div class="stat-card clickable">
+            <div class="stat-value">215</div>
+            <div class="stat-label">Total Incidents</div>
+          </div>
+          <div class="stat-card-combined clickable">
+            <div class="stat-card-half">
+              <div class="stat-value">48</div>
+              <div class="stat-label">Investigation In-Progress</div>
+            </div>
+            <div class="stat-card-divider"></div>
+            <div class="stat-card-half">
+              <div class="stat-value">30</div>
+              <div class="stat-label">Investigation Released</div>
+            </div>
+          </div>
+          <div class="stat-card clickable">
+            <div class="stat-value">26</div>
+            <div class="stat-label">Total Incidents Closed</div>
+          </div>
+        </div>
+
+        <!-- Detail Cards -->
+        <div class="detail-cards-row">
+          <!-- TOTAL REPORTS -->
+          <div class="detail-card clickable">
+            <div class="detail-card-header">
+              <div class="detail-card-icon-title">
+                <div class="detail-card-icon reports">&#128196;</div>
+                <div class="detail-card-label">Total<br>Reports</div>
+              </div>
+              <div class="detail-card-value">215 <span class="arrow">&#8250;</span></div>
+            </div>
+            <div class="detail-card-rows">
+              <div class="detail-row"><span class="label">Pending Safety Manager Approval</span><span class="value">76</span></div>
+              <div class="detail-row"><span class="label">Pending Department Approval</span><span class="value">15</span></div>
+              <div class="detail-row"><span class="label">Approved by Department</span><span class="value">104</span></div>
+              <div class="detail-row"><span class="label">Rejected</span><span class="value">20</span></div>
+            </div>
+          </div>
+
+          <!-- TOTAL INVESTIGATIONS -->
+          <div class="detail-card clickable">
+            <div class="detail-card-header">
+              <div class="detail-card-icon-title">
+                <div class="detail-card-icon investigations">&#128270;</div>
+                <div class="detail-card-label">Total<br>Investigations</div>
+              </div>
+              <div class="detail-card-value">104 <span class="arrow">&#8250;</span></div>
+            </div>
+            <div class="detail-card-rows">
+              <div class="detail-row"><span class="label">In-Progress</span><span class="value">48</span></div>
+              <div class="detail-row"><span class="label">Released</span><span class="value">30</span></div>
+              <div class="detail-row"><span class="label">Closed</span><span class="value">26</span></div>
+            </div>
+            <div class="detail-card-footer">
+              <span class="closure-badge green">25% Closure Rate <span class="info-icon"></span></span>
+            </div>
+          </div>
+
+          <!-- TOTAL RECOMMENDATIONS -->
+          <div class="detail-card clickable">
+            <div class="detail-card-header">
+              <div class="detail-card-icon-title">
+                <div class="detail-card-icon recommendations">&#10003;</div>
+                <div class="detail-card-label">Total<br>Recommendations</div>
+              </div>
+              <div class="detail-card-value">30 <span class="arrow">&#8250;</span></div>
+            </div>
+            <div class="detail-card-rows">
+              <div class="detail-row"><span class="label">Pending</span><span class="value">2</span></div>
+              <div class="detail-row"><span class="label">In-Review</span><span class="value">0</span></div>
+              <div class="detail-row"><span class="label">Done</span><span class="value">28</span></div>
+            </div>
+            <div class="detail-card-footer">
+              <span class="closure-badge green">93% Done Rate <span class="info-icon"></span></span>
+              <span class="closure-badge red">2 Overdue</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPORTER DEMOGRAPHICS -->
+      <div class="section-card">
+        <div class="section-title">Reporter Demographics</div>
+        <div class="demographics-grid">
+          <div class="demo-group">
+            <div class="demo-stat">
+              <div class="demo-value">210</div>
+              <div class="demo-label">Total Male Reports</div>
+            </div>
+            <div class="demo-stat">
+              <div class="demo-value">196</div>
+              <div class="demo-label">By Male Employee</div>
+            </div>
+            <div class="demo-stat">
+              <div class="demo-value">12</div>
+              <div class="demo-label">By Male Contractor</div>
+            </div>
+          </div>
+          <div class="demo-group">
+            <div class="demo-stat">
+              <div class="demo-value">1</div>
+              <div class="demo-label">Total Female Reports</div>
+            </div>
+            <div class="demo-stat">
+              <div class="demo-value">0</div>
+              <div class="demo-label">By Female Employee</div>
+            </div>
+            <div class="demo-stat">
+              <div class="demo-value">1</div>
+              <div class="demo-label">By Female Contractor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GENDER BREAKDOWN -->
+      <div class="chart-card">
+        <div class="chart-title">Gender Breakdown</div>
+        <div class="chart-subtitle">Report count by department and reporter gender</div>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <span class="bar-label">PP</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:78%"></div>
+              <div class="bar-fill orange" style="width:5%"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">PE</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:52%"></div>
+              <div class="bar-fill orange" style="width:2%"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Logistics</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:14%"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Ammonia 1</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:5%"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">HSEF</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:4%"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Administration</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:3%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-dot" style="background:var(--blue-500)"></span> Male</span>
+          <span class="legend-item"><span class="legend-dot" style="background:var(--orange-500)"></span> Female</span>
+        </div>
+      </div>
+
+      <!-- EMPLOYMENT TYPE BREAKDOWN -->
+      <div class="chart-card">
+        <div class="chart-title">Employment Type Breakdown</div>
+        <div class="chart-subtitle">Report count by department and employment type</div>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <span class="bar-label">PP</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:74%"></div>
+              <div class="bar-fill pink" style="width:9%"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">PE</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:49%"></div>
+              <div class="bar-fill pink" style="width:5%"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Logistics</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:11%"></div>
+              <div class="bar-fill pink" style="width:3%"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Ammonia 1</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:5%"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">HSEF</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:3%"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Administration</span>
+            <div class="bar-track">
+              <div class="bar-fill blue" style="width:3%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-dot" style="background:var(--blue-500)"></span> Employee</span>
+          <span class="legend-item"><span class="legend-dot" style="background:var(--pink-500)"></span> Contractor</span>
+        </div>
+      </div>
+
+      <!-- DEPARTMENT WISE SUMMARY -->
+      <div class="chart-card">
+        <div class="dept-header">
+          <div>
+            <div class="chart-title">Department Wise Summary</div>
+            <div class="chart-subtitle">Incidents count by department and status</div>
+          </div>
+          <div class="dept-tabs">
+            <button class="dept-tab active" onclick="switchDeptTab(this)">Reports</button>
+            <button class="dept-tab" onclick="switchDeptTab(this)">Investigations</button>
+            <button class="dept-tab" onclick="switchDeptTab(this)">Recommendations</button>
+          </div>
+        </div>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <span class="bar-label">PP</span>
+            <div class="stacked-bar-track">
+              <div class="bar-fill" style="width:20%;background:var(--orange-500)"></div>
+              <div class="bar-fill" style="width:8%;background:var(--yellow-500)"></div>
+              <div class="bar-fill" style="width:50%;background:var(--teal-500)"></div>
+              <div class="bar-fill" style="width:10%;background:var(--red-500)"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">PE</span>
+            <div class="stacked-bar-track">
+              <div class="bar-fill" style="width:14%;background:var(--orange-500)"></div>
+              <div class="bar-fill" style="width:6%;background:var(--yellow-500)"></div>
+              <div class="bar-fill" style="width:30%;background:var(--teal-500)"></div>
+              <div class="bar-fill" style="width:7%;background:var(--red-500)"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Logistics</span>
+            <div class="stacked-bar-track">
+              <div class="bar-fill" style="width:5%;background:var(--orange-500)"></div>
+              <div class="bar-fill" style="width:3%;background:var(--teal-500)"></div>
+              <div class="bar-fill" style="width:4%;background:var(--teal-500)"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Ammonia 1</span>
+            <div class="stacked-bar-track">
+              <div class="bar-fill" style="width:3%;background:var(--orange-500)"></div>
+              <div class="bar-fill" style="width:2%;background:var(--teal-500)"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">HSEF</span>
+            <div class="stacked-bar-track">
+              <div class="bar-fill" style="width:2%;background:var(--orange-500)"></div>
+              <div class="bar-fill" style="width:2%;background:var(--teal-500)"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Administration</span>
+            <div class="stacked-bar-track">
+              <div class="bar-fill" style="width:1%;background:var(--orange-500)"></div>
+              <div class="bar-fill" style="width:2%;background:var(--teal-500)"></div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-dot" style="background:var(--orange-500)"></span> Pending Safety Manager Approval</span>
+          <span class="legend-item"><span class="legend-dot" style="background:var(--yellow-500)"></span> Pending Department Approval</span>
+          <span class="legend-item"><span class="legend-dot" style="background:var(--teal-500)"></span> Approved by Department</span>
+          <span class="legend-item"><span class="legend-dot" style="background:var(--red-500)"></span> Rejected</span>
+        </div>
+      </div>
+
+      <!-- INCIDENT ANALYSIS -->
+      <div class="section-card">
+        <div class="section-title">Incident Analysis</div>
+
+        <div class="analysis-grid">
+          <!-- Incident Trend -->
+          <div class="analysis-chart-card">
+            <div class="chart-title">Incident Trend</div>
+            <div class="chart-subtitle">Reported vs. Closed</div>
+            <div class="line-chart-container">
+              <svg viewBox="0 0 500 260" preserveAspectRatio="xMidYMid meet">
+                <!-- Grid lines -->
+                <line x1="50" y1="20" x2="50" y2="220" stroke="#E5E7EB" stroke-width="0.5"/>
+                <line x1="50" y1="220" x2="480" y2="220" stroke="#E5E7EB" stroke-width="0.5"/>
+                <line x1="50" y1="180" x2="480" y2="180" stroke="#F3F4F6" stroke-width="0.5"/>
+                <line x1="50" y1="140" x2="480" y2="140" stroke="#F3F4F6" stroke-width="0.5"/>
+                <line x1="50" y1="100" x2="480" y2="100" stroke="#F3F4F6" stroke-width="0.5"/>
+                <line x1="50" y1="60" x2="480" y2="60" stroke="#F3F4F6" stroke-width="0.5"/>
+                <line x1="50" y1="20" x2="480" y2="20" stroke="#F3F4F6" stroke-width="0.5"/>
+
+                <!-- Y-axis labels -->
+                <text x="40" y="224" text-anchor="end" font-size="10" fill="#9CA3AF">0</text>
+                <text x="40" y="184" text-anchor="end" font-size="10" fill="#9CA3AF">40</text>
+                <text x="40" y="144" text-anchor="end" font-size="10" fill="#9CA3AF">80</text>
+                <text x="40" y="104" text-anchor="end" font-size="10" fill="#9CA3AF">120</text>
+                <text x="40" y="64" text-anchor="end" font-size="10" fill="#9CA3AF">160</text>
+
+                <!-- X-axis labels -->
+                <text x="100" y="240" text-anchor="middle" font-size="10" fill="#9CA3AF">Jan 2026</text>
+                <text x="220" y="240" text-anchor="middle" font-size="10" fill="#9CA3AF">Feb 2026</text>
+                <text x="340" y="240" text-anchor="middle" font-size="10" fill="#9CA3AF">Mar 2026</text>
+                <text x="460" y="240" text-anchor="middle" font-size="10" fill="#9CA3AF">Apr 2026</text>
+
+                <!-- Area fill for Reported -->
+                <path d="M100,30 L220,80 L340,130 L460,190 L460,220 L340,220 L220,220 L100,220 Z" fill="rgba(255,152,0,0.1)"/>
+
+                <!-- Area fill for Closed -->
+                <path d="M100,200 L220,215 L340,210 L460,205 L460,220 L340,220 L220,220 L100,220 Z" fill="rgba(76,175,80,0.1)"/>
+
+                <!-- Reported line (orange) -->
+                <polyline points="100,30 220,80 340,130 460,190" fill="none" stroke="#FF9800" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Dashed extension -->
+                <line x1="340" y1="130" x2="460" y2="190" stroke="#FF9800" stroke-width="2" stroke-dasharray="6,4"/>
+
+                <!-- Closed line (green) -->
+                <polyline points="100,200 220,215 340,210 460,205" fill="none" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="340" y1="210" x2="460" y2="205" stroke="#4CAF50" stroke-width="2" stroke-dasharray="6,4"/>
+
+                <!-- Data points -->
+                <circle cx="100" cy="30" r="4" fill="white" stroke="#FF9800" stroke-width="2"/>
+                <circle cx="220" cy="80" r="4" fill="white" stroke="#FF9800" stroke-width="2"/>
+                <circle cx="340" cy="130" r="4" fill="white" stroke="#FF9800" stroke-width="2"/>
+                <circle cx="460" cy="190" r="4" fill="white" stroke="#FF9800" stroke-width="2"/>
+
+                <circle cx="100" cy="200" r="4" fill="white" stroke="#4CAF50" stroke-width="2"/>
+                <circle cx="220" cy="215" r="4" fill="white" stroke="#4CAF50" stroke-width="2"/>
+                <circle cx="340" cy="210" r="4" fill="white" stroke="#4CAF50" stroke-width="2"/>
+                <circle cx="460" cy="205" r="4" fill="white" stroke="#4CAF50" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item"><span class="legend-dot" style="background:#F97316;border:2px solid #FF9800;width:12px;height:12px;border-radius:50%;background:white;border:2px solid #FF9800;"></span> Reported</span>
+              <span class="legend-item"><span class="legend-dot" style="background:#22C55E;border:2px solid #4CAF50;width:12px;height:12px;border-radius:50%;background:white;border:2px solid #4CAF50;"></span> Closed</span>
+            </div>
+          </div>
+
+          <!-- Resolution Rate -->
+          <div class="analysis-chart-card">
+            <div class="chart-title" style="display:flex;align-items:center;justify-content:space-between;">
+              Resolution Rate
+              <span class="info-icon" style="color:var(--gray-400);"></span>
+            </div>
+            <div class="chart-subtitle">Monthly resolution rate (%)</div>
+            <div class="line-chart-container">
+              <svg viewBox="0 0 500 260" preserveAspectRatio="xMidYMid meet">
+                <!-- Grid -->
+                <line x1="50" y1="20" x2="50" y2="220" stroke="#E5E7EB" stroke-width="0.5"/>
+                <line x1="50" y1="220" x2="480" y2="220" stroke="#E5E7EB" stroke-width="0.5"/>
+                <line x1="50" y1="180" x2="480" y2="180" stroke="#F3F4F6" stroke-width="0.5"/>
+                <line x1="50" y1="140" x2="480" y2="140" stroke="#F3F4F6" stroke-width="0.5"/>
+                <line x1="50" y1="100" x2="480" y2="100" stroke="#F3F4F6" stroke-width="0.5"/>
+                <line x1="50" y1="60" x2="480" y2="60" stroke="#F3F4F6" stroke-width="0.5"/>
+                <line x1="50" y1="20" x2="480" y2="20" stroke="#F3F4F6" stroke-width="0.5"/>
+
+                <!-- Y-axis labels (%) -->
+                <text x="40" y="224" text-anchor="end" font-size="10" fill="#9CA3AF">0%</text>
+                <text x="40" y="184" text-anchor="end" font-size="10" fill="#9CA3AF">20%</text>
+                <text x="40" y="144" text-anchor="end" font-size="10" fill="#9CA3AF">40%</text>
+                <text x="40" y="104" text-anchor="end" font-size="10" fill="#9CA3AF">60%</text>
+                <text x="40" y="64" text-anchor="end" font-size="10" fill="#9CA3AF">80%</text>
+                <text x="40" y="24" text-anchor="end" font-size="10" fill="#9CA3AF">100%</text>
+
+                <!-- X-axis labels -->
+                <text x="100" y="240" text-anchor="middle" font-size="10" fill="#9CA3AF">Jan 2026</text>
+                <text x="220" y="240" text-anchor="middle" font-size="10" fill="#9CA3AF">Feb 2026</text>
+                <text x="340" y="240" text-anchor="middle" font-size="10" fill="#9CA3AF">Mar 2026</text>
+                <text x="460" y="240" text-anchor="middle" font-size="10" fill="#9CA3AF">Apr 2026</text>
+
+                <!-- Area fill -->
+                <path d="M100,185 L220,195 L340,190 L460,195 L460,220 L340,220 L220,220 L100,220 Z" fill="rgba(74,20,140,0.08)"/>
+
+                <!-- Resolution Rate line (purple) -->
+                <polyline points="100,185 220,195 340,190 460,195" fill="none" stroke="#4A148C" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="340" y1="190" x2="460" y2="195" stroke="#4A148C" stroke-width="2" stroke-dasharray="6,4"/>
+
+                <!-- Data points -->
+                <circle cx="100" cy="185" r="4" fill="white" stroke="#4A148C" stroke-width="2"/>
+                <circle cx="220" cy="195" r="4" fill="white" stroke="#4A148C" stroke-width="2"/>
+                <circle cx="340" cy="190" r="4" fill="white" stroke="#4A148C" stroke-width="2"/>
+                <circle cx="460" cy="195" r="4" fill="white" stroke="#4A148C" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item"><span class="legend-dot" style="border:2px solid #4A148C;background:white;"></span> Resolution Rate (%)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Incident Type Comparison -->
+        <div class="analysis-chart-card" style="margin-top: 16px;">
+          <div class="chart-title">Incident Type Comparison</div>
+          <div class="chart-subtitle">Monthly breakdown by incident type</div>
+          <div class="grouped-bar-chart">
+            <div class="grouped-bar-month">
+              <div class="grouped-bars">
+                <div class="g-bar near-miss" style="height:78%"></div>
+                <div class="g-bar unsafe-cond" style="height:44%"></div>
+                <div class="g-bar unsafe-act" style="height:12%"></div>
+              </div>
+              <span class="month-label">Jan 2026</span>
+            </div>
+            <div class="grouped-bar-month">
+              <div class="grouped-bars">
+                <div class="g-bar near-miss" style="height:28%"></div>
+                <div class="g-bar unsafe-cond" style="height:37%"></div>
+                <div class="g-bar unsafe-act" style="height:4%"></div>
+              </div>
+              <span class="month-label">Feb 2026</span>
+            </div>
+            <div class="grouped-bar-month">
+              <div class="grouped-bars">
+                <div class="g-bar near-miss" style="height:7%"></div>
+                <div class="g-bar unsafe-cond" style="height:9%"></div>
+                <div class="g-bar unsafe-act" style="height:0%"></div>
+              </div>
+              <span class="month-label">Mar 2026</span>
+            </div>
+            <div class="grouped-bar-month">
+              <div class="grouped-bars">
+                <div class="g-bar near-miss" style="height:4%"></div>
+                <div class="g-bar unsafe-cond" style="height:0%"></div>
+                <div class="g-bar unsafe-act" style="height:0%"></div>
+              </div>
+              <span class="month-label">Apr 2026</span>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <span class="legend-item"><span class="legend-dot" style="background:var(--blue-500)"></span> Near Miss</span>
+            <span class="legend-item"><span class="legend-dot" style="background:var(--orange-500)"></span> Unsafe Conditions</span>
+            <span class="legend-item"><span class="legend-dot" style="background:var(--red-500)"></span> Unsafe Acts</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- ISSUES PANEL -->
+<button class="issues-toggle" onclick="toggleIssuesPanel()">
+  &#128269;
+  <span class="badge-count">8</span>
+</button>
+
+<div class="overlay-dimmer" id="overlayDimmer" onclick="toggleIssuesPanel()"></div>
+
+<div class="issues-panel" id="issuesPanel">
+  <h2>&#9888; Issues Found (8)</h2>
+  <p style="font-size:13px;color:var(--gray-500);margin-bottom:16px;">UI/UX issues identified on the original page, fixed in this prototype:</p>
+
+  <div class="issue-item critical">
+    <div class="issue-severity">Critical</div>
+    <div class="issue-title">1. Tab Text Truncation</div>
+    <div class="issue-desc">"UNSAFE ACTS" tab gets truncated to "UN...A..." at medium viewports (~980px) when tabs and filters share the same row. <strong>Fix:</strong> Tabs now scroll horizontally and filters wrap below on smaller screens.</div>
+  </div>
+
+  <div class="issue-item critical">
+    <div class="issue-severity">Critical</div>
+    <div class="issue-title">2. Console Exceptions on Load</div>
+    <div class="issue-desc">2 unhandled exceptions thrown on page load (Object errors). Likely caused by missing data or failed API calls that should have error boundaries.</div>
+  </div>
+
+  <div class="issue-item warning">
+    <div class="issue-severity">Warning</div>
+    <div class="issue-title">3. Typo: "Adminstration"</div>
+    <div class="issue-desc">Department name "Adminstration" is misspelled in all charts. Should be "Administration". <strong>Fixed</strong> in this prototype.</div>
+  </div>
+
+  <div class="issue-item warning">
+    <div class="issue-severity">Warning</div>
+    <div class="issue-title">4. Sticky Header Overlap</div>
+    <div class="issue-desc">At medium viewports, the sticky tabs/filters bar layout breaks. Tabs and dropdowns overlap at ~980-1100px width, making "UNSAFE ACTS" inaccessible.</div>
+  </div>
+
+  <div class="issue-item warning">
+    <div class="issue-severity">Warning</div>
+    <div class="issue-title">5. Sidebar Collapse Missing</div>
+    <div class="issue-desc">Sidebar doesn't collapse gracefully between ~820-1100px. It either shows full or hides entirely. <strong>Fix:</strong> Added icon-only collapsed state for medium screens.</div>
+  </div>
+
+  <div class="issue-item info">
+    <div class="issue-severity">Info</div>
+    <div class="issue-title">6. Detail Cards Responsiveness</div>
+    <div class="issue-desc">Three detail cards (Reports/Investigations/Recommendations) stay in 3-column even when space is tight, cramping content. <strong>Fix:</strong> They now flow to 2-column at tablet and 1-column on mobile.</div>
+  </div>
+
+  <div class="issue-item info">
+    <div class="issue-severity">Info</div>
+    <div class="issue-title">7. Demographics Section Layout</div>
+    <div class="issue-desc">The 6 demographic stats split into Male/Female groups use a rigid 6-column layout. At iPad Air width the divider and spacing feel cramped. <strong>Fix:</strong> Now uses a 2-row layout at smaller viewports.</div>
+  </div>
+
+  <div class="issue-item info">
+    <div class="issue-severity">Info</div>
+    <div class="issue-title">8. Charts Lack of Interactivity</div>
+    <div class="issue-desc">Bar and line charts show no tooltips or hover states. Users can't discover exact values for bars. Recommendation: add hover tooltips with exact numbers.</div>
+  </div>
+</div>
+
+<script>
+  // Tab switching
+  function switchTab(btn, type) {
+    document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+
+    const subTabs = document.getElementById('nearMissSubTabs');
+    if (type === 'nearMiss') {
+      subTabs.style.display = 'flex';
+    } else {
+      subTabs.style.display = 'none';
+    }
+  }
+
+  // Sub-tab switching
+  function switchSubTab(btn) {
+    btn.parentElement.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  // Department tabs
+  function switchDeptTab(btn) {
+    btn.parentElement.querySelectorAll('.dept-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  // Sidebar toggle
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('collapsed');
+    if (sidebar.style.width === 'var(--sidebar-collapsed)') {
+      sidebar.style.width = '';
+      document.querySelector('.main-content').style.marginLeft = '';
+    }
+  }
+
+  // Issues panel
+  function toggleIssuesPanel() {
+    const panel = document.getElementById('issuesPanel');
+    const dimmer = document.getElementById('overlayDimmer');
+    panel.classList.toggle('open');
+    dimmer.classList.toggle('show');
+  }
+
+  // Add hover tooltips to stat cards
+  document.querySelectorAll('.stat-card, .stat-card-combined, .detail-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-2px)';
+      this.style.boxShadow = '0 6px 16px rgba(0,0,0,0.1)';
+    });
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = '';
+      this.style.boxShadow = '';
+    });
+  });
+
+  // Bar hover effects
+  document.querySelectorAll('.bar-fill').forEach(bar => {
+    bar.addEventListener('mouseenter', function() {
+      this.style.opacity = '0.8';
+      this.style.filter = 'brightness(1.1)';
+    });
+    bar.addEventListener('mouseleave', function() {
+      this.style.opacity = '';
+      this.style.filter = '';
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,1 +1,0 @@
-import{j as o}from"./iframe-CXEw8YqF.js";import{c as r}from"./createSvgIcon-B15l7tE5.js";const t=r(o.jsx("path",{d:"M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2m0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2"}),"MoreVertRounded");export{t as M};

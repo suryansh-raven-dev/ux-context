@@ -1,0 +1,64 @@
+{
+    "name": "process_near_miss_investigation_step2",
+    "description": "Document sequence of events and initial findings",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "investigation_findings": {
+                "type": "object",
+                "description": "Initial findings from the investigation",
+                "reasoning": "Captures the basic facts and timeline of the incident",
+                "properties": {
+                    "sequence_of_events": {
+                        "type": "string",
+                        "description": "Detailed chronological sequence of events leading to and during the incident",
+                        "reasoning": "Essential for understanding how the incident unfolded and identifying potential causes"
+                    }
+                },
+                "required": ["sequence_of_events"]
+            },
+            "location_info": {
+                "type": "object",
+                "description": "Detailed location information",
+                "reasoning": "Precise location details help in understanding the context and environment of the incident",
+                "properties": {
+                    "plant_department": {
+                        "type": "string",
+                        "description": "Department or area where incident occurred",
+                        "reasoning": "Identifies the organizational unit responsible for the area"
+                    },
+                    "exact_location": {
+                        "type": "string",
+                        "description": "Specific location within the department",
+                        "reasoning": "Pinpoints the exact location for investigation and future reference"
+                    },
+                    "equipment": {
+                        "type": "object",
+                        "description": "Equipment involved in the incident",
+                        "reasoning": "Documents specific equipment details for maintenance and prevention",
+                        "properties": {
+                            "tag_no": {
+                                "type": "string",
+                                "description": "Equipment identification number",
+                                "reasoning": "Unique identifier for tracking and maintenance records"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Description of the equipment",
+                                "reasoning": "Provides context about equipment type and function"
+                            }
+                        },
+                        "required": ["tag_no", "description"]
+                    }
+                },
+                "required": ["plant_department", "exact_location", "equipment"]
+            },
+            "reasoning": {
+                "type": "string",
+                "description": "Detailed explanation of findings, location details, and equipment identification",
+                "reasoning": "Documents the rationale for sequence of events interpretation, location assessment, and equipment identification to ensure completeness and accuracy"
+            }
+        },
+        "required": ["investigation_findings", "location_info", "reasoning_generated"]
+    }
+} 

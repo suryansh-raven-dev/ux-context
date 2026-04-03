@@ -1,0 +1,8 @@
+.raven-gradient-title {
+  background: linear-gradient(-14deg, rgb(191, 64, 174) 0%, rgb(107, 64, 191) 50%, rgb(78, 64, 191) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}

@@ -1,0 +1,10 @@
+.raven-divider {
+  border-color: #E0E0E0;
+}
+
+.raven-divider .MuiDivider-wrapper {
+  font-family: 'Source Sans 3', sans-serif;
+  color: #4A148C;
+  font-size: 0.875rem;
+  font-weight: 600;
+}

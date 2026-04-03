@@ -1,0 +1,207 @@
+{
+    "name": "process_near_miss_investigation_step4",
+    "description": "Analyze root causes of the near-miss incident",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "root_cause_analysis": {
+                "type": "object",
+                "description": "Analysis of underlying system, physical, and human factors",
+                "reasoning": "Identifies fundamental causes that need to be addressed to prevent recurrence",
+                "properties": {
+                    "system_factors": {
+                        "type": "object",
+                        "description": "Management system and process-related factors",
+                        "reasoning": "Identifies systemic issues in safety management systems",
+                        "properties": {
+                            "options": {
+                                "type": "object",
+                                "properties": {
+                                    "hazard_identification": {
+                                        "type": "boolean",
+                                        "description": "Hazard Identification & risk assessment",
+                                        "reasoning": "Gaps in hazard identification can lead to uncontrolled risks"
+                                    },
+                                    "procedures": {
+                                        "type": "boolean",
+                                        "description": "Procedures & Practices",
+                                        "reasoning": "Inadequate procedures can lead to unsafe operations"
+                                    },
+                                    "work_permit": {
+                                        "type": "boolean",
+                                        "description": "Work Permit System",
+                                        "reasoning": "Work permit issues can lead to unauthorized or unsafe work"
+                                    },
+                                    "training": {
+                                        "type": "boolean",
+                                        "description": "Personnel Training",
+                                        "reasoning": "Inadequate training can lead to mistakes and unsafe acts"
+                                    },
+                                    "mechanical_integrity": {
+                                        "type": "boolean",
+                                        "description": "Mechanical Integrity",
+                                        "reasoning": "Poor equipment integrity can lead to failures"
+                                    },
+                                    "quality_assurance": {
+                                        "type": "boolean",
+                                        "description": "Quality assurance of material",
+                                        "reasoning": "Poor quality materials can lead to equipment failures"
+                                    },
+                                    "safeguards": {
+                                        "type": "boolean",
+                                        "description": "Safeguards, Controls & Layers of Protection",
+                                        "reasoning": "Inadequate safeguards leave operations vulnerable"
+                                    },
+                                    "maintenance": {
+                                        "type": "boolean",
+                                        "description": "Preventive Maintenance",
+                                        "reasoning": "Poor maintenance leads to equipment failures"
+                                    },
+                                    "moc": {
+                                        "type": "boolean",
+                                        "description": "Management of Change",
+                                        "reasoning": "Poor change management introduces new risks"
+                                    },
+                                    "contractor": {
+                                        "type": "boolean",
+                                        "description": "Contractor Management",
+                                        "reasoning": "Poor contractor management leads to coordination issues"
+                                    },
+                                    "design": {
+                                        "type": "boolean",
+                                        "description": "Design",
+                                        "reasoning": "Design flaws can create inherent hazards"
+                                    },
+                                    "facility": {
+                                        "type": "boolean",
+                                        "description": "Facility Siting",
+                                        "reasoning": "Poor facility layout can increase risks"
+                                    },
+                                    "psrv": {
+                                        "type": "boolean",
+                                        "description": "Pre-startup Safety Review",
+                                        "reasoning": "Inadequate pre-startup review misses hazards"
+                                    },
+                                    "emergency": {
+                                        "type": "boolean",
+                                        "description": "Emergency Preparedness and Response",
+                                        "reasoning": "Poor emergency preparedness increases consequences"
+                                    },
+                                    "resources": {
+                                        "type": "boolean",
+                                        "description": "Inadequate resources",
+                                        "reasoning": "Resource constraints can compromise safety"
+                                    },
+                                    "planning": {
+                                        "type": "boolean",
+                                        "description": "Poor work planning",
+                                        "reasoning": "Inadequate planning leads to rushed or unsafe work"
+                                    }
+                                }
+                            }
+                        },
+                        "required": ["options"]
+                    },
+                    "physical_factors": {
+                        "type": "object",
+                        "description": "Physical and technical factors",
+                        "reasoning": "Identifies equipment and infrastructure issues",
+                        "properties": {
+                            "options": {
+                                "type": "object",
+                                "properties": {
+                                    "plant_design": {
+                                        "type": "boolean",
+                                        "description": "Poor design of plant and equipment",
+                                        "reasoning": "Design flaws create inherent safety issues"
+                                    },
+                                    "maintenance": {
+                                        "type": "boolean",
+                                        "description": "Poorly maintained equipment",
+                                        "reasoning": "Poor maintenance leads to equipment failures"
+                                    },
+                                    "workplace": {
+                                        "type": "boolean",
+                                        "description": "Workplace design/preparation",
+                                        "reasoning": "Poor workplace design creates hazards"
+                                    },
+                                    "equipment": {
+                                        "type": "boolean",
+                                        "description": "Work equipment",
+                                        "reasoning": "Inadequate equipment increases risk"
+                                    },
+                                    "tools": {
+                                        "type": "boolean",
+                                        "description": "Tools",
+                                        "reasoning": "Improper tools lead to workarounds"
+                                    },
+                                    "material": {
+                                        "type": "boolean",
+                                        "description": "Substandard material",
+                                        "reasoning": "Poor quality materials compromise safety"
+                                    }
+                                }
+                            }
+                        },
+                        "required": ["options"]
+                    },
+                    "human_factors": {
+                        "type": "object",
+                        "description": "Human and organizational factors",
+                        "reasoning": "Identifies personnel and organizational issues",
+                        "properties": {
+                            "options": {
+                                "type": "object",
+                                "properties": {
+                                    "awareness": {
+                                        "type": "boolean",
+                                        "description": "Lack of awareness",
+                                        "reasoning": "Poor hazard awareness leads to unsafe acts"
+                                    },
+                                    "competence": {
+                                        "type": "boolean",
+                                        "description": "Low skill and competence levels",
+                                        "reasoning": "Inadequate skills increase error likelihood"
+                                    },
+                                    "medical": {
+                                        "type": "boolean",
+                                        "description": "Individual medical problems",
+                                        "reasoning": "Medical issues can affect performance"
+                                    },
+                                    "supervision": {
+                                        "type": "boolean",
+                                        "description": "Inadequate supervision",
+                                        "reasoning": "Poor supervision fails to catch issues"
+                                    },
+                                    "fatigue": {
+                                        "type": "boolean",
+                                        "description": "Fatigued Staffs",
+                                        "reasoning": "Fatigue impairs judgment and performance"
+                                    },
+                                    "physical": {
+                                        "type": "boolean",
+                                        "description": "Physical capability",
+                                        "reasoning": "Physical limitations can lead to unsafe acts"
+                                    },
+                                    "environmental": {
+                                        "type": "boolean",
+                                        "description": "Diminished performance due environment",
+                                        "reasoning": "Environmental conditions affect human performance"
+                                    }
+                                }
+                            }
+                        },
+                        "required": ["options"]
+                    }
+                },
+                "required": ["system_factors", "physical_factors", "human_factors"]
+            },
+            "reasoning": {
+                "type": "string",
+                "description": "Detailed explanation of identified root causes and their selection",
+                "reasoning": "Documents the thought process behind root cause identification and classification"
+            }
+        },
+        "required": ["root_cause_analysis", "reasoning"]
+    }
+} 

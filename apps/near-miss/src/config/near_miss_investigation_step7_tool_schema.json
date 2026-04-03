@@ -1,0 +1,93 @@
+{
+    "name": "process_near_miss_investigation_step7",
+    "description": "Finalize investigation conclusions and approvals",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "conclusions": {
+                "type": "object",
+                "description": "Final conclusions from the investigation",
+                "reasoning": "Summarizes key findings and prevention possibilities",
+                "properties": {
+                    "incident_cause": {
+                        "type": "string",
+                        "description": "Summary of the incident's primary causes",
+                        "reasoning": "Provides clear understanding of why the incident occurred"
+                    },
+                    "prevention_possibility": {
+                        "type": "string",
+                        "description": "Assessment of how the incident could have been prevented",
+                        "reasoning": "Identifies opportunities for future prevention"
+                    }
+                },
+                "required": ["incident_cause", "prevention_possibility"]
+            },
+            "investigation_team": {
+                "type": "array",
+                "description": "Team members involved in the investigation",
+                "reasoning": "Documents who participated in the investigation process",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "Name of team member",
+                            "reasoning": "Identifies individual team members"
+                        },
+                        "department": {
+                            "type": "string",
+                            "description": "Department of team member",
+                            "reasoning": "Shows cross-functional representation"
+                        },
+                        "role": {
+                            "type": "string",
+                            "description": "Role in the investigation",
+                            "reasoning": "Clarifies responsibilities in investigation"
+                        },
+                        "signature": {
+                            "type": "string",
+                            "description": "Team member's signature",
+                            "reasoning": "Confirms participation and agreement"
+                        }
+                    },
+                    "required": ["name", "department", "role", "signature"]
+                }
+            },
+            "approval": {
+                "type": "object",
+                "description": "Final approval of investigation report",
+                "reasoning": "Ensures proper review and authorization",
+                "properties": {
+                    "reviewed_by": {
+                        "type": "string",
+                        "description": "Name of reviewer",
+                        "reasoning": "Identifies who reviewed the investigation"
+                    },
+                    "designation": {
+                        "type": "string",
+                        "description": "Role/position of reviewer",
+                        "reasoning": "Confirms appropriate level of review"
+                    },
+                    "signature": {
+                        "type": "string",
+                        "description": "Reviewer's signature",
+                        "reasoning": "Provides formal approval"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "Date of approval",
+                        "reasoning": "Records when approval was given"
+                    }
+                },
+                "required": ["reviewed_by", "designation", "signature", "date"]
+            },
+            "reasoning": {
+                "type": "string",
+                "description": "Detailed explanation of conclusions and approval decisions",
+                "reasoning": "Documents the thought process behind final conclusions and approval"
+            }
+        },
+        "required": ["conclusions", "investigation_team", "approval", "reasoning"]
+    }
+} 

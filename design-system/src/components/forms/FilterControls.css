@@ -1,0 +1,19 @@
+.raven-filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.raven-filter-controls__search {
+  min-width: 320px;
+  flex: 1 1 320px;
+}
+
+.raven-filter-controls__department {
+  min-width: 180px;
+}
+
+.raven-filter-controls__date {
+  min-width: 160px;
+}

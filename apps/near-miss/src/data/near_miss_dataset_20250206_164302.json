@@ -1,0 +1,1279 @@
+{
+  "metadata": {
+    "generated_at": "2025-02-06T16:38:58.753715",
+    "num_reports": 10
+  },
+  "reports": [
+    {
+      "report_metadata": {
+        "report_id": "RS-20231012-004",
+        "date": "2023-10-12",
+        "time": "14:32:00"
+      },
+      "location_info": {
+        "plant_department": "Reforming Section",
+        "exact_location": "Catalyst Replacement Bay, near Reactor 3",
+        "equipment": {
+          "tag_no": "RF-108",
+          "description": "Reformer Reactor Pressure Sensor"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my regular walkaround in the Reforming Section, I noticed that the pressure reading on Reactor 3\u2019s sensor (RF-108) spiked unexpectedly by about 15% above the normal operating range. I suspect a sensor calibration error or a transient process upset. I immediately suspected that if this unexpected rise had gone unrecognized, it could have led to an overpressure condition, risking an uncontrolled ammonia release or even a process upset in the reactor system.",
+        "immediate_action": "I quickly reduced the feed valve opening manually and alerted the control room over the radio. I also notified my immediate supervisor and initiated a temporary shutdown of the affected unit to safely investigate the sensor calibration before continuing operations."
+      },
+      "reporter_info": {
+        "name": "James Taylor",
+        "id_no": "OP-7894",
+        "department": "Reforming Section Operations",
+        "report_date": "2023-10-12",
+        "report_time": "14:35:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Lisa Brooks",
+        "validator_signature": "LisaBrooksValidator",
+        "validation_date": "2023-10-12"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-20231010-003",
+        "date": "2023-10-10",
+        "time": "14:30"
+      },
+      "location_info": {
+        "plant_department": "Decomposition Section",
+        "exact_location": "Decomposition Reactor Area near Reactor DCP-301",
+        "equipment": {
+          "tag_no": "DCP-301",
+          "description": "Catalytic Decomposer Reactor used for breaking down intermediate compounds before further processing"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine walkaround in the Decomposition Section, I noticed that the temperature gauge on Reactor DCP-301 suddenly spiked to 95\u00b0C, which is significantly above the normal operating limit of 90\u00b0C. I was startled by the unexpected hike because if left unchecked it could have caused a build-up in pressure and even a potential release of toxic gases. The fluctuation seemed transient, but in our process systems, even a brief excursion like this can lead to serious issues if combined with other upset conditions.",
+        "immediate_action": "I immediately alerted the central control room and manually intervened by adjusting the cooling control settings to normalize the temperature. I also activated the local alarm and isolated the reactor from the upstream process to prevent any transfer of off-spec materials. After ensuring safety, I began a preliminary check to identify any sensor calibration issues or transient process anomalies."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OP-789",
+        "department": "Operations - Decomposition Section",
+        "report_date": "2023-10-10",
+        "report_time": "15:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Smith",
+        "validator_signature": "JS",
+        "validation_date": "2023-10-10"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-SYN-20231026-001",
+        "date": "2023-10-26",
+        "time": "14:35"
+      },
+      "location_info": {
+        "plant_department": "Synthesis Section",
+        "exact_location": "Reactor area near Reactor SR-205",
+        "equipment": {
+          "tag_no": "SR-205",
+          "description": "Ammonia synthesis reactor equipped with backup pressure sensor PS-217"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine check in the Synthesis area, I noticed the pressure reading on Reactor SR-205 spiked unexpectedly to about 18% above its normal operating range. The pressure gauge started fluctuating, which immediately raised concerns since such a spike could lead to an overpressure condition.",
+        "immediate_action": "I quickly switched over to the backup sensor (PS-217) to confirm the readings. I documented the abnormal data manually, notified the control room, and advised a sensor calibration check to ensure accurate monitoring. I also kept monitoring the reactor to ensure that the system returned to safe operating conditions."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OP-3472",
+        "department": "Synthesis Operations",
+        "report_date": "2023-10-26",
+        "report_time": "15:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Alice Smith",
+        "validator_signature": "ASmith",
+        "validation_date": "2023-10-26"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:30"
+      },
+      "location_info": {
+        "plant_department": "Granulation Section",
+        "exact_location": "Granulation Processing Area, near Mixing Hopper",
+        "equipment": {
+          "tag_no": "FS-205",
+          "description": "Feed Moisture Sensor on Granulator Unit GU-205"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my regular monitoring of the Granulation Section, I noticed that the feed moisture sensor (FS-205) on Granulator Unit GU-205 suddenly spiked about 20% above its normal reading. Since our process depends heavily on maintaining precise moisture levels, this unusual jump immediately raised concerns.",
+        "immediate_action": "I quickly reduced the feed rate to the granulator and isolated the sensor to prevent faulty data from impacting the process further. I then notified the control room and requested an immediate inspection of the sensor and associated circuitry. I also manually verified the moisture level with a handheld meter to confirm the anomaly."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OP-30345",
+        "department": "Granulation Operations",
+        "report_date": "2023-10-12",
+        "report_time": "14:45"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Smith",
+        "validator_signature": "JS-Validator-Signature",
+        "validation_date": "2023-10-12"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "SS-210-20231012-001",
+        "date": "2023-10-12",
+        "time": "10:15"
+      },
+      "location_info": {
+        "plant_department": "Steam System",
+        "exact_location": "Boiler House near Steam Boiler ST-101",
+        "equipment": {
+          "tag_no": "ST-101",
+          "description": "Primary steam boiler with automatic pressure regulation"
+        }
+      },
+      "incident_details": {
+        "short_description": "While doing my regular check in the Steam System area, I observed that the pressure gauge on Steam Boiler ST-101 suddenly spiked to about 150 psi, which is well above the normal operating limit of 130 psi. This spike persisted for a few seconds before the gauge normalized, but it set off alarm bells since such a deviation could potentially lead to a dangerous overpressure situation.",
+        "immediate_action": "I immediately reduced the load on the boiler by partially shutting the steam feed valve, and notified the control room while closely monitoring the pressure. I also double-checked other instrumentation to confirm the reading, to ensure it was not a sensor error, and secured the nearby area to prevent accidental exposure."
+      },
+      "reporter_info": {
+        "name": "Mark Thompson",
+        "id_no": "OP-4582",
+        "department": "Steam Operations",
+        "report_date": "2023-10-12",
+        "report_time": "10:35"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": true,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Linda Martinez",
+        "validator_signature": "LMartinez",
+        "validation_date": "2023-10-12"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:20"
+      },
+      "location_info": {
+        "plant_department": "Granulation Section",
+        "exact_location": "Granulator Unit area near the mixing chamber",
+        "equipment": {
+          "tag_no": "FS-205",
+          "description": "Feed moisture sensor for Granulator Unit GU-205"
+        }
+      },
+      "incident_details": {
+        "short_description": "While monitoring production in the Granulation Section, I noticed that the feed moisture sensor FS-205 spiked suddenly by about 20% above its normal reading. This unusual jump in moisture levels was alarming as it could have led to improper granule formation or even equipment stress if left unchecked.",
+        "immediate_action": "I immediately notified the control room and stopped the feed process to prevent any potential chain reaction. I then manually confirmed the sensor readings and monitored the system closely until it stabilized. Production was put on a brief hold until a maintenance check could be completed."
+      },
+      "reporter_info": {
+        "name": "Alex Martinez",
+        "id_no": "OP-1023",
+        "department": "Granulation",
+        "report_date": "2023-10-12",
+        "report_time": "14:35"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jose Arthur",
+        "validator_signature": "J.Arthur",
+        "validation_date": "2023-10-12"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-CR-20231025-001",
+        "date": "2023-10-25",
+        "time": "14:20"
+      },
+      "location_info": {
+        "plant_department": "CO2 Removal Section",
+        "exact_location": "CO2 Absorber Column Area",
+        "equipment": {
+          "tag_no": "CR-205",
+          "description": "CO2 Removal Absorber Column with integrated digital control panel"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine inspection in the CO2 Removal area, I observed a sudden spike of about 15% above normal on the digital display from the CR-205 absorber column. This unexpected increase caught my attention as it could indicate either a sensor malfunction or an actual process upset.",
+        "immediate_action": "I immediately halted any non-critical adjustments and manually reset the sensor. I then cross-checked the process indicators on the control panel and confirmed the readings returned to normal. I informed my shift supervisor and logged the incident for further investigation."
+      },
+      "reporter_info": {
+        "name": "John Smith",
+        "id_no": "OP-1357",
+        "department": "CO2 Removal Section",
+        "report_date": "2023-10-25",
+        "report_time": "14:40"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Jane Doe",
+        "validator_signature": "JD-Signature-20231025",
+        "validation_date": "2023-10-25"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "GRN-20231005-001",
+        "date": "2023-10-05",
+        "time": "14:35"
+      },
+      "location_info": {
+        "plant_department": "Granulation Section",
+        "exact_location": "Feed Processing Area, near blending unit",
+        "equipment": {
+          "tag_no": "FS-205",
+          "description": "Feed Moisture Sensor responsible for monitoring moisture levels in the granulation process"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine check-up in the granulation area, I noticed the FS-205 sensor spiking by approximately 20% above its normal reading. This sudden increase was unexpected and had me worried that the granulation process might be compromised, potentially leading to poorly formed granules or equipment stress.",
+        "immediate_action": "I immediately halted the feed system, informed the control room, and started a preliminary inspection of the sensor and its connections. I also double-checked the process conditions and ensured that the affected area was secured until further evaluation."
+      },
+      "reporter_info": {
+        "name": "John Smith",
+        "id_no": "OP12345",
+        "department": "Granulation Operations",
+        "report_date": "2023-10-05",
+        "report_time": "14:45"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Maria Lopez",
+        "validator_signature": "ML-Signature",
+        "validation_date": "2023-10-05"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NM-DS-20231014-001",
+        "date": "2023-10-14",
+        "time": "14:33"
+      },
+      "location_info": {
+        "plant_department": "Decomposition Section",
+        "exact_location": "Decomposition Reactor DS-102 area",
+        "equipment": {
+          "tag_no": "DS-102 / TS-209",
+          "description": "Reactor vessel DS-102 with attached temperature sensor TS-209"
+        }
+      },
+      "incident_details": {
+        "short_description": "I noticed that the temperature sensor TS-209 on reactor DS-102 suddenly spiked about 40\u00b0C above its normal reading for nearly 3 minutes before returning to normal. I felt a surge of alarm thinking this could indicate a potential runaway reaction or overheating in the reactor.",
+        "immediate_action": "I immediately notified the control room and maintenance team, initiated a backup sensor reading using the secondary sensor on DS-102, and closely monitored reactor parameters to confirm that conditions stabilized. I also logged the event in the shift report while staying on-site to ensure safety."
+      },
+      "reporter_info": {
+        "name": "Alex Turner",
+        "id_no": "OP-1045",
+        "department": "Decomposition Section",
+        "report_date": "2023-10-14",
+        "report_time": "14:45"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": true,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Sandra Lee",
+        "validator_signature": "SandraLeeSignature",
+        "validation_date": "2023-10-14"
+      }
+    },
+    {
+      "report_metadata": {
+        "report_id": "NRMS-RF-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:35"
+      },
+      "location_info": {
+        "plant_department": "Reforming Section",
+        "exact_location": "Adjacent to the control panel of Reactor DS-105",
+        "equipment": {
+          "tag_no": "TS-405",
+          "description": "Temperature Sensor on Reactor DS-105"
+        }
+      },
+      "incident_details": {
+        "short_description": "During my routine walk-through in the Reforming Section, I noticed that the temperature reading on sensor TS-405 abruptly spiked about 35\u00b0C above its normal operating level. The reading jumped from approximately 450\u00b0C to 485\u00b0C and then slowly returned to normal over a span of 4 minutes.",
+        "immediate_action": "I immediately halted the feed stream to the reactor and notified the control room supervisor. I also double-checked the sensor\u2019s display for any obvious malfunctions and recorded the incident details while maintaining a safe distance."
+      },
+      "reporter_info": {
+        "name": "John Doe",
+        "id_no": "OP-107",
+        "department": "Reforming Operations",
+        "report_date": "2023-10-12",
+        "report_time": "15:00"
+      },
+      "safety_validation": {
+        "classification": {
+          "workplace_safety_near_miss": false,
+          "process_safety_near_miss": true,
+          "unsafe_condition": false,
+          "unsafe_act": false,
+          "other": false
+        },
+        "status": {
+          "accepted": true,
+          "rejected": false
+        },
+        "validator_name": "Alice Smith",
+        "validator_signature": "A.Smith",
+        "validation_date": "2023-10-12"
+      }
+    }
+  ],
+  "investigations": [
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231012-004",
+        "report_id": "RS-20231012-004",
+        "date": "2023-10-12",
+        "time": "15:00:00",
+        "plant_department": "Reforming Section",
+        "location": "Catalyst Replacement Bay, near Reactor 3",
+        "equipment": {
+          "tag_no": "RF-108",
+          "description": "Reformer Reactor Pressure Sensor"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During the routine walkaround, operator James Taylor observed an unexpected 15% spike in the pressure reading on Reactor 3\u2019s pressure sensor (RF-108). He immediately took manual control by reducing the feed valve opening and alerted the control room and his supervisor. A temporary shutdown of the affected unit was initiated to inspect the sensor calibration. Preliminary checks indicated that the sensor may have experienced a calibration drift or a transient process upset."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": ["inadequate_warning"],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": ["maintenance"],
+        "physical_factors": ["equipment"],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": ["Timely Sensor Calibration Check"],
+        "successful": [
+          "Prompt identification of abnormal pressure readings by operator",
+          "Immediate manual intervention by reducing the feed valve opening",
+          "Effective communication with the control room and supervisor"
+        ],
+        "missing": ["Automated alarm calibration check protocol in SCADA system"]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was caused by a sensor calibration drift leading to a false high pressure reading, which if left uncorrected could have triggered an overpressure condition.",
+        "prevention_possibility": "Regular calibration checks, enhanced automated alarm verification, and updated maintenance protocols can prevent similar incidents in the future."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231012-001",
+          "recommendation": "Review and recalibrate RF-108 immediately, then update the sensor maintenance schedule to include strict periodic calibration checks.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-20",
+          "completion_date": "",
+          "status": "Open"
+        },
+        {
+          "action_id": "CA-20231012-002",
+          "recommendation": "Develop and implement an automated alarm calibration check protocol within the SCADA system to ensure continuous validation of sensor readings.",
+          "type": "System Change",
+          "responsibility": "Automation Engineering",
+          "target_date": "2023-11-15",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "James Taylor",
+          "department": "Reforming Section Operations",
+          "role": "Investigator/Reporter",
+          "signature": "JamesTaylorOP"
+        },
+        {
+          "name": "Lisa Brooks",
+          "department": "Safety Validation",
+          "role": "Validator",
+          "signature": "LisaBrooksValidator"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Mark Reynolds",
+        "designation": "Safety Manager",
+        "signature": "MarkReynoldsSafety",
+        "date": "2023-10-12"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231010-003",
+        "report_id": "NM-20231010-003",
+        "date": "2023-10-10",
+        "time": "14:30",
+        "plant_department": "Decomposition Section",
+        "location": "Decomposition Reactor Area near Reactor DCP-301",
+        "equipment": {
+          "tag_no": "DCP-301",
+          "description": "Catalytic Decomposer Reactor used for breaking down intermediate compounds before further processing"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine walkaround, the operator observed that the temperature gauge on Reactor DCP-301 spiked to 95\u00b0C, exceeding the normal operating limit of 90\u00b0C. The operator immediately alerted the central control room, adjusted cooling control settings, activated the local alarm, and isolated the reactor from upstream feed. A preliminary review indicated that the spike was transient and may have been caused by a sensor calibration drift or a brief process upset."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": ["temperature_extremes"],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": ["procedures", "maintenance"],
+        "physical_factors": ["equipment"],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Automated alarm system did not trigger an automatic shutdown upon the temperature spike."
+        ],
+        "successful": [
+          "Operator quickly identified the unusual temperature reading.",
+          "Prompt communication with the central control room.",
+          "Immediate manual intervention and isolation of reactor prevented potential escalation."
+        ],
+        "missing": [
+          "Regular sensor calibration verification program.",
+          "Redundant backup sensor and alarm cross-check for temperature monitoring."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "A transient process upset combined with a potential sensor calibration drift resulted in an erroneous temperature reading.",
+        "prevention_possibility": "Enhanced preventive maintenance, more frequent sensor calibrations, and improvements in automatic alarm systems could prevent recurrence."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231010-01",
+          "recommendation": "Conduct a thorough calibration check on the temperature sensor of Reactor DCP-301 and review the sensor maintenance schedule. Also, update the alarm verification protocols to ensure automatic shutdown if similar anomalies occur.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-15",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Doe",
+          "department": "Operations - Decomposition Section",
+          "role": "Initial Reporting Operator",
+          "signature": "JD"
+        },
+        {
+          "name": "Jane Smith",
+          "department": "Process Safety",
+          "role": "Safety Validator",
+          "signature": "JS"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Michael Brown",
+        "designation": "Process Safety Manager",
+        "signature": "MB",
+        "date": "2023-10-11"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-SYN-20231026-01",
+        "report_id": "NM-SYN-20231026-001",
+        "date": "2023-10-26",
+        "time": "14:35",
+        "plant_department": "Synthesis Section",
+        "location": "Reactor area near Reactor SR-205",
+        "equipment": {
+          "tag_no": "SR-205",
+          "description": "Ammonia synthesis reactor equipped with backup pressure sensor PS-217"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine check in the Synthesis area, the operator observed that the pressure gauge on Reactor SR-205 spiked to approximately 18% above its normal operating range. The gauge started fluctuating, prompting an immediate switch to the backup sensor (PS-217) to verify the readings. The abnormal data was documented manually and reported to the control room. A sensor calibration check was recommended while continued monitoring ensured the process returned to stable conditions."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": ["inadequate_warning"],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": ["maintenance"],
+        "physical_factors": ["equipment"],
+        "human_factors": ["awareness"]
+      },
+      "barrier_analysis": {
+        "failed": [
+          "The primary pressure sensor RF-108 did not maintain accurate readings and its diagnostic alarm did not trigger an early warning of the abnormal condition."
+        ],
+        "successful": [
+          "The operator\u2019s prompt use of the backup sensor (PS-217) confirmed the anomaly and allowed for immediate corrective measures.",
+          "Timely reporting to the control room helped prevent any escalation of the incident."
+        ],
+        "missing": [
+          "A routine, enforced sensor calibration schedule to ensure long-term sensor reliability was not evident at the time."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was caused by a drift or calibration error in the primary pressure sensor RF-108, leading to erratic pressure readings that could have resulted in an overpressure condition.",
+        "prevention_possibility": "Regular, scheduled calibration and maintenance of pressure sensors, along with improved diagnostic alarms, could prevent recurrence of this near-miss."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-SYN-20231026-001",
+          "recommendation": "Recalibrate sensor RF-108 immediately and conduct a review of the current sensor maintenance schedule. Implement an enhanced alarm verification procedure to ensure future early warnings.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Team and Process Safety Engineering",
+          "target_date": "2023-10-28",
+          "completion_date": "2023-10-28",
+          "status": "Completed"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Smith",
+          "department": "Process Safety",
+          "role": "Lead Investigator",
+          "signature": "ASmith"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Bob Johnson",
+        "designation": "Process Safety Manager",
+        "signature": "BJohnson",
+        "date": "2023-10-26"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231012-001",
+        "report_id": "NM-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:45",
+        "plant_department": "Granulation Section",
+        "location": "Granulation Processing Area, near Mixing Hopper",
+        "equipment": {
+          "tag_no": "FS-205",
+          "description": "Feed Moisture Sensor on Granulator Unit GU-205"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During routine monitoring, the feed moisture sensor on Granulator Unit GU-205 registered a spike approximately 20% above normal. The operator immediately reduced the feed rate and isolated the sensor. A manual verification confirmed the spike. Subsequent review indicates the sensor experienced a transient malfunction, possibly due to an internal failure or an electrical interference, though no prolonged effect on the process was observed."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": ["inadequate_warning"],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": ["maintenance", "safeguards", "procedures"],
+        "physical_factors": ["equipment"],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Sensor's self-check failed to flag the transient anomaly",
+          "Automatic control override did not engage during the spike"
+        ],
+        "successful": [
+          "Operator promptly reduced the feed rate and isolated the sensor",
+          "Manual verification confirmed the abnormal reading"
+        ],
+        "missing": ["Routine sensor health monitoring and diagnostic check procedure"]
+      },
+      "conclusions": {
+        "incident_cause": "Transient sensor malfunction likely caused by internal degradation or electrical interference compounded by insufficient diagnostic checks.",
+        "prevention_possibility": "Regular sensor calibration, enhanced diagnostic monitoring, and a review of electrical supply integrity can prevent recurrence."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231012-001",
+          "recommendation": "Replace and recalibrate the FS-205 sensor, update and enforce sensor diagnostic procedures, and investigate the stability of the sensor's electrical supply.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-15",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Doe",
+          "department": "Granulation Operations",
+          "role": "Initial Reporter",
+          "signature": "JD-Signature"
+        },
+        {
+          "name": "Alice Brown",
+          "department": "Maintenance",
+          "role": "Investigator",
+          "signature": "AB-Signature"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Jane Smith",
+        "designation": "Safety Manager",
+        "signature": "JS-Signature",
+        "date": "2023-10-12"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-SS-210-001",
+        "report_id": "SS-210-20231012-001",
+        "date": "2023-10-12",
+        "time": "10:15",
+        "plant_department": "Steam System",
+        "location": "Boiler House near Steam Boiler ST-101",
+        "equipment": {
+          "tag_no": "ST-101",
+          "description": "Primary steam boiler with automatic pressure regulation"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine inspection in the Steam System area, the operator observed an unexpected pressure spike on the gauge of Steam Boiler ST-101 which reached approximately 150 psi, exceeding the normal limit of 130 psi. The spike persisted for a few seconds before normalizing. The operator immediately reduced the load on the boiler by partially shutting the steam feed valve, cross checked other instrumentation for validation, and notified the control room. The incident was isolated and no further abnormal readings were noted. Preliminary checks suggest the possibility of a transient sensor malfunction or inadequate damping of the gauge reading."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": ["inadequate_warning"],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": ["maintenance", "procedures"],
+        "physical_factors": ["equipment"],
+        "human_factors": ["awareness"]
+      },
+      "barrier_analysis": {
+        "failed": [
+          "The pressure monitoring system did not filter out transient spikes, leading to a misleading reading."
+        ],
+        "successful": [
+          "The operator promptly cross-checked gauge readings and reduced the boiler load to mitigate risk."
+        ],
+        "missing": [
+          "Automated sensor diagnostics and filtering mechanisms to validate and smooth out transient fluctuations."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "A transient pressure surge was likely triggered by a sensor malfunction or a momentary lapse in sensor damping, exacerbated by potential gaps in maintenance practices.",
+        "prevention_possibility": "Regular calibration, enhanced sensor diagnostics, and review of maintenance protocols could prevent recurrence of such transient spikes."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-210-001",
+          "recommendation": "Review and recalibrate the pressure gauge sensor on ST-101 and install automated diagnostics to detect transient anomalies.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Team",
+          "target_date": "2023-10-20",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Doe",
+          "department": "Steam Operations",
+          "role": "Safety Engineer",
+          "signature": "JDoe"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Linda Martinez",
+        "designation": "Senior Safety Manager",
+        "signature": "LMartinez",
+        "date": "2023-10-12"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-20231012-001",
+        "report_id": "NM-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:20",
+        "plant_department": "Granulation Section",
+        "location": "Granulator Unit area near the mixing chamber",
+        "equipment": {
+          "tag_no": "FS-205",
+          "description": "Feed moisture sensor for Granulator Unit GU-205"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During routine monitoring in the Granulation Section, the operator observed a sudden spike in the feed moisture sensor FS-205 reading by approximately 20% above normal. The sensor reading deviation immediately raised concerns about possible improper granule formation and equipment stress. The operator promptly notified the control room, halted the feed process, and manually verified sensor readings. The system was monitored until stabilization and production was temporarily paused to allow for a maintenance check."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": ["inadequate_warning"],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": ["procedures", "maintenance"],
+        "physical_factors": ["equipment"],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Automated alarm system did not trigger a sustained alert to isolate the issue."
+        ],
+        "successful": [
+          "Operator\u2019s immediate manual verification and prompt shutdown of the feed process."
+        ],
+        "missing": ["Routine sensor calibration checks and enhanced alarm threshold settings."]
+      },
+      "conclusions": {
+        "incident_cause": "A sensor anomaly likely due to outdated calibration and inadequate maintenance protocols led to the erroneous moisture reading.",
+        "prevention_possibility": "Regular calibration, improved maintenance practices, and a more robust alarm system could prevent similar incidents."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-001",
+          "recommendation": "Perform immediate recalibration of the FS-205 sensor and conduct a thorough maintenance review. Additionally, upgrade the alarm threshold settings to ensure earlier detection of sensor anomalies.",
+          "type": "Immediate",
+          "responsibility": "Maintenance Team",
+          "target_date": "2023-10-15",
+          "completion_date": "2023-10-15",
+          "status": "Completed"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Jose Arthur",
+          "department": "Safety",
+          "role": "Investigator",
+          "signature": "J.Arthur"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Maria Gonzalez",
+        "designation": "Safety Manager",
+        "signature": "M.Gonzalez",
+        "date": "2023-10-12"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-CR-20231025-001",
+        "report_id": "NM-CR-20231025-001",
+        "date": "2023-10-25",
+        "time": "15:00",
+        "plant_department": "CO2 Removal Section",
+        "location": "CO2 Absorber Column Area",
+        "equipment": {
+          "tag_no": "CR-205",
+          "description": "CO2 Removal Absorber Column with integrated digital control panel"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During the routine inspection in the CO2 Removal area on 2023-10-25, the operator observed a sudden spike of approximately 15% above normal on the digital display of the CR-205 absorber column. The operator immediately halted non-critical adjustments and performed a manual reset of the sensor. A cross-check of the process indicators confirmed that readings had returned to expected levels. While no process upset was confirmed, the incident highlighted a potential sensor malfunction and the risk of misinterpreted data which could have led to an unsafe process condition."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": ["inadequate_warning"],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": ["maintenance"],
+        "physical_factors": ["equipment"],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Lack of regular sensor calibration and routine verification of alarm thresholds",
+          "Delayed recognition of sensor drift trends"
+        ],
+        "successful": [
+          "Immediate manual reset and cross-check of process parameters by the operator",
+          "Prompt communication of the incident to the supervisor"
+        ],
+        "missing": [
+          "A robust alarm verification procedure and proactive sensor maintenance schedule"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The incident was triggered by a transient sensor malfunction likely linked to inadequate preventive maintenance and calibration procedures, causing an erroneous alarm spike.",
+        "prevention_possibility": "Implementing a stricter sensor calibration and maintenance regime combined with an improved alarm verification protocol would minimize the risk of similar near-miss events in the future."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-CR-20231025-001",
+          "recommendation": "Review and enhance the sensor calibration schedule and alarm verification protocols for the CO2 removal system.",
+          "type": "Short-term",
+          "responsibility": "CO2 Removal Technical Team",
+          "target_date": "2023-11-10",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alice Johnson",
+          "department": "CO2 Removal Section",
+          "role": "Investigator",
+          "signature": "AJ-Sign-20231025"
+        },
+        {
+          "name": "Robert Lee",
+          "department": "Maintenance",
+          "role": "Technical Support",
+          "signature": "RL-Sign-20231025"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Michael Thompson",
+        "designation": "Safety Manager",
+        "signature": "MT-Sign-20231025",
+        "date": "2023-10-26"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-GRN-20231005-01",
+        "report_id": "GRN-20231005-001",
+        "date": "2023-10-05",
+        "time": "15:30",
+        "plant_department": "Granulation Section",
+        "location": "Feed Processing Area, near blending unit",
+        "equipment": {
+          "tag_no": "FS-205",
+          "description": "Feed Moisture Sensor responsible for monitoring moisture levels in the granulation process"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine check-up in the granulation area, the FS-205 sensor registered a sudden spike of approximately 20% above its normal reading. The operator immediately halted the feed system, alerted the control room, and began a preliminary inspection of the sensor and its connections. Further examination indicated that there was no physical damage to the sensor, suggesting a possible calibration drift or electronic interference affecting the sensor's reading."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": ["inadequate_warning"],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": ["poor_judgment"],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": ["procedures", "training"],
+        "physical_factors": ["equipment"],
+        "human_factors": ["awareness"]
+      },
+      "barrier_analysis": {
+        "failed": [
+          "Routine sensor calibration checks did not detect calibration drift or potential electronic interference."
+        ],
+        "successful": [
+          "Immediate halt of the feed system and notification to the control room prevented further process compromise."
+        ],
+        "missing": [
+          "Scheduled electronic interference screening and enhanced sensor diagnostic measures during routine maintenance."
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was primarily caused by a sensor calibration drift or electronic interference, which led to false high readings. This posed a potential process safety risk as it could have compromised the granulation process.",
+        "prevention_possibility": "Regular calibration, enhanced sensor performance diagnostics, and updated maintenance protocols can prevent such incidents."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-20231005-001",
+          "recommendation": "Perform an immediate calibration and diagnostic check of the FS-205 sensor. Review and adjust environmental installation parameters to reduce potential electronic interference.",
+          "type": "Immediate",
+          "responsibility": "Granulation Operations Team",
+          "target_date": "2023-10-07",
+          "completion_date": "",
+          "status": "Open"
+        },
+        {
+          "action_id": "CA-20231005-002",
+          "recommendation": "Revise the sensor maintenance protocols to include periodic calibration verification and electronic interference screening.",
+          "type": "Short-term",
+          "responsibility": "Maintenance Department",
+          "target_date": "2023-10-14",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Smith",
+          "department": "Granulation Operations",
+          "role": "Reporting Operator",
+          "signature": "JS-Signature"
+        },
+        {
+          "name": "Maria Lopez",
+          "department": "Safety and Compliance",
+          "role": "Validator",
+          "signature": "ML-Signature"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Samuel Rodriguez",
+        "designation": "Plant Safety Manager",
+        "signature": "SR-Signature",
+        "date": "2023-10-06"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-DS-20231014-001",
+        "report_id": "NM-DS-20231014-001",
+        "date": "2023-10-14",
+        "time": "15:15",
+        "plant_department": "Decomposition Section",
+        "location": "Reactor DS-102 area",
+        "equipment": {
+          "tag_no": "DS-102 / TS-209",
+          "description": "Reactor vessel DS-102 with attached temperature sensor TS-209"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": true,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "At approximately 14:33 on 2023-10-14, the temperature sensor TS-209 on reactor DS-102 registered a sudden spike of about 40\u00b0C above its normal reading and maintained that elevated level for nearly 3 minutes before returning to normal. The operator immediately notified the control room and maintenance team, activated a backup sensor check, and closely monitored reactor conditions. Subsequent checks and record reviews suggest that the sensor experienced a transient calibration drift or intermittent failure rather than a true process upset."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": ["temperature_extremes"],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": ["maintenance"],
+        "physical_factors": ["equipment"],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": ["Sensor self-diagnostic did not flag the malfunction"],
+        "successful": [
+          "Quick operator detection of the anomaly",
+          "Prompt communication with the control room and maintenance team",
+          "Activation of backup sensor for verification"
+        ],
+        "missing": ["Automated alarm verification system for real-time sensor validation"]
+      },
+      "conclusions": {
+        "incident_cause": "The incident was caused by a transient spike in the TS-209 sensor reading, likely due to sensor calibration drift or intermittent failure, compounded by a gap in preventive maintenance measures.",
+        "prevention_possibility": "Enhanced and regular calibration checks, implementation of an automated sensor validation system, and an updated preventive maintenance schedule could significantly reduce the likelihood of such false alarms in the future."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-DS-20231014-001",
+          "recommendation": "Perform an immediate calibration and full functional test of both TS-209 and the backup sensor on DS-102. Review and update the current maintenance procedures for temperature sensors.",
+          "type": "Immediate",
+          "responsibility": "Maintenance and Instrumentation Team",
+          "target_date": "2023-10-18",
+          "completion_date": "2023-10-18",
+          "status": "Completed"
+        },
+        {
+          "action_id": "CA-DS-20231014-002",
+          "recommendation": "Implement an automated sensor validation and alarm upgrade system to provide real-time verification and reduce false alarms.",
+          "type": "Long-term",
+          "responsibility": "Control Systems Engineering",
+          "target_date": "2023-11-30",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "Alex Turner",
+          "department": "Decomposition Section",
+          "role": "Incident Reporter/Investigator",
+          "signature": "AlexTurnerSignature"
+        },
+        {
+          "name": "Sandra Lee",
+          "department": "Decomposition Section",
+          "role": "Safety Validator",
+          "signature": "SandraLeeSignature"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "John Carter",
+        "designation": "Safety Manager",
+        "signature": "JohnCarterSignature",
+        "date": "2023-10-15"
+      }
+    },
+    {
+      "investigation_metadata": {
+        "investigation_id": "INV-RF-20231012-001",
+        "report_id": "NRMS-RF-20231012-001",
+        "date": "2023-10-12",
+        "time": "14:35",
+        "plant_department": "Reforming Section",
+        "location": "Adjacent to the control panel of Reactor DS-105",
+        "equipment": {
+          "tag_no": "TS-405",
+          "description": "Temperature Sensor on Reactor DS-105"
+        }
+      },
+      "incident_classification": {
+        "workplace_safety_near_miss": false,
+        "process_safety_near_miss": true
+      },
+      "investigation_findings": {
+        "sequence_of_events": "During a routine walk-through in the Reforming Section, the temperature sensor TS-405 on Reactor DS-105 registered an abrupt spike from approximately 450\u00b0C to 485\u00b0C, a 35\u00b0C increase, before gradually returning to normal over 4 minutes. The operator immediately halted the feed stream and notified the control room. Preliminary checks did not reveal any obvious physical damage to the sensor display. However, the incident suggests a potential transient malfunction or drift in the sensor reading, which could have delayed an automated alarm response."
+      },
+      "direct_causes": {
+        "unsafe_conditions": {
+          "equipment_related": ["temperature_extremes"],
+          "workplace_related": [],
+          "environmental_related": []
+        },
+        "unsafe_acts": {
+          "procedural": [],
+          "behavioral": [],
+          "organizational": []
+        }
+      },
+      "root_cause_analysis": {
+        "system_factors": ["maintenance"],
+        "physical_factors": ["equipment"],
+        "human_factors": []
+      },
+      "barrier_analysis": {
+        "failed": ["Automated alarm did not trigger immediate system shutdown upon sensor anomaly"],
+        "successful": [
+          "Operator\u2019s quick recognition of the abnormal reading",
+          "Immediate action to halt the feed stream and notify the control room"
+        ],
+        "missing": [
+          "Backup sensor for temperature verification",
+          "Enhanced redundancy in alarm systems"
+        ]
+      },
+      "conclusions": {
+        "incident_cause": "The near-miss was caused by an anomalous spike in the temperature sensor reading, likely due to sensor drift or calibration issues, compounded by a delayed automated response.",
+        "prevention_possibility": "Routine sensor calibration, implementation of backup sensors, and improved alarm settings could prevent a recurrence of such events."
+      },
+      "corrective_actions": [
+        {
+          "action_id": "CA-RF-20231012-001",
+          "recommendation": "Inspect, recalibrate, and test sensor TS-405; install a redundant backup sensor and review alarm threshold settings to ensure prompt automatic responses.",
+          "type": "Immediate",
+          "responsibility": "Reforming Section Maintenance Team",
+          "target_date": "2023-10-20",
+          "completion_date": "",
+          "status": "Open"
+        }
+      ],
+      "investigation_team": [
+        {
+          "name": "John Doe",
+          "department": "Reforming Operations",
+          "role": "Reporting Operator",
+          "signature": "J.Doe"
+        },
+        {
+          "name": "Alice Smith",
+          "department": "Safety & Compliance",
+          "role": "Safety Officer",
+          "signature": "A.Smith"
+        }
+      ],
+      "approval": {
+        "reviewed_by": "Mark Thompson",
+        "designation": "Plant Manager",
+        "signature": "M.Thompson",
+        "date": "2023-10-12"
+      }
+    }
+  ]
+}

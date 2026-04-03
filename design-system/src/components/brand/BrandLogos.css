@@ -1,0 +1,160 @@
+.raven-brand-logos {
+  font-family: 'Source Sans 3', sans-serif;
+  max-width: 960px;
+}
+
+.raven-brand-logos__section {
+  margin-bottom: 48px;
+}
+
+.raven-brand-logos__section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0 0 8px;
+}
+
+.raven-brand-logos__section-desc {
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0 0 24px;
+}
+
+.raven-brand-logos__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.raven-brand-logos__card {
+  border: 1px solid #E0E0E0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.raven-brand-logos__card:hover {
+  box-shadow: 0px 2px 16px rgba(74, 20, 140, 0.12);
+}
+
+.raven-brand-logos__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  min-height: 160px;
+}
+
+.raven-brand-logos__preview--light {
+  background-color: #FFFFFF;
+}
+
+.raven-brand-logos__preview--dark {
+  background-color: #1A1A2E;
+}
+
+.raven-brand-logos__preview--purple {
+  background: linear-gradient(-14deg, rgb(191, 64, 174) 0%, rgb(107, 64, 191) 50%, rgb(78, 64, 191) 100%);
+}
+
+.raven-brand-logos__preview img {
+  max-width: 240px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.raven-brand-logos__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-top: 1px solid #E0E0E0;
+  background: #FAFAFA;
+}
+
+.raven-brand-logos__label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.raven-brand-logos__name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0;
+}
+
+.raven-brand-logos__variant {
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+.raven-brand-logos__download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #4A148C;
+  background: transparent;
+  border: 1px solid rgba(74, 20, 140, 0.5);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+}
+
+.raven-brand-logos__download-btn:hover {
+  background-color: #F3E5F5;
+  border-color: #4A148C;
+}
+
+.raven-brand-logos__usage-section {
+  margin-top: 48px;
+  padding: 24px;
+  background: #FCF6FE;
+  border: 1px solid #F3E5F5;
+  border-radius: 12px;
+}
+
+.raven-brand-logos__usage-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4A148C;
+  margin: 0 0 16px;
+}
+
+.raven-brand-logos__usage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.raven-brand-logos__usage-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 1.5;
+}
+
+.raven-brand-logos__usage-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.raven-brand-logos__usage-icon--do {
+  color: #4CAF50;
+}
+
+.raven-brand-logos__usage-icon--dont {
+  color: #F44336;
+}

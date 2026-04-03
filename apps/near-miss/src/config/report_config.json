@@ -1,0 +1,167 @@
+{
+  "type": "object",
+  "title": "Near Miss Report Schema",
+  "description": "Schema for capturing near miss incident reports in a petrochemical facility",
+  "properties": {
+    "report_metadata": {
+      "type": "object",
+      "description": "Basic metadata about the report",
+      "properties": {
+        "report_id": {
+          "type": "string",
+          "description": "Unique identifier for the report",
+          "pattern": "^[A-Z0-9]{8,}$"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when the incident occurred"
+        },
+        "time": {
+          "type": "string",
+          "format": "time",
+          "description": "Time when the incident occurred"
+        }
+      },
+      "required": ["report_id", "date", "time"]
+    },
+    "location_info": {
+      "type": "object",
+      "description": "Information about where the incident occurred",
+      "properties": {
+        "plant_department": {
+          "type": "string",
+          "description": "Department or area where incident occurred",
+          "reasoning": "Identifies the organizational unit responsible for the area"
+        },
+        "exact_location": {
+          "type": "string",
+          "description": "Specific location within the department",
+          "reasoning": "Pinpoints the exact location for investigation and future reference"
+        },
+        "equipment": {
+          "type": "object",
+          "description": "Equipment involved in the incident",
+          "properties": {
+            "tag_no": {
+              "type": "string",
+              "description": "Equipment identification number",
+              "pattern": "^[A-Z0-9-]+$"
+            },
+            "description": {
+              "type": "string",
+              "description": "Brief description of the equipment"
+            }
+          },
+          "required": ["tag_no", "description"]
+        }
+      },
+      "required": ["plant_department", "exact_location"]
+    },
+    "incident_details": {
+      "type": "object",
+      "description": "Core information about the incident",
+      "properties": {
+        "short_description": {
+          "type": "string",
+          "description": "Brief description of what happened",
+          "minLength": 10,
+          "maxLength": 500
+        },
+        "immediate_action": {
+          "type": "string",
+          "description": "Actions taken immediately after incident discovery",
+          "reasoning": "Documents initial response and temporary safeguards"
+        }
+      },
+      "required": ["short_description"]
+    },
+    "reporter_info": {
+      "type": "object",
+      "description": "Information about the person reporting the incident",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the reporter"
+        },
+        "id_no": {
+          "type": "string",
+          "description": "Employee ID number",
+          "pattern": "^[A-Z0-9]{6,}$"
+        },
+        "department": {
+          "type": "string",
+          "description": "Department where reporter works"
+        },
+        "report_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when the report was submitted"
+        },
+        "report_time": {
+          "type": "string",
+          "format": "time",
+          "description": "Time when the report was submitted"
+        }
+      },
+      "required": ["name", "id_no", "department", "report_date", "report_time"]
+    },
+    "safety_validation": {
+      "type": "object",
+      "description": "Safety team's validation and classification of the incident",
+      "properties": {
+        "classification": {
+          "type": "object",
+          "description": "Type of safety incident",
+          "properties": {
+            "workplace_safety_near_miss": {
+              "type": "boolean",
+              "description": "Incident related to workplace safety",
+              "reasoning": "Identifies incidents involving personal safety risks"
+            },
+            "process_safety_near_miss": {
+              "type": "boolean",
+              "description": "Incident related to process safety",
+              "reasoning": "Identifies incidents involving process hazards or loss of containment"
+            },
+            "unsafe_condition": {
+              "type": "boolean",
+              "description": "Physical condition that could lead to injury/incident",
+              "reasoning": "Identifies hazardous conditions requiring correction"
+            },
+            "unsafe_act": {
+              "type": "boolean",
+              "description": "Behavior or action that could lead to injury/incident",
+              "reasoning": "Identifies behavioral safety issues requiring intervention"
+            },
+            "other": {
+              "type": "boolean",
+              "description": "Other types of safety concerns"
+            }
+          },
+          "required": ["workplace_safety_near_miss", "process_safety_near_miss"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Accepted", "Rejected"],
+          "description": "Validation status of the report"
+        },
+        "validator_name": {
+          "type": "string",
+          "description": "Name of the safety validator"
+        },
+        "validator_signature": {
+          "type": "string",
+          "description": "Digital signature or validation code"
+        },
+        "validation_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when validation was completed"
+        }
+      },
+      "required": ["classification", "status", "validator_name", "validation_date"]
+    }
+  },
+  "required": ["report_metadata", "location_info", "incident_details", "reporter_info"]
+}
