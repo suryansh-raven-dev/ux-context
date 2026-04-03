@@ -14,3 +14,12 @@ artifacts/recordings/*
 !artifacts/recordings/.gitkeep
 artifacts/reports/*
 !artifacts/reports/.gitkeep
+
+# Design system build artifacts
+design-system/dist/
+design-system/storybook-static/
+design-system/.claude/
+design-system/session-logs/
+design-system/tsconfig.tsbuildinfo
+*.log
+nmms/

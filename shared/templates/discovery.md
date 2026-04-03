@@ -19,4 +19,4 @@ List the specific questions this discovery pass should resolve.
 List the workflows that depend on this discovery map.
 
 ## Update Rule
-Keep this file focused on shared discovery context. Move workflow-specific findings into `docs/learnings/` and selector-level details into `docs/memory/selectors.md`.
+Keep this file focused on shared discovery context. Move workflow-specific findings into `<app>/learnings/` and selector-level details into `<app>/memory/selectors.md`.

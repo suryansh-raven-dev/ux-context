@@ -1,0 +1,59 @@
+.raven-checkbox.MuiFormControlLabel-root {
+  font-family: 'Source Sans 3', sans-serif;
+  margin: 0;
+}
+
+.raven-checkbox .MuiTypography-root {
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--raven-text-primary);
+}
+
+.raven-checkbox .MuiCheckbox-root.Mui-checked {
+  color: var(--raven-text-primary);
+}
+
+.raven-checkbox .MuiCheckbox-root.MuiCheckbox-indeterminate {
+  color: var(--raven-text-primary);
+}
+
+.raven-checkbox .MuiCheckbox-root:hover {
+  background-color: var(--raven-purple-100);
+}
+
+.raven-checkbox--figma.MuiFormControlLabel-root {
+  width: 100%;
+  border-radius: 8px;
+  padding: 20px 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #ffffff;
+}
+
+.raven-checkbox--figma.raven-checkbox--checked.MuiFormControlLabel-root {
+  background-color: #fcf3ff;
+}
+
+.raven-checkbox--figma .MuiCheckbox-root {
+  align-self: flex-start;
+}
+
+.raven-checkbox--figma .MuiFormControlLabel-label {
+  display: block;
+  flex: 1 1 auto;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.raven-checkbox--figma .MuiCheckbox-root:hover {
+  background-color: transparent;
+}
+
+.raven-checkbox--figma .MuiCheckbox-root.Mui-checked,
+.raven-checkbox--figma .MuiCheckbox-root.MuiCheckbox-indeterminate {
+  color: var(--raven-text-primary);
+}
+
+.raven-checkbox--figma.raven-checkbox--disabled .MuiTypography-root,
+.raven-checkbox--figma.raven-checkbox--disabled .MuiCheckbox-root {
+  color: #a3a5ad;
+}

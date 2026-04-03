@@ -11,35 +11,38 @@ This repository is a dedicated QA harness for testing multiple applications. It 
 
 ## Operating Model
 
-1. Add or update a workflow seed in `apps/<app>/workflows/`.
-2. Read the relevant discovery and memory files under `apps/<app>/` before exploring.
+1. Add or update a workflow seed in `<app>/workflows/`.
+2. Read the relevant discovery and memory files under `<app>/` before exploring.
 3. Explore the workflow with computer-use first when the UI is new, visual, or hard to script.
-4. Save confirmed learnings under `apps/<app>/learnings/`, `apps/<app>/discovery/`, and `apps/<app>/memory/`.
+4. Save confirmed learnings under `<app>/learnings/`, `<app>/discovery/`, and `<app>/memory/`.
 5. Capture artifacts in `artifacts/<app>/`.
 6. Promote stable flows to script-based automation only when repeatability matters.
 
 ## Directory Structure
 
 ```
-├── apps/
-│   ├── raven/                  Raven-specific docs, workflows, learnings, memory
-│   │   ├── product-summary.md
-│   │   ├── workflows/
-│   │   ├── learnings/
-│   │   ├── discovery/
-│   │   ├── memory/
-│   │   ├── session-logs/
-│   │   ├── screenshots/
-│   │   └── scripts/
-│   │
-│   └── near-miss/              Near-Miss (NMMS) specific docs
-│       ├── product-summary.md
-│       ├── workflows/
-│       ├── learnings/
-│       ├── discovery/
-│       ├── memory/
-│       ├── session-logs/
-│       └── screenshots/
+├── chatbot/                    Raven chatbot / copilot docs, learnings, memory, scripts
+│   ├── product-summary.md
+│   ├── workflows/
+│   ├── learnings/
+│   ├── discovery/
+│   ├── memory/
+│   ├── screenshots/
+│   └── scripts/
+│
+├── near-miss/                  Near-Miss (NMMS) specific docs and automation
+│   ├── product-summary.md
+│   ├── workflows/
+│   ├── discovery/
+│   ├── memory/
+│   ├── session-logs/
+│   ├── screenshots/
+│   └── scripts/
+│
+├── design-system/              Shared component library and Storybook workspace
+│   ├── src/
+│   ├── session-logs/
+│   └── ...
 │
 ├── shared/
 │   ├── templates/              Shared templates for workflows, learnings, discovery maps
@@ -53,7 +56,7 @@ This repository is a dedicated QA harness for testing multiple applications. It 
 
 ## Adding a New Application
 
-1. Create a new directory under `apps/<app-name>/`.
+1. Create a new directory under `<app-name>/`.
 2. Copy templates from `shared/templates/` to scaffold workflows, learnings, and discovery maps.
 3. Create a `product-summary.md` with the app's details.
 4. Add the app's environments and accounts to `config/`.

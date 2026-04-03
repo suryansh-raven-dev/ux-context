@@ -1,0 +1,54 @@
+---
+description: Raven Design System reference — use when building UI components
+globs: "**/*.{tsx,jsx,ts,js,css}"
+alwaysApply: false
+---
+
+# Raven Design System
+
+Published Storybook: https://69c7a797c64a933a5e31fccf-frcosnnnzo.chromatic.com/?path=/docs/components-all-components--docs
+
+## How to Use
+
+- Before building any UI, check the Storybook for existing components, patterns, and tokens.
+- Browse by category: Inputs, Data Display, Feedback, Surfaces, Navigation, Layout.
+- Each component page includes variants, sizes, colors, states, and real-world Raven product patterns.
+
+## Theme
+
+Wrap the app with `ravenNearMissTheme` from the design system. All styling flows from the theme automatically.
+
+| Token         | Value                          |
+|---------------|--------------------------------|
+| Primary       | `#4A148C` (deep purple)        |
+| Primary Light | `#CE93D8`                      |
+| Primary Dark  | `#311B92`                      |
+| Font          | Source Sans 3                  |
+| Button radius | 50px (pill)                    |
+| Card radius   | 24px                           |
+| Input radius  | 8px                            |
+| Icon style    | Rounded only (`@mui/icons-material/*Rounded`) |
+| Button text   | UPPERCASE                      |
+
+## Component Usage
+
+```tsx
+import { ThemeProvider } from '@mui/material/styles';
+import { ravenNearMissTheme } from '@raven-ui/theme/ravenNearMissTheme';
+import Button from '@mui/material/Button';
+import DeleteRounded from '@mui/icons-material/DeleteRounded';
+
+<ThemeProvider theme={ravenNearMissTheme}>
+  <Button variant="contained" startIcon={<DeleteRounded />}>
+    Delete
+  </Button>
+</ThemeProvider>
+```
+
+## Rules
+
+1. Always use **Rounded** icon variants — never use default/filled/outlined/sharp.
+2. Use `sx` prop with theme tokens (`primary.main`, `text.secondary`, `background.paper`) — never hard-code hex colors.
+3. Use Typography `variant` prop (`h5`, `body1`, `body1Bold`, `caption`) — never set font sizes directly.
+4. Use the theme's elevation via `contained` buttons — do not override `boxShadow` manually.
+5. Check the Storybook's "Raven Product Patterns" story on each component for domain-specific examples before inventing new patterns.

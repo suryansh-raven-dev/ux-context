@@ -12,4 +12,4 @@ alwaysApply: true
 - Capture evidence for each meaningful run: environment, account or role, expected result, actual result, and artifact locations.
 - Never store real credentials, tokens, or private deployment details in tracked files.
 - Keep three categories separate in all notes: user-provided truth, observed behavior, and assumptions.
-- Each application lives under `apps/<app-name>/`. Always identify which application you are testing before reading or writing files.
+- Each application lives under its own top-level folder (for example `chatbot/`, `near-miss/`, or `design-system/`). Always identify which application you are testing before reading or writing files.

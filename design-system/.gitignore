@@ -1,0 +1,16 @@
+# Build artifacts
+dist/
+storybook-static/
+tsconfig.tsbuildinfo
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+
+# Editor
+.claude/worktrees/

@@ -9,14 +9,14 @@ After every meaningful exploration, test run, or discussion about an application
 
 ## What To Update
 
-At the end of each session, review and update ALL applicable files under the relevant app directory (`apps/<app-name>/`):
+At the end of each session, review and update ALL applicable files under the relevant app directory (`<app-name>/`):
 
-1. **Learnings files** (`apps/<app>/learnings/<workflow>/discovery.md`) — update Discovery Status, Observed Behavior, Confirmed Paths, UI Targets, Evidence, and Risks sections with anything new.
-2. **Memory files** (`apps/<app>/memory/`) — add new selectors to `selectors.md`, new issues to `known-issues.md`, new instabilities to `flaky-areas.md`, and refine `test-oracles.md` with confirmed/unconfirmed findings.
-3. **Discovery maps** (`apps/<app>/discovery/`) — update `app-map.md`, `navigation-map.md`, `auth-map.md`, `role-map.md` if any structural or navigation changes are observed.
-4. **Workflow seeds** (`apps/<app>/workflows/`) — update environment, test account, or scope details when new information is confirmed.
-5. **Product summary** (`apps/<app>/product-summary.md`) — update when major new features or sections are discovered.
-6. **Session log** (`apps/<app>/session-logs/<date>-<topic>.md`) — create a new session log summarizing what was done, what was found, and what the next steps are.
+1. **Learnings files** (`<app>/learnings/<workflow>/discovery.md`) — update Discovery Status, Observed Behavior, Confirmed Paths, UI Targets, Evidence, and Risks sections with anything new.
+2. **Memory files** (`<app>/memory/`) — add new selectors to `selectors.md`, new issues to `known-issues.md`, new instabilities to `flaky-areas.md`, and refine `test-oracles.md` with confirmed/unconfirmed findings.
+3. **Discovery maps** (`<app>/discovery/`) — update `app-map.md`, `navigation-map.md`, `auth-map.md`, `role-map.md` if any structural or navigation changes are observed.
+4. **Workflow seeds** (`<app>/workflows/`) — update environment, test account, or scope details when new information is confirmed.
+5. **Product summary** (`<app>/product-summary.md`) — update when major new features or sections are discovered.
+6. **Session log** (`<app>/session-logs/<date>-<topic>.md`) — create a new session log summarizing what was done, what was found, and what the next steps are.
 
 ## When To Document
 
