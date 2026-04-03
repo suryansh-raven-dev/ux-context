@@ -1,56 +1,64 @@
 import { useEffect, useState } from 'react';
-import AddCircleIcon from '@mui/icons-material/AddCircleRounded';
-import ExpandLessIcon from '@mui/icons-material/ExpandLessRounded';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMoreRounded';
-import MenuIcon from '@mui/icons-material/MenuRounded';
+
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import AnalyticsRoundedIcon from '@mui/icons-material/AnalyticsRounded';
+import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
+import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
+import ManageSearchRoundedIcon from '@mui/icons-material/ManageSearchRounded';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import RecommendRoundedIcon from '@mui/icons-material/RecommendRounded';
+import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
+import WarningAmberRoundedIcon from '@mui/icons-material/WarningAmberRounded';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Collapse from '@mui/material/Collapse';
+import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 
 import './SideNavigation.css';
 
-const INCIDENT_PATHS = ['/reports', '/investigations', '/recommendations'] as const;
-const REPORT_INCIDENT_PATH = '/report-incident';
+/* ─── Constants ─────────────────────────────────────────────────────────────── */
+
+const ANALYSIS_PATH = '/analysis';
+const INCIDENT_CHILDREN = [
+  { path: '/reports', label: 'Reports', icon: <AssignmentRoundedIcon fontSize="small" /> },
+  { path: '/investigations', label: 'Investigations', icon: <ManageSearchRoundedIcon fontSize="small" /> },
+  { path: '/recommendations', label: 'Recommendations', icon: <RecommendRoundedIcon fontSize="small" /> },
+  { path: ANALYSIS_PATH, label: 'Analysis', icon: <AnalyticsRoundedIcon fontSize="small" /> },
+] as const;
+
+const INCIDENT_PATHS = INCIDENT_CHILDREN.map((c) => c.path);
+
 const DRAWER_SX = {
   width: 240,
   flexShrink: 0,
-  '& .MuiDrawer-paper': {
-    position: 'relative',
-  },
+  '& .MuiDrawer-paper': { position: 'relative' },
 } as const;
-const NAV_LIST_SX = { flex: 1, px: 1 } as const;
+
+/* ─── Types ─────────────────────────────────────────────────────────────────── */
 
 export type SideNavigationProps = {
   activePath: string;
   onNavigate: (path: string) => void;
 };
 
-function isIncidentsSectionActive(path: string) {
-  return INCIDENT_PATHS.some((p) => path === p);
-}
+/* ─── Component ─────────────────────────────────────────────────────────────── */
 
-/**
- * Permanent drawer navigation with expandable Incidents group and CTA.
- */
 export function SideNavigation({ activePath, onNavigate }: SideNavigationProps) {
-  const [incidentsOpen, setIncidentsOpen] = useState(() => isIncidentsSectionActive(activePath));
+  const [incidentsOpen, setIncidentsOpen] = useState(
+    () => INCIDENT_PATHS.includes(activePath),
+  );
 
   useEffect(() => {
-    if (isIncidentsSectionActive(activePath)) {
-      setIncidentsOpen(true);
-    }
+    if (INCIDENT_PATHS.includes(activePath)) setIncidentsOpen(true);
   }, [activePath]);
-
-  const toggleIncidents = () => {
-    setIncidentsOpen((open) => !open);
-  };
 
   return (
     <Drawer
@@ -66,106 +74,112 @@ export function SideNavigation({ activePath, onNavigate }: SideNavigationProps) 
       }}
     >
       <Box className="raven-side-nav__inner">
+        {/* ── Logo row ─────────────────────────────────── */}
         <Box className="raven-side-nav__logo">
-          <IconButton
-            size="small"
-            edge="start"
-            aria-label="Open navigation menu"
-            className="raven-side-nav__menu-button"
-          >
-            <MenuIcon fontSize="small" />
+          <IconButton size="small" edge="start" aria-label="Toggle menu">
+            <MenuRoundedIcon fontSize="small" />
           </IconButton>
-          <Typography component="span" variant="subtitle1" fontWeight={600}>
-            Org Logo
+          <Typography component="span" variant="subtitle2" fontWeight={600} sx={{ fontStyle: 'italic', color: '#4A148C' }}>
+            ACME
           </Typography>
         </Box>
 
-        <Button
-          variant="contained"
-          color="primary"
-          fullWidth
-          className="raven-side-nav__cta"
-          startIcon={<AddCircleIcon />}
-          onClick={() => onNavigate(REPORT_INCIDENT_PATH)}
-        >
-          Report Incident
-        </Button>
-
-        <List component="div" disablePadding sx={NAV_LIST_SX}>
+        {/* ── Main nav list ─────────────────────────────── */}
+        <List component="div" disablePadding className="raven-side-nav__list">
+          {/* Report Incident */}
           <ListItemButton
             className="raven-side-nav__item"
-            onClick={toggleIncidents}
-            aria-expanded={incidentsOpen}
-            aria-controls="raven-side-nav-incidents-sublist"
-            id="raven-side-nav-incidents-trigger"
+            onClick={() => onNavigate('/report-incident')}
           >
-            <ListItemText primary="Incidents" />
-            {incidentsOpen ? <ExpandLessIcon fontSize="small" /> : <ExpandMoreIcon fontSize="small" />}
+            <ListItemIcon className="raven-side-nav__item-icon">
+              <AddCircleRoundedIcon fontSize="small" sx={{ color: 'text.secondary' }} />
+            </ListItemIcon>
+            <ListItemText primary="Report Incident" primaryTypographyProps={{ variant: 'body2' }} />
+          </ListItemButton>
+
+          {/* Incidents group */}
+          <ListItemButton
+            className="raven-side-nav__item"
+            onClick={() => setIncidentsOpen((o) => !o)}
+            aria-expanded={incidentsOpen}
+          >
+            <ListItemIcon className="raven-side-nav__item-icon">
+              <WarningAmberRoundedIcon fontSize="small" sx={{ color: 'text.secondary' }} />
+            </ListItemIcon>
+            <ListItemText primary="Incidents" primaryTypographyProps={{ variant: 'body2' }} />
+            <ExpandMoreRoundedIcon
+              fontSize="small"
+              className={`raven-side-nav__expand-icon ${incidentsOpen ? 'raven-side-nav__expand-icon--open' : ''}`}
+            />
           </ListItemButton>
 
           <Collapse in={incidentsOpen} timeout="auto" unmountOnExit>
-            <List
-              component="div"
-              disablePadding
-              id="raven-side-nav-incidents-sublist"
-              aria-labelledby="raven-side-nav-incidents-trigger"
-            >
-              <ListItemButton
-                className={
-                  activePath === '/reports'
-                    ? 'raven-side-nav__item raven-side-nav__item--active'
-                    : 'raven-side-nav__item'
-                }
-                onClick={() => onNavigate('/reports')}
-                aria-current={activePath === '/reports' ? 'page' : undefined}
-              >
-                <ListItemText primary="Reports" />
-              </ListItemButton>
-              <ListItemButton
-                className={
-                  activePath === '/investigations'
-                    ? 'raven-side-nav__item raven-side-nav__item--active'
-                    : 'raven-side-nav__item'
-                }
-                onClick={() => onNavigate('/investigations')}
-                aria-current={activePath === '/investigations' ? 'page' : undefined}
-              >
-                <ListItemText primary="Investigations" />
-              </ListItemButton>
-              <ListItemButton
-                className={
-                  activePath === '/recommendations'
-                    ? 'raven-side-nav__item raven-side-nav__item--active'
-                    : 'raven-side-nav__item'
-                }
-                onClick={() => onNavigate('/recommendations')}
-                aria-current={activePath === '/recommendations' ? 'page' : undefined}
-              >
-                <ListItemText primary="Recommendations" />
-              </ListItemButton>
-            </List>
-          </Collapse>
+            <Box className="raven-side-nav__expanded">
+              {/* Purple scroll indicator */}
+              <Box className="raven-side-nav__scroll-indicator" />
 
-          <ListItemButton
-            className={
-              activePath === '/analysis'
-                ? 'raven-side-nav__item raven-side-nav__item--active'
-                : 'raven-side-nav__item'
-            }
-            onClick={() => onNavigate('/analysis')}
-            aria-current={activePath === '/analysis' ? 'page' : undefined}
-          >
-            <ListItemText primary="Analysis" />
-          </ListItemButton>
+              <List component="div" disablePadding className="raven-side-nav__sub-list">
+                {INCIDENT_CHILDREN.map((child) => {
+                  const active = activePath === child.path;
+                  return (
+                    <ListItemButton
+                      key={child.path}
+                      className={`raven-side-nav__sub-item ${active ? 'raven-side-nav__sub-item--active' : ''}`}
+                      onClick={() => onNavigate(child.path)}
+                      aria-current={active ? 'page' : undefined}
+                    >
+                      <ListItemIcon className="raven-side-nav__item-icon">
+                        {child.icon}
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={child.label}
+                        primaryTypographyProps={{
+                          variant: 'body2',
+                          fontWeight: active ? 600 : 400,
+                        }}
+                      />
+                    </ListItemButton>
+                  );
+                })}
+              </List>
+            </Box>
+          </Collapse>
         </List>
 
-        <Box className="raven-side-nav__footer">
-          <Typography variant="caption" color="text.secondary" component="p">
-            Powered by Raven
+        {/* ── Bottom nav items ──────────────────────────── */}
+        <Box className="raven-side-nav__bottom-items">
+          <ListItemButton className="raven-side-nav__item" onClick={() => onNavigate('/help')}>
+            <ListItemIcon className="raven-side-nav__item-icon">
+              <HelpOutlineRoundedIcon fontSize="small" sx={{ color: 'text.secondary' }} />
+            </ListItemIcon>
+            <ListItemText primary="Help & Support" primaryTypographyProps={{ variant: 'body2' }} />
+          </ListItemButton>
+
+          <ListItemButton className="raven-side-nav__item" onClick={() => onNavigate('/settings')}>
+            <ListItemIcon className="raven-side-nav__item-icon">
+              <SettingsRoundedIcon fontSize="small" sx={{ color: 'text.secondary' }} />
+            </ListItemIcon>
+            <ListItemText primary="Settings" primaryTypographyProps={{ variant: 'body2' }} />
+          </ListItemButton>
+        </Box>
+
+        {/* ── Org switch ────────────────────────────────── */}
+        <Divider sx={{ borderColor: '#E1BEE7', mx: 1 }} />
+
+        <Box className="raven-side-nav__org-switch">
+          <Avatar className="raven-side-nav__org-avatar">KR</Avatar>
+          <Typography variant="body2" color="text.secondary" sx={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            Kailash Raj
           </Typography>
-          <Avatar className="raven-side-nav__footer-avatar" alt="Raven">
-            R
-          </Avatar>
+          <ExpandMoreRoundedIcon fontSize="small" sx={{ color: 'text.secondary' }} />
+        </Box>
+
+        <Divider sx={{ borderColor: '#E1BEE7', mx: 1 }} />
+
+        {/* ── Raven branding ────────────────────────────── */}
+        <Box className="raven-side-nav__branding">
+          <Typography variant="caption" color="text.secondary">by</Typography>
+          <Typography variant="caption" fontWeight={700} sx={{ color: '#4A148C' }}>raven</Typography>
         </Box>
       </Box>
     </Drawer>
