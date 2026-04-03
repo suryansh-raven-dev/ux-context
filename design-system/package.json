@@ -11,7 +11,8 @@
     "build-storybook": "storybook build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -34,7 +35,7 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
-    "chromatic": "^16.0.0",
+    "chromatic": "^16.1.0",
     "jsdom": "^25.0.1",
     "storybook": "^8.6.18",
     "typescript": "^5.7.3",
