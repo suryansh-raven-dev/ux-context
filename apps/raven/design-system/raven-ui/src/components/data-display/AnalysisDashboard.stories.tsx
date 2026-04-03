@@ -13,8 +13,10 @@ import Typography from '@mui/material/Typography';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
+import Chip from '@mui/material/Chip';
+import EventRounded from '@mui/icons-material/EventRounded';
+
 import { TabNavigation } from '../navigation/TabNavigation';
-import { FilterControls } from '../forms/FilterControls';
 import { AnalyticsChartCard } from './AnalyticsChartCard';
 import { CauseAnalysisChart } from './CauseAnalysisChart';
 import { IncidentsSummary } from './IncidentsSummary';
@@ -271,7 +273,6 @@ function GroupedBarMock() {
 
 function AnalysisDashboardPrototype() {
   const [activeTab, setActiveTab] = useState(0);
-  const [dept, setDept] = useState('All Departments');
 
   return (
     <Box sx={{ backgroundColor: '#fdfafe', minHeight: '100vh', display: 'flex' }}>
@@ -322,13 +323,11 @@ function AnalysisDashboardPrototype() {
               <Button startIcon={<FileDownloadRounded />} sx={{ color: '#4A148C' }}>Export</Button>
             </Box>
           </Box>
-          <FilterControls
-            departments={['All Departments', 'PP', 'PE', 'Logistics', 'HSEF']}
-            selectedDepartment={dept}
-            onDepartmentChange={setDept}
-            dateRange="Feb-Mar 2026"
-            onDateRangeClick={() => {}}
-          />
+          <Box sx={{ display: 'flex', gap: 1.5, pb: 2 }}>
+            <Chip label="All Units" variant="outlined" sx={{ borderColor: '#E0E0E0' }} />
+            <Chip label="All Departments" variant="outlined" sx={{ borderColor: '#E0E0E0' }} />
+            <Chip icon={<EventRounded sx={{ fontSize: 16 }} />} label="Feb-Mar 2026" variant="outlined" sx={{ borderColor: '#E0E0E0' }} />
+          </Box>
         </Box>
 
         {/* Dashboard content */}
