@@ -7,7 +7,7 @@ import { AnalyticsChartCard } from './AnalyticsChartCard';
 import { CauseAnalysisChart } from './CauseAnalysisChart';
 
 export default {
-  title: 'Data Display/Cause Analysis Chart',
+  title: 'Components/Data Display/Cause Analysis Chart',
   component: CauseAnalysisChart,
   tags: ['autodocs'],
 } satisfies Meta<typeof CauseAnalysisChart>;
