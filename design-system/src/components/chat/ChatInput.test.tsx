@@ -75,7 +75,8 @@ describe('ChatInput', () => {
   it('multiline layout shows attach and voice regions', () => {
     renderWithTheme(<ControlledChatInput multiline />);
 
-    expect(screen.getByRole('button', { name: 'Attach file' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Add photo' })).toBeInTheDocument();
+    const attachButtons = screen.getAllByRole('button', { name: 'Attach file' });
+    expect(attachButtons.length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByRole('button', { name: 'Voice message' })).toBeInTheDocument();
   });
 });

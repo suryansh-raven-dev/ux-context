@@ -1,0 +1,24 @@
+.raven-section-divider-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.raven-section-divider-label__text {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 32px;
+  text-transform: uppercase;
+  color: #9c27b0;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.raven-section-divider-label__line {
+  flex: 1;
+  height: 1px;
+  background-color: #f3e5f5;
+}

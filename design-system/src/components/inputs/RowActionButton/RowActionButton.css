@@ -1,0 +1,27 @@
+.raven-row-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #f3e5f5;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.6);
+  transition: background-color 150ms ease;
+}
+
+.raven-row-action-btn:hover {
+  background-color: rgba(74, 20, 140, 0.04);
+}
+
+.raven-row-action-btn:focus-visible {
+  outline: 2px solid #4a148c;
+  outline-offset: 2px;
+}
+
+.raven-row-action-btn .MuiSvgIcon-root {
+  font-size: 24px;
+}

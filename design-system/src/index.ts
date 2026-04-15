@@ -1,5 +1,6 @@
 // Theme
 export { ravenNearMissTheme } from './theme/ravenNearMissTheme';
+export { ravenAdminTheme, ravenAdminLightTheme, ravenAdminDarkTheme } from './theme/ravenAdminTheme';
 
 // Layout
 export { AppShell } from './components/layout/AppShell';
@@ -18,6 +19,8 @@ export { RavenPagination } from './components/navigation/RavenPagination/RavenPa
 export { RavenMenu } from './components/navigation/RavenMenu/RavenMenu';
 export type { RavenMenuOption, RavenMenuProps } from './components/navigation/RavenMenu/RavenMenu';
 export { RavenLink } from './components/navigation/RavenLink/RavenLink';
+export { UserProfileMenu } from './components/navigation/UserProfileMenu/UserProfileMenu';
+export type { UserProfileMenuProps } from './components/navigation/UserProfileMenu/UserProfileMenu';
 
 // Data Display
 export { SummaryCard } from './components/data-display/SummaryCard';
@@ -36,6 +39,8 @@ export { RavenList } from './components/data-display/RavenList/RavenList';
 export type { RavenListItem, RavenListProps } from './components/data-display/RavenList/RavenList';
 export { RavenTypography } from './components/data-display/RavenTypography/RavenTypography';
 export type { RavenTypographyProps, RavenTypographyVariant, RavenTypographyColor, RavenTypographyAlign } from './components/data-display/RavenTypography/RavenTypography';
+export { ReportStatusChip } from './components/data-display/ReportStatusChip/ReportStatusChip';
+export type { ReportStatusChipProps } from './components/data-display/ReportStatusChip/ReportStatusChip';
 
 // Feedback
 export { ActivityDrawer } from './components/feedback/ActivityDrawer';
@@ -71,6 +76,10 @@ export { RavenCard } from './components/surfaces/RavenCard/RavenCard';
 export type { RavenCardProps } from './components/surfaces/RavenCard/RavenCard';
 export { RavenDivider } from './components/surfaces/RavenDivider/RavenDivider';
 export type { RavenDividerProps } from './components/surfaces/RavenDivider/RavenDivider';
+export { FormSectionCard } from './components/surfaces/FormSectionCard/FormSectionCard';
+export type { FormSectionCardProps } from './components/surfaces/FormSectionCard/FormSectionCard';
+export { SectionDividerLabel } from './components/surfaces/SectionDividerLabel/SectionDividerLabel';
+export type { SectionDividerLabelProps } from './components/surfaces/SectionDividerLabel/SectionDividerLabel';
 
 // Brand
 export { BrandLogos } from './components/brand/BrandLogos';
@@ -94,3 +103,5 @@ export type { RavenSwitchProps } from './components/inputs/RavenSwitch/RavenSwit
 export { RavenAutocomplete } from './components/inputs/RavenAutocomplete/RavenAutocomplete';
 export type { RavenAutocompleteProps } from './components/inputs/RavenAutocomplete/RavenAutocomplete';
 export { VirtualizedAutocompleteListbox } from './components/inputs/RavenAutocomplete/VirtualizedAutocompleteListbox';
+export { RowActionButton } from './components/inputs/RowActionButton/RowActionButton';
+export type { RowActionButtonProps } from './components/inputs/RowActionButton/RowActionButton';

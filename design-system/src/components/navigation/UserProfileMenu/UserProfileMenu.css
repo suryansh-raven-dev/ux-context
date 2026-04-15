@@ -1,0 +1,22 @@
+.raven-user-profile-menu__paper {
+  border-radius: 12px !important;
+  min-width: 218px;
+}
+
+.raven-user-profile-menu__trailing-icon {
+  font-size: 20px !important;
+  color: rgba(0, 0, 0, 0.6);
+  margin-left: 8px;
+}
+
+.raven-user-profile-menu__sign-out .MuiListItemText-primary {
+  color: #d32f2f;
+}
+
+.raven-user-profile-menu__sign-out-icon {
+  color: #d32f2f !important;
+}
+
+.raven-user-profile-menu__sign-out-icon .MuiSvgIcon-root {
+  color: #d32f2f;
+}

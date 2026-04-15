@@ -1,0 +1,34 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "design-system-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "design-system",
+      "port": 5173,
+      "autoPort": true
+    },
+    {
+      "name": "storybook",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "storybook"],
+      "cwd": "design-system",
+      "port": 6006
+    },
+    {
+      "name": "design-system-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview"],
+      "cwd": "design-system",
+      "port": 4173
+    },
+    {
+      "name": "near-miss-app",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "cwd": "apps/near-miss",
+      "port": 3000
+    }
+  ]
+}

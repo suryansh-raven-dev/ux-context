@@ -31,6 +31,8 @@ export type DataTableProps<T extends object> = {
   total: number;
   onPageChange: (page: number) => void;
   onRowsPerPageChange: (rpp: number) => void;
+  /** Column keys whose cell text should render bold (fontWeight 600). */
+  boldColumns?: (keyof T)[];
 };
 
 const COLUMN_WIDTH_SX = (width?: number | string) =>
@@ -83,6 +85,7 @@ export function DataTable<T extends object>({
   total,
   onPageChange,
   onRowsPerPageChange,
+  boldColumns,
 }: DataTableProps<T>) {
   const showAction = Boolean(onRowClick);
 
@@ -131,8 +134,14 @@ export function DataTable<T extends object>({
                     {columns.map((col) => {
                       const raw = row[col.key];
                       const cellContent = col.render ? col.render(raw, row) : String(raw ?? '');
+                      const isBold = boldColumns?.includes(col.key);
                       return (
-                        <TableCell key={`${rowId}-${String(col.key)}`}>{cellContent}</TableCell>
+                        <TableCell
+                          key={`${rowId}-${String(col.key)}`}
+                          sx={isBold ? { fontWeight: 600 } : undefined}
+                        >
+                          {cellContent}
+                        </TableCell>
                       );
                     })}
                     {showAction ? (
