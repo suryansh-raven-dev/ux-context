@@ -1,7 +1,6 @@
 import { useCallback, type ChangeEvent } from 'react';
 import AttachFileIcon from '@mui/icons-material/AttachFileRounded';
 import MicIcon from '@mui/icons-material/MicRounded';
-import PhotoCameraIcon from '@mui/icons-material/PhotoCameraRounded';
 import SendIcon from '@mui/icons-material/SendRounded';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
@@ -45,8 +44,8 @@ export function ChatInput({
     return (
       <Box className={rootClass}>
         <Box className="raven-chat-input__top">
-          <IconButton type="button" aria-label="Add photo" size="small" className="raven-chat-input__icon-btn">
-            <PhotoCameraIcon fontSize="small" />
+          <IconButton type="button" aria-label="Attach file" size="small" className="raven-chat-input__icon-btn">
+            <AttachFileIcon fontSize="small" />
           </IconButton>
           <InputBase
             className="raven-chat-input__field"
@@ -80,8 +79,8 @@ export function ChatInput({
 
   return (
     <Box className={rootClass}>
-      <IconButton type="button" aria-label="Add photo" size="small" className="raven-chat-input__icon-btn">
-        <PhotoCameraIcon fontSize="small" />
+      <IconButton type="button" aria-label="Attach file" size="small" className="raven-chat-input__icon-btn">
+        <AttachFileIcon fontSize="small" />
       </IconButton>
       <InputBase
         className="raven-chat-input__field"

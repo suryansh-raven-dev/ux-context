@@ -18,7 +18,9 @@ export type RavenTypographyVariant =
   | 'body2'
   | 'button'
   | 'caption'
+  | 'caption2'
   | 'overline'
+  | 'label'
   | 'tableHeader'
   | 'inherit';
 
