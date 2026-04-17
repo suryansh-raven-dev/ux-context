@@ -2,6 +2,10 @@
 
 Component library for the Raven Near-Miss Incident Reporting Tool, built from Figma designs.
 
+**Owner:** Design (Suryansh) — raven-ui is the source of truth. Product teams MUST NOT fork or locally reimplement anything covered by this package. File issues in this repo instead.
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add or change primitives, and [CHANGELOG.md](./CHANGELOG.md) for the release log.
+
 ## Stack
 
 - React 18 + TypeScript 5

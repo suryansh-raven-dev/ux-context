@@ -4,7 +4,49 @@ import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-import './CauseAnalysisChart.css';
+const rootSx = { width: '100%', fontFamily: '"Source Sans 3", sans-serif' };
+const bodySx = { display: 'flex', gap: 1 };
+const labelsSx = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 1.25,
+  minWidth: 200,
+  alignItems: 'flex-end',
+  pt: '2px',
+};
+const labelSx = {
+  lineHeight: '22px',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  maxWidth: 200,
+};
+const barsContainerSx = {
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 1.25,
+  position: 'relative',
+};
+const gridSx = { position: 'absolute', inset: 0, pointerEvents: 'none' };
+const gridLineSx = {
+  position: 'absolute',
+  top: 0,
+  bottom: 0,
+  borderLeft: '1px dashed',
+  borderColor: 'action.disabledBackground',
+};
+const barSx = {
+  height: 22,
+  borderRadius: '3px',
+  minWidth: 4,
+  position: 'relative',
+  zIndex: 1,
+  cursor: 'pointer',
+  transition: 'opacity 0.2s ease, width 0.3s ease',
+};
+const axisSx = { pl: '208px', mt: 1 };
+const axisLabelsSx = { position: 'relative', height: 20 };
 
 export type CauseAnalysisRow = {
   category: string;
@@ -14,7 +56,7 @@ export type CauseAnalysisRow = {
 export type CauseAnalysisChartProps = {
   /** Bar data — each row is one horizontal bar */
   data: CauseAnalysisRow[];
-  /** Bar color (default: #4A148C / purple darken-4) */
+  /** Bar color (default: theme primary.main) */
   barColor?: string;
   /** Maximum axis value (auto-calculated if omitted) */
   maxValue?: number;
@@ -39,7 +81,7 @@ export type CauseAnalysisChartProps = {
  */
 export function CauseAnalysisChart({
   data,
-  barColor = '#4A148C',
+  barColor,
   maxValue,
   tickCount = 6,
 }: CauseAnalysisChartProps) {
@@ -51,17 +93,17 @@ export function CauseAnalysisChart({
   const ticks = Array.from({ length: tickCount }, (_, i) => i * step);
 
   return (
-    <Box className="cause-analysis-chart">
+    <Box sx={rootSx}>
       {/* Chart body */}
-      <Box className="cause-analysis-chart__body">
+      <Box sx={bodySx}>
         {/* Category labels */}
-        <Box className="cause-analysis-chart__labels">
+        <Box sx={labelsSx}>
           {data.map((row) => (
             <Typography
               key={row.category}
               variant="caption"
               color="text.secondary"
-              className="cause-analysis-chart__label"
+              sx={labelSx}
               title={row.category}
             >
               {row.category}
@@ -70,14 +112,13 @@ export function CauseAnalysisChart({
         </Box>
 
         {/* Bar area */}
-        <Box className="cause-analysis-chart__bars-container">
+        <Box sx={barsContainerSx}>
           {/* Grid lines */}
-          <Box className="cause-analysis-chart__grid">
+          <Box sx={gridSx}>
             {ticks.map((t) => (
               <Box
                 key={t}
-                className="cause-analysis-chart__grid-line"
-                sx={{ left: `${(t / axisMax) * 100}%` }}
+                sx={{ ...gridLineSx, left: `${(t / axisMax) * 100}%` }}
               />
             ))}
           </Box>
@@ -93,7 +134,7 @@ export function CauseAnalysisChart({
               slotProps={{
                 tooltip: {
                   sx: {
-                    backgroundColor: '#212121',
+                    backgroundColor: 'grey.900',
                     fontSize: 13,
                     fontWeight: 500,
                     borderRadius: '8px',
@@ -101,14 +142,14 @@ export function CauseAnalysisChart({
                     py: 0.75,
                   },
                 },
-                arrow: { sx: { color: '#212121' } },
+                arrow: { sx: { color: 'grey.900' } },
               }}
             >
               <Box
-                className="cause-analysis-chart__bar"
                 sx={{
+                  ...barSx,
                   width: `${(row.value / axisMax) * 100}%`,
-                  backgroundColor: barColor,
+                  backgroundColor: barColor ?? 'primary.main',
                   opacity: hoveredIdx !== null && hoveredIdx !== idx ? 0.5 : 1,
                 }}
                 onMouseEnter={() => setHoveredIdx(idx)}
@@ -120,8 +161,8 @@ export function CauseAnalysisChart({
       </Box>
 
       {/* X-axis ticks */}
-      <Box className="cause-analysis-chart__axis">
-        <Box className="cause-analysis-chart__axis-labels">
+      <Box sx={axisSx}>
+        <Box sx={axisLabelsSx}>
           {ticks.map((t) => (
             <Typography
               key={t}

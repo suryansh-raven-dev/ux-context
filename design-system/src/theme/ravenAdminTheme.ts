@@ -208,8 +208,15 @@ const sharedComponents: Components<Theme> = {
         },
       }),
       notchedOutline: {
-        '& legend': { fontFamily: '"Source Sans 3", sans-serif' },
-        '& legend > span': { fontFamily: '"Source Sans 3", sans-serif' },
+        '& legend': {
+          fontFamily: '"Source Sans 3", sans-serif',
+          fontWeight: 500,
+          fontSize: 'calc(13px * 0.75)',
+        },
+        '& legend > span': {
+          fontFamily: '"Source Sans 3", sans-serif',
+          fontWeight: 500,
+        },
       },
     },
   },

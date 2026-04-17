@@ -19,13 +19,13 @@ type StorybookSectionProps = {
 export function StorybookPage({
   children,
   maxWidth = 760,
-  backgroundColor = '#FCF6FE',
+  backgroundColor,
 }: StorybookPageProps) {
   return (
     <Box
       sx={{
         p: 3,
-        backgroundColor,
+        backgroundColor: backgroundColor ?? 'background.dark',
       }}
     >
       <Stack spacing={2.5} sx={{ maxWidth }}>
@@ -39,13 +39,14 @@ export function StorybookSection({ title, description, children }: StorybookSect
   return (
     <Box
       sx={{
-        border: '1px solid #E0E0E0',
+        border: '1px solid',
+        borderColor: 'divider',
         borderRadius: '12px',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: 'background.default',
         p: 2.5,
       }}
     >
-      <Typography variant="subtitle1" sx={{ fontWeight: 600, color: '#4A148C', mb: description ? 0.75 : 1.5 }}>
+      <Typography variant="subtitle1" sx={{ fontWeight: 600, color: 'primary.main', mb: description ? 0.75 : 1.5 }}>
         {title}
       </Typography>
       {description ? (

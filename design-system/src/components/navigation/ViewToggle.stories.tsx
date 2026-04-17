@@ -6,13 +6,22 @@ import ViewModule from '@mui/icons-material/ViewModuleRounded';
 import { ViewToggle } from './ViewToggle';
 
 export default {
-  title: 'Navigation/View Toggle',
+  title: 'Components/Navigation/Tabs',
   component: ViewToggle,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'View Toggle is a 2–4 option variant of the Tabs pattern tuned for switching the rendering of the same content (List / Grid, Chart / Table, Summary / Details). Same segmented-pill visual as the base Tabs.',
+      },
+    },
+  },
 } satisfies Meta<typeof ViewToggle>;
 
 type Story = StoryObj<typeof ViewToggle>;
 
-export const Default: Story = {
+export const ViewToggleIconLabels: Story = {
+  name: 'Variant: View Toggle (icon + label)',
   render: function ViewToggleStory() {
     const [value, setValue] = useState('list');
     return (
@@ -28,7 +37,8 @@ export const Default: Story = {
   },
 };
 
-export const TextOnly: Story = {
+export const ViewToggleTextOnly: Story = {
+  name: 'Variant: View Toggle (text only)',
   render: function ViewToggleTextStory() {
     const [value, setValue] = useState('a');
     return (

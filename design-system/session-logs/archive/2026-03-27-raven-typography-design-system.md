@@ -49,8 +49,8 @@
 - Updated notes to reflect full type scale + custom variants
 
 ### 6. Updated Design System Documentation (`near-miss-components.md`)
-- Added `§2.17 RavenTypography` section with complete props table, type scale mapping, usage examples, design tokens, and accessibility guidelines
-- Updated `§1.2 Typography` type scale table to include all 17 variants with Raven component mapping
+- Added `2.17 RavenTypography` section with complete props table, type scale mapping, usage examples, design tokens, and accessibility guidelines
+- Updated `1.2 Typography` type scale table to include all 17 variants with Raven component mapping
 
 ---
 
