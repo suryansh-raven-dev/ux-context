@@ -6,7 +6,7 @@ import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { OrgSwitchDropdown } from './OrgSwitchDropdown';
 
 const meta: Meta<typeof OrgSwitchDropdown> = {
-  title: 'Navigation/Org Switch Dropdown',
+  title: 'Components/Navigation/Org Switch Dropdown',
   component: OrgSwitchDropdown,
   parameters: { layout: 'fullscreen' },
 };

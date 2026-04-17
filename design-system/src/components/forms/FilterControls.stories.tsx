@@ -5,7 +5,7 @@ import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { FilterControls } from './FilterControls';
 
 export default {
-  title: 'Forms/Filter Controls',
+  title: 'Components/Forms/Filter Controls',
   component: FilterControls,
 } satisfies Meta<typeof FilterControls>;
 

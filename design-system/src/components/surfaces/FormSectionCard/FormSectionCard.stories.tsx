@@ -8,7 +8,7 @@ import { FormSectionCard } from './FormSectionCard';
 import { SectionDividerLabel } from '../SectionDividerLabel/SectionDividerLabel';
 
 const meta = {
-  title: 'Surfaces/FormSectionCard',
+  title: 'Components/Surfaces/FormSectionCard',
   component: FormSectionCard,
   parameters: { layout: 'padded' },
 } satisfies Meta<typeof FormSectionCard>;
