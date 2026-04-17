@@ -1,40 +1,86 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import { ReportStatusChip } from './ReportStatusChip';
 
-const meta = {
-  title: 'Data Display/ReportStatusChip',
-  component: ReportStatusChip,
-  parameters: { layout: 'centered' },
-} satisfies Meta<typeof ReportStatusChip>;
+import { StorybookPage, StorybookSection } from '../../StorybookPage';
+import { ReportStatusChip as ReportStatusChipComponent } from './ReportStatusChip';
 
+const meta: Meta<typeof ReportStatusChipComponent> = {
+  title: 'Data Display',
+  component: ReportStatusChipComponent,
+};
 export default meta;
-type Story = StoryObj<typeof ReportStatusChip>;
 
-export const InProgress: Story = { args: { status: 'In-progress' } };
-export const Closed: Story = { args: { status: 'Closed' } };
-export const Pending: Story = { args: { status: 'Pending' } };
-export const Released: Story = { args: { status: 'Released' } };
-export const Approved: Story = { args: { status: 'Approved' } };
-export const Rejected: Story = { args: { status: 'Rejected' } };
+type Story = StoryObj<typeof ReportStatusChipComponent>;
 
-export const AllStatuses: Story = {
+export const ReportStatusChip: Story = {
+  name: 'ReportStatusChip',
+  parameters: { layout: 'fullscreen' },
   render: () => (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>All status variants</Typography>
-      <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-        <ReportStatusChip status="In-progress" />
-        <ReportStatusChip status="Closed" />
-        <ReportStatusChip status="Pending" />
-        <ReportStatusChip status="Released" />
-        <ReportStatusChip status="Approved" />
-        <ReportStatusChip status="Rejected" />
-      </Box>
-      <Typography variant="caption" color="text.secondary">
-        Custom label override
-      </Typography>
-      <ReportStatusChip status="in-progress" label="Under Review" />
-    </Box>
+    <StorybookPage maxWidth={760}>
+
+      <StorybookSection
+        title="All statuses"
+        description="Pill-shaped status chip with colored dot + label. Used in DataTable status columns — prefer this over plain text or StatusCell."
+      >
+        <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+          <ReportStatusChipComponent status="In-progress" />
+          <ReportStatusChipComponent status="Closed" />
+          <ReportStatusChipComponent status="Pending" />
+          <ReportStatusChipComponent status="Released" />
+          <ReportStatusChipComponent status="Approved" />
+          <ReportStatusChipComponent status="Rejected" />
+        </Box>
+      </StorybookSection>
+
+      <StorybookSection
+        title="In Progress"
+        description="Blue dot — work is underway."
+      >
+        <ReportStatusChipComponent status="In-progress" />
+      </StorybookSection>
+
+      <StorybookSection
+        title="Closed"
+        description="Green dot — record has been resolved and archived."
+      >
+        <ReportStatusChipComponent status="Closed" />
+      </StorybookSection>
+
+      <StorybookSection
+        title="Pending"
+        description="Amber dot — awaiting an action from another party."
+      >
+        <ReportStatusChipComponent status="Pending" />
+      </StorybookSection>
+
+      <StorybookSection
+        title="Released"
+        description="Green dot — record has moved out of draft into a shared state."
+      >
+        <ReportStatusChipComponent status="Released" />
+      </StorybookSection>
+
+      <StorybookSection
+        title="Approved"
+        description="Green dot — review succeeded and the record is cleared."
+      >
+        <ReportStatusChipComponent status="Approved" />
+      </StorybookSection>
+
+      <StorybookSection
+        title="Rejected"
+        description="Red dot — review failed, the record is blocked."
+      >
+        <ReportStatusChipComponent status="Rejected" />
+      </StorybookSection>
+
+      <StorybookSection
+        title="Custom label"
+        description="Override the default label text while keeping the status color via the label prop."
+      >
+        <ReportStatusChipComponent status="in-progress" label="Under Review" />
+      </StorybookSection>
+
+    </StorybookPage>
   ),
 };

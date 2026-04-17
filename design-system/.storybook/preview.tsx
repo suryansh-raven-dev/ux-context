@@ -18,9 +18,9 @@ const preview: Preview = {
       toolbar: {
         icon: 'paintbrush',
         items: [
-          { value: 'admin-light', title: 'Admin Light' },
-          { value: 'admin-dark', title: 'Admin Dark' },
-          { value: 'near-miss', title: 'Near-Miss (legacy)' },
+          { value: 'admin-light', title: 'Theme: Light' },
+          { value: 'admin-dark', title: 'Theme: Dark' },
+          { value: 'near-miss', title: 'Theme: Near-Miss (legacy)' },
         ],
         dynamicTitle: true,
       },
