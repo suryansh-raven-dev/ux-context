@@ -12,7 +12,68 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-import './IncidentsSummary.css';
+import { statusColors } from '../../tokens/tokens';
+
+const rootSx = { backgroundColor: 'background.default' };
+
+const headerSx = { display: 'flex', alignItems: 'center', gap: 2, p: 1 };
+
+const statRowSx = { display: 'flex', gap: 3, alignItems: 'center', py: 2 };
+
+const statCellSx = {
+  display: 'flex',
+  flex: 1,
+  alignItems: 'center',
+  gap: 2,
+  border: '1px solid',
+  borderColor: 'divider',
+  borderRadius: 2,
+  p: 2,
+};
+
+const statBlockSx = { display: 'flex', flexDirection: 'column', alignItems: 'flex-start' };
+
+const detailRowSx = { display: 'flex', gap: 3, mt: 2 };
+
+const detailCardSx = {
+  flex: 1,
+  background: (theme: { palette: { background: { default: string; dark: string } } }) =>
+    `linear-gradient(to bottom, ${theme.palette.background.default}, ${theme.palette.background.dark})`,
+  borderRadius: '20px',
+  border: '1px solid',
+  borderColor: 'divider',
+};
+
+const detailHeaderSx = {
+  display: 'flex',
+  alignItems: 'flex-start',
+  justifyContent: 'space-between',
+  mb: 2,
+};
+
+const detailTitleRowSx = { display: 'flex', alignItems: 'center', gap: 1.5 };
+
+const detailIconSx = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 36,
+  height: 36,
+  borderRadius: '6px',
+  flexShrink: 0,
+};
+
+const detailCountRowSx = { display: 'flex', alignItems: 'center', gap: 0.5 };
+
+const breakdownSx = { display: 'flex', flexDirection: 'column', gap: 0.5 };
+
+const breakdownItemSx = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+};
+
+const detailFooterSx = { display: 'flex', alignItems: 'center', gap: 1, mt: 1.5 };
 
 /* ─── Types ──────────────────────────────────────────────────────────────────── */
 
@@ -70,7 +131,7 @@ export type IncidentsSummaryProps = {
 
 function StatBlock({ value, label }: OverviewStat) {
   return (
-    <Box className="incidents-summary__stat-block">
+    <Box sx={statBlockSx}>
       <Typography
         variant="h4"
         fontWeight={600}
@@ -87,7 +148,7 @@ function StatBlock({ value, label }: OverviewStat) {
 
 function DetailCardComponent({
   icon,
-  iconBg = '#E1F5FE',
+  iconBg = statusColors['in-progress'].surface,
   title,
   count,
   breakdown,
@@ -96,24 +157,21 @@ function DetailCardComponent({
   onClick,
 }: DetailCard) {
   const header = (
-    <Box className="incidents-summary__detail-header">
-      <Box className="incidents-summary__detail-title-row">
-        <Box
-          className="incidents-summary__detail-icon"
-          sx={{ backgroundColor: iconBg }}
-        >
+    <Box sx={detailHeaderSx}>
+      <Box sx={detailTitleRowSx}>
+        <Box sx={{ ...detailIconSx, backgroundColor: iconBg }}>
           {icon}
         </Box>
         <Typography variant="subtitle2" fontWeight={600} color="text.secondary">
           {title}
         </Typography>
       </Box>
-      <Box className="incidents-summary__detail-count-row">
+      <Box sx={detailCountRowSx}>
         <Typography variant="h4" fontWeight={600} color="text.primary" sx={{ lineHeight: '40px' }}>
           {count}
         </Typography>
-        <IconButton size="small" aria-label={`View ${title} details`}>
-          <ChevronRightRounded fontSize="small" />
+        <IconButton aria-label={`View ${title} details`} sx={{ minWidth: 44, minHeight: 44 }}>
+          <ChevronRightRounded />
         </IconButton>
       </Box>
     </Box>
@@ -121,9 +179,9 @@ function DetailCardComponent({
 
   const body = (
     <>
-      <Box className="incidents-summary__breakdown" role="list">
+      <Box sx={breakdownSx} role="list">
         {breakdown.map((item) => (
-          <Box key={item.label} className="incidents-summary__breakdown-item" role="listitem">
+          <Box key={item.label} sx={breakdownItemSx} role="listitem">
             <Typography variant="body2" color="text.secondary">
               {item.label}
             </Typography>
@@ -135,18 +193,20 @@ function DetailCardComponent({
       </Box>
 
       {(rate || overdue) && (
-        <Box className="incidents-summary__detail-footer">
+        <Box sx={detailFooterSx}>
           {rate && (
             <Chip
               size="small"
               icon={<InfoOutlinedIcon sx={{ fontSize: 16 }} />}
               label={rate.label}
               sx={{
-                backgroundColor: rate.positive ? '#E8F5E9' : '#FBE9E7',
-                color: rate.positive ? '#1B5E20' : '#BF360C',
+                backgroundColor: rate.positive ? statusColors.released.surface : statusColors.rejected.surface,
+                color: rate.positive ? statusColors.released.content : statusColors.rejected.content,
                 fontWeight: 500,
                 fontSize: 13,
-                '& .MuiChip-icon': { color: rate.positive ? '#2E7D32' : '#D84315' },
+                '& .MuiChip-icon': {
+                  color: rate.positive ? statusColors.released.dot : statusColors.rejected.dot,
+                },
               }}
             />
           )}
@@ -156,11 +216,11 @@ function DetailCardComponent({
               icon={<WarningAmberRounded sx={{ fontSize: 16 }} />}
               label={`${overdue.count} ${overdue.label ?? 'Overdue'}`}
               sx={{
-                backgroundColor: '#FFF3E0',
-                color: '#E65100',
+                backgroundColor: statusColors.pending.surface,
+                color: statusColors.pending.content,
                 fontWeight: 500,
                 fontSize: 13,
-                '& .MuiChip-icon': { color: '#EF6C00' },
+                '& .MuiChip-icon': { color: statusColors.pending.dot },
               }}
             />
           )}
@@ -177,11 +237,7 @@ function DetailCardComponent({
   );
 
   return (
-    <Card
-      elevation={0}
-      className="incidents-summary__detail-card"
-      sx={{ borderRadius: '20px', border: '1px solid #F3E5F5' }}
-    >
+    <Card elevation={0} sx={detailCardSx}>
       {onClick ? (
         <CardActionArea onClick={onClick} sx={{ p: 3 }}>
           {cardContent}
@@ -219,16 +275,17 @@ export function IncidentsSummary({
   return (
     <Card
       elevation={0}
-      className="incidents-summary"
       sx={{
+        ...rootSx,
         borderRadius: '32px',
-        border: '1px solid #F3E5F5',
+        border: '1px solid',
+        borderColor: 'divider',
         boxShadow: '0px 2px 8px 3px rgba(63,81,181,0.04)',
         p: 2,
       }}
     >
       {/* Section header */}
-      <Box className="incidents-summary__header">
+      <Box sx={headerSx}>
         <Typography
           variant="subtitle2"
           fontWeight={600}
@@ -248,22 +305,22 @@ export function IncidentsSummary({
               ) : undefined
             }
             sx={{
-              backgroundColor: '#E8F5E9',
-              color: '#1B5E20',
+              backgroundColor: statusColors.released.surface,
+              color: statusColors.released.content,
               fontWeight: 500,
               fontSize: 13,
-              '& .MuiChip-icon': { color: '#2E7D32' },
+              '& .MuiChip-icon': { color: statusColors.released.dot },
             }}
           />
         )}
       </Box>
 
       {/* Overview stat row */}
-      <Box className="incidents-summary__stat-row">
+      <Box sx={statRowSx}>
         {overviewStats.map((group, gIdx) => {
           const stats = Array.isArray(group) ? group : [group];
           return (
-            <Box key={gIdx} className="incidents-summary__stat-cell">
+            <Box key={gIdx} sx={statCellSx}>
               {stats.map((stat, sIdx) => (
                 <Box key={stat.label} sx={{ display: 'flex', alignItems: 'center', gap: 2, flex: 1 }}>
                   {sIdx > 0 && (
@@ -278,7 +335,7 @@ export function IncidentsSummary({
       </Box>
 
       {/* Detail cards */}
-      <Box className="incidents-summary__detail-row">
+      <Box sx={detailRowSx}>
         {detailCards.map((card) => (
           <DetailCardComponent key={card.title} {...card} />
         ))}

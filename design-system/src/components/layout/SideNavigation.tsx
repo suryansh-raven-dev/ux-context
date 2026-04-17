@@ -22,7 +22,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 
-import './SideNavigation.css';
+import { gradients } from '../../tokens/tokens';
 
 /* ─── Constants ─────────────────────────────────────────────────────────────── */
 
@@ -36,11 +36,116 @@ const INCIDENT_CHILDREN = [
 
 const INCIDENT_PATHS = INCIDENT_CHILDREN.map((c) => c.path);
 
-const DRAWER_SX = {
+/* ─── Styles ────────────────────────────────────────────────────────────────── */
+
+const drawerSx = {
   width: 240,
   flexShrink: 0,
-  '& .MuiDrawer-paper': { position: 'relative' },
+  '& .MuiDrawer-paper': {
+    position: 'sticky',
+    top: 0,
+    width: 240,
+    boxSizing: 'border-box',
+    borderRight: 'none',
+    backgroundColor: 'background.dark',
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100vh',
+    maxHeight: '100vh',
+    overflowY: 'auto',
+  },
 } as const;
+
+const innerSx = {
+  display: 'flex',
+  flexDirection: 'column',
+  flex: 1,
+  minHeight: 0,
+  p: '4px 12px',
+  gap: 0.5,
+};
+
+const logoSx = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: 2,
+  p: '4px 4px 8px',
+};
+
+const listSx = { flex: 1, pt: 1 };
+
+const itemSx = {
+  borderRadius: 1,
+  p: 1,
+  minHeight: 40,
+  gap: 1,
+};
+
+const iconSx = { minWidth: 0 };
+
+const expandIconSx = (open: boolean) => ({
+  transition: 'transform 200ms ease',
+  color: 'text.secondary',
+  transform: open ? 'rotate(180deg)' : 'none',
+});
+
+const expandedSx = { display: 'flex', gap: 1, pl: '15px' };
+
+const scrollIndicatorSx = {
+  width: 2,
+  minWidth: 2,
+  borderRadius: 1,
+  backgroundColor: 'purple.200',
+  alignSelf: 'stretch',
+};
+
+const subListSx = {
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 0.5,
+  pb: 1,
+};
+
+const subItemSx = (active: boolean) => ({
+  borderRadius: 1,
+  px: 1,
+  py: 0.5,
+  gap: 1,
+  ...(active && {
+    backgroundColor: 'navItemBg',
+    '& .MuiListItemIcon-root': { color: 'primary.main' },
+    '& .MuiTypography-root': { color: 'primary.main', fontWeight: 600 },
+  }),
+});
+
+const bottomItemsSx = { display: 'flex', flexDirection: 'column', gap: 0.5, mt: 'auto' };
+
+const orgSwitchSx = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: 1,
+  p: 0.75,
+  borderRadius: 1.5,
+  backgroundColor: 'action.hover',
+};
+
+const orgAvatarSx = {
+  width: 32,
+  height: 32,
+  fontSize: '0.875rem',
+  background: (theme: { palette: { mode: string } }) =>
+    theme.palette.mode === 'dark' ? gradients.orgAvatarBrand : gradients.orgAvatarNeutral,
+  borderRadius: '4px',
+};
+
+const brandingSx = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: 1,
+  p: '8px 4px',
+};
 
 /* ─── Types ─────────────────────────────────────────────────────────────────── */
 
@@ -63,35 +168,30 @@ export function SideNavigation({ activePath, onNavigate }: SideNavigationProps) 
   return (
     <Drawer
       variant="permanent"
-      className="raven-side-nav"
-      sx={DRAWER_SX}
+      sx={drawerSx}
       slotProps={{
         paper: {
-          className: 'raven-side-nav__paper',
           component: 'nav',
           'aria-label': 'Primary',
         },
       }}
     >
-      <Box className="raven-side-nav__inner">
+      <Box sx={innerSx}>
         {/* ── Logo row ─────────────────────────────────── */}
-        <Box className="raven-side-nav__logo">
-          <IconButton size="small" edge="start" aria-label="Toggle menu">
-            <MenuRoundedIcon fontSize="small" />
+        <Box sx={logoSx}>
+          <IconButton edge="start" aria-label="Toggle menu" sx={{ minWidth: 44, minHeight: 44 }}>
+            <MenuRoundedIcon />
           </IconButton>
-          <Typography component="span" variant="subtitle2" fontWeight={600} sx={{ fontStyle: 'italic', color: '#4A148C' }}>
+          <Typography component="span" variant="subtitle2" fontWeight={600} sx={{ fontStyle: 'italic', color: 'primary.main' }}>
             ACME
           </Typography>
         </Box>
 
         {/* ── Main nav list ─────────────────────────────── */}
-        <List component="div" disablePadding className="raven-side-nav__list">
+        <List component="div" disablePadding sx={listSx}>
           {/* Report Incident */}
-          <ListItemButton
-            className="raven-side-nav__item"
-            onClick={() => onNavigate('/report-incident')}
-          >
-            <ListItemIcon className="raven-side-nav__item-icon">
+          <ListItemButton sx={itemSx} onClick={() => onNavigate('/report-incident')}>
+            <ListItemIcon sx={iconSx}>
               <AddCircleRoundedIcon fontSize="small" sx={{ color: 'text.secondary' }} />
             </ListItemIcon>
             <ListItemText primary="Report Incident" primaryTypographyProps={{ variant: 'body2' }} />
@@ -99,36 +199,32 @@ export function SideNavigation({ activePath, onNavigate }: SideNavigationProps) 
 
           {/* Incidents group */}
           <ListItemButton
-            className="raven-side-nav__item"
+            sx={itemSx}
             onClick={() => setIncidentsOpen((o) => !o)}
             aria-expanded={incidentsOpen}
           >
-            <ListItemIcon className="raven-side-nav__item-icon">
+            <ListItemIcon sx={iconSx}>
               <WarningAmberRoundedIcon fontSize="small" sx={{ color: 'text.secondary' }} />
             </ListItemIcon>
             <ListItemText primary="Incidents" primaryTypographyProps={{ variant: 'body2' }} />
-            <ExpandMoreRoundedIcon
-              fontSize="small"
-              className={`raven-side-nav__expand-icon ${incidentsOpen ? 'raven-side-nav__expand-icon--open' : ''}`}
-            />
+            <ExpandMoreRoundedIcon fontSize="small" sx={expandIconSx(incidentsOpen)} />
           </ListItemButton>
 
           <Collapse in={incidentsOpen} timeout="auto" unmountOnExit>
-            <Box className="raven-side-nav__expanded">
-              {/* Purple scroll indicator */}
-              <Box className="raven-side-nav__scroll-indicator" />
+            <Box sx={expandedSx}>
+              <Box sx={scrollIndicatorSx} />
 
-              <List component="div" disablePadding className="raven-side-nav__sub-list">
+              <List component="div" disablePadding sx={subListSx}>
                 {INCIDENT_CHILDREN.map((child) => {
                   const active = activePath === child.path;
                   return (
                     <ListItemButton
                       key={child.path}
-                      className={`raven-side-nav__sub-item ${active ? 'raven-side-nav__sub-item--active' : ''}`}
+                      sx={subItemSx(active)}
                       onClick={() => onNavigate(child.path)}
                       aria-current={active ? 'page' : undefined}
                     >
-                      <ListItemIcon className="raven-side-nav__item-icon">
+                      <ListItemIcon sx={iconSx}>
                         {child.icon}
                       </ListItemIcon>
                       <ListItemText
@@ -147,16 +243,16 @@ export function SideNavigation({ activePath, onNavigate }: SideNavigationProps) 
         </List>
 
         {/* ── Bottom nav items ──────────────────────────── */}
-        <Box className="raven-side-nav__bottom-items">
-          <ListItemButton className="raven-side-nav__item" onClick={() => onNavigate('/help')}>
-            <ListItemIcon className="raven-side-nav__item-icon">
+        <Box sx={bottomItemsSx}>
+          <ListItemButton sx={itemSx} onClick={() => onNavigate('/help')}>
+            <ListItemIcon sx={iconSx}>
               <HelpOutlineRoundedIcon fontSize="small" sx={{ color: 'text.secondary' }} />
             </ListItemIcon>
             <ListItemText primary="Help & Support" primaryTypographyProps={{ variant: 'body2' }} />
           </ListItemButton>
 
-          <ListItemButton className="raven-side-nav__item" onClick={() => onNavigate('/settings')}>
-            <ListItemIcon className="raven-side-nav__item-icon">
+          <ListItemButton sx={itemSx} onClick={() => onNavigate('/settings')}>
+            <ListItemIcon sx={iconSx}>
               <SettingsRoundedIcon fontSize="small" sx={{ color: 'text.secondary' }} />
             </ListItemIcon>
             <ListItemText primary="Settings" primaryTypographyProps={{ variant: 'body2' }} />
@@ -164,22 +260,22 @@ export function SideNavigation({ activePath, onNavigate }: SideNavigationProps) 
         </Box>
 
         {/* ── Org switch ────────────────────────────────── */}
-        <Divider sx={{ borderColor: '#E1BEE7', mx: 1 }} />
+        <Divider sx={{ borderColor: 'purple.100', mx: 1 }} />
 
-        <Box className="raven-side-nav__org-switch">
-          <Avatar className="raven-side-nav__org-avatar">KR</Avatar>
+        <Box sx={orgSwitchSx}>
+          <Avatar sx={orgAvatarSx}>KR</Avatar>
           <Typography variant="body2" color="text.secondary" sx={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             Kailash Raj
           </Typography>
           <ExpandMoreRoundedIcon fontSize="small" sx={{ color: 'text.secondary' }} />
         </Box>
 
-        <Divider sx={{ borderColor: '#E1BEE7', mx: 1 }} />
+        <Divider sx={{ borderColor: 'purple.100', mx: 1 }} />
 
         {/* ── Raven branding ────────────────────────────── */}
-        <Box className="raven-side-nav__branding">
+        <Box sx={brandingSx}>
           <Typography variant="caption" color="text.secondary">by</Typography>
-          <Typography variant="caption" fontWeight={700} sx={{ color: '#4A148C' }}>raven</Typography>
+          <Typography variant="caption" fontWeight={700} sx={{ color: 'primary.main' }}>raven</Typography>
         </Box>
       </Box>
     </Drawer>

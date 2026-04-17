@@ -1,0 +1,94 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Guidelines/Three-Tier Contract" />
+
+# The Three-Tier Contract
+
+Every UI decision falls into **one of three tiers.** This is the single most important frame in the Raven design system — it tells you *how much* a surface is allowed to diverge.
+
+When in doubt, assume **Locked.**
+
+---
+
+## Locked tier — MUST NOT diverge
+
+Consistent across all products. No exceptions without a `raven-ui` version bump.
+
+- Color tokens (names *and* hex values)
+- Typography scale (families, weights, sizes, line heights)
+- Spacing scale (the 4/8px base that `raven-ui` publishes)
+- Radius tokens
+- Elevation / shadow tokens
+- Motion durations and easings
+- Focus ring styling and visibility
+- Error / success / warning / info semantic colors
+- Icon library (no custom icons per-product — contribute to `raven-ui` or don't use)
+- Button component (all variants, states, sizes)
+- Input component (all variants, states, sizes)
+- Form validation patterns (error placement, message tone)
+- Toast / snackbar presentation
+- Modal presentation
+- Loading skeleton presentation
+- Focus trap behavior in overlays
+
+---
+
+## Guided tier — SHOULD follow pattern; MAY deviate with justification
+
+Patterns that are consistent where they appear but don't appear in every product, or that have documented variants.
+
+- Sidebar shell (Wide / Rail / Rail-with-Expand)
+- Top bar composition
+- Tenant branding placement
+- Table density and row chrome
+- Empty state anatomy
+- Page header anatomy
+- Breadcrumb presence and format
+- Card anatomy for list items
+- Filter panel composition
+- Auto-titled history
+- Pagination vs infinite scroll
+- Inline edit affordances
+
+---
+
+## Free tier — MAY diverge per product
+
+Product-specific surfaces where the archetype legitimately demands different shapes.
+
+- Canvas viewport (P&amp;ID only)
+- Streaming answer presentation (Copilot, P&amp;ID Search)
+- Incident lifecycle state machine visualization (NMMS only)
+- P&amp;ID equipment / line overlays
+- Domain switcher behavior
+- Product-specific dashboards
+- Product-specific empty illustrations (subject to `raven-ui` illustration grammar)
+
+---
+
+## Default-locked rule
+
+When in doubt, **assume Locked.**
+
+- Engineers **MUST NOT** promote a surface from Locked to Guided or Free without the design system owner's sign-off.
+- LLMs generating code **MUST** default to Locked behavior unless the prompt explicitly names a Free-tier surface.
+- A Guided-tier deviation **MUST** be documented in a code comment that cites the reason (user research, accessibility, archetype constraint, …).
+
+---
+
+## How tiers interact with archetypes
+
+Archetype decides **which** patterns a product uses (from the Guided tier). The Locked tier is the same regardless of archetype. The Free tier is where archetype-specific surfaces legitimately live.
+
+<table>
+  <thead>
+    <tr><th>Tier</th><th>Varies by archetype?</th><th>Varies by product?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Locked</strong></td><td>No</td><td>No</td></tr>
+    <tr><td><strong>Guided</strong></td><td>Yes (archetype picks the variant)</td><td>Rarely</td></tr>
+    <tr><td><strong>Free</strong></td><td>Yes</td><td>Yes</td></tr>
+  </tbody>
+</table>
+
+See *Product Archetypes* for which archetype owns which Guided-tier choices.

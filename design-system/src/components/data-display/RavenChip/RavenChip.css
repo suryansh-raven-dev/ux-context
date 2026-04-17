@@ -4,9 +4,23 @@
   border-radius: 50px;
 }
 
-.raven-chip--default {
-  background-color: #f5f5f5;
+/* Default grey chip — Figma node 1328-34470.
+ * Tight 4px radius, 20px height, 13px/18px Source Sans 3 Medium, #eeeeee bg.
+ * NOT a pill — pill radius belongs to the semantic / status chips only. */
+.MuiChip-root.raven-chip--default {
+  background-color: #eeeeee;
   color: rgba(0, 0, 0, 0.87);
+  border-radius: 4px;
+  height: 20px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.16px;
+}
+
+.MuiChip-root.raven-chip--default .MuiChip-label {
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .raven-chip--success {

@@ -12,6 +12,8 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 
+import { statusColors } from '../../tokens/tokens';
+
 import './DataTable.css';
 
 export type DataTableColumn<T extends object> = {
@@ -41,11 +43,16 @@ const COLUMN_WIDTH_SX = (width?: number | string) =>
 const CLICKABLE_ROW_SX = { cursor: 'pointer' } as const;
 
 const STATUS_DOT: Record<string, string> = {
-  closed: '#2E7D32',
-  'in progress': '#0288D1',
-  pending: '#F57C00',
-  na: '#9E9E9E',
+  closed: statusColors.closed.dot,
+  'in progress': statusColors['in-progress'].dot,
+  'in-progress': statusColors['in-progress'].dot,
+  pending: statusColors.pending.dot,
+  released: statusColors.released.dot,
+  approved: statusColors.approved.dot,
+  rejected: statusColors.rejected.dot,
 };
+
+const NA_DOT_COLOR = 'rgba(0, 0, 0, 0.38)';
 
 function normalizeStatus(status: string) {
   return status.trim().toLowerCase();
@@ -53,10 +60,13 @@ function normalizeStatus(status: string) {
 
 /**
  * Status badge with colored dot for common workflow states.
+ * NOTE: Prefer `ReportStatusChip` for status columns — this cell is retained
+ * for legacy tables; a colored dot used for status can conflict with the
+ * category-binding rule when placed next to category cells.
  */
 export function StatusCell({ status }: { status: string }) {
   const key = normalizeStatus(status);
-  const dotColor = STATUS_DOT[key] ?? '#9E9E9E';
+  const dotColor = STATUS_DOT[key] ?? NA_DOT_COLOR;
 
   return (
     <span className="raven-data-table__status" title={status}>

@@ -1,0 +1,145 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Guidelines/Product Archetypes" />
+
+# Product Archetypes
+
+Raven ships three products today. They share the same component library but serve **different cognitive modes**. Treating them identically is wrong. Treating them as three separate design languages is also wrong.
+
+They are **three shapes of the same language.**
+
+---
+
+## 1. The three products
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Slug</th>
+      <th>Archetype</th>
+      <th>Core user task</th>
+      <th>Deployment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Raven Copilot (AI-SEARCH)</td>
+      <td><code>copilot</code></td>
+      <td>Conversational Canvas</td>
+      <td>Ask questions about plant knowledge, get cited answers</td>
+      <td>ipl.startraven.com</td>
+    </tr>
+    <tr>
+      <td>Near Miss Management System</td>
+      <td><code>nmms</code></td>
+      <td>Transactional Workflow</td>
+      <td>Log, assign, close out near-miss incidents with status tracking</td>
+      <td>nmms.startraven.com</td>
+    </tr>
+    <tr>
+      <td>P&amp;ID Tool</td>
+      <td><code>pid</code></td>
+      <td>Creative Canvas (engineering)</td>
+      <td>Explore, annotate, and query piping &amp; instrumentation diagrams</td>
+      <td>Bundled in Copilot today; will be standalone</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## 2. Archetype definitions (binding)
+
+Archetype **determines which patterns a product uses.** Every product MUST declare one archetype. A product MAY own sub-surfaces of a different archetype (for example, the Search canvas in P&amp;ID is a Conversational Canvas inside a Creative Canvas product), but the dominant archetype sets the **shell**, the **navigation model**, and the **default interaction grammar.**
+
+### 2.1 Conversational Canvas
+
+> Input is free-text intent. Output is streamed, cited, and multi-turn.
+
+- **Input shape:** free-text intent.
+- **Output shape:** streamed, cited, multi-turn responses.
+- **Session:** history is persistent and auto-titled.
+- **Optimized for:** recall and exploration.
+- **Chrome:** quiet. Tenant branding is prominent.
+- **Shell:** Wide Sidebar Shell (chat history lives in primary nav).
+- **Primary product:** Raven Copilot.
+
+### 2.2 Transactional Workflow
+
+> Input is structured form data. Output is records with lifecycle state.
+
+- **Input shape:** structured forms.
+- **Output shape:** records with lifecycle state (In Progress → Closed, Released, Rejected, …).
+- **Optimized for:** throughput, filterability, audit trail.
+- **Chrome:** dense. Status is the primary semantic channel.
+- **Shell:** Wide Sidebar Shell.
+- **Primary product:** Near Miss Management System (NMMS).
+
+### 2.3 Creative Canvas
+
+> Input is direct manipulation on a spatial artifact. Output is persistent views of the artifact plus layered metadata.
+
+- **Input shape:** select, pan, zoom, annotate on a spatial artifact.
+- **Output shape:** persistent views plus layered metadata.
+- **Optimized for:** comprehension of complex visuals.
+- **Chrome:** collapses to rails to preserve canvas area.
+- **Shell:** Rail Shell with Rail-with-Expand (a wide sidebar when expanded).
+- **Primary product:** P&amp;ID Tool.
+
+---
+
+## 3. Product personalities
+
+Each product MAY express a distinct flavor inside its archetype, but **personality MUST NOT override system tokens.** Personality is expressed through:
+
+- **Default density** — Copilot: comfortable &middot; NMMS: dense &middot; P&amp;ID: dense with expand-on-demand
+- **Default sidebar state** — Copilot: wide &middot; NMMS: wide &middot; P&amp;ID: rail, expandable
+- **Iconography weight** — all three share `raven-ui` rounded icons; variant choice differs
+- **Empty-state voice** — Copilot: inviting &middot; NMMS: instructional &middot; P&amp;ID: neutral
+
+Personality **MUST NOT** be expressed through custom colors, custom typography, or forked components.
+
+---
+
+## 4. What the archetype decides
+
+Declaring an archetype fixes the following defaults. Deviate only with documented justification.
+
+<table>
+  <thead>
+    <tr>
+      <th>Decision</th>
+      <th>Conversational Canvas</th>
+      <th>Transactional Workflow</th>
+      <th>Creative Canvas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Shell</td><td>Wide Sidebar</td><td>Wide Sidebar</td><td>Rail + Rail-with-Expand</td></tr>
+    <tr><td>Default density</td><td>Comfortable</td><td>Dense</td><td>Dense (expand on demand)</td></tr>
+    <tr><td>Primary semantic channel</td><td>Citation &amp; provenance</td><td>Status (lifecycle)</td><td>Spatial selection</td></tr>
+    <tr><td>Chrome volume</td><td>Quiet</td><td>Dense</td><td>Collapses to rail</td></tr>
+    <tr><td>Tenant branding emphasis</td><td>Prominent</td><td>Prominent</td><td>Rail-hidden; shown on expand</td></tr>
+    <tr><td>Nav info architecture</td><td>Chat history in primary nav</td><td>Entity tabs &amp; filters</td><td>Layer / tool panel</td></tr>
+    <tr><td>Default output surface</td><td>Streamed answer</td><td>Records table</td><td>Canvas viewport</td></tr>
+  </tbody>
+</table>
+
+---
+
+## 5. Picking an archetype for a new surface
+
+1. **What is the user's primary input?** Free text → Conversational. Form fields → Transactional. Direct manipulation → Creative.
+2. **What is the persistent artifact?** A session history → Conversational. A record with a lifecycle → Transactional. A spatial diagram → Creative.
+3. **Where does the chrome need to go?** Can yield to output → Conversational. Must stay dense for scanning → Transactional. Must collapse to maximize stage → Creative.
+
+If two archetypes both fit, the **dominant** one (what the user is doing 80% of the time on the surface) wins. Sub-surfaces of a different archetype are fine — Search inside P&amp;ID is a Conversational Canvas nested inside a Creative Canvas product, and that is by design.
+
+---
+
+## 6. Rule for frontend
+
+- A product surface **MUST** declare its archetype in the file-level JSDoc or a README adjacent to the route.
+- Components **MUST NOT** gate behavior on product slug; they **MAY** gate on archetype when the design spec calls for it.
+- LLMs generating new surfaces **MUST** identify the archetype first, then pull the matching shell from Section 5 of the [source guidelines](../raven-design-system-guidelines.md).

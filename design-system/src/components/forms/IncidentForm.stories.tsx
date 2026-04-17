@@ -29,6 +29,7 @@ export default {
 
 type Story = StoryObj<typeof IncidentForm>;
 
-export const Default: Story = {
+export const IncidentFormPage: Story = {
+  name: 'Incident Form',
   render: () => <IncidentForm />,
 };

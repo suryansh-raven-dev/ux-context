@@ -44,9 +44,6 @@ export function ChatInput({
     return (
       <Box className={rootClass}>
         <Box className="raven-chat-input__top">
-          <IconButton type="button" aria-label="Attach file" size="small" className="raven-chat-input__icon-btn">
-            <AttachFileIcon fontSize="small" />
-          </IconButton>
           <InputBase
             className="raven-chat-input__field"
             placeholder={placeholder}

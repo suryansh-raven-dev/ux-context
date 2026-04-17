@@ -1,0 +1,389 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Guidelines/Audit (v1.0)" />
+
+# raven-ui Non-Negotiables — Audit Report
+
+**Audit date:** 2026-04-17 &middot; **Against:** raven-ui Non-Negotiables Checklist v1.0 &middot; **Method:** static scan of `src/` + `index.ts` exports + `package.json` + theme sources.
+
+**Legend** — `[x]` ships today (component/token + story) &middot; `[~]` partial (exists but missing variants, not exported, or provided via MUI only) &middot; `[ ]` missing from raven-ui.
+
+---
+
+## Summary
+
+<table>
+  <thead>
+    <tr><th>Status</th><th>Count</th><th>% of 231</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>[x]</code> shipping</td><td>57</td><td>25%</td></tr>
+    <tr><td><code>[~]</code> partial</td><td>40</td><td>17%</td></tr>
+    <tr><td><code>[ ]</code> missing</td><td>134</td><td>58%</td></tr>
+  </tbody>
+</table>
+
+### Headlines
+
+- **Tokens** — core static families (color, typography, spacing, radius, shadow, motion) are in. Missing: z-index, breakpoints, density, opacity, granular focus-ring (width/offset), JSON export of tokens.
+- **Components** — strong form/data-display/feedback coverage. Gaps in advanced overlays (Popover, ContextMenu, CommandPalette), streaming/AI infrastructure, and the entire Canvas primitive set.
+- **Exported but not exposed** — several components live in `src/components/inputs/` but are not re-exported from `src/index.ts` (RavenButton, RavenButtonGroup, RavenSlider, RavenRating, RavenToggleButton, RavenTransferList, RavenFAB).
+- **Theming** — `ravenAdminTheme` (light + dark) + `ravenNearMissTheme`. Missing: high-contrast mode, runtime tenant-token override API, JSON export.
+- **Governance / docs** — stories + a11y addon + Chromatic + vitest. Missing: CONTRIBUTING, CHANGELOG, deprecation policy, migration guides, lint rules against hex literals, CI-gated axe.
+
+---
+
+## Section A — Foundation tokens
+
+<table>
+  <thead>
+    <tr><th>Item</th><th>Status</th><th>Evidence</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Color tokens (brand, semantic, surface, content, border)</td><td><code>[x]</code></td><td><code>tokens.ts</code>: categoryColors, statusColors; <code>useRavenTokens.ts</code>: brand/semantic/surface/content/border families</td></tr>
+    <tr><td>Typography (family, weight, size, lineHeight, letterSpacing)</td><td><code>[~]</code></td><td><code>tokens.ts</code>: fontFamily, fontWeight, fontSize; lineHeight &amp; letterSpacing not exposed as tokens</td></tr>
+    <tr><td>Spacing (space.0–12, sidebar.wide, sidebar.rail, topbar, container, form.max)</td><td><code>[~]</code></td><td><code>tokens.ts</code>: space.1–12 (8px); sidebar/rail/topbar/container tokens not exposed</td></tr>
+    <tr><td>Radius (none, sm, md, lg, xl, pill, circle)</td><td><code>[x]</code></td><td><code>tokens.ts</code>: radius family complete</td></tr>
+    <tr><td>Elevation (shadow.1–5)</td><td><code>[x]</code></td><td><code>tokens.ts</code>: shadow 1–5 + brand + chatGlow</td></tr>
+    <tr><td>Motion (duration, ease)</td><td><code>[x]</code></td><td><code>tokens.ts</code>: duration (instant–slow), ease (standard, entrance, exit, emphasized)</td></tr>
+    <tr><td>Z-index tokens</td><td><code>[ ]</code></td><td>Not defined; MUI defaults only</td></tr>
+    <tr><td>Breakpoint tokens</td><td><code>[ ]</code></td><td>Not defined; MUI defaults only</td></tr>
+    <tr><td>Density tokens</td><td><code>[ ]</code></td><td>Not defined; Table/List/Card do not consume density</td></tr>
+    <tr><td>Opacity tokens (disabled, hover, scrim)</td><td><code>[ ]</code></td><td>Not defined as a family</td></tr>
+    <tr><td>Focus ring (color, width, offset)</td><td><code>[~]</code></td><td><code>useRavenTokens.ts</code>: border.focus color only</td></tr>
+    <tr><td>Dark mode mirror for every token</td><td><code>[x]</code></td><td><code>ravenAdminTheme.ts</code>: light + dark palettes; CSS vars in <code>global.css</code></td></tr>
+  </tbody>
+</table>
+
+## Section B — Icon library
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Own icon set vs. dependency on @mui/icons-material</td><td><code>[ ]</code></td><td>No <code>src/icons/</code>; every component imports from <code>@mui/icons-material</code></td></tr>
+    <tr><td>Contribution/naming process documented</td><td><code>[ ]</code></td><td>Not found</td></tr>
+  </tbody>
+</table>
+
+## Section C — Form primitives
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Button</td><td><code>[~]</code></td><td><code>RavenButton</code> exists but not in <code>index.ts</code></td></tr>
+    <tr><td>IconButton</td><td><code>[ ]</code></td><td>No wrapper; raw MUI used</td></tr>
+    <tr><td>ButtonGroup</td><td><code>[~]</code></td><td><code>RavenButtonGroup</code> exists, not exported</td></tr>
+    <tr><td>SplitButton</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Input / TextField</td><td><code>[~]</code></td><td><code>RavenTextField</code> exported; wraps MUI TextField</td></tr>
+    <tr><td>Textarea (auto-grow, counter)</td><td><code>[ ]</code></td><td>Not found as dedicated component</td></tr>
+    <tr><td>Select</td><td><code>[x]</code></td><td><code>RavenSelect</code></td></tr>
+    <tr><td>Combobox / Autocomplete</td><td><code>[~]</code></td><td><code>RavenAutocomplete</code> exported</td></tr>
+    <tr><td>Checkbox</td><td><code>[x]</code></td><td><code>RavenCheckbox</code></td></tr>
+    <tr><td>CheckboxGroup</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Radio / RadioGroup</td><td><code>[x]</code></td><td><code>RavenRadioGroup</code></td></tr>
+    <tr><td>Switch / Toggle</td><td><code>[x]</code></td><td><code>RavenSwitch</code>; <code>RavenToggleButton</code> exists, not exported</td></tr>
+    <tr><td>Slider (single + range)</td><td><code>[~]</code></td><td><code>RavenSlider</code> exists, not exported</td></tr>
+    <tr><td>DatePicker</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>TimePicker</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>FileUpload</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>ColorPicker</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Label / HelperText / ErrorMessage / FieldGroup</td><td><code>[ ]</code></td><td>No dedicated primitives</td></tr>
+    <tr><td>Form / FormValidationSummary</td><td><code>[ ]</code></td><td>No generic form wrapper</td></tr>
+  </tbody>
+</table>
+
+## Section D — Display primitives
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Badge</td><td><code>[x]</code></td><td><code>RavenBadge</code></td></tr>
+    <tr><td>Chip / Tag</td><td><code>[x]</code></td><td><code>RavenChip</code></td></tr>
+    <tr><td>StatusChip</td><td><code>[~]</code></td><td><code>ReportStatusChip</code> — domain-flavored; no generic StatusChip binding to status tokens</td></tr>
+    <tr><td>CategoryDot</td><td><code>[ ]</code></td><td>Not found; tokens exist but no primitive</td></tr>
+    <tr><td>Avatar</td><td><code>[x]</code></td><td><code>RavenAvatar</code></td></tr>
+    <tr><td>AvatarGroup</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Divider</td><td><code>[x]</code></td><td><code>RavenDivider</code></td></tr>
+    <tr><td>Skeleton</td><td><code>[x]</code></td><td><code>RavenSkeleton</code></td></tr>
+    <tr><td>Spinner</td><td><code>[ ]</code></td><td>Not found (Progress components cover most cases)</td></tr>
+    <tr><td>ProgressBar</td><td><code>[x]</code></td><td><code>RavenLinearProgress</code></td></tr>
+    <tr><td>ProgressRing</td><td><code>[x]</code></td><td><code>RavenCircularProgress</code></td></tr>
+    <tr><td>Tooltip</td><td><code>[x]</code></td><td><code>RavenTooltip</code></td></tr>
+    <tr><td>KeyboardShortcut</td><td><code>[ ]</code></td><td>Not found</td></tr>
+  </tbody>
+</table>
+
+## Section E — Overlay primitives
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Modal / Dialog</td><td><code>[x]</code></td><td><code>RavenDialog</code></td></tr>
+    <tr><td>AlertDialog</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Drawer / SlideOver</td><td><code>[~]</code></td><td><code>ActivityDrawer</code> — domain-flavored</td></tr>
+    <tr><td>Popover</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Menu</td><td><code>[x]</code></td><td><code>RavenMenu</code></td></tr>
+    <tr><td>ContextMenu</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>CommandPalette (Cmd+K)</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Sheet (mobile bottom)</td><td><code>[ ]</code></td><td>Not found</td></tr>
+  </tbody>
+</table>
+
+## Section F — Feedback primitives
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Toast / Snackbar</td><td><code>[x]</code></td><td><code>RavenSnackbar</code></td></tr>
+    <tr><td>Banner / Alert</td><td><code>[x]</code></td><td><code>RavenAlert</code></td></tr>
+    <tr><td>InlineError / InlineSuccess</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>EmptyState</td><td><code>[ ]</code></td><td>Not found — blocks the archetype-specific empty-state requirement</td></tr>
+    <tr><td>NotFoundState / ErrorState</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>ConfirmationDialog</td><td><code>[ ]</code></td><td>Not found as a dedicated wrapper</td></tr>
+  </tbody>
+</table>
+
+## Section G — Navigation primitives
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Tabs</td><td><code>[x]</code></td><td><code>TabNavigation</code></td></tr>
+    <tr><td>SegmentedControl</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Breadcrumbs</td><td><code>[x]</code></td><td><code>BreadcrumbNav</code></td></tr>
+    <tr><td>Pagination</td><td><code>[x]</code></td><td><code>RavenPagination</code></td></tr>
+    <tr><td>Stepper</td><td><code>[~]</code></td><td><code>StatusStepper</code> — domain-aligned; no generic Stepper</td></tr>
+    <tr><td>NavigationMenu</td><td><code>[~]</code></td><td><code>RavenMenu</code>; no dedicated primary-nav tree component</td></tr>
+    <tr><td>SubMenu / NavGroup</td><td><code>[ ]</code></td><td>Not found as a reusable primitive</td></tr>
+    <tr><td>BackLink</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>SkipLink</td><td><code>[ ]</code></td><td>Not found — required by §15 / Section P</td></tr>
+  </tbody>
+</table>
+
+## Section H — Shell primitives
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>AppShell (slot composition)</td><td><code>[x]</code></td><td><code>AppShell</code></td></tr>
+    <tr><td>WideSidebar</td><td><code>[~]</code></td><td><code>SideNavigation</code> serves as wide sidebar; not named by archetype</td></tr>
+    <tr><td>RailSidebar</td><td><code>[ ]</code></td><td>Not found — blocks P&amp;ID default shell</td></tr>
+    <tr><td>RailWithExpand</td><td><code>[ ]</code></td><td>Not found — required by Section 5.3 of guidelines</td></tr>
+    <tr><td>TopBar (brand/nav/actions/user slots)</td><td><code>[ ]</code></td><td>Not found as a dedicated primitive</td></tr>
+    <tr><td>PageHeader</td><td><code>[x]</code></td><td><code>PageHeader</code></td></tr>
+    <tr><td>PageLayout</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>TenantLogo</td><td><code>[x]</code></td><td><code>TenantLogo</code></td></tr>
+    <tr><td>BrandAttribution ("Powered by raven")</td><td><code>[ ]</code></td><td>Not a reusable primitive; the branding row is inlined in <code>SideNavigation.tsx</code></td></tr>
+    <tr><td>TenantContextProvider (runtime tokens/logo)</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>UserMenu</td><td><code>[x]</code></td><td><code>UserProfileMenu</code></td></tr>
+    <tr><td>DomainSelector</td><td><code>[ ]</code></td><td>Not found</td></tr>
+  </tbody>
+</table>
+
+## Section I — Layout primitives
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Stack (vertical, gap token)</td><td><code>[ ]</code></td><td>No raven wrapper; MUI Stack used directly</td></tr>
+    <tr><td>Inline (horizontal, gap token)</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Grid</td><td><code>[ ]</code></td><td>No raven wrapper; MUI Grid used directly</td></tr>
+    <tr><td>Container</td><td><code>[x]</code></td><td><code>Container</code></td></tr>
+    <tr><td>Center</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Split (two-column responsive)</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>AspectRatio</td><td><code>[ ]</code></td><td>Not found</td></tr>
+  </tbody>
+</table>
+
+## Section J — Data display
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Table (sortable, sticky, selection, bulk, density, empty, loading)</td><td><code>[x]</code></td><td><code>DataTable</code></td></tr>
+    <tr><td>DataGrid</td><td><code>[~]</code></td><td><code>VirtualizedDataTable</code></td></tr>
+    <tr><td>List</td><td><code>[x]</code></td><td><code>RavenList</code></td></tr>
+    <tr><td>Tree</td><td><code>[ ]</code></td><td>Not found — blocks P&amp;ID browse panel &amp; NMMS hierarchical filters</td></tr>
+    <tr><td>Card</td><td><code>[x]</code></td><td><code>RavenCard</code></td></tr>
+    <tr><td>KeyValueList / DefinitionList</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Accordion</td><td><code>[x]</code></td><td><code>RavenAccordion</code></td></tr>
+    <tr><td>Disclosure</td><td><code>[ ]</code></td><td>Accordion covers most cases</td></tr>
+    <tr><td>Timeline</td><td><code>[~]</code></td><td><code>ActivityTimelineItem</code> — item only; no Timeline container</td></tr>
+  </tbody>
+</table>
+
+## Section K — AI primitives (Conversational Canvas)
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>ChatInput</td><td><code>[x]</code></td><td><code>ChatInput</code></td></tr>
+    <tr><td>MessageBubble / ChatBubble</td><td><code>[x]</code></td><td><code>ChatBubble</code></td></tr>
+    <tr><td>StreamingText</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>TypingIndicator</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>CitationStrip / CitationCard</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>SuggestionCard</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>ChatSession / ChatHistoryList</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>AIAgentSelector</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>AIErrorState</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>PromptPlaceholder (rotating hint)</td><td><code>[ ]</code></td><td>Not found</td></tr>
+  </tbody>
+</table>
+
+## Section L — Canvas primitives (Creative Canvas)
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>CanvasViewport, CanvasToolbar, SelectionOutline, HoverHighlight, MultiSelect, ContextMenu</td><td><code>[ ]</code></td><td>Entire canvas set missing — no P&amp;ID shell primitives in raven-ui</td></tr>
+    <tr><td>EntityBadge (equipment/line/instrument)</td><td><code>[ ]</code></td><td>Not found; engineering color tokens exist</td></tr>
+    <tr><td>MetadataPanel</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>DomainBadge</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>CanvasEmptyState</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>KeyboardEntityList (a11y fallback)</td><td><code>[ ]</code></td><td>Not found</td></tr>
+  </tbody>
+</table>
+
+## Section M — Workflow primitives (Transactional Workflow)
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>RecordTable (composes Table + FilterBar + pagination)</td><td><code>[ ]</code></td><td>Not found — consumers compose manually</td></tr>
+    <tr><td>FilterBar</td><td><code>[~]</code></td><td><code>StatusFilterBar</code> — NMMS-flavored; no generic FilterBar</td></tr>
+    <tr><td>BulkActionBar</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>InlineEdit (cell-level)</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>LifecycleIndicator</td><td><code>[ ]</code></td><td>Not found (StatusStepper close but not the pill-chain)</td></tr>
+    <tr><td>SLABadge</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>AssigneeAvatar (with presence dot)</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>AuditLogEntry</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>RecordHeader</td><td><code>[ ]</code></td><td>Not found</td></tr>
+  </tbody>
+</table>
+
+## Section N — Theming infrastructure
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Tenant theming layer (runtime token swap)</td><td><code>[~]</code></td><td>Static themes only; no runtime tenant override API</td></tr>
+    <tr><td>Dark mode</td><td><code>[x]</code></td><td><code>ravenAdminDarkTheme</code></td></tr>
+    <tr><td>High-contrast mode</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Theme override API (narrow, no Locked bypass)</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Tokens in CSS vars + JS + JSON</td><td><code>[~]</code></td><td>CSS vars in <code>global.css</code>; TS tokens in <code>tokens.ts</code>; no JSON export</td></tr>
+  </tbody>
+</table>
+
+## Section O — Motion primitives
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Fade / Slide / Scale / Collapse / Shimmer</td><td><code>[ ]</code></td><td>No raven wrappers; MUI primitives used directly</td></tr>
+    <tr><td>prefers-reduced-motion respected</td><td><code>[~]</code></td><td>Not systematically applied</td></tr>
+  </tbody>
+</table>
+
+## Section P — Accessibility baselines
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>WCAG 2.1 AA via axe</td><td><code>[~]</code></td><td><code>@storybook/addon-a11y</code> in Storybook; not gated in CI</td></tr>
+    <tr><td>Focus ring tokens (color, width, offset)</td><td><code>[~]</code></td><td>Color only</td></tr>
+    <tr><td>Focus trap in overlays</td><td><code>[~]</code></td><td>MUI Dialog/Drawer provide; not documented as a contract</td></tr>
+    <tr><td>Live regions for async content</td><td><code>[ ]</code></td><td>No systematic <code>aria-live</code> usage</td></tr>
+    <tr><td>Touch target 44×44 on pointer:coarse</td><td><code>[~]</code></td><td>Audited &amp; fixed in SideNavigation / IncidentsSummary / MobileAppShell; not enforced library-wide</td></tr>
+    <tr><td>Skip link primitive</td><td><code>[ ]</code></td><td>Not found</td></tr>
+  </tbody>
+</table>
+
+## Section Q — Documentation baselines
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Story per component</td><td><code>[x]</code></td><td>94 <code>*.stories.tsx</code> files</td></tr>
+    <tr><td>Props tables (autodocs)</td><td><code>[~]</code></td><td>Storybook autodocs configured; coverage varies</td></tr>
+    <tr><td>Accessibility section per component</td><td><code>[ ]</code></td><td>Not standardized</td></tr>
+    <tr><td>Do / don't examples</td><td><code>[ ]</code></td><td>Not standardized</td></tr>
+    <tr><td>CHANGELOG</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Migration guides</td><td><code>[ ]</code></td><td>Not found</td></tr>
+  </tbody>
+</table>
+
+## Section R — Tooling baselines
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Published as a versioned npm package</td><td><code>[ ]</code></td><td><code>"private": true</code>; no <code>main</code>/<code>exports</code>/<code>types</code> fields</td></tr>
+    <tr><td>TypeScript types shipped</td><td><code>[~]</code></td><td>Types exist in src; no build output</td></tr>
+    <tr><td>Tree-shakeable</td><td><code>[~]</code></td><td>ES modules via Vite</td></tr>
+    <tr><td>Visual regression</td><td><code>[x]</code></td><td><code>chromatic</code> script configured</td></tr>
+    <tr><td>Unit tests</td><td><code>[x]</code></td><td>Vitest, 118+ tests</td></tr>
+    <tr><td>Accessibility tests (axe in CI)</td><td><code>[ ]</code></td><td>a11y addon only; no CI gate</td></tr>
+    <tr><td>Lint rules (no hex, no magic px)</td><td><code>[ ]</code></td><td>Not configured</td></tr>
+    <tr><td>Codemods</td><td><code>[ ]</code></td><td>Not found</td></tr>
+  </tbody>
+</table>
+
+## Section S — Quality gates
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>No hardcoded hex in component source</td><td><code>[~]</code></td><td>Production code clean; docs/test fixtures (ColorPalette, theme tests) excluded</td></tr>
+    <tr><td>No hardcoded px for spacing</td><td><code>[~]</code></td><td>Mostly migrated; a few in story demo code</td></tr>
+    <tr><td>Axe checks pass on every story</td><td><code>[ ]</code></td><td>Not enforced</td></tr>
+    <tr><td>Visual regression</td><td><code>[x]</code></td><td>Chromatic</td></tr>
+    <tr><td>Changelog entry per release</td><td><code>[ ]</code></td><td>No CHANGELOG file</td></tr>
+  </tbody>
+</table>
+
+## Section T — Governance
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Single owner named in README</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>CONTRIBUTING.md</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Proposal template</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Release cadence documented</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Deprecation policy</td><td><code>[ ]</code></td><td>Not found</td></tr>
+    <tr><td>Examples app</td><td><code>[~]</code></td><td>Storybook serves this role</td></tr>
+  </tbody>
+</table>
+
+## Section U — Product-purity prohibitions
+
+<table>
+  <thead><tr><th>Item</th><th>Status</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>No product-specific business logic</td><td><code>[~]</code></td><td><code>IncidentForm</code>, <code>StatusFilterBar</code>, <code>ActivityDrawer</code> are NMMS-flavored wrappers; acceptable if re-scoped as domain examples, not primitives</td></tr>
+    <tr><td>No tenant-specific data baked in</td><td><code>[~]</code></td><td>Sample data ("NM-2026-0142", "ACME") lives in stories only</td></tr>
+    <tr><td>No product analytics events</td><td><code>[x]</code></td><td>No analytics calls found</td></tr>
+    <tr><td>No product API clients</td><td><code>[x]</code></td><td>No API integrations</td></tr>
+    <tr><td>No single-product illustrations</td><td><code>[x]</code></td><td>No product illustration assets shipped</td></tr>
+  </tbody>
+</table>
+
+---
+
+## Priority roadmap (next five raven-ui issues)
+
+Ranked by product pain — the gap most often forces local workarounds.
+
+1. **Export the existing-but-hidden inputs.** RavenButton, RavenButtonGroup, RavenSlider, RavenRating, RavenToggleButton, RavenTransferList, RavenFAB — all live under `src/components/inputs/` but are absent from `src/index.ts`. Cheapest compliance win in the whole library.
+2. **Ship `EmptyState`, `SkipLink`, `CategoryDot`.** Each is referenced by the guidelines as mandatory and each currently forces product code to inline the thing. All three are single-component PRs.
+3. **Promote token families for `zIndex`, `breakpoint`, `density`, `opacity`, and full focus-ring.** These are what every composite component silently falls back to MUI defaults for today.
+4. **Create a generic `FilterBar` + `RecordTable`.** `StatusFilterBar` is NMMS-flavored; the generic primitive it hides behind would unblock any future workflow product.
+5. **Governance scaffolding.** Add `CHANGELOG.md`, `CONTRIBUTING.md`, and a single-line owner block in `README.md`. Hex-literal lint rule in the same PR — the grep pass we did for tokens should become an ESLint rule so regressions can't land.
+
+---
+
+## Methodology
+
+- **Source of truth:** `src/index.ts` (what's actually exported) + `src/components/**/*.tsx` + `src/tokens/tokens.ts` + `src/theme/*.ts` + `package.json` + `.storybook/main.ts`.
+- **Status rules:** `[x]` requires the component to be a named export in `src/index.ts` **and** have a `.stories.tsx` file. `[~]` = exists in `src/` but not exported, OR exported but missing states/variants, OR domain-flavored without a generic sibling. `[ ]` = no match in `src/`.
+- **Out of scope:** runtime behavior verification, axe-core runs, bundle size measurements, visual regression diffs. These need a separate audit.

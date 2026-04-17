@@ -49,7 +49,8 @@ export function AnalyticsChartCard({
       className="analytics-chart-card"
       sx={{
         borderRadius: '20px',
-        border: '1px solid #F3E5F5',
+        border: '1px solid',
+        borderColor: 'divider',
         overflow: 'hidden',
         height: height ?? 'auto',
       }}

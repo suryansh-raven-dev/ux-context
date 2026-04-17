@@ -1,18 +1,18 @@
-import FiberManualRecordRounded from '@mui/icons-material/FiberManualRecordRounded';
+import Box from '@mui/material/Box';
 
-import './ReportStatusChip.css';
+import { statusColors } from '../../../tokens/tokens';
 
-const STATUS_CONFIG: Record<string, { bg: string; text: string; dot: string; label: string }> = {
-  'in-progress': { bg: '#E3F2FD', text: '#0D47A1', dot: '#0288D1', label: 'In-progress' },
-  'in progress': { bg: '#E3F2FD', text: '#0D47A1', dot: '#0288D1', label: 'In-progress' },
-  closed: { bg: '#E8F5E9', text: '#33691E', dot: '#4CAF50', label: 'Closed' },
-  pending: { bg: '#FFF8E1', text: '#FF6F00', dot: '#F57C00', label: 'Pending' },
-  released: { bg: '#E8F5E9', text: '#1B5E20', dot: '#2E7D32', label: 'Released' },
-  approved: { bg: '#E8F5E9', text: '#1B5E20', dot: '#2E7D32', label: 'Approved' },
-  rejected: { bg: '#FFEBEE', text: '#B71C1C', dot: '#F44336', label: 'Rejected' },
+type StatusStyle = { bg: string; text: string; label: string };
+
+const STATUS_CONFIG: Record<string, StatusStyle> = {
+  'in-progress': { bg: statusColors['in-progress'].surface, text: statusColors['in-progress'].content, label: 'In-progress' },
+  'in progress': { bg: statusColors['in-progress'].surface, text: statusColors['in-progress'].content, label: 'In-progress' },
+  closed: { bg: statusColors.closed.surface, text: statusColors.closed.content, label: 'Closed' },
+  pending: { bg: statusColors.pending.surface, text: statusColors.pending.content, label: 'Pending' },
+  released: { bg: statusColors.released.surface, text: statusColors.released.content, label: 'Released' },
+  approved: { bg: statusColors.approved.surface, text: statusColors.approved.content, label: 'Approved' },
+  rejected: { bg: statusColors.rejected.surface, text: statusColors.rejected.content, label: 'Rejected' },
 };
-
-const FALLBACK = { bg: '#F5F5F5', text: 'rgba(0,0,0,0.6)', dot: '#9E9E9E' };
 
 export type ReportStatusChipProps = {
   status: string;
@@ -22,27 +22,39 @@ export type ReportStatusChipProps = {
 export function ReportStatusChip({ status, label }: ReportStatusChipProps) {
   const key = status.trim().toLowerCase();
   const config = STATUS_CONFIG[key];
-  const bg = config?.bg ?? FALLBACK.bg;
-  const textColor = config?.text ?? FALLBACK.text;
-  const dotColor = config?.dot ?? FALLBACK.dot;
+  const bg = config?.bg ?? 'action.hover';
+  const textColor = config?.text ?? 'text.secondary';
   const displayLabel = label ?? config?.label ?? status;
 
   return (
-    <span
-      className="raven-report-status-chip"
-      style={{ backgroundColor: bg }}
+    <Box
+      component="span"
       title={displayLabel}
+      sx={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        height: 24,
+        px: 0.5,
+        borderRadius: '50px',
+        backgroundColor: bg,
+      }}
     >
-      <FiberManualRecordRounded
-        className="raven-report-status-chip__dot"
-        style={{ color: dotColor }}
-      />
-      <span
-        className="raven-report-status-chip__label"
-        style={{ color: textColor }}
+      <Box
+        component="span"
+        sx={{
+          // CLAUDE.md: status chip labels use Roboto (documented exception to Source Sans 3).
+          fontFamily: '"Roboto", sans-serif',
+          fontSize: '13px',
+          fontWeight: 400,
+          letterSpacing: '0.16px',
+          lineHeight: '18px',
+          px: 0.75,
+          whiteSpace: 'nowrap',
+          color: textColor,
+        }}
       >
         {displayLabel}
-      </span>
-    </span>
+      </Box>
+    </Box>
   );
 }

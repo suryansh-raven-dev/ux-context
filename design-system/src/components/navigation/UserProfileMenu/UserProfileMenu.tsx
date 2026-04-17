@@ -12,8 +12,6 @@ import LogoutRounded from '@mui/icons-material/LogoutRounded';
 import OpenInNewRounded from '@mui/icons-material/OpenInNewRounded';
 import ChevronRightRounded from '@mui/icons-material/ChevronRightRounded';
 
-import './UserProfileMenu.css';
-
 export type UserProfileMenuProps = {
   anchorEl: HTMLElement | null;
   open: boolean;
@@ -26,6 +24,26 @@ export type UserProfileMenuProps = {
   onSignOut?: () => void;
   showManageUsers?: boolean;
   darkModeLabel?: string;
+};
+
+const paperSx = {
+  borderRadius: '12px',
+  minWidth: 218,
+};
+
+const trailingIconSx = {
+  fontSize: 20,
+  color: 'text.secondary',
+  ml: 1,
+};
+
+const signOutIconSx = {
+  color: 'error.main',
+  '& .MuiSvgIcon-root': { color: 'error.main' },
+};
+
+const signOutTextSx = {
+  '& .MuiListItemText-primary': { color: 'error.main' },
 };
 
 export function UserProfileMenu({
@@ -46,12 +64,7 @@ export function UserProfileMenu({
       anchorEl={anchorEl}
       open={open}
       onClose={onClose}
-      className="raven-user-profile-menu"
-      slotProps={{
-        paper: {
-          className: 'raven-user-profile-menu__paper',
-        },
-      }}
+      slotProps={{ paper: { sx: paperSx } }}
     >
       {onProfile && (
         <MenuItem onClick={() => { onProfile(); onClose(); }}>
@@ -75,7 +88,7 @@ export function UserProfileMenu({
         <MenuItem onClick={() => { onManageUsers(); onClose(); }}>
           <ListItemIcon><PeopleRounded /></ListItemIcon>
           <ListItemText>Manage Users</ListItemText>
-          <OpenInNewRounded className="raven-user-profile-menu__trailing-icon" />
+          <OpenInNewRounded sx={trailingIconSx} />
         </MenuItem>
       )}
       <Divider sx={{ mx: 2 }} />
@@ -83,15 +96,12 @@ export function UserProfileMenu({
         <MenuItem onClick={() => { onHelpSupport(); onClose(); }}>
           <ListItemIcon><HelpOutlineRounded /></ListItemIcon>
           <ListItemText>Help &amp; Support</ListItemText>
-          <ChevronRightRounded className="raven-user-profile-menu__trailing-icon" />
+          <ChevronRightRounded sx={trailingIconSx} />
         </MenuItem>
       )}
       {onSignOut && (
-        <MenuItem
-          onClick={() => { onSignOut(); onClose(); }}
-          className="raven-user-profile-menu__sign-out"
-        >
-          <ListItemIcon className="raven-user-profile-menu__sign-out-icon">
+        <MenuItem onClick={() => { onSignOut(); onClose(); }} sx={signOutTextSx}>
+          <ListItemIcon sx={signOutIconSx}>
             <LogoutRounded />
           </ListItemIcon>
           <ListItemText>Sign Out</ListItemText>

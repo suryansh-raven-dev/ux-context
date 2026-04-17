@@ -87,6 +87,39 @@ export type { SectionDividerLabelProps } from './components/surfaces/SectionDivi
 
 // Brand
 export { BrandLogos } from './components/brand/BrandLogos';
+export { TenantLogo } from './components/brand/TenantLogo/TenantLogo';
+export type { TenantLogoProps, TenantLogoSize } from './components/brand/TenantLogo/TenantLogo';
+
+// Tokens (3.3 canonical surface)
+export {
+  ravenTokensStatic,
+  categoryColors,
+  statusColors,
+  engineeringColors,
+  fontFamily,
+  fontSize,
+  fontWeight,
+  space,
+  radius,
+  shadow,
+  duration,
+  ease,
+  zIndex,
+  breakpoint,
+  density,
+  opacity,
+  focusRing,
+  useRavenTokens,
+  resolveRavenTokens,
+} from './tokens';
+export type {
+  RavenTokensStatic,
+  CategoryKey,
+  StatusKey,
+  DensityKey,
+  RavenTokens,
+  RavenModeTokens,
+} from './tokens';
 export { MuiV6Catalog } from './components/catalog/MuiV6Catalog';
 export { muiV6Catalog, muiV6Categories } from './catalog/muiV6Catalog';
 export type { MuiV6Category, MuiV6CatalogItem, MuiGuideline, RavenSupportLevel } from './catalog/muiV6Catalog';
@@ -109,3 +142,54 @@ export type { RavenAutocompleteProps } from './components/inputs/RavenAutocomple
 export { VirtualizedAutocompleteListbox } from './components/inputs/RavenAutocomplete/VirtualizedAutocompleteListbox';
 export { RowActionButton } from './components/inputs/RowActionButton/RowActionButton';
 export type { RowActionButtonProps } from './components/inputs/RowActionButton/RowActionButton';
+export { RavenButton, RavenIconButton } from './components/inputs/RavenButton/RavenButton';
+export type {
+  RavenButtonProps,
+  RavenButtonVariant,
+  RavenButtonSize,
+  RavenButtonColor,
+  RavenIconButtonProps,
+  RavenIconButtonSize,
+  RavenIconButtonColor,
+} from './components/inputs/RavenButton/RavenButton';
+export { RavenButtonGroup } from './components/inputs/RavenButtonGroup/RavenButtonGroup';
+export type {
+  RavenButtonGroupProps,
+  RavenButtonGroupButton,
+} from './components/inputs/RavenButtonGroup/RavenButtonGroup';
+export { RavenSlider } from './components/inputs/RavenSlider/RavenSlider';
+export type { RavenSliderProps } from './components/inputs/RavenSlider/RavenSlider';
+export { RavenRating } from './components/inputs/RavenRating/RavenRating';
+export type { RavenRatingProps } from './components/inputs/RavenRating/RavenRating';
+export { RavenToggleButton, RavenToggleButtonGroup } from './components/inputs/RavenToggleButton/RavenToggleButton';
+export type {
+  RavenToggleButtonProps,
+  RavenToggleButtonGroupProps,
+} from './components/inputs/RavenToggleButton/RavenToggleButton';
+export { RavenTransferList } from './components/inputs/RavenTransferList/RavenTransferList';
+export type { RavenTransferListProps } from './components/inputs/RavenTransferList/RavenTransferList';
+export { RavenFab } from './components/inputs/RavenFab/RavenFab';
+export type { RavenFabProps } from './components/inputs/RavenFab/RavenFab';
+
+// Archetype primitives (§Section D / K / P)
+export { EmptyState } from './components/feedback/EmptyState/EmptyState';
+export type { EmptyStateProps } from './components/feedback/EmptyState/EmptyState';
+export { SkipLink } from './components/navigation/SkipLink/SkipLink';
+export type { SkipLinkProps } from './components/navigation/SkipLink/SkipLink';
+export { CategoryDot } from './components/data-display/CategoryDot/CategoryDot';
+export type { CategoryDotProps, CategoryDotSize } from './components/data-display/CategoryDot/CategoryDot';
+export { TypingIndicator } from './components/ai/TypingIndicator/TypingIndicator';
+export type { TypingIndicatorProps } from './components/ai/TypingIndicator/TypingIndicator';
+export { CitationCard } from './components/ai/CitationCard/CitationCard';
+export type { CitationCardProps } from './components/ai/CitationCard/CitationCard';
+export { CitationStrip } from './components/ai/CitationStrip/CitationStrip';
+export type { CitationStripProps, CitationStripItem } from './components/ai/CitationStrip/CitationStrip';
+
+// Workflow primitives (§Section M)
+export { FilterBar } from './components/workflow/FilterBar/FilterBar';
+export type { FilterBarProps, FilterChip } from './components/workflow/FilterBar/FilterBar';
+export { LifecycleIndicator } from './components/workflow/LifecycleIndicator/LifecycleIndicator';
+export type {
+  LifecycleIndicatorProps,
+  LifecycleStep,
+} from './components/workflow/LifecycleIndicator/LifecycleIndicator';

@@ -1,0 +1,57 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Guidelines/Introduction" />
+
+# Raven Design System Guidelines
+
+**Version:** 1.0 (draft) &middot; **Owner:** Design (Suryansh)
+
+**Audience:** Frontend engineers, future designers, LLM code/UI generators.
+
+**Scope:** Raven Copilot (AI-SEARCH), Near Miss Management System (NMMS), P&amp;ID Tool.
+
+**Foundation:** `raven-ui` — the versioned component library distributed as a package and rendered in this Storybook.
+
+---
+
+## How to use this document
+
+These guidelines have three readers.
+
+1. **Frontend engineers** building product surfaces. Read *Product Archetypes*, *Three-Tier Contract*, and the component docs in the rest of Storybook. Treat every rule with **MUST** as a PR-blocker. Treat **SHOULD** as the default unless you have a documented reason. Treat **MAY** as permission, not encouragement.
+
+2. **Designers** extending any product. Read the whole *Guidelines* section end to end. The cross-product decisions that keep the system coherent live in *Product Archetypes* and *Three-Tier Contract*.
+
+3. **LLMs** generating or editing Raven UI code. Load the *Product Archetypes* and *Three-Tier Contract* pages as system context before any UI generation request. When rules conflict, the narrower rule wins — product-specific over cross-product, pattern over component default.
+
+Keywords in these docs follow **RFC 2119** conventions: MUST, MUST NOT, SHOULD, SHOULD NOT, MAY.
+
+---
+
+## What lives where
+
+<table>
+  <thead>
+    <tr><th>Page</th><th>Content</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Product Archetypes</strong></td>
+      <td>The three shapes of Raven — Conversational Canvas, Transactional Workflow, Creative Canvas. Which product is which, and what that determines.</td>
+    </tr>
+    <tr>
+      <td><strong>Three-Tier Contract</strong></td>
+      <td>Locked / Guided / Free. The single most important frame for deciding how much a surface can diverge.</td>
+    </tr>
+    <tr>
+      <td><strong>Components</strong> (rest of sidebar)</td>
+      <td>Stories, props, and usage examples for each <code>raven-ui</code> component.</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## The source of truth
+
+The canonical document is [`raven-design-system-guidelines.md`](../raven-design-system-guidelines.md) at the repo root. These Storybook pages mirror the archetype-shaping sections (§0–§2) so engineers and LLMs can browse them alongside the components they are binding to.
