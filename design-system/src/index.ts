@@ -7,6 +7,10 @@ export { AppShell } from './components/layout/AppShell';
 export { SideNavigation } from './components/layout/SideNavigation';
 export { PageHeader } from './components/layout/PageHeader';
 export { MobileAppShell } from './components/layout/MobileAppShell';
+export { Box } from './components/layout/Box/Box';
+export type { BoxProps, BoxVariant } from './components/layout/Box/Box';
+export { Container } from './components/layout/Container/Container';
+export type { ContainerProps, ContainerMaxWidth } from './components/layout/Container/Container';
 
 // Navigation
 export { TabNavigation } from './components/navigation/TabNavigation';
