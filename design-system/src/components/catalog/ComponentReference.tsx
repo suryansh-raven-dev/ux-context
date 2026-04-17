@@ -159,6 +159,48 @@ export function ComponentReference({
         </Box>
       ) : null}
 
+      {item.crossPlatform?.length ? (
+        <Box sx={{ mt: 3 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#4A148C', mb: 1 }}>
+            Cross-platform parity (Google Material · Microsoft Fluent)
+          </Typography>
+          <ReferenceList items={item.crossPlatform} />
+        </Box>
+      ) : null}
+
+      {item.ravenGuidance?.length ? (
+        <Box sx={{ mt: 3 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#4A148C', mb: 1 }}>
+            Raven guidance
+          </Typography>
+          <ReferenceList items={item.ravenGuidance} />
+        </Box>
+      ) : null}
+
+      {item.ravenUsage ? (
+        <Box sx={{ mt: 3 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#4A148C', mb: 1 }}>
+            Raven usage
+          </Typography>
+          <Box
+            component="pre"
+            sx={{
+              m: 0,
+              p: 2,
+              borderRadius: 2,
+              backgroundColor: '#0E171B',
+              color: '#E1BEE7',
+              overflowX: 'auto',
+              fontSize: 13,
+              lineHeight: 1.65,
+              fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+            }}
+          >
+            {item.ravenUsage}
+          </Box>
+        </Box>
+      ) : null}
+
       <Stack direction="row" spacing={1.5} useFlexGap flexWrap="wrap" sx={{ mt: 3 }}>
         <Link
           href={item.docsUrl}
