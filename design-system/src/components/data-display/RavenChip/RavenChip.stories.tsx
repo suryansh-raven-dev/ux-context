@@ -182,6 +182,35 @@ export const UsageRule: Story = {
   },
   render: () => (
     <StorybookPage maxWidth={960}>
+      <StorybookSection
+        title="Grey default chip spec (Figma 1328-34470)"
+        description="The grey default chip is NOT a pill. It uses 4px radius, 20px height, #eeeeee background, and Source Sans 3 Medium 13/18 with 0.16 letter-spacing. Semantic/status chips keep the pill radius; only the text-only default variant is squared-off."
+      >
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: 'max-content 1fr',
+            columnGap: 3,
+            rowGap: 1.25,
+            alignItems: 'center',
+            fontSize: 13,
+          }}
+        >
+          <Typography variant="caption" color="text.secondary">Example</Typography>
+          <RavenChip label="Format No. IEPL-HSEF/S-4.313A" />
+          <Typography variant="caption" color="text.secondary">Radius</Typography>
+          <Typography variant="body2">4px (not pill)</Typography>
+          <Typography variant="caption" color="text.secondary">Height</Typography>
+          <Typography variant="body2">20px</Typography>
+          <Typography variant="caption" color="text.secondary">Background</Typography>
+          <Typography variant="body2">#eeeeee (grey/lighten-3)</Typography>
+          <Typography variant="caption" color="text.secondary">Typography</Typography>
+          <Typography variant="body2">Source Sans 3 Medium · 13/18 · 0.16 letter-spacing</Typography>
+          <Typography variant="caption" color="text.secondary">Padding</Typography>
+          <Typography variant="body2">3px vertical · 6px horizontal</Typography>
+        </Box>
+      </StorybookSection>
+
       <StorybookSection title="Text only → grey default chip">
         <Stack direction="row" spacing={2}>
           <RuleBlock
