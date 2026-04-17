@@ -20,6 +20,10 @@ import WarningIcon from '@mui/icons-material/WarningRounded';
 
 import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { TabNavigation } from './TabNavigation';
+import { StatusFilterBar } from './StatusFilterBar';
+import { ViewToggle } from './ViewToggle';
+import ViewList from '@mui/icons-material/ViewListRounded';
+import ViewModule from '@mui/icons-material/ViewModuleRounded';
 
 const meta = {
   title: 'Components/Navigation/Tabs',
@@ -536,6 +540,50 @@ function VerticalTabsExample() {
   );
 }
 
+function StatusFilterBarExample() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  return (
+    <StatusFilterBar
+      filters={[
+        { label: 'All', count: 48 },
+        { label: 'Open', count: 12 },
+        { label: 'In review', count: 7 },
+        { label: 'Closed', count: 29 },
+      ]}
+      activeIndex={activeIndex}
+      onChange={setActiveIndex}
+    />
+  );
+}
+
+function ViewToggleIconExample() {
+  const [value, setValue] = useState('list');
+  return (
+    <ViewToggle
+      options={[
+        { label: 'List', value: 'list', icon: <ViewList fontSize="small" /> },
+        { label: 'Grid', value: 'grid', icon: <ViewModule fontSize="small" /> },
+      ]}
+      value={value}
+      onChange={setValue}
+    />
+  );
+}
+
+function ViewToggleTextExample() {
+  const [value, setValue] = useState('a');
+  return (
+    <ViewToggle
+      options={[
+        { label: 'Summary', value: 'a' },
+        { label: 'Details', value: 'b' },
+      ]}
+      value={value}
+      onChange={setValue}
+    />
+  );
+}
+
 function SegmentedTabsExample() {
   const [activeIndex, setActiveIndex] = useState(0);
   const idPrefix = 'segmented-tabs';
@@ -588,6 +636,24 @@ export const TabsPage: Story = {
         description="High-emphasis pill tabs tuned to match the Figma-style proportions for icon, label weight, spacing, border, and elevation."
       >
         <SegmentedTabsExample />
+      </StorybookSection>
+      <StorybookSection
+        title="Status Filter Bar"
+        description="Count-aware variant of the Tabs pattern. Same segmented-pill visual bound to filter-with-counts semantics (All (48) / Open (12) / Closed (29))."
+      >
+        <StatusFilterBarExample />
+      </StorybookSection>
+      <StorybookSection
+        title="View Toggle (icon + label)"
+        description="2–4 option variant of the Tabs pattern for switching the rendering of the same content (List / Grid, Chart / Table, Summary / Details)."
+      >
+        <ViewToggleIconExample />
+      </StorybookSection>
+      <StorybookSection
+        title="View Toggle (text only)"
+        description="Text-only View Toggle when icons aren't needed — Summary / Details style switchers."
+      >
+        <ViewToggleTextExample />
       </StorybookSection>
       <StorybookSection
         title="Basic Tabs"

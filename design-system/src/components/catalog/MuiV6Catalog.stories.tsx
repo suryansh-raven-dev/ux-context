@@ -4,7 +4,7 @@ import { muiV6Categories } from '../../catalog/muiV6Catalog';
 import { MuiV6Catalog } from './MuiV6Catalog';
 
 const meta: Meta<typeof MuiV6Catalog> = {
-  title: 'Components/All Components',
+  title: 'Components',
   component: MuiV6Catalog,
   tags: ['autodocs'],
   argTypes: {

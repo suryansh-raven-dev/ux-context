@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { TenantLogo as TenantLogoComponent } from './TenantLogo';
+import { BrandLogos } from '../BrandLogos';
 
 const meta: Meta<typeof TenantLogoComponent> = {
   title: 'Brand',
@@ -34,11 +35,18 @@ function ChromeRow({ bg, border, children }: { bg: string; border?: string; chil
   );
 }
 
-export const TenantLogo: Story = {
-  name: 'TenantLogo',
+export const Brand: Story = {
+  name: 'Brand',
   parameters: { layout: 'fullscreen' },
   render: () => (
-    <StorybookPage maxWidth={760}>
+    <StorybookPage maxWidth={960}>
+
+      <StorybookSection
+        title="Brand logos"
+        description="All official brand logos for Raven and Indorama. Each logo is shown on its recommended background with a download button."
+      >
+        <BrandLogos />
+      </StorybookSection>
 
       <StorybookSection
         title="When to use TenantLogo"
