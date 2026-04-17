@@ -5,7 +5,7 @@ import { StorybookPage, StorybookSection } from '../StorybookPage';
 import { GradientTitle } from './GradientTitle';
 
 export default {
-  title: 'Chat/Gradient Title',
+  title: 'Components/Chat/Gradient Title',
   component: GradientTitle,
 } satisfies Meta<typeof GradientTitle>;
 

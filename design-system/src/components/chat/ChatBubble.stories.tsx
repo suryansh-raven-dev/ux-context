@@ -6,7 +6,7 @@ import { ChatBubble } from './ChatBubble';
 import type { ChatBubbleProps } from './ChatBubble';
 
 export default {
-  title: 'Chat/Chat Bubble',
+  title: 'Components/Chat/Chat Bubble',
   component: ChatBubble,
 } satisfies Meta<typeof ChatBubble>;
 

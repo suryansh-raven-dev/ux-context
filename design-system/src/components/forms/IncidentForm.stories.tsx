@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { IncidentForm } from './IncidentForm';
 
 export default {
-  title: 'Forms/Incident Form',
+  title: 'Components/Forms/Incident Form',
   component: IncidentForm,
   parameters: {
     layout: 'fullscreen',

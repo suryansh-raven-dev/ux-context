@@ -9,7 +9,7 @@ import { StorybookPage, StorybookSection } from '../../StorybookPage';
 import { UserProfileMenu } from './UserProfileMenu';
 
 const meta = {
-  title: 'Navigation/UserProfileMenu',
+  title: 'Components/Navigation/UserProfileMenu',
   component: UserProfileMenu,
 } satisfies Meta<typeof UserProfileMenu>;
 

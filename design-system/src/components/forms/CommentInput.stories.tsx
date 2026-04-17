@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CommentInput } from './CommentInput';
 
 export default {
-  title: 'Forms/Comment Input',
+  title: 'Components/Forms/Comment Input',
   component: CommentInput,
 } satisfies Meta<typeof CommentInput>;
 

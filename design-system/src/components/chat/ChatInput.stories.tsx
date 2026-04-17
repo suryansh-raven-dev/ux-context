@@ -7,7 +7,7 @@ import { ChatInput } from './ChatInput';
 import type { ChatInputProps } from './ChatInput';
 
 export default {
-  title: 'Chat/Chat Input',
+  title: 'Components/Chat/Chat Input',
   component: ChatInput,
 } satisfies Meta<typeof ChatInput>;
 

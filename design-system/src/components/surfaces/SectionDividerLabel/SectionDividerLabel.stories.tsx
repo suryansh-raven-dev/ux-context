@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import { SectionDividerLabel } from './SectionDividerLabel';
 
 const meta = {
-  title: 'Surfaces/SectionDividerLabel',
+  title: 'Components/Surfaces/SectionDividerLabel',
   component: SectionDividerLabel,
   parameters: { layout: 'padded' },
 } satisfies Meta<typeof SectionDividerLabel>;

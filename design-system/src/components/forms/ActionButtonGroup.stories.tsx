@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ActionButtonGroup } from './ActionButtonGroup';
 
 export default {
-  title: 'Forms/Action Button Group',
+  title: 'Components/Forms/Action Button Group',
   component: ActionButtonGroup,
 } satisfies Meta<typeof ActionButtonGroup>;
 
