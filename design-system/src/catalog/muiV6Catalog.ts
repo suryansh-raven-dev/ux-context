@@ -278,6 +278,60 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     ravenSupport: 'themed',
     ravenEquivalent: 'MuiBackdrop under ravenNearMissTheme',
     notes: 'Backdrop overlays should feel light and unobtrusive while preserving focus on the active surface.',
+    summary:
+      'Dimming scrim shown behind overlays (Modal, Drawer) and on top of long-running blocking work (export, bulk save, initial auth). Use to signal "the rest of the app is inactive right now" — never as a generic loading indicator on inline content.',
+    importPath: [`import Backdrop from '@mui/material/Backdrop';`],
+    composition: [
+      'With `CircularProgress` or Raven `Spinner` for app-blocking operations (export render, P&ID initial parse).',
+      'With `Fade` transition (250ms) — instant appearance feels abrupt and draws too much attention.',
+      'As the built-in scrim layer under `Modal` / `Drawer` — you rarely render Backdrop directly in those cases.',
+    ],
+    keyPoints: [
+      '`open` prop is controlled — keep it tied to the same state that blocks user input upstream.',
+      '`invisible` keeps the click trap but removes the dim layer — useful for nested overlays that already sit on a scrim.',
+      'Default z-index sits below Modal — wrap in a `Portal` and raise z-index when layering over `z.drawer`.',
+    ],
+    accessibility: [
+      'Backdrop MUST have an accompanying `aria-busy="true"` on a labeled region — the scrim alone is invisible to screen readers.',
+      'Trap focus inside the active overlay/content below the backdrop; do not let Tab escape to the dimmed UI.',
+      'Provide a visible cancel affordance for long-running backdrops (> 3s) — never leave users stuck.',
+    ],
+    crossPlatform: [
+      'Google Material 3 — "Scrim" at `surface-container-highest` with 32% opacity over dark, 60% over light.',
+      'Microsoft Fluent — `Overlay` with `fadeInOverlay` transition; blocks pointer events by default.',
+      'Apple HIG — "Backdrop" under modal sheets with `.ultraThinMaterial`; web analog is `rgba(0,0,0,0.6)` or `backdrop-filter: blur(8px)`.',
+    ],
+    ravenGuidance: [
+      'Scrim color: `rgba(14, 23, 27, 0.6)` in admin light, `rgba(0, 0, 0, 0.72)` in dark — matches `color.surface.overlay`.',
+      'Never use Backdrop for skeleton or shimmer loading — those belong inline in the affected region.',
+      'For app-blocking work > 1s, pair with a centered card that names what is happening ("Exporting drawing…") and shows progress where known.',
+    ],
+    ravenUsage: `import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+
+<Backdrop
+  open={isExporting}
+  sx={{
+    zIndex: (t) => t.zIndex.modal + 1,
+    color: '#fff',
+    backgroundColor: 'rgba(14, 23, 27, 0.6)',
+    backdropFilter: 'blur(2px)',
+  }}
+  aria-busy="true"
+  aria-live="polite"
+>
+  <Stack spacing={2} alignItems="center">
+    <CircularProgress color="inherit" />
+    <Typography variant="body1" sx={{ fontWeight: 600 }}>
+      Exporting drawing…
+    </Typography>
+    <Typography variant="body2" sx={{ opacity: 0.8 }}>
+      This usually takes 5–10 seconds.
+    </Typography>
+  </Stack>
+</Backdrop>`,
   },
   {
     category: 'Feedback',
@@ -458,6 +512,74 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     ravenSupport: 'themed',
     ravenEquivalent: 'MuiBottomNavigation under ravenNearMissTheme',
     notes: 'Use only on constrained mobile layouts and keep the active state clearly brand-led.',
+    summary:
+      'Three-to-five tab strip pinned to the bottom of the viewport for top-level destinations on mobile shells. In Raven, this is a NearMiss-only primitive — admin/NMMS/P&ID desktop shells use `WideSidebar` or `RailSidebar` instead.',
+    importPath: [
+      `import BottomNavigation from '@mui/material/BottomNavigation';`,
+      `import BottomNavigationAction from '@mui/material/BottomNavigationAction';`,
+    ],
+    composition: [
+      'BottomNavigation → BottomNavigationAction × 3–5, each with an icon + label.',
+      'Wrap in `Paper` with `elevation={3}` + `sx={{ position: "fixed", bottom: 0 }}` so it floats above content.',
+      'Pair with `useMediaQuery(theme.breakpoints.down("sm"))` to show only on compact viewports.',
+    ],
+    keyPoints: [
+      'Use between 3 and 5 destinations — fewer collapses to a single button, more overflows on narrow phones.',
+      'Always show labels on the active item; icon-only can be ambiguous for first-time users.',
+      '`showLabels` prop forces labels on all states — Raven defaults to `showLabels` because safety operators wear gloves.',
+    ],
+    accessibility: [
+      'Each action MUST have a visible text label OR `aria-label` — icon-only is non-compliant for motor-impaired users.',
+      'Minimum 48x48 CSS px touch target per action (MD guideline; Raven enforces 44x44 per WCAG 2.1).',
+      'Announce route changes with `aria-current="page"` on the active action.',
+    ],
+    crossPlatform: [
+      'Google Material 3 — "Navigation bar" at surface-container with 80px height; 3–5 destinations.',
+      'Microsoft Fluent — "TabList" horizontal at bottom is the mobile pattern; `appearance="subtle"`.',
+      'Apple HIG — "Tab bar" with SF Symbols; the web equivalent here.',
+    ],
+    ravenGuidance: [
+      'Height: 64px; icons 24px; label `caption` (12px/16px Source Sans 3 600).',
+      'Active color: `primary.main` (#4A148C admin / #23E0D2 dark); inactive: `text.secondary`.',
+      'Use ONLY in NearMiss mobile flow — never in admin dashboard, which always has a sidebar.',
+    ],
+    ravenUsage: `import { useState } from 'react';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import Paper from '@mui/material/Paper';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
+import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
+
+function MobileShellBottomNav() {
+  const [value, setValue] = useState(0);
+  return (
+    <Paper
+      elevation={3}
+      sx={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        borderRadius: 0,
+        borderTop: '1px solid #F3E5F5',
+      }}
+    >
+      <BottomNavigation
+        showLabels
+        value={value}
+        onChange={(_, v) => setValue(v)}
+        sx={{ height: 64 }}
+      >
+        <BottomNavigationAction label="Home"    icon={<HomeRoundedIcon />} />
+        <BottomNavigationAction label="Reports" icon={<ListAltRoundedIcon />} />
+        <BottomNavigationAction label="Tasks"   icon={<AssignmentRoundedIcon />} />
+        <BottomNavigationAction label="Me"      icon={<PersonRoundedIcon />} />
+      </BottomNavigation>
+    </Paper>
+  );
+}`,
   },
   {
     category: 'Navigation',
@@ -467,6 +589,64 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     ravenSupport: 'available',
     ravenEquivalent: 'BreadcrumbNav / MuiBreadcrumbs',
     notes: 'Breadcrumbs should stay terse and may include status metadata where context improves navigation.',
+    summary:
+      'Location-trail navigation showing the hierarchy from the app root to the current view. Raven uses breadcrumbs for deep incident detail pages, nested equipment in P&ID, and configuration sub-pages — never on top-level destinations that already live in the sidebar.',
+    importPath: [
+      `import Breadcrumbs from '@mui/material/Breadcrumbs';`,
+      `import Link from '@mui/material/Link';`,
+      `import Typography from '@mui/material/Typography';`,
+    ],
+    composition: [
+      'Breadcrumbs → Link … Link → Typography (current page, not a link).',
+      'Use `maxItems` + `itemsBeforeCollapse` + `itemsAfterCollapse` to collapse the middle on long trails.',
+      'Embed inside `PageHeader` above the title, not inside the main content scroll area.',
+    ],
+    keyPoints: [
+      'Each intermediate segment is a real, clickable link (`href`) — never a disabled Typography.',
+      'The terminal (current) segment is a `Typography` with `color="text.primary"` and `aria-current="page"`.',
+      'Default separator is "/"; Raven uses `ChevronRightRoundedIcon` in admin/NMMS and "›" in NearMiss.',
+    ],
+    accessibility: [
+      'Wrap with `<nav aria-label="Breadcrumb">` — MUI Breadcrumbs does this automatically but verify in DOM.',
+      'Terminal segment MUST carry `aria-current="page"` so screen readers announce "current page".',
+      'Collapsed items expose a "Show path" button — ensure it is keyboard-reachable and announces the expanded items.',
+    ],
+    crossPlatform: [
+      'Google Material — "Breadcrumb" pattern in Top app bar variant; terse labels, chevron separators.',
+      'Microsoft Fluent — `Breadcrumb` + `BreadcrumbItem` + `BreadcrumbDivider`; same collapse behavior at 4+ items.',
+      'Nielsen Norman — recommends breadcrumbs for hierarchies 3+ levels deep; keep labels ≤ 3 words.',
+    ],
+    ravenGuidance: [
+      'Typography: `body2` (14px/20px) Source Sans 3; separator `text.tertiary`.',
+      'Max visible: 4 segments — collapse the middle to `…` with an expand control.',
+      'Labels mirror the URL slug: Title Case, no trailing chrome like "page" or "view".',
+    ],
+    ravenUsage: `import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+
+<Breadcrumbs
+  aria-label="Breadcrumb"
+  separator={<ChevronRightRoundedIcon fontSize="small" sx={{ color: 'text.tertiary' }} />}
+  maxItems={4}
+  itemsBeforeCollapse={1}
+  itemsAfterCollapse={2}
+  sx={{ mb: 1 }}
+>
+  <Link underline="hover" color="text.secondary" href="/reports">
+    Reports
+  </Link>
+  <Link underline="hover" color="text.secondary" href="/reports/near-miss">
+    Near-Miss
+  </Link>
+  <Link underline="hover" color="text.secondary" href="/reports/near-miss/2026-Q1">
+    2026 Q1
+  </Link>
+  <Typography color="text.primary" aria-current="page" sx={{ fontWeight: 600 }}>
+    NM-10284
+  </Typography>
+</Breadcrumbs>`,
   },
   {
     category: 'Navigation',
@@ -476,6 +656,84 @@ export const muiV6Catalog: MuiV6CatalogItem[] = [
     ravenSupport: 'available',
     ravenEquivalent: 'ActivityDrawer / MuiDrawer',
     notes: 'Raven drawers favor soft left corners, light surfaces, and timeline-style supporting content.',
+    summary:
+      'Side panel that slides in from an edge of the viewport. Raven uses drawers for secondary context that is transient — activity timelines, detail previews, filter panels, mobile navigation — not for primary structural navigation (that is `WideSidebar` / `RailSidebar`).',
+    importPath: [
+      `import Drawer from '@mui/material/Drawer';`,
+    ],
+    composition: [
+      'Drawer (anchor="right") + ActivityDrawer body: header → tabs → timeline → action bar.',
+      'Drawer (anchor="left", variant="temporary") + NavigationMenu for mobile nav — pair with `useMediaQuery(theme.breakpoints.down("md"))`.',
+      'Drawer (anchor="bottom", variant="temporary") as a sheet on compact mobile viewports.',
+    ],
+    keyPoints: [
+      '`variant="temporary"` (default) shows a backdrop and closes on outside click; `variant="persistent"` stays open and pushes content; `variant="permanent"` is always visible (use sidebar primitives instead).',
+      'Set `PaperProps={{ sx: { width: 480 } }}` to size — widths default to `auto` which rarely matches design.',
+      '`keepMounted` helps SEO for navigation content but costs memory — default unmount is correct for activity/detail drawers.',
+    ],
+    accessibility: [
+      'Temporary drawer traps focus (MUI default); ensure there is a visible Close button reachable by Tab from the first focusable item.',
+      'Set `aria-labelledby` on the Drawer root pointing to the drawer title.',
+      'Return focus to the trigger on close (MUI default unless `disableRestoreFocus`).',
+    ],
+    crossPlatform: [
+      'Google Material 3 — "Navigation drawer" (modal) and "Side sheet" (persistent); side sheet is the `activity drawer` analog.',
+      'Microsoft Fluent — `Drawer` with `position="end"` + `size="medium" | "large"`; identical contract.',
+      'Apple HIG — "Sheet" presentation styles; `.formSheet` maps to Raven right drawer, `.pageSheet` to bottom sheet.',
+    ],
+    ravenGuidance: [
+      'Paper radii: 16px on the leading edge (top-left + bottom-left for right drawer); 0 on the edge that meets the viewport.',
+      'Width: 480px admin default; 360px compact; 100vw on mobile (sheet mode).',
+      'Header: sticky, `background.default` surface, bottom border `divider`, 56px tall, close IconButton on the trailing side.',
+    ],
+    ravenUsage: `import Drawer from '@mui/material/Drawer';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+
+<Drawer
+  anchor="right"
+  open={open}
+  onClose={onClose}
+  aria-labelledby="activity-drawer-title"
+  PaperProps={{
+    sx: {
+      width: 480,
+      borderTopLeftRadius: 16,
+      borderBottomLeftRadius: 16,
+      bgcolor: 'background.default',
+    },
+  }}
+>
+  <Stack
+    direction="row"
+    alignItems="center"
+    justifyContent="space-between"
+    sx={{
+      px: 2.5,
+      height: 56,
+      position: 'sticky',
+      top: 0,
+      bgcolor: 'background.default',
+      borderBottom: '1px solid',
+      borderColor: 'divider',
+      zIndex: 1,
+    }}
+  >
+    <Typography id="activity-drawer-title" variant="h6" sx={{ fontWeight: 600 }}>
+      Incident activity
+    </Typography>
+    <IconButton aria-label="Close" onClick={onClose}>
+      <CloseRoundedIcon />
+    </IconButton>
+  </Stack>
+
+  <Box sx={{ p: 2.5 }}>
+    <ActivityTimeline events={events} />
+  </Box>
+</Drawer>`,
   },
   {
     category: 'Navigation',
